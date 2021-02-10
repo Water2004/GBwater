@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="cn">
+    <head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="generator" content="Hugo 0.80.0" />
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/remixicon/remixicon.css"><link rel="stylesheet" href="/css/tony.min.2cd909c3b2b4f0eb1f6b8dbe02a8be4ed8a7456895a39f284818ed1e771073c6.css" integrity="sha256-LNkJw7K08Osfa42+Aqi+TtinRWiVo58oSBjtHncQc8Y="/>
+
+    <link rel="shortcut icon" href="/images/t.jpg" type="image/x-icon" />
+    <title>倍增LCA</title>
+
+    <meta name="author" content="HUGO-THEME-TONY" /><meta name="description" content="" />
+
+    
+    <link rel="canonical" href="http://example.com/posts/%E5%80%8D%E5%A2%9Elca/" />
+    
+
+
+</head>
+
+    <header id="header-div" class="tony-header-fixed">
+
+    <div class="header-div1">
+        <a href="http://example.com/" style="display:inline-block;">
+            <img src="/images/t.jpg">
+        </a>
+    </div>
+    <div class="header-div2">
+    <a href="/"><button class="btn btn-light">主页</button></a>
+    <a href="/tags/"><button class="btn btn-light">标签</button></a>
+    <a href="/categories/"><button class="btn btn-light">分类</button></a>
+    <a href="/archives/"><button class="btn btn-light">归档</button></a>
+    <a href="/about/"><button class="btn btn-light">关于</button></a>
+    
+</div>
+</header>
+    <body>
+        
+    <div id="post-container">
+    <div class="grid grid-centered">
+        <div id="grid-cell" class="grid-cell">
+            
+                <div class="single-left">
+                    
+        
+        
+        
+        
+            
+            
+            
+            <div class="index-div">
+                <div class="single-index">
+                    <h4>
+                        <i class="ri-list-check-2"></i>
+                        
+                    </h4>
+                </div>  
+                <ul id="article-index" class="index-ul">
+                    
+                        
+                        
+                            
+                                
+                                
+                                <a href="#%e5%80%8d%e5%a2%9elca">
+                                    <li style="padding-left:23px" class="">
+                                        <i class="ri-checkbox-blank-circle-line"></i>
+                                        &nbsp;&nbsp;倍增LCA
+                                    </li>
+                                </a>
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                                
+                                <a href="#%e5%bc%95%e5%ad%90">
+                                    <li style="padding-left:23px" class="">
+                                        <i class="ri-checkbox-blank-circle-line"></i>
+                                        &nbsp;&nbsp;引子
+                                    </li>
+                                </a>
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                                
+                                <a href="#%e5%9f%ba%e6%9c%ac%e6%80%9d%e8%b7%af">
+                                    <li style="padding-left:23px" class="">
+                                        <i class="ri-checkbox-blank-circle-line"></i>
+                                        &nbsp;&nbsp;基本思路
+                                    </li>
+                                </a>
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                                
+                                <a href="#%e9%a2%84%e5%a4%84%e7%90%86">
+                                    <li style="padding-left:23px" class="">
+                                        <i class="ri-checkbox-blank-circle-line"></i>
+                                        &nbsp;&nbsp;预处理
+                                    </li>
+                                </a>
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                                
+                                <a href="#%e8%b7%b3">
+                                    <li style="padding-left:23px" class="">
+                                        <i class="ri-checkbox-blank-circle-line"></i>
+                                        &nbsp;&nbsp;跳！
+                                    </li>
+                                </a>
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                                
+                                <a href="#%e5%ae%8c%e6%95%b4%e4%bb%a3%e7%a0%81">
+                                    <li style="padding-left:23px" class="">
+                                        <i class="ri-checkbox-blank-circle-line"></i>
+                                        &nbsp;&nbsp;完整代码
+                                    </li>
+                                </a>
+                            
+                        
+                    
+                </ul>
+            </div>
+        
+                    
+
+
+
+
+    
+        <div>
+            <div class="index-div-prev">
+                <h4></h4>
+                <p>
+                    <a href="/posts/hello-world/" rel="next">Hello World</a>
+                </p>
+            </div>
+        </div>
+    
+    
+        <div>
+            <div class="index-div-next">
+                <h4></h4>
+                <p>
+                    <a href="/posts/%E9%9D%99%E9%BB%98%E6%8B%B7%E6%96%87%E4%BB%B6/" rel="prev">静默拷文件</a>
+                </p>
+            </div>
+        </div>
+    
+
+                </div>
+            
+            
+                <div id="reading-bar"></div>
+            
+            <article class="article reveal">
+                <div id="load">
+                    <div class="article-header">
+                        
+    
+        <span class="badge badge-pill badge-danger single-badge">
+            <a href="http://example.com/categories/oi" class="post-header">OI</a>
+        </span>
+    
+
+<span title="预计阅读时长" class="badge badge-pill badge-danger single-badge post-header">
+    6 mins
+</span>
+<h2 class="single-h2">倍增LCA</h2>
+<div class="article-list-footer">
+    <span class="article-list-date">15-11-20</span>
+    <span class="article-list-divider">/</span>
+    <span class="article-list-minutes">2831 Words</span>
+</div>
+<div class="single-line"></div>
+                    </div>
+                    <div class="article-content">
+                        <h1 id="倍增lca">倍增LCA</h1>
+
+<h2 id="引子">引子</h2>
+
+<p>什么？你还不知道什么是LCA？LCA就是树上两个节点的最近公共祖先。<br>
+所以，对于怎么找LCA，是个人都会想到一个办法，让两个节点不断向上移动，只要重合了就是LCA了，嘿嘿嘿<br>
+然鹅，一个一个移动太慢，只要数据过了 $10^8$ 分分钟 T 飞~<br>
+所以，我们需要一个快速的移动方式，比如，成几何级数的移动，这就是倍增算法</p>
+
+<h2 id="基本思路">基本思路</h2>
+
+<p>既然要成几何级数的移动速度，要找个底数，比如2吧，每次移动 $2^k$ 个<br>
+要想一次移动这么多，肯定要预处理，不如先预处理一个数组 $grand[i][j]$ 表示 $i$ 向上跳<span  class="math">\(2^k\)</span>个是谁，跳出这棵树的值就为-1吧<br>
+怎么判断已经跳到了LCA呢？毕竟公共祖先不只有LCA一个<br>
+不如就不直接跳到LCA，把所有跳到相同节点的情况都视为跳出树了，一直跳直到跳不动了为止，这时候两个节点的父节点就是LCA了，是不是特别机智~</p>
+
+<h2 id="预处理">预处理</h2>
+
+<p>怎么预处理出 $grand$数组呢？
+什么？你想一个个往上跳，然后取对数？省省吧，有这功夫早就 T 飞了，我们需要一个更高效的方法，最好能利用已经求出的 $grand$ 数组<br>
+那不就是动态规划嘛，让我们来凑一手状态转移方程<br>
+首先，$i$ 向上跳 $2^k$ 个可以分解成两个动作，先向上跳 $2^{k-1}$ 个，再向上跳 $2^{k-1}$ 个<br>
+$i$向上跳 $2^{k-1}$ 个不就是$grand[i][k-1]$嘛，套个娃，再向上跳 $2^{k-1}$ 个当然就是 $grand[grand[i][k-1]][k-1]$ 。于是我们得出方程：
+<span  class="math">\(
+grand[i][k]=grand[grand[i][k-1]][k-1]
+\)</span>
+瞅瞅这个方程，我们该用什么算法呢？<br>
+要想转移状态，必须要先求出 $grand[i][k-1]$，这告诉我们应该：</p>
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#00a8c8">for</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">k</span><span style="color:#f92672">=</span><span style="color:#111">;</span><span style="color:#111">k</span><span style="color:#f92672">&lt;</span> <span style="color:#111">MAXON</span><span style="color:#111">;</span><span style="color:#111">k</span><span style="color:#f92672">++</span><span style="color:#111">)</span>
+<span style="color:#111">{</span>
+  <span style="color:#75715e">//求grand
+</span><span style="color:#75715e"></span><span style="color:#111">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>再看，我们还要先求出$i$的祖先节点的$grand$，因为我们要用到$grand[grand[i][k-1]][k-1]$ 嘛，这好说，来一手 $dfs$ 深度优先搜索就好了，顺便还可以记录每个节点的父节点和深度，一举两得<br>
+于是我们竟然可以写出代码了
+先用邻接表存图：</p>
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">	<span style="color:#00a8c8">struct</span> <span style="color:#75af00">edge</span>
+	<span style="color:#111">{</span>
+		<span style="color:#00a8c8">int</span> <span style="color:#111">to</span><span style="color:#111">;</span><span style="color:#75715e">//这条边到达的点
+</span><span style="color:#75715e"></span>		<span style="color:#00a8c8">int</span> <span style="color:#111">next</span><span style="color:#111">;</span><span style="color:#75715e">//下一条边
+</span><span style="color:#75715e"></span>	<span style="color:#111">}</span><span style="color:#111">Edge</span><span style="color:#111">[</span><span style="color:#111">MAXON</span><span style="color:#111">];</span>
+	<span style="color:#00a8c8">int</span> <span style="color:#111">head</span><span style="color:#111">[</span><span style="color:#111">MAXON</span><span style="color:#111">];</span><span style="color:#75715e">//head[i]表示由i开始的第一条边的编号
+</span><span style="color:#75715e"></span>	<span style="color:#00a8c8">int</span> <span style="color:#111">tot</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span><span style="color:#111">;</span><span style="color:#75715e">//总边数
+</span><span style="color:#75715e"></span>	<span style="color:#00a8c8">int</span> <span style="color:#111">grand</span><span style="color:#111">[</span><span style="color:#ae81ff">500010</span><span style="color:#111">][</span><span style="color:#ae81ff">30</span><span style="color:#111">];</span>
+	<span style="color:#00a8c8">int</span> <span style="color:#111">fa</span><span style="color:#111">[</span><span style="color:#111">MAXON</span><span style="color:#111">];</span>
+	<span style="color:#00a8c8">void</span> <span style="color:#75af00">add_dege</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">from</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span> <span style="color:#111">to</span><span style="color:#111">)</span>
+	<span style="color:#111">{</span>
+		<span style="color:#111">tot</span><span style="color:#f92672">++</span><span style="color:#111">;</span><span style="color:#75715e">//当前边的编号
+</span><span style="color:#75715e"></span>		<span style="color:#111">Edge</span><span style="color:#111">[</span><span style="color:#111">tot</span><span style="color:#111">].</span><span style="color:#111">to</span> <span style="color:#f92672">=</span> <span style="color:#111">to</span><span style="color:#111">;</span>
+		<span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">from</span> <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#111">)</span>
+			<span style="color:#111">Edge</span><span style="color:#111">[</span><span style="color:#111">tot</span><span style="color:#111">].</span><span style="color:#111">next</span> <span style="color:#f92672">=</span> <span style="color:#111">head</span><span style="color:#111">[</span><span style="color:#111">from</span><span style="color:#111">];</span><span style="color:#75715e">//插入在前
+</span><span style="color:#75715e"></span>		<span style="color:#111">head</span><span style="color:#111">[</span><span style="color:#111">from</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">tot</span><span style="color:#111">;</span><span style="color:#75715e">//由于这条边插入在了前面,故当前边就是由from开始的第一条边
+</span><span style="color:#75715e"></span>	<span style="color:#111">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#00a8c8">void</span> <span style="color:#75af00">dfs</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">from</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span> <span style="color:#111">now</span><span style="color:#111">)</span>
+	<span style="color:#111">{</span>
+		<span style="color:#111">fa</span><span style="color:#111">[</span><span style="color:#111">now</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">from</span><span style="color:#111">;</span><span style="color:#75715e">//记录父节点
+</span><span style="color:#75715e"></span>		<span style="color:#00a8c8">int</span> <span style="color:#111">start</span> <span style="color:#f92672">=</span> <span style="color:#111">head</span><span style="color:#111">[</span><span style="color:#111">now</span><span style="color:#111">];</span><span style="color:#75715e">//从第一个子节点开始找
+</span><span style="color:#75715e"></span>		<span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">from</span> <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#111">)</span><span style="color:#75715e">//若不是根节点,深度为父节点深度+1(根节点为0)
+</span><span style="color:#75715e"></span>			<span style="color:#111">dep</span><span style="color:#111">[</span><span style="color:#111">now</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">dep</span><span style="color:#111">[</span><span style="color:#111">from</span><span style="color:#111">]</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+		<span style="color:#75715e">//int g = log2(dep[now]) ;
+</span><span style="color:#75715e"></span>		<span style="color:#00a8c8">int</span> <span style="color:#111">g</span> <span style="color:#f92672">=</span> <span style="color:#111">lg</span><span style="color:#111">[</span><span style="color:#111">dep</span><span style="color:#111">[</span><span style="color:#111">now</span><span style="color:#111">]];</span>
+		<span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">from</span> <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#111">)</span><span style="color:#75715e">//根节点没有父节点
+</span><span style="color:#75715e"></span>			<span style="color:#111">grand</span><span style="color:#111">[</span><span style="color:#111">now</span><span style="color:#111">][</span><span style="color:#ae81ff">0</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">from</span><span style="color:#111">;</span><span style="color:#75715e">//2^0=1,即父节点
+</span><span style="color:#75715e"></span>		<span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span> <span style="color:#111">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#f92672">=</span> <span style="color:#111">g</span><span style="color:#111">;</span> <span style="color:#111">i</span><span style="color:#f92672">++</span><span style="color:#111">)</span>
+		<span style="color:#111">{</span>
+			<span style="color:#111">grand</span><span style="color:#111">[</span><span style="color:#111">now</span><span style="color:#111">][</span><span style="color:#111">i</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">grand</span><span style="color:#111">[</span><span style="color:#111">grand</span><span style="color:#111">[</span><span style="color:#111">now</span><span style="color:#111">][</span><span style="color:#111">i</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span><span style="color:#111">]][</span><span style="color:#111">i</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span><span style="color:#111">];</span><span style="color:#75715e">//状态转移方程
+</span><span style="color:#75715e"></span>		<span style="color:#111">}</span>
+		<span style="color:#00a8c8">while</span> <span style="color:#111">(</span><span style="color:#111">start</span><span style="color:#111">)</span><span style="color:#75715e">//一个一个找孩子
+</span><span style="color:#75715e"></span>		<span style="color:#111">{</span>
+			<span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">Edge</span><span style="color:#111">[</span><span style="color:#111">start</span><span style="color:#111">].</span><span style="color:#111">to</span> <span style="color:#f92672">==</span> <span style="color:#111">from</span><span style="color:#111">)</span><span style="color:#75715e">//若相连节点不是父节点
+</span><span style="color:#75715e"></span>			<span style="color:#111">{</span>
+				<span style="color:#111">start</span> <span style="color:#f92672">=</span> <span style="color:#111">Edge</span><span style="color:#111">[</span><span style="color:#111">start</span><span style="color:#111">].</span><span style="color:#111">next</span><span style="color:#111">;</span>
+				<span style="color:#00a8c8">continue</span><span style="color:#111">;</span>
+			<span style="color:#111">}</span>
+			<span style="color:#111">dfs</span><span style="color:#111">(</span><span style="color:#111">now</span><span style="color:#111">,</span> <span style="color:#111">Edge</span><span style="color:#111">[</span><span style="color:#111">start</span><span style="color:#111">].</span><span style="color:#111">to</span><span style="color:#111">);</span><span style="color:#75715e">//继续搜索子节点
+</span><span style="color:#75715e"></span>			<span style="color:#111">start</span> <span style="color:#f92672">=</span> <span style="color:#111">Edge</span><span style="color:#111">[</span><span style="color:#111">start</span><span style="color:#111">].</span><span style="color:#111">next</span><span style="color:#111">;</span><span style="color:#75715e">//搜索下一个子节点
+</span><span style="color:#75715e"></span>		<span style="color:#111">}</span>
+	<span style="color:#111">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="跳">跳！</h2>
+
+<p>预处理好了，接下来就是跳了<br>
+怎么跳呢？先跳到同一高度，然后什么都好说</p>
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">		<span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">dep</span><span style="color:#111">[</span><span style="color:#111">a</span><span style="color:#111">]</span> <span style="color:#f92672">&gt;</span> <span style="color:#111">dep</span><span style="color:#111">[</span><span style="color:#111">b</span><span style="color:#111">])</span><span style="color:#75715e">//统一b深度大于a
+</span><span style="color:#75715e"></span>		<span style="color:#111">{</span>
+			<span style="color:#111">a</span> <span style="color:#f92672">=</span> <span style="color:#111">a</span> <span style="color:#f92672">+</span> <span style="color:#111">b</span><span style="color:#111">;</span><span style="color:#75715e">//a此时等于原来的a,b之和
+</span><span style="color:#75715e"></span>			<span style="color:#111">b</span> <span style="color:#f92672">=</span> <span style="color:#111">a</span> <span style="color:#f92672">-</span> <span style="color:#111">b</span><span style="color:#111">;</span><span style="color:#75715e">//b此时等于原来的a
+</span><span style="color:#75715e"></span>			<span style="color:#111">a</span> <span style="color:#f92672">=</span> <span style="color:#111">a</span> <span style="color:#f92672">-</span> <span style="color:#111">b</span><span style="color:#111">;</span><span style="color:#75715e">//a此时等于原来的b
+</span><span style="color:#75715e"></span>		<span style="color:#111">}</span><span style="color:#75715e">//神奇的交换方法
+</span><span style="color:#75715e"></span>		<span style="color:#00a8c8">int</span> <span style="color:#111">deep</span> <span style="color:#f92672">=</span> <span style="color:#111">dep</span><span style="color:#111">[</span><span style="color:#111">b</span><span style="color:#111">]</span> <span style="color:#f92672">-</span> <span style="color:#111">dep</span><span style="color:#111">[</span><span style="color:#111">a</span><span style="color:#111">];</span><span style="color:#75715e">//深度差
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">//int step = log2(deep);
+</span><span style="color:#75715e"></span>		<span style="color:#00a8c8">int</span> <span style="color:#111">step</span> <span style="color:#f92672">=</span> <span style="color:#111">lg</span><span style="color:#111">[</span><span style="color:#111">deep</span><span style="color:#111">];</span><span style="color:#75715e">//最大要走的步数
+</span><span style="color:#75715e"></span>		<span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">i</span> <span style="color:#f92672">=</span> <span style="color:#111">step</span><span style="color:#111">;</span> <span style="color:#111">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span> <span style="color:#111">i</span><span style="color:#f92672">--</span><span style="color:#111">)</span><span style="color:#75715e">//先让b跳到和a同一深度
+</span><span style="color:#75715e"></span>		<span style="color:#111">{</span>
+			<span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">dep</span><span style="color:#111">[</span><span style="color:#111">grand</span><span style="color:#111">[</span><span style="color:#111">b</span><span style="color:#111">][</span><span style="color:#111">i</span><span style="color:#111">]]</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">dep</span><span style="color:#111">[</span><span style="color:#111">a</span><span style="color:#111">])</span> <span style="color:#00a8c8">continue</span><span style="color:#111">;</span><span style="color:#75715e">//跳过头了,不跳
+</span><span style="color:#75715e"></span>			<span style="color:#00a8c8">else</span>
+			<span style="color:#111">{</span>
+				<span style="color:#111">b</span> <span style="color:#f92672">=</span> <span style="color:#111">grand</span><span style="color:#111">[</span><span style="color:#111">b</span><span style="color:#111">][</span><span style="color:#111">i</span><span style="color:#111">];</span><span style="color:#75715e">//没跳过头,跳
+</span><span style="color:#75715e"></span>			<span style="color:#111">}</span>
+		<span style="color:#111">}</span>
+		<span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">a</span> <span style="color:#f92672">==</span> <span style="color:#111">b</span><span style="color:#111">)</span> <span style="color:#00a8c8">return</span> <span style="color:#111">a</span><span style="color:#111">;</span><span style="color:#75715e">//若相等,则已经找到LCA
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>这里为什么要有个step呢，因为先封个顶，一点点下降，能跳再跳，万一就跳出去了呢<br>
+然后就是两个节点一起向上跳了</p>
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">		<span style="color:#111">step</span> <span style="color:#f92672">=</span> <span style="color:#111">lg</span><span style="color:#111">[</span><span style="color:#111">dep</span><span style="color:#111">[</span><span style="color:#111">a</span><span style="color:#111">]];</span> <span style="color:#75715e">//要走的步数
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">//step = log2(dep[a]);
+</span><span style="color:#75715e"></span>		<span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">i</span> <span style="color:#f92672">=</span> <span style="color:#111">step</span><span style="color:#111">;</span> <span style="color:#111">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span> <span style="color:#111">i</span><span style="color:#f92672">--</span><span style="color:#111">)</span>
+		<span style="color:#111">{</span>
+			<span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">grand</span><span style="color:#111">[</span><span style="color:#111">a</span><span style="color:#111">][</span><span style="color:#111">i</span><span style="color:#111">]</span> <span style="color:#f92672">==</span> <span style="color:#111">grand</span><span style="color:#111">[</span><span style="color:#111">b</span><span style="color:#111">][</span><span style="color:#111">i</span><span style="color:#111">])</span> <span style="color:#00a8c8">continue</span><span style="color:#111">;</span><span style="color:#75715e">//跳过头了,不跳
+</span><span style="color:#75715e"></span>			<span style="color:#00a8c8">else</span><span style="color:#75715e">//没跳过头,跳
+</span><span style="color:#75715e"></span>			<span style="color:#111">{</span>
+				<span style="color:#111">a</span> <span style="color:#f92672">=</span> <span style="color:#111">grand</span><span style="color:#111">[</span><span style="color:#111">a</span><span style="color:#111">][</span><span style="color:#111">i</span><span style="color:#111">];</span>
+				<span style="color:#111">b</span> <span style="color:#f92672">=</span> <span style="color:#111">grand</span><span style="color:#111">[</span><span style="color:#111">b</span><span style="color:#111">][</span><span style="color:#111">i</span><span style="color:#111">];</span>
+			<span style="color:#111">}</span>
+		<span style="color:#111">}</span>
+		<span style="color:#00a8c8">return</span> <span style="color:#111">fa</span><span style="color:#111">[</span><span style="color:#111">a</span><span style="color:#111">];</span><span style="color:#75715e">//最后他们的父节点就是LC
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>要问这个$lg$数组是怎么来的？洛谷上抄的，嘿嘿嘿</p>
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">	<span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span> <span style="color:#111">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#f92672">=</span> <span style="color:#111">n</span><span style="color:#111">;</span> <span style="color:#111">i</span><span style="color:#f92672">++</span><span style="color:#111">)</span> <span style="color:#75715e">//常数优化,预先算出log_2(i)+1的值，用的时候直接调用就可以了
+</span><span style="color:#75715e"></span>		<span style="color:#111">lg</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">lg</span><span style="color:#111">[</span><span style="color:#111">i</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span><span style="color:#111">]</span> <span style="color:#f92672">+</span> <span style="color:#111">(</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#111">lg</span><span style="color:#111">[</span><span style="color:#111">i</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span><span style="color:#111">]</span> <span style="color:#f92672">==</span> <span style="color:#111">i</span><span style="color:#111">);</span>  <span style="color:#75715e">//看不懂的可以手推一下
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="完整代码">完整代码</h2>
+
+<p>我写这玩意的时候特别喜欢class，于是。。。码风奇丑，凑合着看吧。。。</p>
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;cmath&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;cstdio&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">using</span> <span style="color:#00a8c8">namespace</span> <span style="color:#111">std</span><span style="color:#111">;</span>
+<span style="color:#00a8c8">const</span> <span style="color:#00a8c8">int</span> <span style="color:#111">MAXON</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000010</span><span style="color:#111">;</span>
+<span style="color:#00a8c8">int</span> <span style="color:#111">dep</span><span style="color:#111">[</span><span style="color:#111">MAXON</span><span style="color:#111">];</span><span style="color:#75715e">//dep[i]代表编号为i的点所处的深度
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">int</span> <span style="color:#111">lg</span><span style="color:#111">[</span><span style="color:#111">MAXON</span><span style="color:#111">];</span>
+<span style="color:#00a8c8">class</span> <span style="color:#75af00">Graph</span>
+<span style="color:#111">{</span>
+<span style="color:#00a8c8">private</span><span style="color:#f92672">:</span>
+	<span style="color:#00a8c8">struct</span> <span style="color:#75af00">edge</span>
+	<span style="color:#111">{</span>
+		<span style="color:#00a8c8">int</span> <span style="color:#111">to</span><span style="color:#111">;</span><span style="color:#75715e">//这条边到达的点
+</span><span style="color:#75715e"></span>		<span style="color:#00a8c8">int</span> <span style="color:#111">next</span><span style="color:#111">;</span><span style="color:#75715e">//下一条边
+</span><span style="color:#75715e"></span>	<span style="color:#111">}</span><span style="color:#111">Edge</span><span style="color:#111">[</span><span style="color:#111">MAXON</span><span style="color:#111">];</span>
+	<span style="color:#00a8c8">int</span> <span style="color:#111">head</span><span style="color:#111">[</span><span style="color:#111">MAXON</span><span style="color:#111">];</span><span style="color:#75715e">//head[i]表示由i开始的第一条边的编号
+</span><span style="color:#75715e"></span>	<span style="color:#00a8c8">int</span> <span style="color:#111">tot</span><span style="color:#111">;</span><span style="color:#75715e">//总边数
+</span><span style="color:#75715e"></span>	<span style="color:#00a8c8">int</span> <span style="color:#111">grand</span><span style="color:#111">[</span><span style="color:#ae81ff">500010</span><span style="color:#111">][</span><span style="color:#ae81ff">30</span><span style="color:#111">];</span>
+	<span style="color:#00a8c8">int</span> <span style="color:#111">fa</span><span style="color:#111">[</span><span style="color:#111">MAXON</span><span style="color:#111">];</span>
+<span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
+	<span style="color:#111">Graph</span><span style="color:#111">()</span>
+	<span style="color:#111">{</span>
+		<span style="color:#111">tot</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span>
+	<span style="color:#111">}</span>
+	<span style="color:#00a8c8">void</span> <span style="color:#75af00">add_dege</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">from</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span> <span style="color:#111">to</span><span style="color:#111">)</span>
+	<span style="color:#111">{</span>
+		<span style="color:#111">tot</span><span style="color:#f92672">++</span><span style="color:#111">;</span><span style="color:#75715e">//当前边的编号
+</span><span style="color:#75715e"></span>		<span style="color:#111">Edge</span><span style="color:#111">[</span><span style="color:#111">tot</span><span style="color:#111">].</span><span style="color:#111">to</span> <span style="color:#f92672">=</span> <span style="color:#111">to</span><span style="color:#111">;</span>
+		<span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">from</span> <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#111">)</span>
+			<span style="color:#111">Edge</span><span style="color:#111">[</span><span style="color:#111">tot</span><span style="color:#111">].</span><span style="color:#111">next</span> <span style="color:#f92672">=</span> <span style="color:#111">head</span><span style="color:#111">[</span><span style="color:#111">from</span><span style="color:#111">];</span><span style="color:#75715e">//插入在前
+</span><span style="color:#75715e"></span>		<span style="color:#111">head</span><span style="color:#111">[</span><span style="color:#111">from</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">tot</span><span style="color:#111">;</span><span style="color:#75715e">//由于这条边插入在了前面,故当前边就是由from开始的第一条边
+</span><span style="color:#75715e"></span>	<span style="color:#111">}</span>
+	<span style="color:#00a8c8">void</span> <span style="color:#75af00">dfs</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">from</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span> <span style="color:#111">now</span><span style="color:#111">)</span>
+	<span style="color:#111">{</span>
+		<span style="color:#111">fa</span><span style="color:#111">[</span><span style="color:#111">now</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">from</span><span style="color:#111">;</span><span style="color:#75715e">//记录父节点
+</span><span style="color:#75715e"></span>		<span style="color:#00a8c8">int</span> <span style="color:#111">start</span> <span style="color:#f92672">=</span> <span style="color:#111">head</span><span style="color:#111">[</span><span style="color:#111">now</span><span style="color:#111">];</span><span style="color:#75715e">//从第一个子节点开始找
+</span><span style="color:#75715e"></span>		<span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">from</span> <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#111">)</span><span style="color:#75715e">//若不是根节点,深度为父节点深度+1(根节点为0)
+</span><span style="color:#75715e"></span>			<span style="color:#111">dep</span><span style="color:#111">[</span><span style="color:#111">now</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">dep</span><span style="color:#111">[</span><span style="color:#111">from</span><span style="color:#111">]</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+		<span style="color:#75715e">//int g = log2(dep[now]) ;
+</span><span style="color:#75715e"></span>		<span style="color:#00a8c8">int</span> <span style="color:#111">g</span> <span style="color:#f92672">=</span> <span style="color:#111">lg</span><span style="color:#111">[</span><span style="color:#111">dep</span><span style="color:#111">[</span><span style="color:#111">now</span><span style="color:#111">]];</span>
+		<span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">from</span> <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#111">)</span><span style="color:#75715e">//根节点没有父节点
+</span><span style="color:#75715e"></span>			<span style="color:#111">grand</span><span style="color:#111">[</span><span style="color:#111">now</span><span style="color:#111">][</span><span style="color:#ae81ff">0</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">from</span><span style="color:#111">;</span><span style="color:#75715e">//2^0=1,即父节点
+</span><span style="color:#75715e"></span>		<span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span> <span style="color:#111">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#111">g</span><span style="color:#111">;</span> <span style="color:#111">i</span><span style="color:#f92672">++</span><span style="color:#111">)</span>
+		<span style="color:#111">{</span>
+			<span style="color:#111">grand</span><span style="color:#111">[</span><span style="color:#111">now</span><span style="color:#111">][</span><span style="color:#111">i</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">grand</span><span style="color:#111">[</span><span style="color:#111">grand</span><span style="color:#111">[</span><span style="color:#111">now</span><span style="color:#111">][</span><span style="color:#111">i</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span><span style="color:#111">]][</span><span style="color:#111">i</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span><span style="color:#111">];</span><span style="color:#75715e">//状态转移方程
+</span><span style="color:#75715e"></span>		<span style="color:#111">}</span>
+		<span style="color:#00a8c8">while</span> <span style="color:#111">(</span><span style="color:#111">start</span><span style="color:#111">)</span><span style="color:#75715e">//一个一个找孩子
+</span><span style="color:#75715e"></span>		<span style="color:#111">{</span>
+			<span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">Edge</span><span style="color:#111">[</span><span style="color:#111">start</span><span style="color:#111">].</span><span style="color:#111">to</span> <span style="color:#f92672">==</span> <span style="color:#111">from</span><span style="color:#111">)</span><span style="color:#75715e">//若相连节点不是父节点
+</span><span style="color:#75715e"></span>			<span style="color:#111">{</span>
+				<span style="color:#111">start</span> <span style="color:#f92672">=</span> <span style="color:#111">Edge</span><span style="color:#111">[</span><span style="color:#111">start</span><span style="color:#111">].</span><span style="color:#111">next</span><span style="color:#111">;</span>
+				<span style="color:#00a8c8">continue</span><span style="color:#111">;</span>
+			<span style="color:#111">}</span>
+			<span style="color:#111">dfs</span><span style="color:#111">(</span><span style="color:#111">now</span><span style="color:#111">,</span> <span style="color:#111">Edge</span><span style="color:#111">[</span><span style="color:#111">start</span><span style="color:#111">].</span><span style="color:#111">to</span><span style="color:#111">);</span><span style="color:#75715e">//继续搜索子节点
+</span><span style="color:#75715e"></span>			<span style="color:#111">start</span> <span style="color:#f92672">=</span> <span style="color:#111">Edge</span><span style="color:#111">[</span><span style="color:#111">start</span><span style="color:#111">].</span><span style="color:#111">next</span><span style="color:#111">;</span><span style="color:#75715e">//搜索下一个子节点
+</span><span style="color:#75715e"></span>		<span style="color:#111">}</span>
+	<span style="color:#111">}</span>
+	<span style="color:#00a8c8">int</span> <span style="color:#75af00">lca</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">a</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span> <span style="color:#111">b</span><span style="color:#111">)</span>
+	<span style="color:#111">{</span>
+		<span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">dep</span><span style="color:#111">[</span><span style="color:#111">a</span><span style="color:#111">]</span> <span style="color:#f92672">&gt;</span> <span style="color:#111">dep</span><span style="color:#111">[</span><span style="color:#111">b</span><span style="color:#111">])</span><span style="color:#75715e">//统一b深度大于a
+</span><span style="color:#75715e"></span>		<span style="color:#111">{</span>
+			<span style="color:#111">a</span> <span style="color:#f92672">=</span> <span style="color:#111">a</span> <span style="color:#f92672">+</span> <span style="color:#111">b</span><span style="color:#111">;</span><span style="color:#75715e">//a此时等于原来的a,b之和
+</span><span style="color:#75715e"></span>			<span style="color:#111">b</span> <span style="color:#f92672">=</span> <span style="color:#111">a</span> <span style="color:#f92672">-</span> <span style="color:#111">b</span><span style="color:#111">;</span><span style="color:#75715e">//b此时等于原来的a
+</span><span style="color:#75715e"></span>			<span style="color:#111">a</span> <span style="color:#f92672">=</span> <span style="color:#111">a</span> <span style="color:#f92672">-</span> <span style="color:#111">b</span><span style="color:#111">;</span><span style="color:#75715e">//a此时等于原来的b
+</span><span style="color:#75715e"></span>		<span style="color:#111">}</span><span style="color:#75715e">//神奇的交换方法
+</span><span style="color:#75715e"></span>		<span style="color:#00a8c8">int</span> <span style="color:#111">deep</span> <span style="color:#f92672">=</span> <span style="color:#111">dep</span><span style="color:#111">[</span><span style="color:#111">b</span><span style="color:#111">]</span> <span style="color:#f92672">-</span> <span style="color:#111">dep</span><span style="color:#111">[</span><span style="color:#111">a</span><span style="color:#111">];</span><span style="color:#75715e">//深度差
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">//int step = log2(deep);
+</span><span style="color:#75715e"></span>		<span style="color:#00a8c8">int</span> <span style="color:#111">step</span> <span style="color:#f92672">=</span> <span style="color:#111">lg</span><span style="color:#111">[</span><span style="color:#111">deep</span><span style="color:#111">];</span><span style="color:#75715e">//最大要走的步数
+</span><span style="color:#75715e"></span>		<span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">i</span> <span style="color:#f92672">=</span> <span style="color:#111">step</span><span style="color:#111">;</span> <span style="color:#111">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span> <span style="color:#111">i</span><span style="color:#f92672">--</span><span style="color:#111">)</span><span style="color:#75715e">//先让b跳到和a同一深度
+</span><span style="color:#75715e"></span>		<span style="color:#111">{</span>
+			<span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">dep</span><span style="color:#111">[</span><span style="color:#111">grand</span><span style="color:#111">[</span><span style="color:#111">b</span><span style="color:#111">][</span><span style="color:#111">i</span><span style="color:#111">]]</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">dep</span><span style="color:#111">[</span><span style="color:#111">a</span><span style="color:#111">])</span> <span style="color:#00a8c8">continue</span><span style="color:#111">;</span><span style="color:#75715e">//跳过头了,不跳
+</span><span style="color:#75715e"></span>			<span style="color:#00a8c8">else</span>
+			<span style="color:#111">{</span>
+				<span style="color:#111">b</span> <span style="color:#f92672">=</span> <span style="color:#111">grand</span><span style="color:#111">[</span><span style="color:#111">b</span><span style="color:#111">][</span><span style="color:#111">i</span><span style="color:#111">];</span><span style="color:#75715e">//没跳过头,跳
+</span><span style="color:#75715e"></span>			<span style="color:#111">}</span>
+		<span style="color:#111">}</span>
+		<span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">a</span> <span style="color:#f92672">==</span> <span style="color:#111">b</span><span style="color:#111">)</span> <span style="color:#00a8c8">return</span> <span style="color:#111">a</span><span style="color:#111">;</span><span style="color:#75715e">//若相等,则已经找到LCA
+</span><span style="color:#75715e"></span>		<span style="color:#111">step</span> <span style="color:#f92672">=</span> <span style="color:#111">lg</span><span style="color:#111">[</span><span style="color:#111">dep</span><span style="color:#111">[</span><span style="color:#111">a</span><span style="color:#111">]];</span> <span style="color:#75715e">//要走的步数
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">//step = log2(dep[a]);
+</span><span style="color:#75715e"></span>		<span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">i</span> <span style="color:#f92672">=</span> <span style="color:#111">step</span><span style="color:#111">;</span> <span style="color:#111">i</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span> <span style="color:#111">i</span><span style="color:#f92672">--</span><span style="color:#111">)</span>
+		<span style="color:#111">{</span>
+			<span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">grand</span><span style="color:#111">[</span><span style="color:#111">a</span><span style="color:#111">][</span><span style="color:#111">i</span><span style="color:#111">]</span> <span style="color:#f92672">==</span> <span style="color:#111">grand</span><span style="color:#111">[</span><span style="color:#111">b</span><span style="color:#111">][</span><span style="color:#111">i</span><span style="color:#111">])</span> <span style="color:#00a8c8">continue</span><span style="color:#111">;</span><span style="color:#75715e">//跳过头了,不跳
+</span><span style="color:#75715e"></span>			<span style="color:#00a8c8">else</span><span style="color:#75715e">//没跳过头,跳
+</span><span style="color:#75715e"></span>			<span style="color:#111">{</span>
+				<span style="color:#111">a</span> <span style="color:#f92672">=</span> <span style="color:#111">grand</span><span style="color:#111">[</span><span style="color:#111">a</span><span style="color:#111">][</span><span style="color:#111">i</span><span style="color:#111">];</span>
+				<span style="color:#111">b</span> <span style="color:#f92672">=</span> <span style="color:#111">grand</span><span style="color:#111">[</span><span style="color:#111">b</span><span style="color:#111">][</span><span style="color:#111">i</span><span style="color:#111">];</span>
+			<span style="color:#111">}</span>
+		<span style="color:#111">}</span>
+		<span style="color:#00a8c8">return</span> <span style="color:#111">fa</span><span style="color:#111">[</span><span style="color:#111">a</span><span style="color:#111">];</span><span style="color:#75715e">//最后他们的父节点就是LCA
+</span><span style="color:#75715e"></span>	<span style="color:#111">}</span>
+<span style="color:#111">};</span>
+<span style="color:#111">Graph</span> <span style="color:#111">G</span><span style="color:#111">;</span>
+<span style="color:#00a8c8">int</span> <span style="color:#75af00">main</span><span style="color:#111">()</span>
+<span style="color:#111">{</span>
+	<span style="color:#00a8c8">int</span> <span style="color:#111">n</span><span style="color:#111">,</span> <span style="color:#111">m</span><span style="color:#111">,</span> <span style="color:#111">s</span><span style="color:#111">;</span>
+	<span style="color:#75715e">//cin &gt;&gt; n &gt;&gt; m &gt;&gt; s;
+</span><span style="color:#75715e"></span>	<span style="color:#111">scanf</span><span style="color:#111">(</span><span style="color:#d88200">&#34;%d%d%d&#34;</span><span style="color:#111">,</span> <span style="color:#f92672">&amp;</span><span style="color:#111">n</span><span style="color:#111">,</span> <span style="color:#f92672">&amp;</span><span style="color:#111">m</span><span style="color:#111">,</span> <span style="color:#f92672">&amp;</span><span style="color:#111">s</span><span style="color:#111">);</span>
+	<span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span> <span style="color:#111">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#111">n</span><span style="color:#111">;</span> <span style="color:#111">i</span><span style="color:#f92672">++</span><span style="color:#111">)</span> <span style="color:#75715e">//常熟优化,预先算出log_2(i)+1的值，用的时候直接调用就可以了
+</span><span style="color:#75715e"></span>		<span style="color:#111">lg</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">lg</span><span style="color:#111">[</span><span style="color:#111">i</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span><span style="color:#111">]</span> <span style="color:#f92672">+</span> <span style="color:#111">(</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#111">lg</span><span style="color:#111">[</span><span style="color:#111">i</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span><span style="color:#111">]</span> <span style="color:#f92672">==</span> <span style="color:#111">i</span><span style="color:#111">);</span>  <span style="color:#75715e">//看不懂的可以手推一下
+</span><span style="color:#75715e"></span>	<span style="color:#111">n</span><span style="color:#f92672">--</span><span style="color:#111">;</span>
+	<span style="color:#00a8c8">while</span> <span style="color:#111">(</span><span style="color:#111">n</span><span style="color:#f92672">--</span><span style="color:#111">)</span>
+	<span style="color:#111">{</span>
+		<span style="color:#00a8c8">int</span> <span style="color:#111">a</span><span style="color:#111">,</span> <span style="color:#111">b</span><span style="color:#111">;</span>
+		<span style="color:#75715e">//cin &gt;&gt; a &gt;&gt; b;
+</span><span style="color:#75715e"></span>		<span style="color:#111">scanf</span><span style="color:#111">(</span><span style="color:#d88200">&#34;%d%d&#34;</span><span style="color:#111">,</span> <span style="color:#f92672">&amp;</span><span style="color:#111">a</span><span style="color:#111">,</span> <span style="color:#f92672">&amp;</span><span style="color:#111">b</span><span style="color:#111">);</span>
+		<span style="color:#111">G</span><span style="color:#111">.</span><span style="color:#111">add_dege</span><span style="color:#111">(</span><span style="color:#111">a</span><span style="color:#111">,</span> <span style="color:#111">b</span><span style="color:#111">);</span>
+		<span style="color:#111">G</span><span style="color:#111">.</span><span style="color:#111">add_dege</span><span style="color:#111">(</span><span style="color:#111">b</span><span style="color:#111">,</span> <span style="color:#111">a</span><span style="color:#111">);</span>
+	<span style="color:#111">}</span>
+	<span style="color:#111">G</span><span style="color:#111">.</span><span style="color:#111">dfs</span><span style="color:#111">(</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#111">s</span><span style="color:#111">);</span>
+	<span style="color:#00a8c8">while</span> <span style="color:#111">(</span><span style="color:#111">m</span><span style="color:#f92672">--</span><span style="color:#111">)</span>
+	<span style="color:#111">{</span>
+		<span style="color:#00a8c8">int</span> <span style="color:#111">a</span><span style="color:#111">,</span> <span style="color:#111">b</span><span style="color:#111">;</span>
+		<span style="color:#75715e">//cin &gt;&gt; a &gt;&gt; b;
+</span><span style="color:#75715e"></span>		<span style="color:#111">scanf</span><span style="color:#111">(</span><span style="color:#d88200">&#34;%d%d&#34;</span><span style="color:#111">,</span> <span style="color:#f92672">&amp;</span><span style="color:#111">a</span><span style="color:#111">,</span> <span style="color:#f92672">&amp;</span><span style="color:#111">b</span><span style="color:#111">);</span>
+		<span style="color:#00a8c8">int</span> <span style="color:#111">ans</span> <span style="color:#f92672">=</span> <span style="color:#111">G</span><span style="color:#111">.</span><span style="color:#111">lca</span><span style="color:#111">(</span><span style="color:#111">a</span><span style="color:#111">,</span> <span style="color:#111">b</span><span style="color:#111">);</span>
+		<span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">ans</span> <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#111">)</span>
+			<span style="color:#111">printf</span><span style="color:#111">(</span><span style="color:#d88200">&#34;%d</span><span style="color:#8045ff">\n</span><span style="color:#d88200">&#34;</span><span style="color:#111">,</span> <span style="color:#111">s</span><span style="color:#111">);</span>
+		<span style="color:#75715e">//cout &lt;&lt; s &lt;&lt; endl;
+</span><span style="color:#75715e"></span>		<span style="color:#00a8c8">else</span>
+			<span style="color:#111">printf</span><span style="color:#111">(</span><span style="color:#d88200">&#34;%d</span><span style="color:#8045ff">\n</span><span style="color:#d88200">&#34;</span><span style="color:#111">,</span> <span style="color:#111">ans</span><span style="color:#111">);</span>
+		<span style="color:#75715e">//cout &lt;&lt; ans &lt;&lt; endl;
+</span><span style="color:#75715e"></span>	<span style="color:#111">}</span>
+	<span style="color:#00a8c8">return</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span>
+<span style="color:#111">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+                    </div>
+                    
+                        <div style="text-align: left; margin: 60px 0px 40px 8px; border-radius: 6px;">
+    <ul class="post_tags" style="margin: 0px; padding: 0px 0px 15px; width: 100%;">
+    	<li class="cat-real" style="display: inline-block; color: rgb(102, 102, 102); font-size: 1.1rem; font-weight: 600; margin: 0px; letter-spacing: 1px;">
+            <a style="background-color: rgb(231, 243, 255); color: rgb(47, 148, 254); padding: 1px 12px; border-radius: 4px; font-size: 0.9rem;"></a>
+        </li>
+        
+            <li class="cat-real" style="display: inline-block;">
+                <a href="http://example.com/tags/lca/" style="font-size: 0.9rem; border-radius: 4px; padding: 1px 12px;">LCA</a>
+            </li>
+        
+            <li class="cat-real" style="display: inline-block;">
+                <a href="http://example.com/tags/%E5%80%8D%E5%A2%9E/" style="font-size: 0.9rem; border-radius: 4px; padding: 1px 12px;">倍增</a>
+            </li>
+        
+    </ul>
+</div>
+                    
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+    <div>
+    <a href="" target="_blank" style="text-decoration:none">
+        <div class="goup-container footer-github">
+            <i class="ri-github-fill footer-github-icon"></i>
+        </div>
+    </a>
+    <div class="footer reveal">
+        
+            <p>
+                Copyright&nbsp;<i class="ri-copyright-line"></i>&nbsp;·&nbsp;2021&nbsp;·&nbsp;HUGO-THEME-TONY&nbsp;·&nbsp;
+                <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" style="text-decoration: none;color: inherit;font-size: 14px;font-weight: 500;">
+                    CC BY-NC 4.0
+                </a>
+            </p>
+        
+        <p>
+            
+                Powered by <a href="https://github.com/gohugoio/hugo">Hugo</a> | Theme is <a href="https://github.com/ThemeTony/hugo-theme-tony">Tony</a>
+            
+        </p>
+    </div>
+</div>
+
+
+    <script src="/js/jquery.min.js"></script><script src="/js/tony.min.21fb28b08edccb7a220a2a53f8fa67ba2f62588d04437e5a3998769b79537006.js" integrity="sha256-IfsosI7cy3oiCipT+Ppnui9iWI0EQ35aOZh2m3lTcAY="></script><script src="/js/medium-zoom.min.js"></script>
+<script>
+	mediumZoom(document.querySelectorAll('div.article-content img'), {
+        background: '#fff'
+    });
+</script>
+
+
+    
+<script>
+(function(){
+	var bp = document.createElement('script');
+	var curProtocol = window.location.protocol.split(':')[0];
+	if (curProtocol === 'https'){
+	 bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+	}
+	else{
+	bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	}
+	var s = document.getElementsByTagName("script")[0];
+	s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+</html>

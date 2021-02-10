@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="cn">
+    <head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="generator" content="Hugo 0.80.0" />
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/remixicon/remixicon.css"><link rel="stylesheet" href="/css/tony.min.2cd909c3b2b4f0eb1f6b8dbe02a8be4ed8a7456895a39f284818ed1e771073c6.css" integrity="sha256-LNkJw7K08Osfa42+Aqi+TtinRWiVo58oSBjtHncQc8Y="/>
+
+    <link rel="shortcut icon" href="/images/t.jpg" type="image/x-icon" />
+    <title>偏微分</title>
+
+    <meta name="author" content="HUGO-THEME-TONY" /><meta name="description" content="" />
+
+    
+    <link rel="canonical" href="http://example.com/posts/%E5%81%8F%E5%BE%AE%E5%88%86/" />
+    
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [["$", "$"]],
+    },
+    displayMath: [
+      ["$$", "$$"],
+      ["\[\[", "\]\]"],
+    ],
+    svg: {
+      fontCache: "global",
+    },
+  };
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+></script>
+
+
+
+</head>
+
+    <header id="header-div" class="tony-header-fixed">
+
+    <div class="header-div1">
+        <a href="http://example.com/" style="display:inline-block;">
+            <img src="/images/t.jpg">
+        </a>
+    </div>
+    <div class="header-div2">
+    <a href="/"><button class="btn btn-light">主页</button></a>
+    <a href="/tags/"><button class="btn btn-light">标签</button></a>
+    <a href="/categories/"><button class="btn btn-light">分类</button></a>
+    <a href="/archives/"><button class="btn btn-light">归档</button></a>
+    <a href="/about/"><button class="btn btn-light">关于</button></a>
+    
+</div>
+</header>
+    <body>
+        
+    <div id="post-container">
+    <div class="grid grid-centered">
+        <div id="grid-cell" class="grid-cell">
+            
+                <div class="single-left">
+                    
+        
+        
+        
+        
+            
+            
+            
+            <div class="index-div">
+                <div class="single-index">
+                    <h4>
+                        <i class="ri-list-check-2"></i>
+                        
+                    </h4>
+                </div>  
+                <ul id="article-index" class="index-ul">
+                    
+                        
+                        
+                            
+                                
+                                
+                                <a href="#%e5%bc%95%e5%ad%90">
+                                    <li style="padding-left:23px" class="">
+                                        <i class="ri-checkbox-blank-circle-line"></i>
+                                        &nbsp;&nbsp;引子
+                                    </li>
+                                </a>
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                                
+                                <a href="#%e6%a0%97%e5%ad%90">
+                                    <li style="padding-left:23px" class="">
+                                        <i class="ri-checkbox-blank-circle-line"></i>
+                                        &nbsp;&nbsp;栗子
+                                    </li>
+                                </a>
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                                
+                                <a href="#%e6%9c%ac%e8%b4%a8">
+                                    <li style="padding-left:23px" class="">
+                                        <i class="ri-checkbox-blank-circle-line"></i>
+                                        &nbsp;&nbsp;本质
+                                    </li>
+                                </a>
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                                
+                                <a href="#%e5%ba%94%e7%94%a8">
+                                    <li style="padding-left:23px" class="">
+                                        <i class="ri-checkbox-blank-circle-line"></i>
+                                        &nbsp;&nbsp;应用
+                                    </li>
+                                </a>
+                            
+                        
+                    
+                </ul>
+            </div>
+        
+                    
+
+
+
+
+    
+        <div>
+            <div class="index-div-prev">
+                <h4></h4>
+                <p>
+                    <a href="/posts/%E9%9D%99%E9%BB%98%E6%8B%B7%E6%96%87%E4%BB%B6/" rel="next">静默拷文件</a>
+                </p>
+            </div>
+        </div>
+    
+    
+        <div>
+            <div class="index-div-next">
+                <h4></h4>
+                <p>
+                    <a href="/posts/%E5%AF%BC%E6%95%B0/" rel="prev">导数</a>
+                </p>
+            </div>
+        </div>
+    
+
+                </div>
+            
+            
+                <div id="reading-bar"></div>
+            
+            <article class="article reveal">
+                <div id="load">
+                    <div class="article-header">
+                        
+<span title="预计阅读时长" class="badge badge-pill badge-danger single-badge post-header">
+    3 mins
+</span>
+<h2 class="single-h2">偏微分</h2>
+<div class="article-list-footer">
+    <span class="article-list-date">01-01-01</span>
+    <span class="article-list-divider">/</span>
+    <span class="article-list-minutes">1410 Words</span>
+</div>
+<div class="single-line"></div>
+                    </div>
+                    <div class="article-content">
+                        <p><strong>这篇文章挺短的，因为我也不怎么会…(⊙_⊙;)…</strong></p>
+<h1 id="引子">引子</h1>
+<p>众所周知，用导数可以求一个函数的最值<br>
+<br>
+如果...要求的东西不是函数呢？<br>
+比如：
+$$
+a^2+b^2-2ab
+$$
+一般的做法肯定是均值不等式：
+$$
+a^2+b^2-2ab \ge 2ab-2ab =0
+$$
+但如果复杂到均值不等式做不了呢？<br>
+大佬：“那就来一把柯西，没有一把柯西搞不定的东西，如果有，就用两把！”<br>
+<br>
+当然，我们不是大佬，用一点蠢一点的办法，比如 <strong>”偏微分“</strong></p>
+<h1 id="栗子">栗子</h1>
+<p>我们会求单变量函数的最值，能不能想办法把两个变量化成一个变量呢？<br>
+<br>
+不如我们先把 $b$ 当成常数，如果无论 $b$ 取何值，$a$ 原式永远在 $a$取同一个值时取到最小值，那么当原式取到最小值时，$a$ 一定等于这个值<br>
+$b$ 也是同理<br>
+这样我们只要把这两个值肝出来，问题就解决了嘛q(≧▽≦q)，至于方法，肯定是求导啊<br>
+看不懂？我们来试一下:<br>
+<br>
+先把$b$当成常数，求其导数：
+$$
+{\partial \over \partial  a}\cdot (a^2+b^2-2ab)=2a-2b
+$$
+令其等于0:
+$$
+\Rightarrow a=b
+$$
+故$a=b$时原式取到最小值(需要讨论，此处省略)<br>
+<br>
+同样地，把$a$当成常数，求其导数：
+$$
+{\partial \over \partial  b} (a^2+b^2-2ab)=2b-2a
+$$
+令其等于0：
+$$
+\Rightarrow a=b
+$$
+故$a=b$时原式取到最小值(需要讨论，此处省略)<br>
+综上所述，$a=b$时原式取到最小值，为0<br>
+<br>
+注意到: $d\rightarrow \partial$ 了吗？$d$ 表示常微分，$\partial$ 表示偏微分(微的都不是单变量函数了，当然得换一个)<br>
+至于为什么上面单独有一个$\partial$ ,那是因为右边那一坨太大了，怼上去不好看，所以单独拿出来，只留一个$\partial$ 在上面</p>
+<h1 id="本质">本质</h1>
+<p>还是看不懂，那让我们看看偏微分的本质<br>
+<br>
+函数为什么一定是一个单变量的呢？为什么不能有两个自变量呢？<br>
+当然可以，专业点，这个东西叫 <strong>二元函数</strong><br>
+<br>
+既然是个函数，就可以化它的图像啦，不如看看$f(x,y)=x^2+y^2-2xy$的图像：<br>
+<img src="https://s1.ax1x.com/2020/07/22/UH62DO.png" alt="UH62DO.png"><br>
+这玩意变成一个立体图了！o((⊙﹏⊙))o.
+联系一下一元函数取最值的情况——切线水平<br>
+不难推测，二元函数取最值的情况是：<strong>切面水平</strong>
+<br>
+切面水平，怎么表示呢？<br>
+<br>
+显然，如果一个平面和一个曲面相切，过切点的任何一个面截这两个面所得的直线和曲线一定相切，反之亦然 (此处不严谨)<br>
+所以我们只要找两条直线就好啦~<br>
+所以我们只要找两个截面就行啦~<br>
+截面当然是沿x轴一个沿y轴一个最方便啦~<br>
+要问x轴上的截面截得的两条线的解析式当然令x等于一个固定值就行啦，y轴也一样~ <br>
+<img src="https://s1.ax1x.com/2020/07/22/UHRxmV.png" alt="看不懂，没关系">
+把x当成常数，导数就是这个曲面在沿x截面截得的曲线的切点的斜率随y变化的关系<br>
+反之亦然<br>
+我们只需要令这两个导数等于0，就确定了水平两条相交直线，并且这两条直线还与图像相切<br>
+这样就确定了水平的切面<br>
+进而就可以求出最大值<br>
+<br>
+以上部分看懂了最好，看不懂也没关系 （因为我写的也很绕(。_。)）
+但只要记住：</p>
+<ol>
+<li>把一个变量当常数，求导，令导数等于0，得到一条方程</li>
+<li>把另一个变量当常数，求导，令导数等于0，得到另一条方程</li>
+<li>......</li>
+<li>解这些方程，得到个个变量的值</li>
+<li>把这些值带入原式，得到最值(此处还需讨论一下)</li>
+</ol>
+<p>就可以使用了</p>
+<h1 id="应用">应用</h1>
+<p>有了这么强大的工具，我们干点什么好呢？<br>
+不如来推导一下回归直线的最小二乘法的公式~<br>
+<br>
+有一堆点：
+$$
+(x_1,y_1) , (x_2,y_2) , (x_3,y_3) ... (x_n,y_n)
+$$
+设回归直线为
+$$
+y=ax+b
+$$
+那么原来的点在直线上就是：
+$$
+(x_1,ax_1+b) , (x_2,ax_2+b) , (x_3,ax_3+b) ... (x_n,ax_n+b)<br>
+$$
+纵坐标的方差(类似？)的n倍就是：
+$$
+\begin{aligned}
+n\sigma^2 &amp;=\sum_{i=1}^n (ax_i+b-y_i)^2=a^2\sum_{i=1}^n x_i^2+2ab\sum_{i=1}^nx_i-2a\sum_{i=1}^nx_iy_i+nb^2+\sum_{i=1}^ny_i^2-2b\sum_{i=1}^ny_i\<br>
+&amp;=a^2\sum_{i=1}^n x_i^2+2nab\overline x-2a\sum_{i=1}^nx_iy_i+nb^2+\sum_{i=1}^ny_i^2-2nb\overline y
+\end{aligned}
+$$
+当其取到最小值时，偏导数为0
+<br>
+对$a$求偏导：
+$$
+{\partial (n\sigma^2)\over \partial a}  = 2a\sum_{i=1}^nx_i^2+2nb\overline x-2\sum_{i=1}^nx_iy_i
+$$
+令其等于零：
+$$
+\Rightarrow a\sum_{i=1}^nx_i^2+nb\overline x-\sum_{i=1}^nx_iy_i=0·····(1)
+$$
+对$b$求偏导：
+$$
+{\partial (n\sigma^2)\over \partial b} = 2na\overline x+2nb-2n\overline y\<br>
+$$
+令其等于0：
+$$
+\Rightarrow a\overline x+b=\overline y \Rightarrow b=\overline y-a\overline x
+$$
+代入(1)式得：
+$$
+a\sum_{i=1}^nx_i^2+n\overline x(\overline y-ax\overline )-\sum_{i=1}^nx_iy_i=0\<br>
+\Rightarrow a={\sum_{i=1}^n x_iy_i-n\overline x\overline y\over \sum_{i=1}^n x_i^2-n\overline x^2}
+$$
+推导完成，完结撒花 ✿✿ヽ(°▽°)ノ✿</p>
+
+                    </div>
+                    
+                        <div style="text-align: left; margin: 60px 0px 40px 8px; border-radius: 6px;">
+    <ul class="post_tags" style="margin: 0px; padding: 0px 0px 15px; width: 100%;">
+    	<li class="cat-real" style="display: inline-block; color: rgb(102, 102, 102); font-size: 1.1rem; font-weight: 600; margin: 0px; letter-spacing: 1px;">
+            <a style="background-color: rgb(231, 243, 255); color: rgb(47, 148, 254); padding: 1px 12px; border-radius: 4px; font-size: 0.9rem;"></a>
+        </li>
+        
+            <li class="cat-real" style="display: inline-block;">
+                <a href="http://example.com/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 0.9rem; border-radius: 4px; padding: 1px 12px;">数学</a>
+            </li>
+        
+            <li class="cat-real" style="display: inline-block;">
+                <a href="http://example.com/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="font-size: 0.9rem; border-radius: 4px; padding: 1px 12px;">微积分</a>
+            </li>
+        
+    </ul>
+</div>
+                    
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+    <div>
+    <a href="" target="_blank" style="text-decoration:none">
+        <div class="goup-container footer-github">
+            <i class="ri-github-fill footer-github-icon"></i>
+        </div>
+    </a>
+    <div class="footer reveal">
+        
+            <p>
+                Copyright&nbsp;<i class="ri-copyright-line"></i>&nbsp;·&nbsp;2021&nbsp;·&nbsp;HUGO-THEME-TONY&nbsp;·&nbsp;
+                <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" style="text-decoration: none;color: inherit;font-size: 14px;font-weight: 500;">
+                    CC BY-NC 4.0
+                </a>
+            </p>
+        
+        <p>
+            
+                Powered by <a href="https://github.com/gohugoio/hugo">Hugo</a> | Theme is <a href="https://github.com/ThemeTony/hugo-theme-tony">Tony</a>
+            
+        </p>
+    </div>
+</div>
+
+
+    <script src="/js/jquery.min.js"></script><script src="/js/tony.min.21fb28b08edccb7a220a2a53f8fa67ba2f62588d04437e5a3998769b79537006.js" integrity="sha256-IfsosI7cy3oiCipT+Ppnui9iWI0EQ35aOZh2m3lTcAY="></script><script src="/js/medium-zoom.min.js"></script>
+<script>
+	mediumZoom(document.querySelectorAll('div.article-content img'), {
+        background: '#fff'
+    });
+</script>
+
+
+    
+<script>
+(function(){
+	var bp = document.createElement('script');
+	var curProtocol = window.location.protocol.split(':')[0];
+	if (curProtocol === 'https'){
+	 bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+	}
+	else{
+	bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	}
+	var s = document.getElementsByTagName("script")[0];
+	s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+</html>

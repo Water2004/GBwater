@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="cn">
+    <title type="text">HUGO-THEME-TONY</title>
+    <subtitle type="html"></subtitle>
+    <updated>2021-02-10T12:29:35+08:00</updated>
+    <id>http://example.com/</id>
+    <link rel="alternate" type="text/html" href="http://example.com/" />
+    <link rel="self" type="application/atom+xml" href="http://example.com/atom.xml" />
+    <author>
+            <name>HUGO-THEME-TONY</name>
+            <uri>http://example.com/</uri>
+            
+                <email>mail@example.com</email>
+            </author>
+    <generator uri="https://gohugo.io/" version="0.80.0">Hugo</generator>
+        
+            
+            <entry>
+                <title type="text">Hello World</title>
+                <link rel="alternate" type="text/html" href="http://example.com/posts/hello-world/" />
+                <id>http://example.com/posts/hello-world/</id>
+                <updated>2021-01-01T10:43:00+08:00</updated>
+                <published>2021-01-01T10:43:00+08:00</published><summary type="html"><![CDATA[%!s(<nil>)]]></summary>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </entry>
+        
+    
+        
+            
+            <entry>
+                <title type="text">倍增LCA</title>
+                <link rel="alternate" type="text/html" href="http://example.com/posts/%E5%80%8D%E5%A2%9Elca/" />
+                <id>http://example.com/posts/%E5%80%8D%E5%A2%9Elca/</id>
+                <updated>2020-11-15T00:00:00+00:00</updated>
+                <published>2020-11-15T00:00:00+00:00</published><summary type="html"><![CDATA[%!s(<nil>)]]></summary>
+                
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category scheme="http://example.com/categories/oi/" term="OI" label="OI" />
+                                
+                           
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category scheme="http://example.com/tags/lca/" term="LCA" label="LCA" />
+                                
+                           
+                                
+                                
+                                
+                                    <category scheme="http://example.com/tags/%E5%80%8D%E5%A2%9E/" term="倍增" label="倍增" />
+                                
+                           
+                        
+                    
+                
+            </entry>
+        
+    
+        
+            
+            <entry>
+                <title type="text">静默拷文件</title>
+                <link rel="alternate" type="text/html" href="http://example.com/posts/%E9%9D%99%E9%BB%98%E6%8B%B7%E6%96%87%E4%BB%B6/" />
+                <id>http://example.com/posts/%E9%9D%99%E9%BB%98%E6%8B%B7%E6%96%87%E4%BB%B6/</id>
+                <updated>2020-07-22T00:00:00+00:00</updated>
+                <published>2020-07-22T00:00:00+00:00</published><summary type="html"><![CDATA[%!s(<nil>)]]></summary>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category scheme="http://example.com/tags/%E7%94%B5%E6%95%99%E5%B9%B3%E5%8F%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%E9%9B%86/" term="电教平台自动化管理工具集" label="电教平台自动化管理工具集" />
+                                
+                           
+                        
+                    
+                
+            </entry>
+        
+    
+        
+            
+            <entry>
+                <title type="text">偏微分</title>
+                <link rel="alternate" type="text/html" href="http://example.com/posts/%E5%81%8F%E5%BE%AE%E5%88%86/" />
+                <id>http://example.com/posts/%E5%81%8F%E5%BE%AE%E5%88%86/</id>
+                <updated>0001-01-01T00:00:00+00:00</updated>
+                <published>0001-01-01T00:00:00+00:00</published><summary type="html"><![CDATA[%!s(<nil>)]]></summary>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category scheme="http://example.com/tags/%E6%95%B0%E5%AD%A6/" term="数学" label="数学" />
+                                
+                           
+                                
+                                
+                                
+                                    <category scheme="http://example.com/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" term="微积分" label="微积分" />
+                                
+                           
+                        
+                    
+                
+            </entry>
+        
+    
+        
+            
+            <entry>
+                <title type="text">导数</title>
+                <link rel="alternate" type="text/html" href="http://example.com/posts/%E5%AF%BC%E6%95%B0/" />
+                <id>http://example.com/posts/%E5%AF%BC%E6%95%B0/</id>
+                <updated>0001-01-01T00:00:00+00:00</updated>
+                <published>0001-01-01T00:00:00+00:00</published><summary type="html"><![CDATA[%!s(<nil>)]]></summary>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category scheme="http://example.com/tags/%E6%95%B0%E5%AD%A6/" term="数学" label="数学" />
+                                
+                           
+                                
+                                
+                                
+                                    <category scheme="http://example.com/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" term="微积分" label="微积分" />
+                                
+                           
+                        
+                    
+                
+            </entry>
+        
+    
+        
+            
+            <entry>
+                <title type="text">积分</title>
+                <link rel="alternate" type="text/html" href="http://example.com/posts/%E7%A7%AF%E5%88%86/" />
+                <id>http://example.com/posts/%E7%A7%AF%E5%88%86/</id>
+                <updated>0001-01-01T00:00:00+00:00</updated>
+                <published>0001-01-01T00:00:00+00:00</published><summary type="html"><![CDATA[%!s(<nil>)]]></summary>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category scheme="http://example.com/tags/%E6%95%B0%E5%AD%A6/" term="数学" label="数学" />
+                                
+                           
+                                
+                                
+                                
+                                    <category scheme="http://example.com/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" term="微积分" label="微积分" />
+                                
+                           
+                        
+                    
+                
+            </entry>
+        
+    
+        
+            
+            <entry>
+                <title type="text">线段树</title>
+                <link rel="alternate" type="text/html" href="http://example.com/posts/%E7%BA%BF%E6%AE%B5%E6%A0%91/" />
+                <id>http://example.com/posts/%E7%BA%BF%E6%AE%B5%E6%A0%91/</id>
+                <updated>0001-01-01T00:00:00+00:00</updated>
+                <published>0001-01-01T00:00:00+00:00</published><summary type="html"><![CDATA[%!s(<nil>)]]></summary>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category scheme="http://example.com/tags/rmq/" term="RMQ" label="RMQ" />
+                                
+                           
+                                
+                                
+                                
+                                    <category scheme="http://example.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" term="数据结构" label="数据结构" />
+                                
+                           
+                                
+                                
+                                
+                                    <category scheme="http://example.com/tags/c&#43;&#43;/" term="c&#43;&#43;" label="c&#43;&#43;" />
+                                
+                           
+                        
+                    
+                
+            </entry>
+        
+    
+</feed>
