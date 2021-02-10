@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="cn">
+    <head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="generator" content="Hugo 0.80.0" />
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/remixicon/remixicon.css"><link rel="stylesheet" href="/css/tony.min.2cd909c3b2b4f0eb1f6b8dbe02a8be4ed8a7456895a39f284818ed1e771073c6.css" integrity="sha256-LNkJw7K08Osfa42+Aqi+TtinRWiVo58oSBjtHncQc8Y="/>
+
+    <link rel="shortcut icon" href="/images/t.jpg" type="image/x-icon" />
+    <title>主席树</title>
+
+    <meta name="author" content="GBwater" /><meta name="description" content="" />
+
+    
+    <link rel="canonical" href="https://gbwater.ga/posts/%E4%B8%BB%E5%B8%AD%E6%A0%91/" />
+    
+
+
+</head>
+
+    <header id="header-div" class="tony-header-fixed">
+
+    <div class="header-div1">
+        <a href="https://gbwater.ga/" style="display:inline-block;">
+            <img src="/images/t.jpg">
+        </a>
+    </div>
+    <div class="header-div2">
+    <a href="/"><button class="btn btn-light">主页</button></a>
+    <a href="/tags/"><button class="btn btn-light">标签</button></a>
+    <a href="/categories/"><button class="btn btn-light">分类</button></a>
+    <a href="/archives/"><button class="btn btn-light">归档</button></a>
+    <a href="/about/"><button class="btn btn-light">关于</button></a>
+    <a href="/links/"><button class="btn btn-light">友链</button></a>
+    
+</div>
+</header>
+    <body>
+        
+    <div id="post-container">
+    <div class="grid grid-centered">
+        <div id="grid-cell" class="grid-cell">
+            
+                <div class="single-left">
+                    
+        
+        
+        
+        
+            
+            
+            
+            <div class="index-div">
+                <div class="single-index">
+                    <h4>
+                        <i class="ri-list-check-2"></i>
+                        
+                    </h4>
+                </div>  
+                <ul id="article-index" class="index-ul">
+                    
+                        
+                        
+                            
+                                
+                                
+                                <a href="#%e7%ae%80%e4%bb%8b">
+                                    <li style="padding-left:23px" class="">
+                                        <i class="ri-checkbox-blank-circle-line"></i>
+                                        &nbsp;&nbsp;简介
+                                    </li>
+                                </a>
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                                
+                                <a href="#%e5%89%8d%e7%bd%ae%e5%a7%bf%e5%8a%bf">
+                                    <li style="padding-left:23px" class="">
+                                        <i class="ri-checkbox-blank-circle-line"></i>
+                                        &nbsp;&nbsp;前置姿势
+                                    </li>
+                                </a>
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                                
+                                <a href="#%e6%9d%83%e5%80%bc%e7%ba%bf%e6%ae%b5%e6%a0%91">
+                                    <li style="padding-left:23px" class="">
+                                        <i class="ri-checkbox-blank-circle-line"></i>
+                                        &nbsp;&nbsp;权值线段树
+                                    </li>
+                                </a>
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                                
+                                <a href="#%e6%9f%a5%e8%af%a2%e5%8e%9f%e7%90%86">
+                                    <li style="padding-left:23px" class="">
+                                        <i class="ri-checkbox-blank-circle-line"></i>
+                                        &nbsp;&nbsp;查询原理
+                                    </li>
+                                </a>
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                                
+                                <a href="#%e4%b8%be%e4%b8%aa%e6%a0%97%e5%ad%90">
+                                    <li style="padding-left:23px" class="">
+                                        <i class="ri-checkbox-blank-circle-line"></i>
+                                        &nbsp;&nbsp;举个栗子
+                                    </li>
+                                </a>
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                                
+                                <a href="#%e5%bb%ba%e6%a0%91">
+                                    <li style="padding-left:23px" class="">
+                                        <i class="ri-checkbox-blank-circle-line"></i>
+                                        &nbsp;&nbsp;建树
+                                    </li>
+                                </a>
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                                
+                                <a href="#%e6%9f%a5%e8%af%a2">
+                                    <li style="padding-left:23px" class="">
+                                        <i class="ri-checkbox-blank-circle-line"></i>
+                                        &nbsp;&nbsp;查询
+                                    </li>
+                                </a>
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                                
+                                <a href="#%e6%80%9d%e6%83%b3">
+                                    <li style="padding-left:23px" class="">
+                                        <i class="ri-checkbox-blank-circle-line"></i>
+                                        &nbsp;&nbsp;思想
+                                    </li>
+                                </a>
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                                
+                                <a href="#%e5%89%8d%e7%bc%80%e5%92%8c">
+                                    <li style="padding-left:23px" class="">
+                                        <i class="ri-checkbox-blank-circle-line"></i>
+                                        &nbsp;&nbsp;前缀和
+                                    </li>
+                                </a>
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                                
+                                <a href="#%e7%a9%ba%e9%97%b4%e4%bc%98%e5%8c%96">
+                                    <li style="padding-left:23px" class="">
+                                        <i class="ri-checkbox-blank-circle-line"></i>
+                                        &nbsp;&nbsp;空间优化
+                                    </li>
+                                </a>
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                                
+                                <a href="#%e7%a6%bb%e6%95%a3%e5%8c%96">
+                                    <li style="padding-left:23px" class="">
+                                        <i class="ri-checkbox-blank-circle-line"></i>
+                                        &nbsp;&nbsp;离散化
+                                    </li>
+                                </a>
+                            
+                        
+                    
+                        
+                        
+                            
+                                
+                                
+                                <a href="#%e5%ae%8c%e6%95%b4%e4%bb%a3%e7%a0%81">
+                                    <li style="padding-left:23px" class="">
+                                        <i class="ri-checkbox-blank-circle-line"></i>
+                                        &nbsp;&nbsp;完整代码
+                                    </li>
+                                </a>
+                            
+                        
+                    
+                </ul>
+            </div>
+        
+                    
+
+
+
+
+    
+        <div>
+            <div class="index-div-prev">
+                <h4></h4>
+                <p>
+                    <a href="/posts/thunder-cracked/" rel="next">迅雷和谐版</a>
+                </p>
+            </div>
+        </div>
+    
+    
+        <div>
+            <div class="index-div-next">
+                <h4></h4>
+                <p>
+                    <a href="/posts/%E7%BA%BF%E6%AE%B5%E6%A0%91/" rel="prev">线段树</a>
+                </p>
+            </div>
+        </div>
+    
+
+                </div>
+            
+            
+                <div id="reading-bar"></div>
+            
+            <article class="article reveal">
+                <div id="load">
+                    <div class="article-header">
+                        
+    
+        <span class="badge badge-pill badge-danger single-badge">
+            <a href="https://gbwater.ga/categories/oi" class="post-header">OI</a>
+        </span>
+    
+
+<span title="预计阅读时长" class="badge badge-pill badge-danger single-badge post-header">
+    8 mins
+</span>
+<h2 class="single-h2">主席树</h2>
+<div class="article-list-footer">
+    <span class="article-list-date">28-04-20</span>
+    <span class="article-list-divider">/</span>
+    <span class="article-list-minutes">3949 Words</span>
+</div>
+<div class="single-line"></div>
+                    </div>
+                    <div class="article-content">
+                        <h1 id="简介">简介</h1>
+<p>主席树是一种数据结构，用来解决区间第k小(大)问题。要问为什么叫主席树？因为这是一个叫黄嘉泰的dalao发明的 <del>名字缩写跟我国某位主席一样，Orz</del><br>
+时间复杂度是Onlogn，十分优秀 <del>空间复杂度倒是有点大</del></p>
+<h1 id="前置姿势">前置姿势</h1>
+<h2 id="权值线段树">权值线段树</h2>
+<ul>
+<li>众所周知，权值线段树是一种线段树 <del>话说这不是废话吗2333</del></li>
+<li>它不同于一般线段树的是它的每一个结点的值代表这个区间中的数在序列中出现的总次数，正所谓“权值”</li>
+<li>它可以被用来处理区间第k小(大)问题</li>
+</ul>
+<h3 id="查询原理">查询原理</h3>
+<p>此处利用二分的思想：
+现有区间[l,r],不妨设区间[l,m] ( m为区间中间位置 ) 内的数的个数为n:
+显然:<br>
+若 n &lt; k ，第k小就是区间[m+1,r]的第 k - n 小
+反之，则为区间[l,r]的第k小
+于是可以写出伪代码</p>
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#00a8c8">int</span> <span style="color:#75af00">que</span><span style="color:#111">(</span><span style="color:#111">k</span><span style="color:#111">,</span><span style="color:#111">l</span><span style="color:#111">,</span><span style="color:#111">r</span><span style="color:#111">)</span><span style="color:#75715e">//询问区间[l,r]的第k小
+</span><span style="color:#75715e"></span><span style="color:#111">{</span>
+    <span style="color:#00a8c8">if</span><span style="color:#111">(</span><span style="color:#111">l</span><span style="color:#f92672">==</span><span style="color:#111">r</span><span style="color:#111">)</span> <span style="color:#00a8c8">return</span> <span style="color:#111">l</span><span style="color:#111">;</span>
+    <span style="color:#00a8c8">int</span> <span style="color:#111">m</span><span style="color:#f92672">=</span><span style="color:#111">(</span><span style="color:#111">l</span><span style="color:#f92672">+</span><span style="color:#111">r</span><span style="color:#111">)</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span><span style="color:#111">;</span>
+    <span style="color:#00a8c8">if</span><span style="color:#111">(</span><span style="color:#111">cnt</span><span style="color:#111">(</span><span style="color:#111">l</span><span style="color:#111">,</span><span style="color:#111">m</span><span style="color:#111">)</span><span style="color:#f92672">&gt;=</span><span style="color:#111">k</span><span style="color:#111">)</span> <span style="color:#00a8c8">return</span> <span style="color:#111">que</span><span style="color:#111">(</span><span style="color:#111">k</span><span style="color:#111">,</span><span style="color:#111">l</span><span style="color:#111">,</span><span style="color:#111">m</span><span style="color:#111">);</span>
+    <span style="color:#00a8c8">return</span> <span style="color:#111">que</span><span style="color:#111">(</span><span style="color:#111">k</span><span style="color:#f92672">-</span><span style="color:#111">cnt</span><span style="color:#111">(</span><span style="color:#111">l</span><span style="color:#111">,</span><span style="color:#111">r</span><span style="color:#111">),</span><span style="color:#111">m</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span><span style="color:#111">r</span><span style="color:#111">);</span>
+<span style="color:#111">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="举个栗子">举个栗子</h4>
+<p>对于序列 1,3,2,2,0,1 建立的权值线段树如下
+<img src="https://s1.ax1x.com/2020/06/02/tt4T3R.png" alt=""><br>
+查询第3小：</p>
+<ol>
+<li>访问区间[0,3],有6个数，&gt; 3</li>
+<li>访问左区间[0,1]查询第3小,有3个数,=3</li>
+<li>访问右区间[1,1],查询第2小，返回结果-&gt;1</li>
+</ol>
+<h3 id="建树">建树</h3>
+<p>当然是递归建树啦ψ(｀∇´)ψ<br>
+此处同普通线段树,只需统计区间个数即可<br>
+此处使用暴力统计 <del>其实是懒得打</del></p>
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#00a8c8">int</span> <span style="color:#111">ls</span><span style="color:#111">[</span><span style="color:#ae81ff">100</span><span style="color:#111">],</span><span style="color:#111">rs</span><span style="color:#111">[</span><span style="color:#ae81ff">100</span><span style="color:#111">],</span><span style="color:#111">cnt</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#111">v</span><span style="color:#111">[</span><span style="color:#ae81ff">100</span><span style="color:#111">];</span>
+<span style="color:#00a8c8">int</span> <span style="color:#111">l</span><span style="color:#111">[</span><span style="color:#ae81ff">100</span><span style="color:#111">],</span><span style="color:#111">r</span><span style="color:#111">[</span><span style="color:#ae81ff">100</span><span style="color:#111">];</span>
+<span style="color:#00a8c8">int</span> <span style="color:#111">num</span><span style="color:#111">[</span><span style="color:#ae81ff">100</span><span style="color:#111">];</span>
+<span style="color:#00a8c8">int</span> <span style="color:#111">n</span><span style="color:#111">;</span>
+<span style="color:#00a8c8">void</span> <span style="color:#75af00">update</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">p</span><span style="color:#111">)</span>
+<span style="color:#111">{</span>
+    <span style="color:#111">v</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]</span><span style="color:#f92672">=</span><span style="color:#111">v</span><span style="color:#111">[</span><span style="color:#111">ls</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]]</span><span style="color:#f92672">+</span><span style="color:#111">v</span><span style="color:#111">[</span><span style="color:#111">rs</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]];</span>
+<span style="color:#111">}</span>
+<span style="color:#00a8c8">void</span> <span style="color:#75af00">build</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">p</span><span style="color:#111">,</span><span style="color:#00a8c8">int</span> <span style="color:#111">l</span><span style="color:#111">,</span><span style="color:#00a8c8">int</span> <span style="color:#111">r</span><span style="color:#111">)</span>
+<span style="color:#111">{</span>
+    <span style="color:#111">l</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]</span><span style="color:#f92672">=</span><span style="color:#111">l</span><span style="color:#111">;</span><span style="color:#111">r</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]</span><span style="color:#f92672">=</span><span style="color:#111">r</span><span style="color:#111">;</span>
+    <span style="color:#00a8c8">if</span><span style="color:#111">(</span><span style="color:#111">l</span><span style="color:#f92672">==</span><span style="color:#111">r</span><span style="color:#111">)</span>
+    <span style="color:#111">{</span>
+        <span style="color:#00a8c8">for</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">i</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span><span style="color:#111">;</span><span style="color:#111">i</span><span style="color:#f92672">&lt;</span><span style="color:#111">n</span><span style="color:#111">;</span><span style="color:#111">i</span><span style="color:#f92672">++</span><span style="color:#111">)</span>
+        <span style="color:#111">{</span>
+            <span style="color:#00a8c8">if</span><span style="color:#111">(</span><span style="color:#111">num</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">]</span><span style="color:#f92672">&gt;=</span><span style="color:#111">l</span><span style="color:#f92672">&amp;&amp;</span><span style="color:#111">num</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">]</span><span style="color:#f92672">&lt;=</span><span style="color:#111">r</span><span style="color:#111">)</span> <span style="color:#111">v</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]</span><span style="color:#f92672">++</span><span style="color:#111">;</span>
+        <span style="color:#111">}</span>
+        <span style="color:#00a8c8">return</span><span style="color:#111">;</span>
+    <span style="color:#111">}</span>
+    <span style="color:#00a8c8">int</span> <span style="color:#111">m</span><span style="color:#f92672">=</span><span style="color:#111">l</span><span style="color:#f92672">+</span><span style="color:#111">r</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+    <span style="color:#111">ls</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]</span><span style="color:#f92672">=++</span><span style="color:#111">cnt</span><span style="color:#111">;</span>
+    <span style="color:#111">rs</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]</span><span style="color:#f92672">=++</span><span style="color:#111">cnt</span><span style="color:#111">;</span>
+    <span style="color:#111">build</span><span style="color:#111">(</span><span style="color:#111">ls</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">],</span><span style="color:#111">l</span><span style="color:#111">,</span><span style="color:#111">m</span><span style="color:#111">);</span>
+    <span style="color:#111">build</span><span style="color:#111">(</span><span style="color:#111">rs</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">],</span><span style="color:#111">m</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span><span style="color:#111">r</span><span style="color:#111">);</span>
+    <span style="color:#111">update</span><span style="color:#111">(</span><span style="color:#111">p</span><span style="color:#111">);</span>
+<span style="color:#111">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="查询">查询</h3>
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#00a8c8">int</span> <span style="color:#75af00">que</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">p</span><span style="color:#111">,</span><span style="color:#00a8c8">int</span> <span style="color:#111">k</span><span style="color:#111">)</span>
+<span style="color:#111">{</span>
+    <span style="color:#00a8c8">if</span><span style="color:#111">(</span><span style="color:#111">l</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]</span><span style="color:#f92672">==</span><span style="color:#111">r</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">])</span> <span style="color:#00a8c8">return</span> <span style="color:#111">l</span><span style="color:#111">;</span>
+    <span style="color:#00a8c8">int</span> <span style="color:#111">m</span><span style="color:#f92672">=</span><span style="color:#111">l</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]</span><span style="color:#f92672">+</span><span style="color:#111">r</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+    <span style="color:#00a8c8">if</span><span style="color:#111">(</span><span style="color:#111">v</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]</span><span style="color:#f92672">&lt;</span><span style="color:#111">k</span><span style="color:#111">)</span> <span style="color:#00a8c8">return</span> <span style="color:#111">que</span><span style="color:#111">(</span><span style="color:#111">rs</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">],</span><span style="color:#111">k</span><span style="color:#f92672">-</span><span style="color:#111">v</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]);</span>
+    <span style="color:#00a8c8">return</span> <span style="color:#111">que</span><span style="color:#111">(</span><span style="color:#111">ls</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">],</span><span style="color:#111">k</span><span style="color:#111">);</span>
+<span style="color:#111">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="思想">思想</h1>
+<p>权值线段树有一个缺点，只能查询整个区间的第k小，对于子区间就无能为力了<br>
+那是不是对于所有子区间都能搞出一个权值线段树就好了呢？</p>
+<h2 id="前缀和">前缀和</h2>
+<p>这里就可以用前缀和的思想：<br>
+若用相同范围（即相同的l，r）对任意子区间建树，所有的权值线段树结构相同，这意味着两棵树可以相减（即每一个等位节点相减）！<br>
+于是我们可以依次对[0,0],[0,1],[0,2]...[0,n]建树，如需得到[l,r]的树，只需将[0,r]和[0,l-1]两棵线段树相减即可！<br>
+查询可以机智地使用宏定义</p>
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#define lv (value[ls[r]]-value[ls[l]])</span><span style="color:#75715e">//相减后得到的线段树左儿子的值
+</span><span style="color:#75715e"></span><span style="color:#75715e">#define rv (value[rs[r]]-value[rs[l]])</span><span style="color:#75715e">//相减后得到的线段树右儿子的值
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="空间优化">空间优化</h2>
+<p>然而这里有一个问题，每一个区间建立线段树，空间复杂度太大，无法接受<br>
+怎么优化呢？<br>
+实际上，下一棵线段树就相当于上一棵线段树进行单点更新，即[0,n]相对于[0,n-1]只是更新了[num[n],num[n]]的值而已。<br>
+由于主席树不是完全二叉树，需要开数组保存左右儿子的编号，这里利用一下：如果更新左儿子，就把右儿子编号赋为上一棵树该节点右儿子的编号，反之也一样。这样每次建树只需新开一条链就行了 <del>有没有感觉特别机智</del><br>
+更新</p>
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#00a8c8">void</span> <span style="color:#75af00">updata</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">last</span><span style="color:#75715e">/*上一棵线段树等位结点编号*/</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span> <span style="color:#111">p</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span> <span style="color:#111">v</span><span style="color:#111">)</span><span style="color:#75715e">//建立下一棵线段树,相当于线段树的单点更新,只需保存一条链而已
+</span><span style="color:#75715e"></span><span style="color:#111">{</span>
+	<span style="color:#111">ln</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">ln</span><span style="color:#111">[</span><span style="color:#111">last</span><span style="color:#111">];</span> <span style="color:#111">rn</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">rn</span><span style="color:#111">[</span><span style="color:#111">last</span><span style="color:#111">];</span><span style="color:#75715e">//这棵线段树和上一棵一样,直接赋值
+</span><span style="color:#75715e"></span>	<span style="color:#111">value</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">value</span><span style="color:#111">[</span><span style="color:#111">last</span><span style="color:#111">]</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span><span style="color:#75715e">//明显v包含在区间里,直接加一即可
+</span><span style="color:#75715e"></span>	<span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">ln</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]</span> <span style="color:#f92672">==</span> <span style="color:#111">rn</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">])</span> <span style="color:#00a8c8">return</span><span style="color:#111">;</span><span style="color:#75715e">//叶节点,不用继续更新,直接返回即可
+</span><span style="color:#75715e"></span>	<span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">v</span> <span style="color:#f92672">&lt;=</span> <span style="color:#111">(</span><span style="color:#111">ln</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]</span> <span style="color:#f92672">+</span> <span style="color:#111">rn</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]</span> <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">1</span><span style="color:#111">))</span><span style="color:#75715e">//包含在左儿子的区间中
+</span><span style="color:#75715e"></span>	<span style="color:#111">{</span>
+		<span style="color:#111">rs</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">rs</span><span style="color:#111">[</span><span style="color:#111">last</span><span style="color:#111">];</span><span style="color:#75715e">//右子树(即右儿子)和上一棵线段树的一样
+</span><span style="color:#75715e"></span>		<span style="color:#111">ls</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#f92672">++</span><span style="color:#111">cnt</span><span style="color:#111">;</span><span style="color:#75715e">//累计节点编号
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">//本来更新节点的值是写在这里的,但这样根节点就更新不了了,于是写到了前面
+</span><span style="color:#75715e"></span>		<span style="color:#111">updata</span><span style="color:#111">(</span><span style="color:#111">ls</span><span style="color:#111">[</span><span style="color:#111">last</span><span style="color:#111">],</span> <span style="color:#111">ls</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">],</span> <span style="color:#111">v</span><span style="color:#111">);</span><span style="color:#75715e">//建立左子树
+</span><span style="color:#75715e"></span>	<span style="color:#111">}</span>
+	<span style="color:#00a8c8">else</span><span style="color:#75715e">//反之亦然同理
+</span><span style="color:#75715e"></span>	<span style="color:#111">{</span>
+		<span style="color:#111">ls</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">ls</span><span style="color:#111">[</span><span style="color:#111">last</span><span style="color:#111">];</span>
+		<span style="color:#111">rs</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#f92672">++</span><span style="color:#111">cnt</span><span style="color:#111">;</span>
+		<span style="color:#111">updata</span><span style="color:#111">(</span><span style="color:#111">rs</span><span style="color:#111">[</span><span style="color:#111">last</span><span style="color:#111">],</span> <span style="color:#111">rs</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">],</span> <span style="color:#111">v</span><span style="color:#111">);</span>
+	<span style="color:#111">}</span>
+<span style="color:#111">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>循环建树</p>
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#00a8c8">void</span> <span style="color:#75af00">build</span><span style="color:#111">()</span><span style="color:#75715e">//建立主席树
+</span><span style="color:#75715e"></span><span style="color:#111">{</span>
+	<span style="color:#111">root</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">cnt</span><span style="color:#111">;</span><span style="color:#75715e">//0号根节点为空树,便于相减
+</span><span style="color:#75715e"></span>	<span style="color:#111">bud</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#111">n2</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#111">cnt</span><span style="color:#111">);</span><span style="color:#75715e">//先建一发空树
+</span><span style="color:#75715e"></span>	<span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span> <span style="color:#111">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">n</span><span style="color:#111">;</span> <span style="color:#111">i</span><span style="color:#f92672">++</span><span style="color:#111">)</span><span style="color:#75715e">//[0,n)和(0,n]皆可,只不过是root[i-1]和root[i+1]的区别
+</span><span style="color:#75715e"></span>	<span style="color:#111">{</span>
+		<span style="color:#111">root</span><span style="color:#111">[</span><span style="color:#111">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#f92672">++</span><span style="color:#111">cnt</span><span style="color:#111">;</span><span style="color:#75715e">//累计根节点
+</span><span style="color:#75715e"></span>		<span style="color:#111">updata</span><span style="color:#111">(</span><span style="color:#111">root</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">],</span> <span style="color:#111">root</span><span style="color:#111">[</span><span style="color:#111">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#111">],</span> <span style="color:#111">num</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">]);</span><span style="color:#75715e">//更新这棵线段树
+</span><span style="color:#75715e"></span>	<span style="color:#111">}</span>
+<span style="color:#111">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="离散化">离散化</h2>
+<p>然而还有一个问题，权值线段树的空间复杂度是与数据范围相关的，所以此处需要离散化。所谓离散化就是把一堆范围很大的数映射到一段很小的区间里<br>
+例如对于序列：12 , 76 , 123 , 67 , 1 , 20<br>
+排序后：1 , 12 , 20 , 67 , 76 , 123<br>
+令：1-&gt;1 , 12-&gt;2 , 20-&gt;3 , 67-&gt;4 , 76-&gt;5 , 123-&gt;6<br>
+原序列就变成了：2 , 5 , 6 , 4 , 1 , 3<br>
+至于怎么搞映射？这不是map最擅长的吗（￣︶￣）↗　</p>
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#111">map</span> <span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;</span> <span style="color:#111">po</span><span style="color:#75715e">/*由原值映射到离散化后的值*/</span><span style="color:#111">,</span> <span style="color:#111">re</span><span style="color:#75715e">/*由离散化后的值映射到原值*/</span><span style="color:#111">;</span>
+<span style="color:#111">sort</span><span style="color:#111">(</span><span style="color:#111">tmp</span><span style="color:#111">,</span> <span style="color:#111">tmp</span> <span style="color:#f92672">+</span> <span style="color:#111">n</span><span style="color:#111">);</span><span style="color:#75715e">//先来一发排序
+</span><span style="color:#75715e">//巨坑!!tmp+n是排序区间末区间端点的下一个值的地址!!!
+</span><span style="color:#75715e">//我也不知道STL为什么要这样反正我就这样爆了两个点
+</span><span style="color:#75715e"></span><span style="color:#111">n2</span> <span style="color:#f92672">=</span> <span style="color:#111">unique</span><span style="color:#111">(</span><span style="color:#111">tmp</span><span style="color:#111">,</span> <span style="color:#111">tmp</span> <span style="color:#f92672">+</span> <span style="color:#111">n</span><span style="color:#111">)</span> <span style="color:#f92672">-</span> <span style="color:#111">tmp</span><span style="color:#111">;</span><span style="color:#75715e">//去重也一样!!!(STL的东西都是这个尿性)
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span> <span style="color:#111">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">n2</span><span style="color:#111">;</span> <span style="color:#111">i</span><span style="color:#f92672">++</span><span style="color:#111">)</span><span style="color:#75715e">//记录离散化后的数值
+</span><span style="color:#75715e"></span><span style="color:#111">{</span>
+	<span style="color:#111">po</span><span style="color:#111">[</span><span style="color:#111">tmp</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">]]</span> <span style="color:#f92672">=</span> <span style="color:#111">i</span><span style="color:#111">;</span>
+	<span style="color:#111">re</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">tmp</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">];</span>
+<span style="color:#111">}</span>
+<span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span> <span style="color:#111">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">n</span><span style="color:#111">;</span> <span style="color:#111">i</span><span style="color:#f92672">++</span><span style="color:#111">)</span><span style="color:#75715e">//将原值变为离散化后的值
+</span><span style="color:#75715e"></span><span style="color:#111">{</span>
+	<span style="color:#111">num</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">po</span><span style="color:#111">[</span><span style="color:#111">num</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">]];</span>
+<span style="color:#111">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>输出答案时也别忘了搞回去</p>
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#111">cout</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#111">re</span><span style="color:#111">[</span><span style="color:#111">ans</span><span style="color:#111">]</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#d88200">&#39;\n&#39;</span><span style="color:#111">;</span><span style="color:#75715e">//输出答案,一定要离散化的数值搞回来!!!小心爆零!!!
+</span></code></pre></td></tr></table>
+</div>
+</div><h1 id="完整代码">完整代码</h1>
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">/*
+</span><span style="color:#75715e">主席树 20191210
+</span><span style="color:#75715e">皮:震惊,cin和cout,竟然没有没有TLE???数据竟然没有爆int???!!!
+</span><span style="color:#75715e">*/</span>
+<span style="color:#75715e">#include</span><span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;map&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;algorithm&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;cstdio&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">using</span> <span style="color:#00a8c8">namespace</span> <span style="color:#111">std</span><span style="color:#111">;</span>
+<span style="color:#00a8c8">int</span> <span style="color:#111">ls</span><span style="color:#111">[</span><span style="color:#ae81ff">20000000</span><span style="color:#111">]</span><span style="color:#75715e">/*保存节点左儿子*/</span><span style="color:#111">,</span> <span style="color:#111">rs</span><span style="color:#111">[</span><span style="color:#ae81ff">20000000</span><span style="color:#111">]</span><span style="color:#75715e">/*保存节点右儿子*/</span><span style="color:#111">,</span>
+<span style="color:#111">root</span><span style="color:#111">[</span><span style="color:#ae81ff">200010</span><span style="color:#111">]</span><span style="color:#75715e">/*保存第一个元素到第n个数对应权值线段树的根节点*/</span><span style="color:#111">,</span>
+<span style="color:#111">value</span><span style="color:#111">[</span><span style="color:#ae81ff">20000000</span><span style="color:#111">]</span><span style="color:#75715e">/*保存权值线段树节点的值*/</span><span style="color:#111">,</span> 
+<span style="color:#111">ln</span><span style="color:#111">[</span><span style="color:#ae81ff">20000000</span><span style="color:#111">]</span><span style="color:#75715e">/*保存节点区间左端点*/</span><span style="color:#111">,</span> <span style="color:#111">rn</span><span style="color:#111">[</span><span style="color:#ae81ff">20000000</span><span style="color:#111">]</span><span style="color:#75715e">/*保存节点区间右端点*/</span><span style="color:#111">;</span>
+<span style="color:#00a8c8">int</span> <span style="color:#111">cnt</span><span style="color:#75715e">/*累计节点编号*/</span><span style="color:#111">,</span> <span style="color:#111">n</span><span style="color:#75715e">/*数的个数*/</span><span style="color:#111">;</span>
+<span style="color:#00a8c8">int</span> <span style="color:#111">n2</span><span style="color:#75715e">/*排序去重后数的个数(离散化巨坑)*/</span><span style="color:#111">;</span>
+<span style="color:#00a8c8">int</span> <span style="color:#111">num</span><span style="color:#111">[</span><span style="color:#ae81ff">200010</span><span style="color:#111">]</span><span style="color:#75715e">/*保存序列*/</span><span style="color:#111">,</span> <span style="color:#111">tmp</span><span style="color:#111">[</span><span style="color:#ae81ff">200010</span><span style="color:#111">]</span><span style="color:#75715e">/*便于离散化*/</span><span style="color:#111">;</span>
+<span style="color:#00a8c8">void</span> <span style="color:#75af00">bud</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">l</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span> <span style="color:#111">r</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span> <span style="color:#111">p</span><span style="color:#111">)</span><span style="color:#75715e">//建立空树(便于线段树相减),同普通线段树,只是没有保存节点权值而已
+</span><span style="color:#75715e"></span><span style="color:#111">{</span>
+	<span style="color:#111">ln</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">l</span><span style="color:#111">;</span> <span style="color:#111">rn</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">r</span><span style="color:#111">;</span><span style="color:#75715e">//显然
+</span><span style="color:#75715e"></span>	<span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">l</span> <span style="color:#f92672">!=</span> <span style="color:#111">r</span><span style="color:#111">)</span><span style="color:#75715e">//巨坑,否则死循环!!!
+</span><span style="color:#75715e"></span>	<span style="color:#111">{</span>
+		<span style="color:#111">ls</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#f92672">++</span><span style="color:#111">cnt</span><span style="color:#111">;</span><span style="color:#75715e">//累计子节点
+</span><span style="color:#75715e"></span>		<span style="color:#111">bud</span><span style="color:#111">(</span><span style="color:#111">l</span><span style="color:#111">,</span> <span style="color:#111">(</span><span style="color:#111">l</span> <span style="color:#f92672">+</span> <span style="color:#111">r</span> <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">1</span><span style="color:#111">),</span> <span style="color:#111">cnt</span><span style="color:#111">);</span><span style="color:#75715e">//递归建立左子树
+</span><span style="color:#75715e"></span>		<span style="color:#111">rs</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#f92672">++</span><span style="color:#111">cnt</span><span style="color:#111">;</span><span style="color:#75715e">//累计子节点
+</span><span style="color:#75715e"></span>		<span style="color:#111">bud</span><span style="color:#111">((</span><span style="color:#111">l</span> <span style="color:#f92672">+</span> <span style="color:#111">r</span> <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">1</span><span style="color:#111">)</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#111">r</span><span style="color:#111">,</span> <span style="color:#111">cnt</span><span style="color:#111">);</span><span style="color:#75715e">//递归建立右子树
+</span><span style="color:#75715e"></span>	<span style="color:#111">}</span>
+<span style="color:#111">}</span>
+<span style="color:#00a8c8">void</span> <span style="color:#75af00">updata</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">last</span><span style="color:#75715e">/*上一棵线段树等位结点编号*/</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span> <span style="color:#111">p</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span> <span style="color:#111">v</span><span style="color:#111">)</span><span style="color:#75715e">//建立下一棵线段树,相当于线段树的单点更新,只需保存一条链而已
+</span><span style="color:#75715e"></span><span style="color:#111">{</span>
+	<span style="color:#111">ln</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">ln</span><span style="color:#111">[</span><span style="color:#111">last</span><span style="color:#111">];</span> <span style="color:#111">rn</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">rn</span><span style="color:#111">[</span><span style="color:#111">last</span><span style="color:#111">];</span><span style="color:#75715e">//这棵线段树和上一棵一样,直接赋值
+</span><span style="color:#75715e"></span>	<span style="color:#111">value</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">value</span><span style="color:#111">[</span><span style="color:#111">last</span><span style="color:#111">]</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span><span style="color:#75715e">//明显v包含在区间里,直接加一即可
+</span><span style="color:#75715e"></span>	<span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">ln</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]</span> <span style="color:#f92672">==</span> <span style="color:#111">rn</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">])</span> <span style="color:#00a8c8">return</span><span style="color:#111">;</span><span style="color:#75715e">//叶节点,不用继续更新,直接返回即可
+</span><span style="color:#75715e"></span>	<span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">v</span> <span style="color:#f92672">&lt;=</span> <span style="color:#111">(</span><span style="color:#111">ln</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]</span> <span style="color:#f92672">+</span> <span style="color:#111">rn</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]</span> <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">1</span><span style="color:#111">))</span><span style="color:#75715e">//包含在左儿子的区间中
+</span><span style="color:#75715e"></span>	<span style="color:#111">{</span>
+		<span style="color:#111">rs</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">rs</span><span style="color:#111">[</span><span style="color:#111">last</span><span style="color:#111">];</span><span style="color:#75715e">//右子树(即右儿子)和上一棵线段树的一样
+</span><span style="color:#75715e"></span>		<span style="color:#111">ls</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#f92672">++</span><span style="color:#111">cnt</span><span style="color:#111">;</span><span style="color:#75715e">//累计节点编号
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">//本来更新节点的值是写在这里的,但这样根节点就更新不了了,于是写到了前面
+</span><span style="color:#75715e"></span>		<span style="color:#111">updata</span><span style="color:#111">(</span><span style="color:#111">ls</span><span style="color:#111">[</span><span style="color:#111">last</span><span style="color:#111">],</span> <span style="color:#111">ls</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">],</span> <span style="color:#111">v</span><span style="color:#111">);</span><span style="color:#75715e">//建立左子树
+</span><span style="color:#75715e"></span>	<span style="color:#111">}</span>
+	<span style="color:#00a8c8">else</span><span style="color:#75715e">//反之亦然同理
+</span><span style="color:#75715e"></span>	<span style="color:#111">{</span>
+		<span style="color:#111">ls</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">ls</span><span style="color:#111">[</span><span style="color:#111">last</span><span style="color:#111">];</span>
+		<span style="color:#111">rs</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#f92672">++</span><span style="color:#111">cnt</span><span style="color:#111">;</span>
+		<span style="color:#111">updata</span><span style="color:#111">(</span><span style="color:#111">rs</span><span style="color:#111">[</span><span style="color:#111">last</span><span style="color:#111">],</span> <span style="color:#111">rs</span><span style="color:#111">[</span><span style="color:#111">p</span><span style="color:#111">],</span> <span style="color:#111">v</span><span style="color:#111">);</span>
+	<span style="color:#111">}</span>
+<span style="color:#111">}</span>
+<span style="color:#00a8c8">void</span> <span style="color:#75af00">build</span><span style="color:#111">()</span><span style="color:#75715e">//建立主席树
+</span><span style="color:#75715e"></span><span style="color:#111">{</span>
+	<span style="color:#111">root</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">cnt</span><span style="color:#111">;</span><span style="color:#75715e">//0号根节点为空树,便于相减
+</span><span style="color:#75715e"></span>	<span style="color:#111">bud</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#111">n2</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#111">cnt</span><span style="color:#111">);</span><span style="color:#75715e">//先建一发空树
+</span><span style="color:#75715e"></span>	<span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span> <span style="color:#111">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">n</span><span style="color:#111">;</span> <span style="color:#111">i</span><span style="color:#f92672">++</span><span style="color:#111">)</span><span style="color:#75715e">//[0,n)和(0,n]皆可,只不过是root[i-1]和root[i+1]的区别
+</span><span style="color:#75715e"></span>	<span style="color:#111">{</span>
+		<span style="color:#111">root</span><span style="color:#111">[</span><span style="color:#111">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#f92672">++</span><span style="color:#111">cnt</span><span style="color:#111">;</span><span style="color:#75715e">//累计根节点
+</span><span style="color:#75715e"></span>		<span style="color:#111">updata</span><span style="color:#111">(</span><span style="color:#111">root</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">],</span> <span style="color:#111">root</span><span style="color:#111">[</span><span style="color:#111">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#111">],</span> <span style="color:#111">num</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">]);</span><span style="color:#75715e">//更新这棵线段树
+</span><span style="color:#75715e"></span>	<span style="color:#111">}</span>
+<span style="color:#111">}</span>
+<span style="color:#75715e">//这类宏定义一定要加括号，否则死的很惨！！！！！！
+</span><span style="color:#75715e">//我才不会告诉你我就是因为这个第一次交爆零了...
+</span><span style="color:#75715e">//还有,宏定义这种东西作用范围是当前文件...写在哪里都一样...
+</span><span style="color:#75715e"></span><span style="color:#75715e">#define lv (value[ls[r]]-value[ls[l]])</span><span style="color:#75715e">//相减后得到的线段树左儿子的值
+</span><span style="color:#75715e"></span><span style="color:#75715e">#define rv (value[rs[r]]-value[rs[l]])</span><span style="color:#75715e">//相减后得到的线段树右儿子的值
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">int</span> <span style="color:#111">ans</span><span style="color:#111">;</span><span style="color:#75715e">//落谷猥琐巨坑,直接返回会MLE!!!被迫改void并使用全局变量保存答案
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">void</span> <span style="color:#75af00">query</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">k</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span> <span style="color:#111">l</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span> <span style="color:#111">r</span><span style="color:#111">)</span><span style="color:#75715e">//这里的l和r指的不是数列的区间,而是l棵线段树和第r棵线段树的根节点
+</span><span style="color:#75715e"></span><span style="color:#111">{</span>
+	<span style="color:#75715e">//直接写成(其实就是)权值的查询就好
+</span><span style="color:#75715e"></span>	<span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">ln</span><span style="color:#111">[</span><span style="color:#111">l</span><span style="color:#111">]</span> <span style="color:#f92672">==</span> <span style="color:#111">rn</span><span style="color:#111">[</span><span style="color:#111">l</span><span style="color:#111">])</span><span style="color:#75715e">//叶节点,直接记录答案
+</span><span style="color:#75715e"></span>	<span style="color:#111">{</span>
+		<span style="color:#111">ans</span> <span style="color:#f92672">=</span> <span style="color:#111">ln</span><span style="color:#111">[</span><span style="color:#111">l</span><span style="color:#111">];</span>
+		<span style="color:#00a8c8">return</span><span style="color:#111">;</span>
+	<span style="color:#111">}</span>
+	<span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">k</span> <span style="color:#f92672">&lt;=</span> <span style="color:#111">lv</span><span style="color:#111">)</span><span style="color:#75715e">//左儿子包含的数的个数大于等于待查询的k
+</span><span style="color:#75715e"></span>		<span style="color:#111">query</span><span style="color:#111">(</span><span style="color:#111">k</span><span style="color:#111">,</span> <span style="color:#111">ls</span><span style="color:#111">[</span><span style="color:#111">l</span><span style="color:#111">],</span> <span style="color:#111">ls</span><span style="color:#111">[</span><span style="color:#111">r</span><span style="color:#111">]);</span><span style="color:#75715e">//向左儿子查询第k小即可
+</span><span style="color:#75715e"></span>	<span style="color:#00a8c8">else</span><span style="color:#75715e">//左儿子包含的数的个数小于待查询的k
+</span><span style="color:#75715e"></span>		<span style="color:#111">query</span><span style="color:#111">(</span><span style="color:#111">k</span> <span style="color:#f92672">-</span> <span style="color:#111">lv</span><span style="color:#111">,</span> <span style="color:#111">rs</span><span style="color:#111">[</span><span style="color:#111">l</span><span style="color:#111">],</span> <span style="color:#111">rs</span><span style="color:#111">[</span><span style="color:#111">r</span><span style="color:#111">]);</span><span style="color:#75715e">//整段区间的第k小即为右区间的第(k-左区间包含数的个数)小
+</span><span style="color:#75715e"></span><span style="color:#111">}</span>
+<span style="color:#111">map</span> <span style="color:#f92672">&lt;</span><span style="color:#00a8c8">int</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span><span style="color:#f92672">&gt;</span> <span style="color:#111">po</span><span style="color:#75715e">/*由原值映射到离散化后的值*/</span><span style="color:#111">,</span> <span style="color:#111">re</span><span style="color:#75715e">/*由离散化后的值映射到原值*/</span><span style="color:#111">;</span>
+<span style="color:#00a8c8">int</span> <span style="color:#75af00">main</span><span style="color:#111">()</span>
+<span style="color:#111">{</span>
+	<span style="color:#111">cin</span> <span style="color:#f92672">&gt;&gt;</span> <span style="color:#111">n</span><span style="color:#111">;</span><span style="color:#75715e">//输入,显然
+</span><span style="color:#75715e"></span>	<span style="color:#00a8c8">int</span> <span style="color:#111">m</span><span style="color:#111">;</span>
+	<span style="color:#111">cin</span> <span style="color:#f92672">&gt;&gt;</span> <span style="color:#111">m</span><span style="color:#111">;</span>
+	<span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span> <span style="color:#111">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">n</span><span style="color:#111">;</span> <span style="color:#111">i</span><span style="color:#f92672">++</span><span style="color:#111">)</span><span style="color:#75715e">//输入并保存副本用于离散化
+</span><span style="color:#75715e"></span>	<span style="color:#111">{</span>
+		<span style="color:#111">cin</span> <span style="color:#f92672">&gt;&gt;</span> <span style="color:#111">num</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">];</span>
+		<span style="color:#111">tmp</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">num</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">];</span>
+	<span style="color:#111">}</span>
+	<span style="color:#75715e">//---------------------------------------离散化--------------------------------------------
+</span><span style="color:#75715e"></span>	<span style="color:#111">sort</span><span style="color:#111">(</span><span style="color:#111">tmp</span><span style="color:#111">,</span> <span style="color:#111">tmp</span> <span style="color:#f92672">+</span> <span style="color:#111">n</span><span style="color:#111">);</span><span style="color:#75715e">//先来一发排序
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">//巨坑!!tmp+n是排序区间末区间端点的下一个值的地址!!!
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">//我也不知道STL为什么要这样反正我就这样爆了两个点
+</span><span style="color:#75715e"></span>	<span style="color:#111">n2</span> <span style="color:#f92672">=</span> <span style="color:#111">unique</span><span style="color:#111">(</span><span style="color:#111">tmp</span><span style="color:#111">,</span> <span style="color:#111">tmp</span> <span style="color:#f92672">+</span> <span style="color:#111">n</span><span style="color:#111">)</span> <span style="color:#f92672">-</span> <span style="color:#111">tmp</span><span style="color:#111">;</span><span style="color:#75715e">//去重也一样!!!(STL的东西都是这个尿性)
+</span><span style="color:#75715e"></span>	<span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span> <span style="color:#111">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">n2</span><span style="color:#111">;</span> <span style="color:#111">i</span><span style="color:#f92672">++</span><span style="color:#111">)</span><span style="color:#75715e">//记录离散化后的数值
+</span><span style="color:#75715e"></span>	<span style="color:#111">{</span>
+		<span style="color:#111">po</span><span style="color:#111">[</span><span style="color:#111">tmp</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">]]</span> <span style="color:#f92672">=</span> <span style="color:#111">i</span><span style="color:#111">;</span>
+		<span style="color:#111">re</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">tmp</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">];</span>
+	<span style="color:#111">}</span>
+	<span style="color:#00a8c8">for</span> <span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span> <span style="color:#111">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">n</span><span style="color:#111">;</span> <span style="color:#111">i</span><span style="color:#f92672">++</span><span style="color:#111">)</span><span style="color:#75715e">//将原值变为离散化后的值
+</span><span style="color:#75715e"></span>	<span style="color:#111">{</span>
+		<span style="color:#111">num</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">]</span> <span style="color:#f92672">=</span> <span style="color:#111">po</span><span style="color:#111">[</span><span style="color:#111">num</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">]];</span>
+	<span style="color:#111">}</span>
+	<span style="color:#75715e">//-----------------------------------------------------------------------------------------
+</span><span style="color:#75715e"></span>	<span style="color:#111">build</span><span style="color:#111">();</span><span style="color:#75715e">//建立主席树
+</span><span style="color:#75715e"></span>	<span style="color:#00a8c8">int</span> <span style="color:#111">l</span><span style="color:#111">,</span> <span style="color:#111">r</span><span style="color:#111">,</span> <span style="color:#111">k</span><span style="color:#111">;</span>
+	<span style="color:#00a8c8">while</span> <span style="color:#111">(</span><span style="color:#111">m</span><span style="color:#f92672">--</span><span style="color:#111">)</span>
+	<span style="color:#111">{</span>
+		<span style="color:#111">cin</span> <span style="color:#f92672">&gt;&gt;</span> <span style="color:#111">l</span> <span style="color:#f92672">&gt;&gt;</span> <span style="color:#111">r</span> <span style="color:#f92672">&gt;&gt;</span> <span style="color:#111">k</span><span style="color:#111">;</span>
+		<span style="color:#111">l</span><span style="color:#f92672">--</span><span style="color:#111">;</span>
+		<span style="color:#111">query</span><span style="color:#111">(</span><span style="color:#111">k</span><span style="color:#111">,</span> <span style="color:#111">root</span><span style="color:#111">[</span><span style="color:#111">l</span><span style="color:#111">],</span> <span style="color:#111">root</span><span style="color:#111">[</span><span style="color:#111">r</span><span style="color:#111">]);</span><span style="color:#75715e">//一定要传递根节点的编号!!!!!!
+</span><span style="color:#75715e"></span>		<span style="color:#111">cout</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#111">re</span><span style="color:#111">[</span><span style="color:#111">ans</span><span style="color:#111">]</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#d88200">&#39;\n&#39;</span><span style="color:#111">;</span><span style="color:#75715e">//输出答案,一定要离散化的数值搞回来!!!小心爆零!!!
+</span><span style="color:#75715e"></span>	<span style="color:#111">}</span>
+	<span style="color:#00a8c8">return</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span>
+<span style="color:#111">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+                    </div>
+                    
+                        <div style="text-align: left; margin: 60px 0px 40px 8px; border-radius: 6px;">
+    <ul class="post_tags" style="margin: 0px; padding: 0px 0px 15px; width: 100%;">
+    	<li class="cat-real" style="display: inline-block; color: rgb(102, 102, 102); font-size: 1.1rem; font-weight: 600; margin: 0px; letter-spacing: 1px;">
+            <a style="background-color: rgb(231, 243, 255); color: rgb(47, 148, 254); padding: 1px 12px; border-radius: 4px; font-size: 0.9rem;"></a>
+        </li>
+        
+            <li class="cat-real" style="display: inline-block;">
+                <a href="https://gbwater.ga/tags/%E5%8C%BA%E9%97%B4%E7%AC%ACk%E5%B0%8F/" style="font-size: 0.9rem; border-radius: 4px; padding: 1px 12px;">区间第k小</a>
+            </li>
+        
+            <li class="cat-real" style="display: inline-block;">
+                <a href="https://gbwater.ga/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 0.9rem; border-radius: 4px; padding: 1px 12px;">数据结构</a>
+            </li>
+        
+            <li class="cat-real" style="display: inline-block;">
+                <a href="https://gbwater.ga/tags/c&#43;&#43;/" style="font-size: 0.9rem; border-radius: 4px; padding: 1px 12px;">c&#43;&#43;</a>
+            </li>
+        
+    </ul>
+</div>
+                    
+                        <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    
+    <div id="vcomments"></div>
+    <script>
+    new Valine({
+        el: '#vcomments' ,
+        appId: '0yETd71mzQvC5kqlVGmDIVLr-gzGzoHsz',
+        appKey: 'PuVvdF6GU4JvY8RXiuHWlI5W',
+        notify:false, 
+        verify:false, 
+        avatar:'mp', 
+        placeholder: 'just go go' , 
+        enableQQ:true , 
+        visitor:true , 
+        pageSize:15 , 
+        recordIP:true
+    });
+    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+    <div>
+    <a href="https://github.com/water2004" target="_blank" style="text-decoration:none">
+        <div class="goup-container footer-github">
+            <i class="ri-github-fill footer-github-icon"></i>
+        </div>
+    </a>
+    <div class="footer reveal">
+        
+            <p>
+                Copyright&nbsp;<i class="ri-copyright-line"></i>&nbsp;·&nbsp;2021&nbsp;·&nbsp;GBwater&nbsp;·&nbsp;
+                <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" style="text-decoration: none;color: inherit;font-size: 14px;font-weight: 500;">
+                    CC BY-NC 4.0
+                </a>
+            </p>
+        
+        <p>
+            
+                Powered by <a href="https://github.com/gohugoio/hugo">Hugo</a> | Theme is <a href="https://github.com/ThemeTony/hugo-theme-tony">Tony</a>
+            
+        </p>
+    </div>
+</div>
+
+
+    <script src="/js/jquery.min.js"></script><script src="/js/tony.min.21fb28b08edccb7a220a2a53f8fa67ba2f62588d04437e5a3998769b79537006.js" integrity="sha256-IfsosI7cy3oiCipT+Ppnui9iWI0EQ35aOZh2m3lTcAY="></script><script src="/js/medium-zoom.min.js"></script>
+<script>
+	mediumZoom(document.querySelectorAll('div.article-content img'), {
+        background: '#fff'
+    });
+</script>
+
+
+    
+<script>
+(function(){
+	var bp = document.createElement('script');
+	var curProtocol = window.location.protocol.split(':')[0];
+	if (curProtocol === 'https'){
+	 bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+	}
+	else{
+	bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	}
+	var s = document.getElementsByTagName("script")[0];
+	s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+</html>

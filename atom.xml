@@ -2,27 +2,27 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="cn">
-    <title type="text">HUGO-THEME-TONY</title>
+    <title type="text">GBwater&#39;s blog</title>
     <subtitle type="html"></subtitle>
-    <updated>2021-02-10T12:29:35+08:00</updated>
-    <id>http://example.com/</id>
-    <link rel="alternate" type="text/html" href="http://example.com/" />
-    <link rel="self" type="application/atom+xml" href="http://example.com/atom.xml" />
+    <updated>2021-02-10T16:45:22+08:00</updated>
+    <id>https://gbwater.ga/</id>
+    <link rel="alternate" type="text/html" href="https://gbwater.ga/" />
+    <link rel="self" type="application/atom+xml" href="https://gbwater.ga/atom.xml" />
     <author>
-            <name>HUGO-THEME-TONY</name>
-            <uri>http://example.com/</uri>
+            <name>GBwater</name>
+            <uri>https://gbwater.ga/</uri>
             
-                <email>mail@example.com</email>
+                <email>3076697508@qq.com</email>
             </author>
     <generator uri="https://gohugo.io/" version="0.80.0">Hugo</generator>
         
             
             <entry>
-                <title type="text">Hello World</title>
-                <link rel="alternate" type="text/html" href="http://example.com/posts/hello-world/" />
-                <id>http://example.com/posts/hello-world/</id>
-                <updated>2021-01-01T10:43:00+08:00</updated>
-                <published>2021-01-01T10:43:00+08:00</published><summary type="html"><![CDATA[%!s(<nil>)]]></summary>
+                <title type="text">csp2020小结</title>
+                <link rel="alternate" type="text/html" href="https://gbwater.ga/posts/csp2020%E5%B0%8F%E7%BB%93/" />
+                <id>https://gbwater.ga/posts/csp2020%E5%B0%8F%E7%BB%93/</id>
+                <updated>2020-11-22T00:00:00+00:00</updated>
+                <published>2020-11-22T00:00:00+00:00</published><summary type="html"><![CDATA[%!s(<nil>)]]></summary>
                 
                 
                 
@@ -30,7 +30,67 @@
                 
                     
                         
+                            
+                                
+                                
+                                
+                                    <category scheme="https://gbwater.ga/categories/oi/" term="OI" label="OI" />
+                                
+                           
+                        
                     
+                        
+                            
+                                
+                                
+                                
+                                    <category scheme="https://gbwater.ga/tags/csp/" term="CSP" label="CSP" />
+                                
+                           
+                                
+                                
+                                
+                                    <category scheme="https://gbwater.ga/tags/noip/" term="NOIP" label="NOIP" />
+                                
+                           
+                        
+                    
+                
+            </entry>
+        
+    
+        
+            
+            <entry>
+                <title type="text">文件自动保存update2-6-1</title>
+                <link rel="alternate" type="text/html" href="https://gbwater.ga/posts/%E6%96%87%E4%BB%B6%E8%87%AA%E5%8A%A8%E4%BF%9D%E5%AD%98update2-6-1/" />
+                <id>https://gbwater.ga/posts/%E6%96%87%E4%BB%B6%E8%87%AA%E5%8A%A8%E4%BF%9D%E5%AD%98update2-6-1/</id>
+                <updated>2020-11-22T00:00:00+00:00</updated>
+                <published>2020-11-22T00:00:00+00:00</published><summary type="html"><![CDATA[%!s(<nil>)]]></summary>
+                
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category scheme="https://gbwater.ga/categories/%E5%B7%A5%E5%85%B7/" term="工具" label="工具" />
+                                
+                           
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category scheme="https://gbwater.ga/tags/%E7%94%B5%E6%95%99%E5%B9%B3%E5%8F%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%E9%9B%86/" term="电教平台自动化管理工具集" label="电教平台自动化管理工具集" />
+                                
+                           
                         
                     
                 
@@ -41,8 +101,8 @@
             
             <entry>
                 <title type="text">倍增LCA</title>
-                <link rel="alternate" type="text/html" href="http://example.com/posts/%E5%80%8D%E5%A2%9Elca/" />
-                <id>http://example.com/posts/%E5%80%8D%E5%A2%9Elca/</id>
+                <link rel="alternate" type="text/html" href="https://gbwater.ga/posts/%E5%80%8D%E5%A2%9Elca/" />
+                <id>https://gbwater.ga/posts/%E5%80%8D%E5%A2%9Elca/</id>
                 <updated>2020-11-15T00:00:00+00:00</updated>
                 <published>2020-11-15T00:00:00+00:00</published><summary type="html"><![CDATA[%!s(<nil>)]]></summary>
                 
@@ -56,7 +116,7 @@
                                 
                                 
                                 
-                                    <category scheme="http://example.com/categories/oi/" term="OI" label="OI" />
+                                    <category scheme="https://gbwater.ga/categories/oi/" term="OI" label="OI" />
                                 
                            
                         
@@ -66,13 +126,13 @@
                                 
                                 
                                 
-                                    <category scheme="http://example.com/tags/lca/" term="LCA" label="LCA" />
+                                    <category scheme="https://gbwater.ga/tags/lca/" term="LCA" label="LCA" />
                                 
                            
                                 
                                 
                                 
-                                    <category scheme="http://example.com/tags/%E5%80%8D%E5%A2%9E/" term="倍增" label="倍增" />
+                                    <category scheme="https://gbwater.ga/tags/%E5%80%8D%E5%A2%9E/" term="倍增" label="倍增" />
                                 
                            
                         
@@ -84,17 +144,25 @@
         
             
             <entry>
-                <title type="text">静默拷文件</title>
-                <link rel="alternate" type="text/html" href="http://example.com/posts/%E9%9D%99%E9%BB%98%E6%8B%B7%E6%96%87%E4%BB%B6/" />
-                <id>http://example.com/posts/%E9%9D%99%E9%BB%98%E6%8B%B7%E6%96%87%E4%BB%B6/</id>
-                <updated>2020-07-22T00:00:00+00:00</updated>
-                <published>2020-07-22T00:00:00+00:00</published><summary type="html"><![CDATA[%!s(<nil>)]]></summary>
+                <title type="text">210 Onedrive 使用指南</title>
+                <link rel="alternate" type="text/html" href="https://gbwater.ga/posts/210onedrive%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" />
+                <id>https://gbwater.ga/posts/210onedrive%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
+                <updated>2020-10-01T00:00:00+00:00</updated>
+                <published>2020-10-01T00:00:00+00:00</published><summary type="html"><![CDATA[%!s(<nil>)]]></summary>
                 
                 
                 
                 
                 
                     
+                        
+                            
+                                
+                                
+                                
+                                    <category scheme="https://gbwater.ga/categories/%E5%AD%A6%E4%B9%A0/" term="学习" label="学习" />
+                                
+                           
                         
                     
                         
@@ -102,7 +170,7 @@
                                 
                                 
                                 
-                                    <category scheme="http://example.com/tags/%E7%94%B5%E6%95%99%E5%B9%B3%E5%8F%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%E9%9B%86/" term="电教平台自动化管理工具集" label="电教平台自动化管理工具集" />
+                                    <category scheme="https://gbwater.ga/tags/%E7%BD%91%E7%9B%98/" term="网盘" label="网盘" />
                                 
                            
                         
@@ -115,16 +183,24 @@
             
             <entry>
                 <title type="text">偏微分</title>
-                <link rel="alternate" type="text/html" href="http://example.com/posts/%E5%81%8F%E5%BE%AE%E5%88%86/" />
-                <id>http://example.com/posts/%E5%81%8F%E5%BE%AE%E5%88%86/</id>
-                <updated>0001-01-01T00:00:00+00:00</updated>
-                <published>0001-01-01T00:00:00+00:00</published><summary type="html"><![CDATA[%!s(<nil>)]]></summary>
+                <link rel="alternate" type="text/html" href="https://gbwater.ga/posts/%E5%81%8F%E5%BE%AE%E5%88%86/" />
+                <id>https://gbwater.ga/posts/%E5%81%8F%E5%BE%AE%E5%88%86/</id>
+                <updated>2020-07-22T00:00:00+00:00</updated>
+                <published>2020-07-22T00:00:00+00:00</published><summary type="html"><![CDATA[%!s(<nil>)]]></summary>
                 
                 
                 
                 
                 
                     
+                        
+                            
+                                
+                                
+                                
+                                    <category scheme="https://gbwater.ga/categories/%E5%AD%A6%E4%B9%A0/" term="学习" label="学习" />
+                                
+                           
                         
                     
                         
@@ -132,13 +208,13 @@
                                 
                                 
                                 
-                                    <category scheme="http://example.com/tags/%E6%95%B0%E5%AD%A6/" term="数学" label="数学" />
+                                    <category scheme="https://gbwater.ga/tags/%E6%95%B0%E5%AD%A6/" term="数学" label="数学" />
                                 
                            
                                 
                                 
                                 
-                                    <category scheme="http://example.com/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" term="微积分" label="微积分" />
+                                    <category scheme="https://gbwater.ga/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" term="微积分" label="微积分" />
                                 
                            
                         
@@ -150,17 +226,25 @@
         
             
             <entry>
-                <title type="text">导数</title>
-                <link rel="alternate" type="text/html" href="http://example.com/posts/%E5%AF%BC%E6%95%B0/" />
-                <id>http://example.com/posts/%E5%AF%BC%E6%95%B0/</id>
-                <updated>0001-01-01T00:00:00+00:00</updated>
-                <published>0001-01-01T00:00:00+00:00</published><summary type="html"><![CDATA[%!s(<nil>)]]></summary>
+                <title type="text">静默拷文件</title>
+                <link rel="alternate" type="text/html" href="https://gbwater.ga/posts/%E9%9D%99%E9%BB%98%E6%8B%B7%E6%96%87%E4%BB%B6/" />
+                <id>https://gbwater.ga/posts/%E9%9D%99%E9%BB%98%E6%8B%B7%E6%96%87%E4%BB%B6/</id>
+                <updated>2020-07-22T00:00:00+00:00</updated>
+                <published>2020-07-22T00:00:00+00:00</published><summary type="html"><![CDATA[%!s(<nil>)]]></summary>
                 
                 
                 
                 
                 
                     
+                        
+                            
+                                
+                                
+                                
+                                    <category scheme="https://gbwater.ga/categories/%E5%B7%A5%E5%85%B7/" term="工具" label="工具" />
+                                
+                           
                         
                     
                         
@@ -168,13 +252,7 @@
                                 
                                 
                                 
-                                    <category scheme="http://example.com/tags/%E6%95%B0%E5%AD%A6/" term="数学" label="数学" />
-                                
-                           
-                                
-                                
-                                
-                                    <category scheme="http://example.com/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" term="微积分" label="微积分" />
+                                    <category scheme="https://gbwater.ga/tags/%E7%94%B5%E6%95%99%E5%B9%B3%E5%8F%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%E9%9B%86/" term="电教平台自动化管理工具集" label="电教平台自动化管理工具集" />
                                 
                            
                         
@@ -187,16 +265,24 @@
             
             <entry>
                 <title type="text">积分</title>
-                <link rel="alternate" type="text/html" href="http://example.com/posts/%E7%A7%AF%E5%88%86/" />
-                <id>http://example.com/posts/%E7%A7%AF%E5%88%86/</id>
-                <updated>0001-01-01T00:00:00+00:00</updated>
-                <published>0001-01-01T00:00:00+00:00</published><summary type="html"><![CDATA[%!s(<nil>)]]></summary>
+                <link rel="alternate" type="text/html" href="https://gbwater.ga/posts/%E7%A7%AF%E5%88%86/" />
+                <id>https://gbwater.ga/posts/%E7%A7%AF%E5%88%86/</id>
+                <updated>2020-07-21T00:00:00+00:00</updated>
+                <published>2020-07-21T00:00:00+00:00</published><summary type="html"><![CDATA[%!s(<nil>)]]></summary>
                 
                 
                 
                 
                 
                     
+                        
+                            
+                                
+                                
+                                
+                                    <category scheme="https://gbwater.ga/categories/%E5%AD%A6%E4%B9%A0/" term="学习" label="学习" />
+                                
+                           
                         
                     
                         
@@ -204,13 +290,189 @@
                                 
                                 
                                 
-                                    <category scheme="http://example.com/tags/%E6%95%B0%E5%AD%A6/" term="数学" label="数学" />
+                                    <category scheme="https://gbwater.ga/tags/%E6%95%B0%E5%AD%A6/" term="数学" label="数学" />
                                 
                            
                                 
                                 
                                 
-                                    <category scheme="http://example.com/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" term="微积分" label="微积分" />
+                                    <category scheme="https://gbwater.ga/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" term="微积分" label="微积分" />
+                                
+                           
+                        
+                    
+                
+            </entry>
+        
+    
+        
+            
+            <entry>
+                <title type="text">导数</title>
+                <link rel="alternate" type="text/html" href="https://gbwater.ga/posts/%E5%AF%BC%E6%95%B0/" />
+                <id>https://gbwater.ga/posts/%E5%AF%BC%E6%95%B0/</id>
+                <updated>2020-07-18T00:00:00+00:00</updated>
+                <published>2020-07-18T00:00:00+00:00</published><summary type="html"><![CDATA[%!s(<nil>)]]></summary>
+                
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category scheme="https://gbwater.ga/categories/%E5%AD%A6%E4%B9%A0/" term="学习" label="学习" />
+                                
+                           
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category scheme="https://gbwater.ga/tags/%E6%95%B0%E5%AD%A6/" term="数学" label="数学" />
+                                
+                           
+                                
+                                
+                                
+                                    <category scheme="https://gbwater.ga/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" term="微积分" label="微积分" />
+                                
+                           
+                        
+                    
+                
+            </entry>
+        
+    
+        
+            
+            <entry>
+                <title type="text">网易云论据</title>
+                <link rel="alternate" type="text/html" href="https://gbwater.ga/posts/%E7%BD%91%E6%98%93%E4%BA%91%E8%AE%BA%E6%8D%AE/" />
+                <id>https://gbwater.ga/posts/%E7%BD%91%E6%98%93%E4%BA%91%E8%AE%BA%E6%8D%AE/</id>
+                <updated>2020-06-27T00:00:00+00:00</updated>
+                <published>2020-06-27T00:00:00+00:00</published><summary type="html"><![CDATA[%!s(<nil>)]]></summary>
+                
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category scheme="https://gbwater.ga/categories/%E5%AD%A6%E4%B9%A0/" term="学习" label="学习" />
+                                
+                           
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category scheme="https://gbwater.ga/tags/%E8%AF%AD%E6%96%87/" term="语文" label="语文" />
+                                
+                           
+                        
+                    
+                
+            </entry>
+        
+    
+        
+            
+            <entry>
+                <title type="text">迅雷和谐版</title>
+                <link rel="alternate" type="text/html" href="https://gbwater.ga/posts/thunder-cracked/" />
+                <id>https://gbwater.ga/posts/thunder-cracked/</id>
+                <updated>2020-04-29T00:00:00+00:00</updated>
+                <published>2020-04-29T00:00:00+00:00</published><summary type="html"><![CDATA[%!s(<nil>)]]></summary>
+                
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category scheme="https://gbwater.ga/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/" term="资源分享" label="资源分享" />
+                                
+                           
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category scheme="https://gbwater.ga/tags/%E7%A0%B4%E8%A7%A3/" term="破解" label="破解" />
+                                
+                           
+                                
+                                
+                                
+                                    <category scheme="https://gbwater.ga/tags/%E4%B8%8B%E8%BD%BD/" term="下载" label="下载" />
+                                
+                           
+                        
+                    
+                
+            </entry>
+        
+    
+        
+            
+            <entry>
+                <title type="text">主席树</title>
+                <link rel="alternate" type="text/html" href="https://gbwater.ga/posts/%E4%B8%BB%E5%B8%AD%E6%A0%91/" />
+                <id>https://gbwater.ga/posts/%E4%B8%BB%E5%B8%AD%E6%A0%91/</id>
+                <updated>2020-04-28T00:00:00+00:00</updated>
+                <published>2020-04-28T00:00:00+00:00</published><summary type="html"><![CDATA[%!s(<nil>)]]></summary>
+                
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category scheme="https://gbwater.ga/categories/oi/" term="OI" label="OI" />
+                                
+                           
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category scheme="https://gbwater.ga/tags/%E5%8C%BA%E9%97%B4%E7%AC%ACk%E5%B0%8F/" term="区间第k小" label="区间第k小" />
+                                
+                           
+                                
+                                
+                                
+                                    <category scheme="https://gbwater.ga/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" term="数据结构" label="数据结构" />
+                                
+                           
+                                
+                                
+                                
+                                    <category scheme="https://gbwater.ga/tags/c&#43;&#43;/" term="c&#43;&#43;" label="c&#43;&#43;" />
                                 
                            
                         
@@ -223,10 +485,98 @@
             
             <entry>
                 <title type="text">线段树</title>
-                <link rel="alternate" type="text/html" href="http://example.com/posts/%E7%BA%BF%E6%AE%B5%E6%A0%91/" />
-                <id>http://example.com/posts/%E7%BA%BF%E6%AE%B5%E6%A0%91/</id>
-                <updated>0001-01-01T00:00:00+00:00</updated>
-                <published>0001-01-01T00:00:00+00:00</published><summary type="html"><![CDATA[%!s(<nil>)]]></summary>
+                <link rel="alternate" type="text/html" href="https://gbwater.ga/posts/%E7%BA%BF%E6%AE%B5%E6%A0%91/" />
+                <id>https://gbwater.ga/posts/%E7%BA%BF%E6%AE%B5%E6%A0%91/</id>
+                <updated>2020-04-26T00:00:00+00:00</updated>
+                <published>2020-04-26T00:00:00+00:00</published><summary type="html"><![CDATA[%!s(<nil>)]]></summary>
+                
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category scheme="https://gbwater.ga/categories/oi/" term="OI" label="OI" />
+                                
+                           
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category scheme="https://gbwater.ga/tags/rmq/" term="RMQ" label="RMQ" />
+                                
+                           
+                                
+                                
+                                
+                                    <category scheme="https://gbwater.ga/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" term="数据结构" label="数据结构" />
+                                
+                           
+                                
+                                
+                                
+                                    <category scheme="https://gbwater.ga/tags/c&#43;&#43;/" term="c&#43;&#43;" label="c&#43;&#43;" />
+                                
+                           
+                        
+                    
+                
+            </entry>
+        
+    
+        
+            
+            <entry>
+                <title type="text">定时关机</title>
+                <link rel="alternate" type="text/html" href="https://gbwater.ga/posts/%E5%AE%9A%E6%97%B6%E5%85%B3%E6%9C%BA/" />
+                <id>https://gbwater.ga/posts/%E5%AE%9A%E6%97%B6%E5%85%B3%E6%9C%BA/</id>
+                <updated>2020-04-25T00:00:00+00:00</updated>
+                <published>2020-04-25T00:00:00+00:00</published><summary type="html"><![CDATA[%!s(<nil>)]]></summary>
+                
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category scheme="https://gbwater.ga/categories/%E5%B7%A5%E5%85%B7/" term="工具" label="工具" />
+                                
+                           
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category scheme="https://gbwater.ga/tags/%E7%94%B5%E6%95%99%E5%B9%B3%E5%8F%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%E9%9B%86/" term="电教平台自动化管理工具集" label="电教平台自动化管理工具集" />
+                                
+                           
+                        
+                    
+                
+            </entry>
+        
+    
+        
+            
+            <entry>
+                <title type="text">文件自动保存</title>
+                <link rel="alternate" type="text/html" href="https://gbwater.ga/posts/%E6%96%87%E4%BB%B6%E8%87%AA%E5%8A%A8%E4%BF%9D%E5%AD%98/" />
+                <id>https://gbwater.ga/posts/%E6%96%87%E4%BB%B6%E8%87%AA%E5%8A%A8%E4%BF%9D%E5%AD%98/</id>
+                <updated>2020-04-25T00:00:00+00:00</updated>
+                <published>2020-04-25T00:00:00+00:00</published><summary type="html"><![CDATA[%!s(<nil>)]]></summary>
                 
                 
                 
@@ -240,19 +590,57 @@
                                 
                                 
                                 
-                                    <category scheme="http://example.com/tags/rmq/" term="RMQ" label="RMQ" />
+                                    <category scheme="https://gbwater.ga/tags/%E7%94%B5%E6%95%99%E5%B9%B3%E5%8F%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%E9%9B%86/" term="电教平台自动化管理工具集" label="电教平台自动化管理工具集" />
+                                
+                           
+                        
+                    
+                
+            </entry>
+        
+    
+        
+            
+            <entry>
+                <title type="text">wine软件包及mono和gecko</title>
+                <link rel="alternate" type="text/html" href="https://gbwater.ga/posts/wine&#43;gecko&#43;mono/" />
+                <id>https://gbwater.ga/posts/wine&#43;gecko&#43;mono/</id>
+                <updated>2020-04-24T00:00:00+00:00</updated>
+                <published>2020-04-24T00:00:00+00:00</published><summary type="html"><![CDATA[%!s(<nil>)]]></summary>
+                
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category scheme="https://gbwater.ga/categories/linux/" term="linux" label="linux" />
+                                
+                           
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category scheme="https://gbwater.ga/tags/wine/" term="wine" label="wine" />
                                 
                            
                                 
                                 
                                 
-                                    <category scheme="http://example.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" term="数据结构" label="数据结构" />
+                                    <category scheme="https://gbwater.ga/tags/deepin/" term="deepin" label="deepin" />
                                 
                            
                                 
                                 
                                 
-                                    <category scheme="http://example.com/tags/c&#43;&#43;/" term="c&#43;&#43;" label="c&#43;&#43;" />
+                                    <category scheme="https://gbwater.ga/tags/debian/" term="debian" label="debian" />
                                 
                            
                         
