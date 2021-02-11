@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>deepin on GBwater&#39;s blog</title>
-    <link>https://gbwater.ga/tags/deepin/</link>
-    <description>Recent content in deepin on GBwater&#39;s blog</description>
+    <title>deepin入坑指南 on GBwater&#39;s blog</title>
+    <link>https://gbwater.ga/tags/deepin%E5%85%A5%E5%9D%91%E6%8C%87%E5%8D%97/</link>
+    <description>Recent content in deepin入坑指南 on GBwater&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 11 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://gbwater.ga/tags/deepin/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 11 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://gbwater.ga/tags/deepin%E5%85%A5%E5%9D%91%E6%8C%87%E5%8D%97/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>deepin20编译安装dde-top-panel</title>
       <link>https://gbwater.ga/p/deepin20%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85dde-top-panel/</link>
@@ -23,15 +23,6 @@
       
       <guid>https://gbwater.ga/p/deepin%E5%85%A5%E5%9D%91%E6%8C%87%E5%8D%97%E5%89%8D%E8%A8%80%E7%AE%80%E4%BB%8B%E4%B8%8E%E8%AF%B4%E6%98%8E/</guid>
       <description>简要介绍linux相关知识及安装deepin前的一些注意事项</description>
-    </item>
-    
-    <item>
-      <title>wine软件包及mono和gecko</title>
-      <link>https://gbwater.ga/p/wine%E8%BD%AF%E4%BB%B6%E5%8C%85%E5%8F%8Amono%E5%92%8Cgecko/</link>
-      <pubDate>Fri, 24 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://gbwater.ga/p/wine%E8%BD%AF%E4%BB%B6%E5%8C%85%E5%8F%8Amono%E5%92%8Cgecko/</guid>
-      <description>由于wine官网访问贼慢,特此下载以供后人使用</description>
     </item>
     
   </channel>

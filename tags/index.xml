@@ -6,7 +6,25 @@
     <description>Recent content in Tags on GBwater&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 22 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://gbwater.ga/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 11 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://gbwater.ga/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>deepin</title>
+      <link>https://gbwater.ga/tags/deepin/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://gbwater.ga/tags/deepin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>deepin入坑指南</title>
+      <link>https://gbwater.ga/tags/deepin%E5%85%A5%E5%9D%91%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://gbwater.ga/tags/deepin%E5%85%A5%E5%9D%91%E6%8C%87%E5%8D%97/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>CSP</title>
       <link>https://gbwater.ga/tags/csp/</link>
@@ -148,15 +166,6 @@
       <pubDate>Fri, 24 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://gbwater.ga/tags/debian/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>deepin</title>
-      <link>https://gbwater.ga/tags/deepin/</link>
-      <pubDate>Fri, 24 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://gbwater.ga/tags/deepin/</guid>
       <description></description>
     </item>
     

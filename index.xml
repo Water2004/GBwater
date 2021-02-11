@@ -6,7 +6,315 @@
         <description>Recent content on GBwater&#39;s blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sun, 22 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://gbwater.ga/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 11 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://gbwater.ga/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>deepin20编译安装dde-top-panel</title>
+        <link>https://gbwater.ga/p/deepin20%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85dde-top-panel/</link>
+        <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://gbwater.ga/p/deepin20%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85dde-top-panel/</guid>
+        <description>&lt;img src="https://s3.ax1x.com/2021/01/31/yA4cJs.jpg" alt="Featured image of post deepin20编译安装dde-top-panel" /&gt;&lt;h1 id=&#34;deepin20编译安装dde-top-panel&#34;&gt;deepin20编译安装dde-top-panel&lt;/h1&gt;
+&lt;h2 id=&#34;依赖&#34;&gt;依赖&lt;/h2&gt;
+&lt;p&gt;libqt5widgets5 libqt5concurrent5 libqt5x11extras5-dev libqt5svg5-dev libdtkwidget-dev libkf5windowsystem-dev libdframeworkdbus-dev libdtkgui-dev cmake libdtkcore-bin  g++ libxdo-dev libdtkcore5-bin libxcb-ewmh-dev libgsettings-qt-dev qt5-default&lt;/p&gt;
+&lt;h2 id=&#34;下载文件&#34;&gt;下载文件&lt;/h2&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/SeptemberHX/dde-top-panel&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;下载dde-top-panel的源代码和release&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/SeptemberHX/dde-globalmenu-service.git&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;下载全局菜单的release&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;编译&#34;&gt;编译&lt;/h2&gt;
+&lt;p&gt;顶栏高度的配置在/dde-top-panel-master/frame/util/CustomSettings.cpp的25行&lt;/p&gt;
+&lt;p&gt;进入dde-top-panel目录，执行：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;mkdir build
+&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; build
+cmake ..
+make
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;注意，源码的路径里不能有中文！&lt;/p&gt;
+&lt;p&gt;编译出的文件会在：build/frame/dde-top-panel&lt;/p&gt;
+&lt;h2 id=&#34;安装dde-top-panel&#34;&gt;安装dde-top-panel&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;将com.deepin.dde.toppanel.gschema.xml 复制到/usr/share/glib-2.0/schemas&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;执行&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo glib-compile-schemas /usr/share/glib-2.0/schemas
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;赋予dde-top-panel可执行权限：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;chmod +x dde-top-panel
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;将dde-top-panel复制到你喜欢的目录（比如/opt），记下路径&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;新建一个文本文档，输入以下内容：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[Desktop Entry]
+Comment=DDE Top Panel
+Exec=/opt/dde-top-panel
+Hidden=false
+Name=dde-top-panel
+Type=Application
+X-Deepin-Vendor=user-custom
+X-GNOME-Autostart-enabled=true&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;其中的“Exec=”后面的内容替换为dde-top-panel可执行文件的路径，要写完整路径！&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;将这个文件的扩展名由.txt改为.desktop&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;将这个文件复制到~/.config/autostart&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;注销或重启或者直接双击运行&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;启用全局菜单&#34;&gt;启用全局菜单&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;赋予dde-globalmenu-service可执行权限&lt;/li&gt;
+&lt;li&gt;复制 dde-globalmenu-service 到 /usr/bin&lt;/li&gt;
+&lt;li&gt;复制 dde-globalmenu-service.desktop 到 ~/.config/autostart&lt;/li&gt;
+&lt;li&gt;修改文件 ~/.gtkrc-2.0 ，添加 gtk-modules=appmenu-gtk-module&lt;/li&gt;
+&lt;li&gt;修改文件 ～/.config/gtk-3.0/settings.ini ，[Settings] 条目下 添加 gtk-modules=appmenu-gtk-module&lt;/li&gt;
+&lt;li&gt;apt 安装 appmenu-qt appmenu-gtk2-module appmenu-gtk3-module  libdbusmenu-gtk3-4  libdbusmenu-gtk4 libdbusmenu-qt5-2&lt;/li&gt;
+&lt;li&gt;注销或重启&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;去除最大化窗口时的标题栏&#34;&gt;去除最大化窗口时的标题栏&lt;/h2&gt;
+&lt;p&gt;在 ~/.config/kwinrc 添加配置：
+[Windows]
+BorderlessMaximizedWindows=true
+然后重新登录&lt;/p&gt;
+&lt;h2 id=&#34;插件&#34;&gt;插件&lt;/h2&gt;
+&lt;p&gt;将插件复制到 ~/.local/lib/dde-top-panel/plugins 下&lt;/p&gt;
+&lt;h3 id=&#34;de-istate-menus&#34;&gt;de-istate-menus&lt;/h3&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/SeptemberHX/dde-istate-menus&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;下载release&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;3.0版本只兼容部分英特尔cpu，如果崩溃，请使用2.0版本&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;需要安装新依赖：libsensors5
+确保执行过 sensors-detect，且 sensors 有输出。
+需要重新设置权限
+功耗只支持部分 Intel CPU，由于Linux上没有获取功耗的统一接口，导致该部分功能直接和硬件挂钩，很容易不兼容然后导致 top-panel 闪退。如有问题，请暂时使用 0.2 版本&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;安装依赖&#34;&gt;安装依赖&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo apt install libqt5charts5
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;给予权限&#34;&gt;给予权限&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo setcap cap_net_raw,cap_dac_read_search,cap_sys_ptrace+ep &amp;lt;dde-top-panel的路径&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;安装&#34;&gt;安装&lt;/h4&gt;
+&lt;p&gt;将插件复制到~/.local/lib/dde-top-panel/plugins即可&lt;/p&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;参考资料&lt;/h2&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://bbs.deepin.org/zh/post/195128&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;septemberhx:dde-top-panel&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://bbs.deepin.org/zh/post/195858&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;septemberhx:dde-istate-menus&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/SeptemberHX/dde-top-panel&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;github:dde-top-panel&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>deepin入坑指南(前言)——简介与说明</title>
+        <link>https://gbwater.ga/p/deepin%E5%85%A5%E5%9D%91%E6%8C%87%E5%8D%97%E5%89%8D%E8%A8%80%E7%AE%80%E4%BB%8B%E4%B8%8E%E8%AF%B4%E6%98%8E/</link>
+        <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://gbwater.ga/p/deepin%E5%85%A5%E5%9D%91%E6%8C%87%E5%8D%97%E5%89%8D%E8%A8%80%E7%AE%80%E4%BB%8B%E4%B8%8E%E8%AF%B4%E6%98%8E/</guid>
+        <description>&lt;img src="https://s3.ax1x.com/2021/01/31/yA4cJs.jpg" alt="Featured image of post deepin入坑指南(前言)——简介与说明" /&gt;&lt;h1 id=&#34;deepin入坑指南前言简介与说明&#34;&gt;deepin入坑指南(前言)——简介与说明&lt;/h1&gt;
+&lt;h2 id=&#34;什么是deepin&#34;&gt;什么是deepin？&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;deepin&lt;/strong&gt;（原名：&lt;strong&gt;Linux Deepin&lt;/strong&gt;；中文通称：&lt;strong&gt;深度操作系统&lt;/strong&gt;）是由&lt;a class=&#34;link&#34; href=&#34;https://baike.baidu.com/item/%e6%ad%a6%e6%b1%89%e6%b7%b1%e4%b9%8b%e5%ba%a6%e7%a7%91%e6%8a%80%e6%9c%89%e9%99%90%e5%85%ac%e5%8f%b8/19984704&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;武汉深之度科技有限公司&lt;/a&gt;在&lt;a class=&#34;link&#34; href=&#34;https://baike.baidu.com/item/Debian/748667&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Debian&lt;/a&gt;基础上开发的&lt;a class=&#34;link&#34; href=&#34;https://baike.baidu.com/item/Linux/27050&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Linux&lt;/a&gt;操作系统，其前身是Hiweed Linux操作系统，于2004年2月28日开始对外发行，可以安装在个人计算机和服务器中&lt;/p&gt;
+&lt;p&gt;​																									——来自百度百科&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;提到deepin，你是不是想到了这个：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.deepinghost.com/templets/skin/images/t2.jpg&#34; alt=&#34;&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;事实上，深度（即deepin）以前和雨林木风、番茄花园一样，是做盗版系统的。但是，深度的盗版Windows的最后一版是XP V9.0。自2009年，HiweedLinux改名deepin，自此，Deepin的历史开始了。&lt;/p&gt;
+&lt;p&gt;这就是我的Deepin桌面：&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgchr.com/i/yAhzPs&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;img src=&#34;https://s3.ax1x.com/2021/01/31/yAhzPs.png&#34; alt=&#34;yAhzPs.png&#34;  /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;安装deepin之前&#34;&gt;安装Deepin之前&lt;/h2&gt;
+&lt;p&gt;在安装Deepin之前，首先要明确，Deepin不是Windows。请务必了解以下内容：&lt;/p&gt;
+&lt;h3 id=&#34;deepin和windows有什么不同&#34;&gt;Deepin和Windows有什么不同&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Deepin的软件包格式为.deb和.AppImage，exe程序在Deepin下&lt;strong&gt;不一定&lt;/strong&gt;能完美运行&lt;/li&gt;
+&lt;li&gt;Deepin中占用的文件可以直接删除，而Windows不能&lt;/li&gt;
+&lt;li&gt;Deepin的权限较Windows更高，随意使用有破坏系统的风险&lt;/li&gt;
+&lt;li&gt;Deepin的文件系统为ext4，Windows不能访问，Deepin可以访问NTFS，但稍微缓慢&lt;/li&gt;
+&lt;li&gt;Deepin自定义可以更加彻底，使用更自由&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;deepin能做什么&#34;&gt;Deepin能做什么&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;QQ、微信（使用deepin-wine运行的Windows程序）&lt;/li&gt;
+&lt;li&gt;轻度的视频剪辑&lt;/li&gt;
+&lt;li&gt;主流的音乐播放（网易云音乐，QQ音乐）&lt;/li&gt;
+&lt;li&gt;轻度的游戏（Steam、HMCL启动的MC，但很多游戏没有Linux版本）&lt;/li&gt;
+&lt;li&gt;下载器（迅雷等）&lt;/li&gt;
+&lt;li&gt;网盘（百度网盘等）&lt;/li&gt;
+&lt;li&gt;基本的CAD软件&lt;/li&gt;
+&lt;li&gt;其他基本需求（浏览器、播放器、开发工具等）&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;谁适合使用&#34;&gt;谁适合使用&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Deepin下日常办公完全适合&lt;/li&gt;
+&lt;li&gt;银行系统大多只能用IE浏览器，无法在Deepin上安装&lt;/li&gt;
+&lt;li&gt;重度游戏爱好者建议上游戏官网查看有没有Linux版本后决定&lt;/li&gt;
+&lt;li&gt;CAD软件不是特别完善&lt;/li&gt;
+&lt;li&gt;对只有Windows版本的软件重度依赖的人不建议使用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;需要做好的准备&#34;&gt;需要做好的准备&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;备份好重要文件&lt;/li&gt;
+&lt;li&gt;请不要把Windows下的习惯带到Deepin，尝试适应它&lt;/li&gt;
+&lt;li&gt;一个&lt;a class=&#34;link&#34; href=&#34;https://bbs.deepin.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Deepin论坛&lt;/a&gt;帐号，遇到问题时发帖求助&lt;/li&gt;
+&lt;li&gt;下载&lt;a class=&#34;link&#34; href=&#34;https://www.deepin.org/zh/download/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Deepin系统镜像&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;一只8G以上的U盘（用于系统安装）&lt;/li&gt;
+&lt;li&gt;看完这篇文章（皮）&lt;/li&gt;
+&lt;li&gt;一个准备应对困难的好心情&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;linux基本知识简介&#34;&gt;Linux基本知识简介&lt;/h2&gt;
+&lt;p&gt;在这个部分，你将学到基本的Linux知识，能更快的适应Deepin，要坚持看完哦~&lt;/p&gt;
+&lt;h3 id=&#34;文件目录&#34;&gt;文件目录&lt;/h3&gt;
+&lt;p&gt;目录就是文件夹（省了一个字，嘿嘿）。目录的表示方法是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;以/开头&lt;/li&gt;
+&lt;li&gt;两层文件夹之间用/隔开&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;/home/gbwater/Desktop/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;表示的就是home里的gbwater文件夹里的Desktop文件夹，即桌面。这一串东西叫路径。这和Windows很相似。&lt;/p&gt;
+&lt;h4 id=&#34;根目录&#34;&gt;根目录&lt;/h4&gt;
+&lt;p&gt;不同于Windows，Deepin没有盘符，更没有C盘。请不要因此抱怨，这更加科学和便利。&lt;/p&gt;
+&lt;p&gt;Deepin的系统存放在根目录（/），下图的“系统盘”指的就是根目录&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgchr.com/i/yABzCD&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;img src=&#34;https://s3.ax1x.com/2021/01/31/yABzCD.png&#34; alt=&#34;yABzCD.png&#34;  /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;所有的其他主要目录（home、opt、usr等，将在下文介绍）都挂载（类似Windows下的快捷方式）在根目录。所以选择文件夹时找不到这些文件夹，那就去根目录里找。虽然你有权限，但不要轻易修改里面的内容，容易使系统崩溃。&lt;/p&gt;
+&lt;p&gt;进入根目录有两种方式，一是在文件管理器中双击进入，而是在终端下使用命令（详情请见后文的终端部分）：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;home&#34;&gt;/home&lt;/h4&gt;
+&lt;p&gt;/home目录就是文件管理器侧边栏的“主目录”，是储存用户文件的目录。“桌面”、“文档”、“下载”等文件夹都存在这个目录，如图所示:&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgchr.com/i/yADoIf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;img src=&#34;https://s3.ax1x.com/2021/01/31/yADoIf.png&#34; alt=&#34;yADoIf.png&#34;  /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;但千万不要认为这里面只有用户文件，许多重要的配置文件也储存在这里。要查看或修改这些文件，需要临时显示隐藏文件，快捷键：&lt;!-- raw HTML omitted --&gt;ctrl&lt;!-- raw HTML omitted --&gt;+&lt;!-- raw HTML omitted --&gt;H&lt;!-- raw HTML omitted --&gt;，再次进入时会默认隐藏。&lt;/p&gt;
+&lt;p&gt;要在终端进入/home，输入命令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ~/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;opt&#34;&gt;/opt&lt;/h4&gt;
+&lt;p&gt;/opt是存放软件的目录。按照Deepin的规范，所有在应用商店里安装的软件都会存放到/opt/apps下一个以软件包（将在下文介绍）名称命名的文件夹下。这很类似Windows中C盘下的“programme files”文件夹。如果不是在应用商店里安装的，一般默认直接安装到/opt。如图所示：&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgchr.com/i/yAydMQ&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;img src=&#34;https://s3.ax1x.com/2021/01/31/yAydMQ.png&#34; alt=&#34;yAydMQ.png&#34;  /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;media&#34;&gt;/media&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;linux 系统会自动识别一些设备，例如U盘、光驱等等，当识别后，Linux 会把识别的设备挂载到这个目录下。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;比如我的用户名是gbwater，那么新插入的U盘就在/media/gbwater下能找到。当然，要访问U盘等设备直接一打开文件管理器就能看到了。&lt;/p&gt;
+&lt;h4 id=&#34;usr&#34;&gt;/usr&lt;/h4&gt;
+&lt;p&gt;usr 是 unix shared resources(共享资源) 的缩写，这是一个非常重要的目录，用户的很多应用程序和文件都放在这个目录下，类似于 windows 下的 program files 目录。&lt;/p&gt;
+&lt;h4 id=&#34;小结&#34;&gt;小结&lt;/h4&gt;
+&lt;p&gt;Linux下的系统目录还有很多，这里介绍的都是比较常用的。所有这些目录都挂载在根目录下面。建议安装系统的时候将一些重要的目录单独分区，而不是让它们默认地储存到根目录。这样，重装系统时只要选择挂载它们，数据什么的都不会丢。这是Linux区别于Windows的一大特点。&lt;/p&gt;
+&lt;h3 id=&#34;软件包简介&#34;&gt;软件包简介&lt;/h3&gt;
+&lt;p&gt;软件包就是软件。Deepin中软件的安装包一般是.deb格式。&lt;/p&gt;
+&lt;h4 id=&#34;依赖关系&#34;&gt;依赖关系&lt;/h4&gt;
+&lt;p&gt;软件包之间可以有依赖关系。所谓依赖关系，就是安装的顺序。如A依赖B，那么安装A时一定要先安装B，卸载B时也会一起卸载A&lt;/p&gt;
+&lt;h3 id=&#34;基本的命令行操作&#34;&gt;基本的命令行操作&lt;/h3&gt;
+&lt;p&gt;很多人谈命令行色变，认为命令行是程序员的玩物。其实并不是，命令行是操作的一种方式，有时候比在图形界面用鼠标点更方便快捷，还能完成一些图形界面不能实现的操作。&lt;/p&gt;
+&lt;p&gt;运行命令需要终端，如图所示：&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgchr.com/i/yAcuBd&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;img src=&#34;https://s3.ax1x.com/2021/01/31/yAcuBd.png&#34; alt=&#34;yAcuBd.png&#34;  /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;运行命令时，在里面输入命令，然后按回车键即可&lt;/p&gt;
+&lt;h4 id=&#34;深度终端使用简介&#34;&gt;深度终端使用简介&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;用鼠标按住并拖动选择内容&lt;/li&gt;
+&lt;li&gt;复制文字快捷键&lt;!-- raw HTML omitted --&gt;ctrl&lt;!-- raw HTML omitted --&gt;+&lt;!-- raw HTML omitted --&gt;shift&lt;!-- raw HTML omitted --&gt;+&lt;!-- raw HTML omitted --&gt;C&lt;!-- raw HTML omitted --&gt;&lt;/li&gt;
+&lt;li&gt;i粘贴文字快捷键&lt;!-- raw HTML omitted --&gt;ctrl&lt;!-- raw HTML omitted --&gt;+&lt;!-- raw HTML omitted --&gt;shift&lt;!-- raw HTML omitted --&gt;+&lt;!-- raw HTML omitted --&gt;V&lt;!-- raw HTML omitted --&gt;&lt;/li&gt;
+&lt;li&gt;终止当前程序运行快捷键&lt;!-- raw HTML omitted --&gt;ctrl&lt;!-- raw HTML omitted --&gt;+&lt;!-- raw HTML omitted --&gt;C&lt;!-- raw HTML omitted --&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;当然，你也可以选中内容然后在要插入的地方单击鼠标中键将其插入&lt;/p&gt;
+&lt;h4 id=&#34;什么是命令&#34;&gt;什么是命令&lt;/h4&gt;
+&lt;p&gt;一个命令其实就是一个软件，存放在/bin目录下。&lt;/p&gt;
+&lt;p&gt;有的命令不用参数，有的命令需要参数。参数就是告诉这个命令要它做什么。参数直接跟在命令后面。&lt;/p&gt;
+&lt;p&gt;参数的形式不是固定的，下面将简单介绍一些常用的命令。&lt;/p&gt;
+&lt;h4 id=&#34;权限获取&#34;&gt;权限获取&lt;/h4&gt;
+&lt;p&gt;Linux下root的权限是系统的最高权限，可以进行任意操作（甚至删掉整个系统！）。&lt;/p&gt;
+&lt;p&gt;一些操作比如修改系统文件，安装软件之类的操作需要root权限。&lt;/p&gt;
+&lt;p&gt;要临时用root权限执行命令，在命令前加上“sudo”，回车后输入密码。注意在终端输入密码是不会显示你输入了什么的。输入完成后再回车即可。在同一个终端窗口中第二次使用sudo是不用输入密码的。&lt;/p&gt;
+&lt;p&gt;例如，要临时用root权限安装软件，输入：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo apt install &amp;lt;软件包名称&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;下文都会使用&amp;quot;&amp;lt;&amp;gt;&amp;ldquo;表示需要替换的内容&lt;/p&gt;
+&lt;p&gt;要在当前终端窗口中启用root，输入命令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;su
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;回车后输入密码即可。&lt;/p&gt;
+&lt;p&gt;要退出root，输入命令:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;文件目录操作&#34;&gt;文件、目录操作&lt;/h4&gt;
+&lt;p&gt;还没有输入命令时，光标前面有一行字，比如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;gbwater@gbwater-PC:~/Desktop$
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;此处gbwater指的是当前窗口中登录的用户名，用su命令进入root后会显示：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;root@gbwater-PC:/home/gbwater/Desktop#
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;冒号后面到$或#前面是当前所处的目录位置，如当前就处于~/Desktop下&lt;/p&gt;
+&lt;p&gt;要进入当前目录里的一个文件夹，输入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; &amp;lt;文件夹名称&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;要返回上一目录，输入：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ..
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&amp;ldquo;..&amp;ldquo;其实是一个文件夹，进入它就是进入上一目录&lt;/p&gt;
+&lt;p&gt;要查看当前目录下有什么文件（夹），输入：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;ls
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这条命令默认不显示隐藏文件（夹），要连带隐藏文件（夹）一起查看，输入：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;ls -a
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果嫌文件或者文件夹名字太长，可以按&lt;!-- raw HTML omitted --&gt;tap&lt;!-- raw HTML omitted --&gt;让终端帮你自动补全。&lt;/p&gt;
+&lt;p&gt;cd命令也可以进入不在当前文件夹的目录，输入;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; &amp;lt;目录的路径&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果路径中含有空格，需要将路径用单引号括起来。当然，你也可以直接在文件管理器里将那个文件(夹)拖到终端里。&lt;/p&gt;
+&lt;p&gt;新建文件夹，输入：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;mkdir &amp;lt;文件夹名称&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;删除文件，输入：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;rm &amp;lt;文件路径&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果要删除的文件位于当前目录，可以直接输入文件名称&lt;/p&gt;
+&lt;p&gt;注意在终端中删除的文件不能在回收站中恢复！&lt;/p&gt;
+&lt;p&gt;删除文件夹，输入：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;rm -r &amp;lt;文件夹路径&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果要删除的文件夹位于当前目录，可以直接输入文件夹名称&lt;/p&gt;
+&lt;p&gt;不想看到确认删除的提示，加上-f：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;rm -rf &amp;lt;要删的东西&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;复制文件：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;cp &amp;lt;要复制的东西&amp;gt; &amp;lt;复制去的目录&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;注意复制去的目录后面要加上斜杠（/）&lt;/p&gt;
+&lt;p&gt;移动文件：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;mv &amp;lt;要移动的东西&amp;gt; &amp;lt;移动去的目录&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;注意移动去的目录后面要加上斜杠（/）&lt;/p&gt;
+&lt;p&gt;重命名文件（夹）：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;mv &amp;lt;原名&amp;gt; &amp;lt;新名称&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;注意如果重命名的是文件夹，后面不能加上斜杠（/）！&lt;/p&gt;
+&lt;h4 id=&#34;软件包操作&#34;&gt;软件包操作&lt;/h4&gt;
+&lt;p&gt;在线安装软件包&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo apt install &amp;lt;软件包名称&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;安装下载的软件包（自动处理依赖关系）&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo apt install &amp;lt;软件包文件的路径&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;安装下载的软件包（不自动处理依赖关系）&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo dpkg -i &amp;lt;软件包文件的路径&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;自动修复依赖关系&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo apt install -f
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在线搜索软件包&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;apt search &amp;lt;软件包名称&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;下载软件包&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;apt download &amp;lt;软件包名称&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;删除软件包(保留其配置文件)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo apt remove &amp;lt;软件包名称&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;删除软件包(删除其配置文件)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo apt purge &amp;lt;软件包名称&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;当然，以上操作可以通过deepin软件包管理器及起动器的右键菜单以图形界面的方式完成。&lt;/p&gt;
+&lt;h2 id=&#34;尾声&#34;&gt;尾声&lt;/h2&gt;
+&lt;p&gt;相信看完了以上内容，你对Deepin和Linux的了解更深入了。在实体机安装之前，不如先用虚拟机体验一下。欢迎使用！&lt;/p&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;参考资料&lt;/h2&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1aX4y1N7F3&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Deepin入门指南系列（一）：你好 deepin&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.runoob.com/linux/linux-system-contents.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Linux 系统目录结构&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>csp2020小结</title>
         <link>https://gbwater.ga/p/csp2020%E5%B0%8F%E7%BB%93/</link>
         <pubDate>Sun, 22 Nov 2020 00:00:00 +0000</pubDate>
