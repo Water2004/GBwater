@@ -315,7 +315,28 @@
 <p>本来以为它要考很多dp，考前特地去练了很多，结果最后还是没有做出来QAQ</p>
 <p>由于csp2019考了很多树，我还特意去学了树剖，结果一个都没考QAQ</p>
 <p>不过，考前特地看了<del>最快的</del>快读。这次数据量这么大，总算有用了一次</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span><span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span><span class="cpf">&lt;cstdio&gt;</span><span class="cp">
 </span><span class="cp">#define ll long long
 </span><span class="cp"></span><span class="n">ll</span> <span class="nf">read</span><span class="p">()</span>
 <span class="p">{</span>
@@ -332,10 +353,20 @@
 	<span class="p">}</span>
 	<span class="k">return</span> <span class="n">num</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div><p>还有，不要用cin！不要用cin！即便加了网传的奇淫技巧：</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">ios</span><span class="o">::</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>还有，不要用cin！不要用cin！即便加了网传的奇淫技巧：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">ios</span><span class="o">::</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 <span class="n">cin</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-</code></pre></div><p>也没用！</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>也没用！</p>
 <p>活生生的教训仍历历在目：</p>
 <p>用scanf的：</p>
 <p><a class="link" href="https://imgchr.com/i/DQjV76"  target="_blank" rel="noopener"
@@ -348,7 +379,30 @@
 <p>这道题一看似曾相识，于是上来先推公式，无果，于是想想其他做法</p>
 <p>想了半天想不出来，于是暴力模拟！一天一天的往初始日期累加</p>
 <p>写了一个用来计算指定月份天数的函数，也就是判断闰年，然后返回</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">DayInMon</span><span class="p">(</span><span class="kt">int</span> <span class="n">y</span><span class="p">,</span><span class="kt">int</span> <span class="n">m</span><span class="p">)</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">DayInMon</span><span class="p">(</span><span class="kt">int</span> <span class="n">y</span><span class="p">,</span><span class="kt">int</span> <span class="n">m</span><span class="p">)</span>
 <span class="p">{</span>
 	<span class="kt">bool</span> <span class="n">r_year</span><span class="o">=</span><span class="nb">false</span><span class="p">;</span>
 	<span class="k">if</span><span class="p">(</span><span class="n">y</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span>
@@ -367,8 +421,36 @@
 	<span class="k">if</span><span class="p">(</span><span class="n">m</span><span class="o">&lt;=</span><span class="mi">7</span><span class="p">)</span> <span class="k">return</span> <span class="n">m</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="o">?</span> <span class="mi">30</span><span class="o">:</span><span class="mi">31</span><span class="p">;</span>
 	<span class="k">else</span> <span class="k">return</span> <span class="n">m</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="o">?</span> <span class="mi">31</span><span class="o">:</span><span class="mi">30</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div><p>然后又写了一个日期加一的函数，就是如果天数到头月+1，年份到头年+1。然后特判年份为-1时下一年为1：</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">add</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>然后又写了一个日期加一的函数，就是如果天数到头月+1，年份到头年+1。然后特判年份为-1时下一年为1：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">add</span><span class="p">()</span>
 <span class="p">{</span>
 	<span class="k">if</span><span class="p">(</span><span class="n">day</span><span class="o">&lt;</span><span class="n">DayInMon</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="n">month</span><span class="p">))</span>
 	<span class="p">{</span>
@@ -390,7 +472,9 @@
 		<span class="p">}</span>
 	<span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div><p>但是看到数据范围，O(Qr)的复杂度肯定爆啊</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>但是看到数据范围，O(Qr)的复杂度肯定爆啊</p>
 <p>于是想着优化</p>
 <p>优化1：既然一天一天加慢，那我一个月一个月加不就好了？</p>
 <p>然而，由于要考虑的特殊情况太多，像什么闰不闰年，哪天被删了之类的，头疼。。。。。。</p>
@@ -401,7 +485,131 @@
 <p>打完心里美滋滋，想着80分稳了<del>分不在多，及格就行</del>~</p>
 <p>完整代码如下：</p>
 <p><del>一个模拟打这么多行我也是醉了</del></p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span><span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span><span class="cpf">&lt;cstdio&gt;</span><span class="cp">
 </span><span class="cp">#include</span><span class="cpf">&lt;algorithm&gt;</span><span class="cp">
 </span><span class="cp">#define ll long long
 </span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
@@ -521,41 +729,102 @@
 <span class="n">fclose</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>
 <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div><p>等到出成绩，我人都傻了，好家伙，爆零！</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>等到出成绩，我人都傻了，好家伙，爆零！</p>
 <p>回来交了洛谷，才发现犯了3个致命的错误</p>
 <p>注意第101行：</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp">		<span class="k">while</span><span class="p">(</span><span class="n">da</span><span class="o">==</span><span class="n">q</span><span class="p">[</span><span class="n">cnt</span><span class="p">].</span><span class="n">date</span><span class="p">)</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp">		<span class="k">while</span><span class="p">(</span><span class="n">da</span><span class="o">==</span><span class="n">q</span><span class="p">[</span><span class="n">cnt</span><span class="p">].</span><span class="n">date</span><span class="p">)</span>
 		<span class="p">{</span>
 			<span class="n">Ayear</span><span class="p">[</span><span class="n">q</span><span class="p">[</span><span class="n">cnt</span><span class="p">].</span><span class="n">rnk</span><span class="p">]</span><span class="o">=</span><span class="n">year</span><span class="p">;</span>
 			<span class="n">Amonth</span><span class="p">[</span><span class="n">q</span><span class="p">[</span><span class="n">cnt</span><span class="p">].</span><span class="n">rnk</span><span class="p">]</span><span class="o">=</span><span class="n">month</span><span class="p">;</span>
 			<span class="n">Aday</span><span class="p">[</span><span class="n">q</span><span class="p">[</span><span class="n">cnt</span><span class="p">].</span><span class="n">rnk</span><span class="p">]</span><span class="o">=</span><span class="n">day</span><span class="p">;</span>
 			<span class="n">cnt</span><span class="o">++</span><span class="p">;</span>
 		<span class="p">}</span>
-</code></pre></div><p>这里我之前写的是：</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp">		<span class="k">if</span><span class="p">(</span><span class="n">da</span><span class="o">==</span><span class="n">q</span><span class="p">[</span><span class="n">cnt</span><span class="p">].</span><span class="n">date</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这里我之前写的是：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp">		<span class="k">if</span><span class="p">(</span><span class="n">da</span><span class="o">==</span><span class="n">q</span><span class="p">[</span><span class="n">cnt</span><span class="p">].</span><span class="n">date</span><span class="p">)</span>
 		<span class="p">{</span>
 			<span class="n">Ayear</span><span class="p">[</span><span class="n">q</span><span class="p">[</span><span class="n">cnt</span><span class="p">].</span><span class="n">rnk</span><span class="p">]</span><span class="o">=</span><span class="n">year</span><span class="p">;</span>
 			<span class="n">Amonth</span><span class="p">[</span><span class="n">q</span><span class="p">[</span><span class="n">cnt</span><span class="p">].</span><span class="n">rnk</span><span class="p">]</span><span class="o">=</span><span class="n">month</span><span class="p">;</span>
 			<span class="n">Aday</span><span class="p">[</span><span class="n">q</span><span class="p">[</span><span class="n">cnt</span><span class="p">].</span><span class="n">rnk</span><span class="p">]</span><span class="o">=</span><span class="n">day</span><span class="p">;</span>
 			<span class="n">cnt</span><span class="o">++</span><span class="p">;</span>
 		<span class="p">}</span>
-</code></pre></div><p>当有询问是重复的时候就会引起错误！</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>当有询问是重复的时候就会引起错误！</p>
 <p>幸好我最后检查的时候把它改过来了。</p>
 <p>但是！注意第85行：</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">sort</span><span class="p">(</span><span class="n">q</span><span class="p">,</span><span class="n">q</span><span class="o">+</span><span class="n">T</span><span class="p">,</span><span class="n">cmp</span><span class="p">);</span>
-</code></pre></div><p>明明应该是下面这个好不好！</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">sort</span><span class="p">(</span><span class="n">q</span><span class="p">,</span><span class="n">q</span><span class="o">+</span><span class="n">T</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">cmp</span><span class="p">);</span>
-</code></pre></div><p>这是个遗留问题，因为我之前的输入写的是：</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp">	<span class="k">for</span><span class="p">(</span><span class="n">ll</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">T</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">sort</span><span class="p">(</span><span class="n">q</span><span class="p">,</span><span class="n">q</span><span class="o">+</span><span class="n">T</span><span class="p">,</span><span class="n">cmp</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>明明应该是下面这个好不好！</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">sort</span><span class="p">(</span><span class="n">q</span><span class="p">,</span><span class="n">q</span><span class="o">+</span><span class="n">T</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">cmp</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这是个遗留问题，因为我之前的输入写的是：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp">	<span class="k">for</span><span class="p">(</span><span class="n">ll</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">T</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
 	<span class="p">{</span>
 		<span class="n">q</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">date</span><span class="o">=</span><span class="n">read</span><span class="p">();</span>
 		<span class="n">q</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">rnk</span><span class="o">=</span><span class="n">i</span><span class="p">;</span>
 		<span class="k">if</span><span class="p">(</span><span class="n">maxon</span><span class="o">&lt;</span><span class="n">q</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">date</span><span class="p">)</span> <span class="n">maxon</span><span class="o">=</span><span class="n">q</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">date</span><span class="p">;</span>
 	<span class="p">}</span>
-</code></pre></div><p>但是我改了读入没改sort！于是。。。。。。爆零快乐QAQ</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>但是我改了读入没改sort！于是。。。。。。爆零快乐QAQ</p>
 <p>除此之外，注意第114行：</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">if</span><span class="p">(</span><span class="n">year</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span> <span class="n">printf</span><span class="p">(</span><span class="s">&#34; BC&#34;</span><span class="p">);</span>
-</code></pre></div><p>乍一看好像没问题，但是！我存年份明明用的是Ayear[i]啊。。。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">if</span><span class="p">(</span><span class="n">year</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span> <span class="n">printf</span><span class="p">(</span><span class="s">&#34; BC&#34;</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>乍一看好像没问题，但是！我存年份明明用的是Ayear[i]啊。。。</p>
 <p>这输出明显要么全部带BC，要么不带BC，这不爆零谁爆零？</p>
 <p>但是，这么明显我为什么没发现呢？看看样例：</p>
 <blockquote>
@@ -582,7 +851,32 @@
 </code></pre></blockquote>
 <p>好家伙，样例里要么都是带BC的，要么都是不带BC的！<del>CCF老坑批了。。。</del></p>
 <p>还有，注意我写的while循环：</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp">		<span class="k">while</span><span class="p">(</span><span class="n">lu</span><span class="p">)</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp">		<span class="k">while</span><span class="p">(</span><span class="n">lu</span><span class="p">)</span>
 		<span class="p">{</span>
 			<span class="n">da</span><span class="o">++</span><span class="p">;</span>
 			<span class="k">if</span><span class="p">(</span><span class="n">year</span><span class="o">==</span><span class="mi">1582</span><span class="o">&amp;&amp;</span><span class="n">month</span><span class="o">==</span><span class="mi">10</span><span class="o">&amp;&amp;</span><span class="n">day</span><span class="o">==</span><span class="mi">4</span><span class="p">)</span>
@@ -603,10 +897,143 @@
 			<span class="n">cnt</span><span class="o">++</span><span class="p">;</span>
 		<span class="p">}</span>
 		<span class="p">}</span>
-</code></pre></div><p>好家伙，我竟然没有意识到输入会有0！这样若遇到0，啥都不会输出！<del>真是快乐</del></p>
+</code></pre></td></tr></table>
+</div>
+</div><p>好家伙，我竟然没有意识到输入会有0！这样若遇到0，啥都不会输出！<del>真是快乐</del></p>
 <p><!-- raw HTML omitted -->80-&gt;0 ！<!-- raw HTML omitted --></p>
 <p>另附修正后的80分代码：<del>(什么？你说丑，那是dev太烂了QAQ)</del></p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span><span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span><span class="cpf">&lt;cstdio&gt;</span><span class="cp">
 </span><span class="cp">#include</span><span class="cpf">&lt;algorithm&gt;</span><span class="cp">
 </span><span class="cp">#define ll long long
 </span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
@@ -733,10 +1160,72 @@
 <span class="n">fclose</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>
 <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div><h3 id="t2动物园">T2动物园</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="t2动物园">T2动物园</h3>
 <p>写完T1，赶紧来写T2（T1就打了1个多小时QAQ）</p>
 <p>题意很简单，就是一个二进制的题，我很快就写出了代码：</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span><span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span><span class="cpf">&lt;cstdio&gt;</span><span class="cp">
 </span><span class="cp">#include</span><span class="cpf">&lt;algorithm&gt;</span><span class="cp">
 </span><span class="cp">#include</span><span class="cpf">&lt;set&gt;</span><span class="cp">
 </span><span class="cp">#define ll long long
@@ -792,7 +1281,9 @@
 	<span class="n">fclose</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>
 	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div><p>不到半个小时就写完了，心里想着A了A了就去看T3了。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>不到半个小时就写完了，心里想着A了A了就去看T3了。</p>
 <p>但是！可能是写的太快，我并没有意识到n,m都是小于$10^6$</p>
 <p>并且输出可以是$2^{64}$爆long long</p>
 <p>要知道，只要建一个变量把A数组全部按位或就可以把内层循环去掉了，然后再改一下输出就能A了QAQ</p>
@@ -800,7 +1291,207 @@
 <h3 id="t3调用">T3调用</h3>
 <p>看到此题，我心中狂喜，这不就是线段树裸题吗？<del>丝毫没有注意到数据范围</del></p>
 <p>于是打了一遍板子，过了前两个样例，想着A了A了就走了<del>丝毫没有意识到问题的严重性</del></p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span><span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span><span class="cpf">&lt;cstdio&gt;</span><span class="cp">
 </span><span class="cp">#include</span><span class="cpf">&lt;algorithm&gt;</span><span class="cp">
 </span><span class="cp">#include</span><span class="cpf">&lt;vector&gt;</span><span class="cp">
 </span><span class="cp">#define ll long long
@@ -996,7 +1687,9 @@
 	<span class="n">fclose</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>
 	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div><p>而且！因为我忘记了乘法能不能直接取模，于是我就没给乘法取模，样例3 long long乘爆了输出全是0！</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>而且！因为我忘记了乘法能不能直接取模，于是我就没给乘法取模，样例3 long long乘爆了输出全是0！</p>
 <p>更严重的是，这份线段树打挂了，至今都没调处来哪里挂了</p>
 <p>交了份官方数据，发现只有三分之一的数据是TLE的</p>
 <p><!-- raw HTML omitted -->凉了凉了。。。。。。<!-- raw HTML omitted --></p>

@@ -250,11 +250,21 @@
 <h2 id="编译">编译</h2>
 <p>顶栏高度的配置在/dde-top-panel-master/frame/util/CustomSettings.cpp的25行</p>
 <p>进入dde-top-panel目录，执行：</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">mkdir build
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">mkdir build
 <span class="nb">cd</span> build
 cmake ..
 make
-</code></pre></div><p>注意，源码的路径里不能有中文！</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>注意，源码的路径里不能有中文！</p>
 <p>编译出的文件会在：build/frame/dde-top-panel</p>
 <h2 id="安装dde-top-panel">安装dde-top-panel</h2>
 <ol>
@@ -263,12 +273,26 @@ make
 </li>
 <li>
 <p>执行</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo glib-compile-schemas /usr/share/glib-2.0/schemas
-</code></pre></div></li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">sudo glib-compile-schemas /usr/share/glib-2.0/schemas
+</code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>赋予dde-top-panel可执行权限：</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">chmod +x dde-top-panel
-</code></pre></div></li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">chmod +x dde-top-panel
+</code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>将dde-top-panel复制到你喜欢的目录（比如/opt），记下路径</p>
 </li>
@@ -324,10 +348,24 @@ BorderlessMaximizedWindows=true
 功耗只支持部分 Intel CPU，由于Linux上没有获取功耗的统一接口，导致该部分功能直接和硬件挂钩，很容易不兼容然后导致 top-panel 闪退。如有问题，请暂时使用 0.2 版本</p>
 </blockquote>
 <h4 id="安装依赖">安装依赖</h4>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt install libqt5charts5
-</code></pre></div><h4 id="给予权限">给予权限</h4>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo setcap cap_net_raw,cap_dac_read_search,cap_sys_ptrace+ep &lt;dde-top-panel的路径&gt;
-</code></pre></div><h4 id="安装">安装</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt install libqt5charts5
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="给予权限">给予权限</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">sudo setcap cap_net_raw,cap_dac_read_search,cap_sys_ptrace+ep &lt;dde-top-panel的路径&gt;
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="安装">安装</h4>
 <p>将插件复制到~/.local/lib/dde-top-panel/plugins即可</p>
 <h2 id="参考资料">参考资料</h2>
 <p><a class="link" href="https://bbs.deepin.org/zh/post/195128"  target="_blank" rel="noopener"

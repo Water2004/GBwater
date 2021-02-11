@@ -256,14 +256,27 @@
 若 n &lt; k ，第k小就是区间[m+1,r]的第 k - n 小
 反之，则为区间[l,r]的第k小
 于是可以写出伪代码</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">que</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">r</span><span class="p">)</span><span class="c1">//询问区间[l,r]的第k小
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">que</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">r</span><span class="p">)</span><span class="c1">//询问区间[l,r]的第k小
 </span><span class="c1"></span><span class="p">{</span>
     <span class="k">if</span><span class="p">(</span><span class="n">l</span><span class="o">==</span><span class="n">r</span><span class="p">)</span> <span class="k">return</span> <span class="n">l</span><span class="p">;</span>
     <span class="kt">int</span> <span class="n">m</span><span class="o">=</span><span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
     <span class="k">if</span><span class="p">(</span><span class="n">cnt</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="n">m</span><span class="p">)</span><span class="o">&gt;=</span><span class="n">k</span><span class="p">)</span> <span class="k">return</span> <span class="n">que</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">m</span><span class="p">);</span>
     <span class="k">return</span> <span class="n">que</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="n">cnt</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="n">r</span><span class="p">),</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">r</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre></div><h4 id="举个栗子">举个栗子</h4>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="举个栗子">举个栗子</h4>
 <p>对于序列 1,3,2,2,0,1 建立的权值线段树如下
 <img src="https://s1.ax1x.com/2020/06/02/tt4T3R.png" alt=""  /><br>
 查询第3小：</p>
@@ -276,7 +289,37 @@
 <p>当然是递归建树啦ψ(｀∇´)ψ<br>
 此处同普通线段树,只需统计区间个数即可<br>
 此处使用暴力统计 <del>其实是懒得打</del></p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">ls</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span><span class="n">rs</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span><span class="n">cnt</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">v</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">ls</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span><span class="n">rs</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span><span class="n">cnt</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">v</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
 <span class="kt">int</span> <span class="n">l</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span><span class="n">r</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
 <span class="kt">int</span> <span class="n">num</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
 <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
@@ -302,15 +345,30 @@
     <span class="n">build</span><span class="p">(</span><span class="n">rs</span><span class="p">[</span><span class="n">p</span><span class="p">],</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">r</span><span class="p">);</span>
     <span class="n">update</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre></div><h3 id="查询">查询</h3>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">que</span><span class="p">(</span><span class="kt">int</span> <span class="n">p</span><span class="p">,</span><span class="kt">int</span> <span class="n">k</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="查询">查询</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">que</span><span class="p">(</span><span class="kt">int</span> <span class="n">p</span><span class="p">,</span><span class="kt">int</span> <span class="n">k</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">if</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">==</span><span class="n">r</span><span class="p">[</span><span class="n">p</span><span class="p">])</span> <span class="k">return</span> <span class="n">l</span><span class="p">;</span>
     <span class="kt">int</span> <span class="n">m</span><span class="o">=</span><span class="n">l</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">+</span><span class="n">r</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">&gt;&gt;</span><span class="mi">1</span><span class="p">;</span>
     <span class="k">if</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">&lt;</span><span class="n">k</span><span class="p">)</span> <span class="k">return</span> <span class="n">que</span><span class="p">(</span><span class="n">rs</span><span class="p">[</span><span class="n">p</span><span class="p">],</span><span class="n">k</span><span class="o">-</span><span class="n">v</span><span class="p">[</span><span class="n">p</span><span class="p">]);</span>
     <span class="k">return</span> <span class="n">que</span><span class="p">(</span><span class="n">ls</span><span class="p">[</span><span class="n">p</span><span class="p">],</span><span class="n">k</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre></div><h1 id="思想">思想</h1>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="思想">思想</h1>
 <p>权值线段树有一个缺点，只能查询整个区间的第k小，对于子区间就无能为力了<br>
 那是不是对于所有子区间都能搞出一个权值线段树就好了呢？</p>
 <h2 id="前缀和">前缀和</h2>
@@ -318,15 +376,46 @@
 若用相同范围（即相同的l，r）对任意子区间建树，所有的权值线段树结构相同，这意味着两棵树可以相减（即每一个等位节点相减）！<br>
 于是我们可以依次对[0,0],[0,1],[0,2]&hellip;[0,n]建树，如需得到[l,r]的树，只需将[0,r]和[0,l-1]两棵线段树相减即可！<br>
 查询可以机智地使用宏定义</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#define lv (value[ls[r]]-value[ls[l]])</span><span class="c1">//相减后得到的线段树左儿子的值
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#define lv (value[ls[r]]-value[ls[l]])</span><span class="c1">//相减后得到的线段树左儿子的值
 </span><span class="c1"></span><span class="cp">#define rv (value[rs[r]]-value[rs[l]])</span><span class="c1">//相减后得到的线段树右儿子的值
-</span></code></pre></div><h2 id="空间优化">空间优化</h2>
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="空间优化">空间优化</h2>
 <p>然而这里有一个问题，每一个区间建立线段树，空间复杂度太大，无法接受<br>
 怎么优化呢？<br>
 实际上，下一棵线段树就相当于上一棵线段树进行单点更新，即[0,n]相对于[0,n-1]只是更新了[num[n],num[n]]的值而已。<br>
 由于主席树不是完全二叉树，需要开数组保存左右儿子的编号，这里利用一下：如果更新左儿子，就把右儿子编号赋为上一棵树该节点右儿子的编号，反之也一样。这样每次建树只需新开一条链就行了 <del>有没有感觉特别机智</del><br>
 更新</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">updata</span><span class="p">(</span><span class="kt">int</span> <span class="n">last</span><span class="cm">/*上一棵线段树等位结点编号*/</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p</span><span class="p">,</span> <span class="kt">int</span> <span class="n">v</span><span class="p">)</span><span class="c1">//建立下一棵线段树,相当于线段树的单点更新,只需保存一条链而已
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">updata</span><span class="p">(</span><span class="kt">int</span> <span class="n">last</span><span class="cm">/*上一棵线段树等位结点编号*/</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p</span><span class="p">,</span> <span class="kt">int</span> <span class="n">v</span><span class="p">)</span><span class="c1">//建立下一棵线段树,相当于线段树的单点更新,只需保存一条链而已
 </span><span class="c1"></span><span class="p">{</span>
 	<span class="n">ln</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="n">ln</span><span class="p">[</span><span class="n">last</span><span class="p">];</span> <span class="n">rn</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="n">rn</span><span class="p">[</span><span class="n">last</span><span class="p">];</span><span class="c1">//这棵线段树和上一棵一样,直接赋值
 </span><span class="c1"></span>	<span class="n">value</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="p">[</span><span class="n">last</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span><span class="c1">//明显v包含在区间里,直接加一即可
@@ -345,8 +434,24 @@
 		<span class="n">updata</span><span class="p">(</span><span class="n">rs</span><span class="p">[</span><span class="n">last</span><span class="p">],</span> <span class="n">rs</span><span class="p">[</span><span class="n">p</span><span class="p">],</span> <span class="n">v</span><span class="p">);</span>
 	<span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div><p>循环建树</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">build</span><span class="p">()</span><span class="c1">//建立主席树
+</code></pre></td></tr></table>
+</div>
+</div><p>循环建树</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">build</span><span class="p">()</span><span class="c1">//建立主席树
 </span><span class="c1"></span><span class="p">{</span>
 	<span class="n">root</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">cnt</span><span class="p">;</span><span class="c1">//0号根节点为空树,便于相减
 </span><span class="c1"></span>	<span class="n">bud</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">cnt</span><span class="p">);</span><span class="c1">//先建一发空树
@@ -356,14 +461,34 @@
 </span><span class="c1"></span>		<span class="n">updata</span><span class="p">(</span><span class="n">root</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">root</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="c1">//更新这棵线段树
 </span><span class="c1"></span>	<span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div><h2 id="离散化">离散化</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="离散化">离散化</h2>
 <p>然而还有一个问题，权值线段树的空间复杂度是与数据范围相关的，所以此处需要离散化。所谓离散化就是把一堆范围很大的数映射到一段很小的区间里<br>
 例如对于序列：12 , 76 , 123 , 67 , 1 , 20<br>
 排序后：1 , 12 , 20 , 67 , 76 , 123<br>
 令：1-&gt;1 , 12-&gt;2 , 20-&gt;3 , 67-&gt;4 , 76-&gt;5 , 123-&gt;6<br>
 原序列就变成了：2 , 5 , 6 , 4 , 1 , 3<br>
 至于怎么搞映射？这不是map最擅长的吗（￣︶￣）↗　</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">map</span> <span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">po</span><span class="cm">/*由原值映射到离散化后的值*/</span><span class="p">,</span> <span class="n">re</span><span class="cm">/*由离散化后的值映射到原值*/</span><span class="p">;</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">map</span> <span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">po</span><span class="cm">/*由原值映射到离散化后的值*/</span><span class="p">,</span> <span class="n">re</span><span class="cm">/*由离散化后的值映射到原值*/</span><span class="p">;</span>
 <span class="n">sort</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">tmp</span> <span class="o">+</span> <span class="n">n</span><span class="p">);</span><span class="c1">//先来一发排序
 </span><span class="c1">//巨坑!!tmp+n是排序区间末区间端点的下一个值的地址!!!
 </span><span class="c1">//我也不知道STL为什么要这样反正我就这样爆了两个点
@@ -377,10 +502,135 @@
 </span><span class="c1"></span><span class="p">{</span>
 	<span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">po</span><span class="p">[</span><span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">]];</span>
 <span class="p">}</span>
-</code></pre></div><p>输出答案时也别忘了搞回去</p>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">re</span><span class="p">[</span><span class="n">ans</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span><span class="c1">//输出答案,一定要离散化的数值搞回来!!!小心爆零!!!
-</span></code></pre></div><h1 id="完整代码">完整代码</h1>
-<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cm">/*
+</code></pre></td></tr></table>
+</div>
+</div><p>输出答案时也别忘了搞回去</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">re</span><span class="p">[</span><span class="n">ans</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span><span class="c1">//输出答案,一定要离散化的数值搞回来!!!小心爆零!!!
+</span></code></pre></td></tr></table>
+</div>
+</div><h1 id="完整代码">完整代码</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cm">/*
 </span><span class="cm">主席树 20191210
 </span><span class="cm">皮:震惊,cin和cout,竟然没有没有TLE???数据竟然没有爆int???!!!
 </span><span class="cm">*/</span>
@@ -492,7 +742,9 @@
 </span><span class="c1"></span>	<span class="p">}</span>
 	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></td></tr></table>
+</div>
+</div>
 </section>
 
 

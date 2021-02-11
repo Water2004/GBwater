@@ -306,8 +306,15 @@
 <li>两层文件夹之间用/隔开</li>
 </ul>
 <p>如：</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">/home/gbwater/Desktop/
-</code></pre></div><p>表示的就是home里的gbwater文件夹里的Desktop文件夹，即桌面。这一串东西叫路径。这和Windows很相似。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">/home/gbwater/Desktop/
+</code></pre></td></tr></table>
+</div>
+</div><p>表示的就是home里的gbwater文件夹里的Desktop文件夹，即桌面。这一串东西叫路径。这和Windows很相似。</p>
 <h4 id="根目录">根目录</h4>
 <p>不同于Windows，Deepin没有盘符，更没有C盘。请不要因此抱怨，这更加科学和便利。</p>
 <p>Deepin的系统存放在根目录（/），下图的“系统盘”指的就是根目录</p>
@@ -315,15 +322,29 @@
     ><img src="https://s3.ax1x.com/2021/01/31/yABzCD.png" alt="yABzCD.png"  /></a></p>
 <p>所有的其他主要目录（home、opt、usr等，将在下文介绍）都挂载（类似Windows下的快捷方式）在根目录。所以选择文件夹时找不到这些文件夹，那就去根目录里找。虽然你有权限，但不要轻易修改里面的内容，容易使系统崩溃。</p>
 <p>进入根目录有两种方式，一是在文件管理器中双击进入，而是在终端下使用命令（详情请见后文的终端部分）：</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">cd</span> /
-</code></pre></div><h4 id="home">/home</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">cd</span> /
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="home">/home</h4>
 <p>/home目录就是文件管理器侧边栏的“主目录”，是储存用户文件的目录。“桌面”、“文档”、“下载”等文件夹都存在这个目录，如图所示:</p>
 <p><a class="link" href="https://imgchr.com/i/yADoIf"  target="_blank" rel="noopener"
     ><img src="https://s3.ax1x.com/2021/01/31/yADoIf.png" alt="yADoIf.png"  /></a></p>
 <p>但千万不要认为这里面只有用户文件，许多重要的配置文件也储存在这里。要查看或修改这些文件，需要临时显示隐藏文件，快捷键：<!-- raw HTML omitted -->ctrl<!-- raw HTML omitted -->+<!-- raw HTML omitted -->H<!-- raw HTML omitted -->，再次进入时会默认隐藏。</p>
 <p>要在终端进入/home，输入命令：</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">cd</span> ~/
-</code></pre></div><h4 id="opt">/opt</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">cd</span> ~/
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="opt">/opt</h4>
 <p>/opt是存放软件的目录。按照Deepin的规范，所有在应用商店里安装的软件都会存放到/opt/apps下一个以软件包（将在下文介绍）名称命名的文件夹下。这很类似Windows中C盘下的“programme files”文件夹。如果不是在应用商店里安装的，一般默认直接安装到/opt。如图所示：</p>
 <p><a class="link" href="https://imgchr.com/i/yAydMQ"  target="_blank" rel="noopener"
     ><img src="https://s3.ax1x.com/2021/01/31/yAydMQ.png" alt="yAydMQ.png"  /></a></p>
@@ -363,70 +384,245 @@
 <p>一些操作比如修改系统文件，安装软件之类的操作需要root权限。</p>
 <p>要临时用root权限执行命令，在命令前加上“sudo”，回车后输入密码。注意在终端输入密码是不会显示你输入了什么的。输入完成后再回车即可。在同一个终端窗口中第二次使用sudo是不用输入密码的。</p>
 <p>例如，要临时用root权限安装软件，输入：</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt install &lt;软件包名称&gt;
-</code></pre></div><p>下文都会使用&quot;&lt;&gt;&ldquo;表示需要替换的内容</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt install &lt;软件包名称&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>下文都会使用&quot;&lt;&gt;&ldquo;表示需要替换的内容</p>
 <p>要在当前终端窗口中启用root，输入命令：</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">su
-</code></pre></div><p>回车后输入密码即可。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">su
+</code></pre></td></tr></table>
+</div>
+</div><p>回车后输入密码即可。</p>
 <p>要退出root，输入命令:</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">exit</span>
-</code></pre></div><h4 id="文件目录操作">文件、目录操作</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">exit</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="文件目录操作">文件、目录操作</h4>
 <p>还没有输入命令时，光标前面有一行字，比如：</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">gbwater@gbwater-PC:~/Desktop$
-</code></pre></div><p>此处gbwater指的是当前窗口中登录的用户名，用su命令进入root后会显示：</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">root@gbwater-PC:/home/gbwater/Desktop#
-</code></pre></div><p>冒号后面到$或#前面是当前所处的目录位置，如当前就处于~/Desktop下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">gbwater@gbwater-PC:~/Desktop$
+</code></pre></td></tr></table>
+</div>
+</div><p>此处gbwater指的是当前窗口中登录的用户名，用su命令进入root后会显示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">root@gbwater-PC:/home/gbwater/Desktop#
+</code></pre></td></tr></table>
+</div>
+</div><p>冒号后面到$或#前面是当前所处的目录位置，如当前就处于~/Desktop下</p>
 <p>要进入当前目录里的一个文件夹，输入</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">cd</span> &lt;文件夹名称&gt;
-</code></pre></div><p>要返回上一目录，输入：</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">cd</span> ..
-</code></pre></div><p>&ldquo;..&ldquo;其实是一个文件夹，进入它就是进入上一目录</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">cd</span> &lt;文件夹名称&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>要返回上一目录，输入：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">cd</span> ..
+</code></pre></td></tr></table>
+</div>
+</div><p>&ldquo;..&ldquo;其实是一个文件夹，进入它就是进入上一目录</p>
 <p>要查看当前目录下有什么文件（夹），输入：</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">ls
-</code></pre></div><p>这条命令默认不显示隐藏文件（夹），要连带隐藏文件（夹）一起查看，输入：</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">ls -a
-</code></pre></div><p>如果嫌文件或者文件夹名字太长，可以按<!-- raw HTML omitted -->tap<!-- raw HTML omitted -->让终端帮你自动补全。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">ls
+</code></pre></td></tr></table>
+</div>
+</div><p>这条命令默认不显示隐藏文件（夹），要连带隐藏文件（夹）一起查看，输入：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">ls -a
+</code></pre></td></tr></table>
+</div>
+</div><p>如果嫌文件或者文件夹名字太长，可以按<!-- raw HTML omitted -->tap<!-- raw HTML omitted -->让终端帮你自动补全。</p>
 <p>cd命令也可以进入不在当前文件夹的目录，输入;</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">cd</span> &lt;目录的路径&gt;
-</code></pre></div><p>如果路径中含有空格，需要将路径用单引号括起来。当然，你也可以直接在文件管理器里将那个文件(夹)拖到终端里。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">cd</span> &lt;目录的路径&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>如果路径中含有空格，需要将路径用单引号括起来。当然，你也可以直接在文件管理器里将那个文件(夹)拖到终端里。</p>
 <p>新建文件夹，输入：</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">mkdir &lt;文件夹名称&gt;
-</code></pre></div><p>删除文件，输入：</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">rm &lt;文件路径&gt;
-</code></pre></div><p>如果要删除的文件位于当前目录，可以直接输入文件名称</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">mkdir &lt;文件夹名称&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>删除文件，输入：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">rm &lt;文件路径&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>如果要删除的文件位于当前目录，可以直接输入文件名称</p>
 <p>注意在终端中删除的文件不能在回收站中恢复！</p>
 <p>删除文件夹，输入：</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">rm -r &lt;文件夹路径&gt;
-</code></pre></div><p>如果要删除的文件夹位于当前目录，可以直接输入文件夹名称</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">rm -r &lt;文件夹路径&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>如果要删除的文件夹位于当前目录，可以直接输入文件夹名称</p>
 <p>不想看到确认删除的提示，加上-f：</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">rm -rf &lt;要删的东西&gt;
-</code></pre></div><p>复制文件：</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">cp &lt;要复制的东西&gt; &lt;复制去的目录&gt;
-</code></pre></div><p>注意复制去的目录后面要加上斜杠（/）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">rm -rf &lt;要删的东西&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>复制文件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">cp &lt;要复制的东西&gt; &lt;复制去的目录&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>注意复制去的目录后面要加上斜杠（/）</p>
 <p>移动文件：</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">mv &lt;要移动的东西&gt; &lt;移动去的目录&gt;
-</code></pre></div><p>注意移动去的目录后面要加上斜杠（/）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">mv &lt;要移动的东西&gt; &lt;移动去的目录&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>注意移动去的目录后面要加上斜杠（/）</p>
 <p>重命名文件（夹）：</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">mv &lt;原名&gt; &lt;新名称&gt;
-</code></pre></div><p>注意如果重命名的是文件夹，后面不能加上斜杠（/）！</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">mv &lt;原名&gt; &lt;新名称&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>注意如果重命名的是文件夹，后面不能加上斜杠（/）！</p>
 <h4 id="软件包操作">软件包操作</h4>
 <p>在线安装软件包</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt install &lt;软件包名称&gt;
-</code></pre></div><p>安装下载的软件包（自动处理依赖关系）</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt install &lt;软件包文件的路径&gt;
-</code></pre></div><p>安装下载的软件包（不自动处理依赖关系）</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo dpkg -i &lt;软件包文件的路径&gt;
-</code></pre></div><p>自动修复依赖关系</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt install -f
-</code></pre></div><p>在线搜索软件包</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">apt search &lt;软件包名称&gt;
-</code></pre></div><p>下载软件包</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">apt download &lt;软件包名称&gt;
-</code></pre></div><p>删除软件包(保留其配置文件)</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt remove &lt;软件包名称&gt;
-</code></pre></div><p>删除软件包(删除其配置文件)</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt purge &lt;软件包名称&gt;
-</code></pre></div><p>当然，以上操作可以通过deepin软件包管理器及起动器的右键菜单以图形界面的方式完成。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt install &lt;软件包名称&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>安装下载的软件包（自动处理依赖关系）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt install &lt;软件包文件的路径&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>安装下载的软件包（不自动处理依赖关系）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">sudo dpkg -i &lt;软件包文件的路径&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>自动修复依赖关系</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt install -f
+</code></pre></td></tr></table>
+</div>
+</div><p>在线搜索软件包</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">apt search &lt;软件包名称&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>下载软件包</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">apt download &lt;软件包名称&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>删除软件包(保留其配置文件)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt remove &lt;软件包名称&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>删除软件包(删除其配置文件)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt purge &lt;软件包名称&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>当然，以上操作可以通过deepin软件包管理器及起动器的右键菜单以图形界面的方式完成。</p>
 <h2 id="尾声">尾声</h2>
 <p>相信看完了以上内容，你对Deepin和Linux的了解更深入了。在实体机安装之前，不如先用虚拟机体验一下。欢迎使用！</p>
 <h2 id="参考资料">参考资料</h2>
