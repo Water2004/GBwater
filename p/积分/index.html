@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='积分相关知识的初步介绍'><title>积分</title>
+
+<link rel='canonical' href='https://gbwater.ga/p/%E7%A7%AF%E5%88%86/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='积分'>
+<meta property='og:description' content='积分相关知识的初步介绍'>
+<meta property='og:url' content='https://gbwater.ga/p/%E7%A7%AF%E5%88%86/'>
+<meta property='og:site_name' content='GBwater&#39;s blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='数学' /><meta property='article:tag' content='微积分' /><meta property='article:published_time' content='2020-07-21T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-07-21T00:00:00&#43;00:00'/><meta property='og:image' content='https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1362029340,873040901&fm=26&gp=0.jpg' />
+<meta name="twitter:title" content="积分">
+<meta name="twitter:description" content="积分相关知识的初步介绍"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1362029340,873040901&fm=26&gp=0.jpg' />
+    <link rel="shortcut icon" href="https://s3.ax1x.com/2021/02/11/yBQqjH.png" />
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu62a23029c3233378eeddc901e2496d13_24275_300x0_resize_box_2.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://gbwater.ga">GBwater&#39;s blog</a></h1>
+        <h2 class="site-description">欢迎各位大佬！</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/categories/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-box-multiple" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="7" y="3" width="14" height="14" rx="2" />
+  <path d="M17 17v2a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h2" />
+</svg>
+                
+                <span>Categories</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="https://gbwater.ga" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/%E7%A7%AF%E5%88%86/">
+                
+                    <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1362029340,873040901&amp;fm=26&amp;gp=0.jpg" loading="lazy" alt="Featured image of post 积分" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%AD%A6%E4%B9%A0/" style="background-color: #2a9d8f; color: #fff;">
+                学习
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/%E7%A7%AF%E5%88%86/">积分</a>
+    </h2>
+
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Jul 21, 2020</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <h1 id="引子">引子</h1>
+<p>数学家们在解决了导数这一迷之问题后，造就了迷之脑洞，想出了一些迷之问题<br>
+<!-- raw HTML omitted -->
+比如这个:求函数$y=x^2$的图像和$x$轴以及直线$x=1$围成的面积<br>
+<img src="https://s1.ax1x.com/2020/07/20/U4jDA0.png" alt="图我都给你准备好了"  />
+有了导数的经验,数学家们一拍光秃秃的脑袋:&ldquo;不如我们再玩一次$\Delta$吧?&rdquo;<br>
+<!-- raw HTML omitted -->
+于是他们把$0\rightarrow 1$分成了$n$份,画出了$n$个矩形,就像这样<br>
+<img src="https://s1.ax1x.com/2020/07/20/U4j07q.png" alt="U4j07q.png"  /><br>
+其中每个矩形的底都是$1\over n$,高就是右端点横坐标的平方,即$x^2$,是第几个矩形,$x$就等于几倍$1\over n$<br>
+<!-- raw HTML omitted -->
+这样一来，矩形的面积之和:<br>
+$$
+\begin{aligned}
+S &amp;= {1\over n}\cdot \left(1\over n\right)^2 + {1\over n}\cdot \left(2\over n\right)^2+{1\over n}\cdot \left(3\over n\right)^2+&hellip;+{1\over n}\cdot \left(n\over n\right)^2 \<br>
+&amp;= {1\over n}\cdot \left( \left( 1\over n\right)^2+\left( 2\over n\right)^2+\left( 3\over n\right)^2+&hellip;+\left( n\over n\right)^2\right) \<br>
+&amp;= {1\over n^3}\cdot \left(1^2+2^2+3^2+&hellip;+n^2\right)\<br>
+&amp;= {1\over n^3}\cdot {n(n+1)(2n+1)\over 6}\<br>
+&amp;= {1\over 3}+{1\over 3n}+{1\over 6n^2}
+\end{aligned}
+$$
+然后，让$n\rightarrow +\infty$矩形的面积和就是所求面积，故：
+$$S={1\over 3}$$
+数学家们老高兴了呢~</p>
+<h1 id="一般化推广">一般化推广</h1>
+<p>在解决了上面的问题后，数学家们本着永无止境的心，又把1换成了$x_0$,让我们一起康康有什么变化：<br>
+还是一样地把0~$x_0$分成$n$份，仿照上面画出$n$个矩形：<br>
+$$
+\begin{aligned}
+S &amp;= {x_0\over n}\cdot \left(x_0\over n\right)^2 + {x_0\over n}\cdot \left(2x_0\over n\right)^2+{x_0\over n}\cdot \left(3x_0\over n\right)^2+&hellip;+{x_0\over n}\cdot \left(nx_0\over n\right)^2 \\<br>
+&amp;= {x_0\over n}\cdot \left( \left( x_0\over n\right)^2+\left( 2x_0\over n\right)^2+\left( 3x_0\over n\right)^2+&hellip;+\left( nx_0\over n\right)^2\right) \\<br>
+&amp;= {x_0^3\over n^3}\cdot \left(1^2+2^2+3^2+&hellip;+n^2\right)\\<br>
+&amp;= {x_0^3\over n^3}\cdot {n(n+1)(2n+1)\over 6}\\<br>
+&amp;= {x_0^3\over 3}+{x_0^3\over 3n}+{x_0^3\over 6n^2}
+\end{aligned}
+$$
+接着，让$n\rightarrow +\infty$，那么:
+$$S={1\over 3}x_0^3$$</p>
+<p>回顾上面的过程，本着偷懒的精神，数学家们开始简化算式：<br>
+老是$1\over n$的太烦，还要说明$n\rightarrow  +\infty$,不如直接用导数里现成的$dx$代替$1\over n$多省事ψ(｀∇´)ψ<br>
+省略号太烦，还要列举前几项，$dx$又无限小，不能用求和符号，于是他们把求和符号拉长，创造了个新玩意：<br>
+$$\sum_{i=1}^n {1\over n}\cdot{i\over n}^2\rightarrow \int_0^1 x^2dx$$
+看到这个，小问号的朋友又多了起来：woc这都是什么鬼东西(⊙_⊙)？<br>
+<!-- raw HTML omitted -->
+$dx$就是$x$的一个微小变化量，我们以这个玩意作为矩形的底，画出$\infty$个矩形<br>
+那矩形的高怎么办呢？嘿嘿嘿，反正矩形的端点(反正底无限小，左右无所谓)的横坐标是$x$，我们直接拿$x^2$当高岂不是美滋滋（￣︶￣）↗<br>
+于是乎，一个矩形的面积就是底乘高，即<br>
+$$x^2 dx$$
+把0~1的所有矩形的面积加起来，就表示成：
+$$\int_0^1x^2dx={1\over 3}$$
+数学家们管这叫定积分 ,即有范围的积分，算出来是一个数，表示这个范围里函数图像围成的面积<br>
+<!-- raw HTML omitted -->
+有 定 就一定有不定，即没有范围的积分，算出来是一个函数，表示从0开始函数图像围成的面积随$x$变化的关系:<br>
+$$\int x^2dx={1\over 3}x^3$$</p>
+<h1 id="积分的性质">积分的性质</h1>
+<p>不知道你发现没有 <del>反正我是没有</del> ：
+$$\int x^2dx={1\over 3}x^3$$
+$$({1\over 3}x^3)'=x^2$$
+不定积分和导数一定有什么不可告人的秘密 ( •̀ ω •́ )✧
+<!-- raw HTML omitted -->
+假设我们有一个函数$f(x)%$：
+$$f'(x)={df(x)\over dx }\Rightarrow f'(x)dx=df(x)$$
+那么：
+$$\int f'(x)dx=\int df(x)=f(x)$$
+至于你问为什么：
+$$\int df(x)=f(x)$$
+因为$df(x)=f(x+dx)-f(x)$,学过数列的小盆友一看就知道，这不就是一手裂项相消嘛~<br>
+<!-- raw HTML omitted -->
+至此，我们发现了，求导和不定积分互为 <strong>逆运算</strong> ！！！<br>
+<!-- raw HTML omitted -->
+这样一来爽啦，什么积分不会搞，找找什么东西求导等于它就成啦！这样，数学家们搞出了一堆积分公式：
+$$\int kdx=kx+C$$
+$$\int x^n={1\over n+1}x^{n+1}+C$$
+$$\int {1\over x}=\ln x+C$$
+$$\int \sin x dx=-\cos x +C$$
+$$\int \cos x dx=\sin x +C$$
+$$&hellip;$$
+咦，这一堆$C$是干什么吃的？
+<!-- raw HTML omitted -->
+在积分式中：
+$$\int f(x)dx=F(x)+C$$
+我们称$F(x)$为$f(x)$的一个原函数，就是$f(x)$求导之前原来的那个函数<br>
+一个函数的原函数有无数个，因为求导后函数的常数部分直接就莫得了，所以积分时要把它加回去<br>
+不信？看好喽：
+$$2=(2x)'=(2x+1)'=(2x+2)'=&hellip;$$
+这真是要多少有多少 `(<em>&gt;﹏&lt;</em>)′&gt;)</p>
+<p>秉承着偷懒至上的伟大精神，数学家们把这一堆常数合并成一个$C$，称其为“积分常数”<br>
+真可谓 “大道至简，务实高效” 啊 <del>没错，这就是我们前班主任的格言</del><br>
+<!-- raw HTML omitted -->
+此外，积分和导数一样，有如下性质：
+$$\int [f(x)+g(x)]=\int f(x)+\int g(x)$$
+$$\int [af(x)]=a\int f(x)$$
+毕竟互为逆运算嘛，都是一家人¯\ (°_o)/¯</p>
+<h1 id="积分的运算">积分的运算</h1>
+<p>搞了这么久，你一定很想知道定积分怎么算吧？<br>
+来，搬张板凳，继续吃瓜  ——<strong>牛顿——莱布尼茨公式</strong> “</p>
+<blockquote>
+<p>如果函数$f(x)$在区间$[a,b]$上连续，并且存在原函数$F(x)$ ,<br>
+则：
+$$\int_a^bf(x)dx=F(b)-F(a)=F(x)|_a^b$$</p>
+</blockquote>
+<p>咦为什么没加$C$？因为$F(a)$和$F(b)$都加了$C$，一减就莫得了(｡･∀･)ﾉﾞ<br>
+至于你问$F(x)|_a^b$是个什么意思，那就是$F(b)-F(a)$，目的就是少写几个字 (＃°Д°)<br>
+证明嘛。。。<a class="link" href="https://baike.baidu.com/item/%E7%89%9B%E9%A1%BF-%E8%8E%B1%E5%B8%83%E5%B0%BC%E8%8C%A8%E5%85%AC%E5%BC%8F/7451942?fr=aladdin"  target="_blank" rel="noopener"
+    >围观大佬</a>就好，切记，保护好头发ヾ(•ω•`)o<br>
+<!-- raw HTML omitted -->
+看到这里，你以为你就会算积分了吗？no no no，比如这个：(大佬请绕路)
+$$\int {1\over x+1}dx = ?$$
+这就需要 <strong>换元积分法</strong> 了<br>
+<!-- raw HTML omitted --> 
+令$t=x+1$,则：
+$$\int {1\over x+1}dx=\int {1\over t}dx$$
+又有：
+$$t'=(x+1)'=x'\Rightarrow dt=dx$$
+$$原式=\int {1\over t}dt=\ln t +C=\ln(x+1)+C$$
+是不是很秀？<br>
+<!-- raw HTML omitted -->
+尽管还有一些东西暂时积不出来，就先到这儿吧 <del>因为我还不会</del>，到时候再补，咬我呀~</p>
+<h1 id="积分的应用">积分的应用</h1>
+<p>有了积分，我们就可以为所欲为地算一些奇奇怪怪的东西了<br>
+<!-- raw HTML omitted -->
+比如算球的体积<br>
+<!-- raw HTML omitted -->
+众所周知，球是由一个圆旋转得来的，我们取出那个圆，其半径为$r$，放到坐标系里，其方程就是：
+$$x^2+y^2=r^2$$
+因为一个半圆沿直径旋转就可以搞出一个球了，这里偷个懒，把它变成半圆：
+$$y=\sqrt{r^2-x^2}$$
+秉承着偷懒的伟大精神，${1\over 4}$圆沿半径旋转一圈是半球，算出这玩意的体积再乘个2就行了<br>
+<img src="https://s1.ax1x.com/2020/07/21/UIUYsx.png" alt="UIUYsx.png"  />
+还是一样在里面画个长为$dx$矩形：<br>
+<img src="https://s1.ax1x.com/2020/07/21/UIa961.png" alt="UIa961.png"  />
+它的高就是$\sqrt{r^2-x^2}$<br>
+<!-- raw HTML omitted -->
+这个小矩形沿$x$轴旋转一圈就是一个圆柱,这个圆柱的底面半径就是这个矩形的高，高就是这个矩形的底边长<br>
+其体积为：
+$$\pi\cdot(\sqrt{r^2-x^2})^2dx=\pi r^2dx-\pi x^2dx$$
+那把0~1这无数个小圆柱的体积加起来不就是这个半球的体积了？故：
+$$
+\begin{aligned}
+V &amp;= \int _0^r (\pi r^2-\pi x^2)dx\<br>
+&amp;=(\pi r^2 x-{\pi \over 3}x^3)|_0^r\<br>
+&amp;={2\over 3}\pi r^3
+\end{aligned}
+$$
+那么球的体积就是这个半球体积的两倍：
+$$V_球={4\over 3}\pi r^3$$
+妙啊(*￣3￣)╭<br>
+<!-- raw HTML omitted -->
+不仅如此，还可以算其他奇奇怪怪的东西，比如球的表面积、$y=x^2$沿$y$轴转一圈的体积等等&hellip;<br>
+总之，干旋转体这活特别在行<br>
+<!-- raw HTML omitted -->
+完结撒花 ✿✿ヽ(°▽°)ノ✿</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E6%95%B0%E5%AD%A6/">数学</a>
+        
+            <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/">微积分</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+        
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [["$", "$"]],
+    },
+    displayMath: [
+      ["$$", "$$"],
+      ["\[\[", "\]\]"],
+    ],
+    svg: {
+      fontCache: "global",
+    },
+  };
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+></script>
+
+
+    
+    
+            <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    
+    <div id="vcomments"></div>
+    <script>
+    new Valine({
+        el: '#vcomments' ,
+        appId: '0yETd71mzQvC5kqlVGmDIVLr-gzGzoHsz',
+        appKey: 'PuVvdF6GU4JvY8RXiuHWlI5W',
+        notify:false, 
+        verify:false, 
+        avatar:'mp', 
+        placeholder: 'just go go' , 
+        enableQQ:true , 
+        visitor:true , 
+        pageSize:15 , 
+        recordIP:true
+    });
+    </script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/%E5%81%8F%E5%BE%AE%E5%88%86/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1595424976775&amp;di=d5e3760fd96da88eb8d7329fc1f81e2c&amp;imgtype=0&amp;src=http%3A%2F%2Fpic1.zhimg.com%2Fv2-e499e09400aefa4525e8dccdeb828d70_b.jpg" loading="lazy" data-key="" data-hash="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1595424976775&amp;di=d5e3760fd96da88eb8d7329fc1f81e2c&amp;imgtype=0&amp;src=http%3A%2F%2Fpic1.zhimg.com%2Fv2-e499e09400aefa4525e8dccdeb828d70_b.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">偏微分</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/%E5%AF%BC%E6%95%B0/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1595088441530&amp;di=ec0a63deebd73fdc0d2cad4d971afb56&amp;imgtype=0&amp;src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fbaike%2Fpic%2Fitem%2Fe7cd7b899e510fb3cc0a63b2db33c895d1430c87.jpg" loading="lazy" data-key="" data-hash="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1595088441530&amp;di=ec0a63deebd73fdc0d2cad4d971afb56&amp;imgtype=0&amp;src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fbaike%2Fpic%2Fitem%2Fe7cd7b899e510fb3cc0a63b2db33c895d1430c87.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">导数</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/210-onedrive-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://s1.ax1x.com/2020/10/01/0McffA.jpg" loading="lazy" data-key="" data-hash="https://s1.ax1x.com/2020/10/01/0McffA.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">210 Onedrive 使用指南</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E7%BD%91%E6%98%93%E4%BA%91%E8%AE%BA%E6%8D%AE/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">网易云论据</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2021 GBwater&#39;s blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

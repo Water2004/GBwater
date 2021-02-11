@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='偏微分相关知识的初步介绍'><title>偏微分</title>
+
+<link rel='canonical' href='https://gbwater.ga/p/%E5%81%8F%E5%BE%AE%E5%88%86/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='偏微分'>
+<meta property='og:description' content='偏微分相关知识的初步介绍'>
+<meta property='og:url' content='https://gbwater.ga/p/%E5%81%8F%E5%BE%AE%E5%88%86/'>
+<meta property='og:site_name' content='GBwater&#39;s blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='数学' /><meta property='article:tag' content='微积分' /><meta property='article:published_time' content='2020-07-22T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-07-22T00:00:00&#43;00:00'/><meta property='og:image' content='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1595424976775&di=d5e3760fd96da88eb8d7329fc1f81e2c&imgtype=0&src=http%3A%2F%2Fpic1.zhimg.com%2Fv2-e499e09400aefa4525e8dccdeb828d70_b.jpg' />
+<meta name="twitter:title" content="偏微分">
+<meta name="twitter:description" content="偏微分相关知识的初步介绍"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1595424976775&di=d5e3760fd96da88eb8d7329fc1f81e2c&imgtype=0&src=http%3A%2F%2Fpic1.zhimg.com%2Fv2-e499e09400aefa4525e8dccdeb828d70_b.jpg' />
+    <link rel="shortcut icon" href="https://s3.ax1x.com/2021/02/11/yBQqjH.png" />
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu62a23029c3233378eeddc901e2496d13_24275_300x0_resize_box_2.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://gbwater.ga">GBwater&#39;s blog</a></h1>
+        <h2 class="site-description">欢迎各位大佬！</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/categories/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-box-multiple" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="7" y="3" width="14" height="14" rx="2" />
+  <path d="M17 17v2a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h2" />
+</svg>
+                
+                <span>Categories</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="https://gbwater.ga" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/%E5%81%8F%E5%BE%AE%E5%88%86/">
+                
+                    <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1595424976775&amp;di=d5e3760fd96da88eb8d7329fc1f81e2c&amp;imgtype=0&amp;src=http%3A%2F%2Fpic1.zhimg.com%2Fv2-e499e09400aefa4525e8dccdeb828d70_b.jpg" loading="lazy" alt="Featured image of post 偏微分" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%AD%A6%E4%B9%A0/" style="background-color: #2a9d8f; color: #fff;">
+                学习
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/%E5%81%8F%E5%BE%AE%E5%88%86/">偏微分</a>
+    </h2>
+
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Jul 22, 2020</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <p><strong>这篇文章挺短的，因为我也不怎么会…(⊙_⊙;)…</strong></p>
+<h1 id="引子">引子</h1>
+<p>众所周知，用导数可以求一个函数的最值<br>
+<!-- raw HTML omitted -->
+如果&hellip;要求的东西不是函数呢？<br>
+比如：
+$$
+a^2+b^2-2ab
+$$
+一般的做法肯定是均值不等式：
+$$
+a^2+b^2-2ab \ge 2ab-2ab =0
+$$
+但如果复杂到均值不等式做不了呢？<br>
+大佬：“那就来一把柯西，没有一把柯西搞不定的东西，如果有，就用两把！”<br>
+<!-- raw HTML omitted -->
+当然，我们不是大佬，用一点蠢一点的办法，比如 <strong>”偏微分“</strong></p>
+<h1 id="栗子">栗子</h1>
+<p>我们会求单变量函数的最值，能不能想办法把两个变量化成一个变量呢？<br>
+<!-- raw HTML omitted -->
+不如我们先把 $b$ 当成常数，如果无论 $b$ 取何值，$a$ 原式永远在 $a$取同一个值时取到最小值，那么当原式取到最小值时，$a$ 一定等于这个值<br>
+$b$ 也是同理<br>
+这样我们只要把这两个值肝出来，问题就解决了嘛q(≧▽≦q)，至于方法，肯定是求导啊<br>
+看不懂？我们来试一下:<br>
+<!-- raw HTML omitted -->
+先把$b$当成常数，求其导数：
+$$
+{\partial \over \partial  a}\cdot (a^2+b^2-2ab)=2a-2b
+$$
+令其等于0:
+$$
+\Rightarrow a=b
+$$
+故$a=b$时原式取到最小值(需要讨论，此处省略)<br>
+<!-- raw HTML omitted -->
+同样地，把$a$当成常数，求其导数：
+$$
+{\partial \over \partial  b} (a^2+b^2-2ab)=2b-2a
+$$
+令其等于0：
+$$
+\Rightarrow a=b
+$$
+故$a=b$时原式取到最小值(需要讨论，此处省略)<br>
+综上所述，$a=b$时原式取到最小值，为0<br>
+<!-- raw HTML omitted -->
+注意到: $d\rightarrow \partial$ 了吗？$d$ 表示常微分，$\partial$ 表示偏微分(微的都不是单变量函数了，当然得换一个)<br>
+至于为什么上面单独有一个$\partial$ ,那是因为右边那一坨太大了，怼上去不好看，所以单独拿出来，只留一个$\partial$ 在上面</p>
+<h1 id="本质">本质</h1>
+<p>还是看不懂，那让我们看看偏微分的本质<br>
+<!-- raw HTML omitted -->
+函数为什么一定是一个单变量的呢？为什么不能有两个自变量呢？<br>
+当然可以，专业点，这个东西叫 <strong>二元函数</strong><br>
+<!-- raw HTML omitted -->
+既然是个函数，就可以化它的图像啦，不如看看$f(x,y)=x^2+y^2-2xy$的图像：<br>
+<img src="https://s1.ax1x.com/2020/07/22/UH62DO.png" alt="UH62DO.png"  /><br>
+这玩意变成一个立体图了！o((⊙﹏⊙))o.
+联系一下一元函数取最值的情况——切线水平<br>
+不难推测，二元函数取最值的情况是：<strong>切面水平</strong>
+<!-- raw HTML omitted -->
+切面水平，怎么表示呢？<br>
+<!-- raw HTML omitted -->
+显然，如果一个平面和一个曲面相切，过切点的任何一个面截这两个面所得的直线和曲线一定相切，反之亦然 (此处不严谨)<br>
+所以我们只要找两条直线就好啦~<br>
+所以我们只要找两个截面就行啦~<br>
+截面当然是沿x轴一个沿y轴一个最方便啦~<br>
+要问x轴上的截面截得的两条线的解析式当然令x等于一个固定值就行啦，y轴也一样~ <br>
+<img src="https://s1.ax1x.com/2020/07/22/UHRxmV.png" alt="看不懂，没关系"  />
+把x当成常数，导数就是这个曲面在沿x截面截得的曲线的切点的斜率随y变化的关系<br>
+反之亦然<br>
+我们只需要令这两个导数等于0，就确定了水平两条相交直线，并且这两条直线还与图像相切<br>
+这样就确定了水平的切面<br>
+进而就可以求出最大值<br>
+<!-- raw HTML omitted -->
+以上部分看懂了最好，看不懂也没关系 （因为我写的也很绕(。_。)）
+但只要记住：</p>
+<ol>
+<li>把一个变量当常数，求导，令导数等于0，得到一条方程</li>
+<li>把另一个变量当常数，求导，令导数等于0，得到另一条方程</li>
+<li>&hellip;&hellip;</li>
+<li>解这些方程，得到个个变量的值</li>
+<li>把这些值带入原式，得到最值(此处还需讨论一下)</li>
+</ol>
+<p>就可以使用了</p>
+<h1 id="应用">应用</h1>
+<p>有了这么强大的工具，我们干点什么好呢？<br>
+不如来推导一下回归直线的最小二乘法的公式~<br>
+<!-- raw HTML omitted -->
+有一堆点：
+$$
+(x_1,y_1) , (x_2,y_2) , (x_3,y_3) &hellip; (x_n,y_n)
+$$
+设回归直线为
+$$
+y=ax+b
+$$
+那么原来的点在直线上就是：
+$$
+(x_1,ax_1+b) , (x_2,ax_2+b) , (x_3,ax_3+b) &hellip; (x_n,ax_n+b)<br>
+$$
+纵坐标的方差(类似？)的n倍就是：
+$$
+\begin{aligned}
+n\sigma^2 &amp;=\sum_{i=1}^n (ax_i+b-y_i)^2=a^2\sum_{i=1}^n x_i^2+2ab\sum_{i=1}^nx_i-2a\sum_{i=1}^nx_iy_i+nb^2+\sum_{i=1}^ny_i^2-2b\sum_{i=1}^ny_i\<br>
+&amp;=a^2\sum_{i=1}^n x_i^2+2nab\overline x-2a\sum_{i=1}^nx_iy_i+nb^2+\sum_{i=1}^ny_i^2-2nb\overline y
+\end{aligned}
+$$
+当其取到最小值时，偏导数为0
+<!-- raw HTML omitted -->
+对$a$求偏导：
+$$
+{\partial (n\sigma^2)\over \partial a}  = 2a\sum_{i=1}^nx_i^2+2nb\overline x-2\sum_{i=1}^nx_iy_i
+$$
+令其等于零：
+$$
+\Rightarrow a\sum_{i=1}^nx_i^2+nb\overline x-\sum_{i=1}^nx_iy_i=0·····(1)
+$$
+对$b$求偏导：
+$$
+{\partial (n\sigma^2)\over \partial b} = 2na\overline x+2nb-2n\overline y\<br>
+$$
+令其等于0：
+$$
+\Rightarrow a\overline x+b=\overline y \Rightarrow b=\overline y-a\overline x
+$$
+代入(1)式得：
+$$
+a\sum_{i=1}^nx_i^2+n\overline x(\overline y-ax\overline )-\sum_{i=1}^nx_iy_i=0\<br>
+\Rightarrow a={\sum_{i=1}^n x_iy_i-n\overline x\overline y\over \sum_{i=1}^n x_i^2-n\overline x^2}
+$$
+推导完成，完结撒花 ✿✿ヽ(°▽°)ノ✿</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E6%95%B0%E5%AD%A6/">数学</a>
+        
+            <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/">微积分</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+        
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [["$", "$"]],
+    },
+    displayMath: [
+      ["$$", "$$"],
+      ["\[\[", "\]\]"],
+    ],
+    svg: {
+      fontCache: "global",
+    },
+  };
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+></script>
+
+
+    
+    
+            <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    
+    <div id="vcomments"></div>
+    <script>
+    new Valine({
+        el: '#vcomments' ,
+        appId: '0yETd71mzQvC5kqlVGmDIVLr-gzGzoHsz',
+        appKey: 'PuVvdF6GU4JvY8RXiuHWlI5W',
+        notify:false, 
+        verify:false, 
+        avatar:'mp', 
+        placeholder: 'just go go' , 
+        enableQQ:true , 
+        visitor:true , 
+        pageSize:15 , 
+        recordIP:true
+    });
+    </script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/%E7%A7%AF%E5%88%86/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1362029340,873040901&amp;fm=26&amp;gp=0.jpg" loading="lazy" data-key="" data-hash="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1362029340,873040901&amp;fm=26&amp;gp=0.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">积分</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/%E5%AF%BC%E6%95%B0/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1595088441530&amp;di=ec0a63deebd73fdc0d2cad4d971afb56&amp;imgtype=0&amp;src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fbaike%2Fpic%2Fitem%2Fe7cd7b899e510fb3cc0a63b2db33c895d1430c87.jpg" loading="lazy" data-key="" data-hash="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1595088441530&amp;di=ec0a63deebd73fdc0d2cad4d971afb56&amp;imgtype=0&amp;src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fbaike%2Fpic%2Fitem%2Fe7cd7b899e510fb3cc0a63b2db33c895d1430c87.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">导数</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/210-onedrive-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://s1.ax1x.com/2020/10/01/0McffA.jpg" loading="lazy" data-key="" data-hash="https://s1.ax1x.com/2020/10/01/0McffA.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">210 Onedrive 使用指南</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E7%BD%91%E6%98%93%E4%BA%91%E8%AE%BA%E6%8D%AE/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">网易云论据</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2021 GBwater&#39;s blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

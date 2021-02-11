@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='倍增算法求解最近公共祖先'><title>倍增LCA</title>
+
+<link rel='canonical' href='https://gbwater.ga/p/%E5%80%8D%E5%A2%9Elca/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='倍增LCA'>
+<meta property='og:description' content='倍增算法求解最近公共祖先'>
+<meta property='og:url' content='https://gbwater.ga/p/%E5%80%8D%E5%A2%9Elca/'>
+<meta property='og:site_name' content='GBwater&#39;s blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='LCA' /><meta property='article:tag' content='倍增' /><meta property='article:published_time' content='2020-11-15T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-11-15T00:00:00&#43;00:00'/><meta property='og:image' content='https://s3.ax1x.com/2020/11/15/DPOB9J.jpg' />
+<meta name="twitter:title" content="倍增LCA">
+<meta name="twitter:description" content="倍增算法求解最近公共祖先"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://s3.ax1x.com/2020/11/15/DPOB9J.jpg' />
+    <link rel="shortcut icon" href="https://s3.ax1x.com/2021/02/11/yBQqjH.png" />
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu62a23029c3233378eeddc901e2496d13_24275_300x0_resize_box_2.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://gbwater.ga">GBwater&#39;s blog</a></h1>
+        <h2 class="site-description">欢迎各位大佬！</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/categories/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-box-multiple" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="7" y="3" width="14" height="14" rx="2" />
+  <path d="M17 17v2a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h2" />
+</svg>
+                
+                <span>Categories</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="https://gbwater.ga" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/%E5%80%8D%E5%A2%9Elca/">
+                
+                    <img src="https://s3.ax1x.com/2020/11/15/DPOB9J.jpg" loading="lazy" alt="Featured image of post 倍增LCA" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/oi/" style="background-color: #2a9d8f; color: #fff;">
+                OI
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/%E5%80%8D%E5%A2%9Elca/">倍增LCA</a>
+    </h2>
+
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Nov 15, 2020</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <h1 id="倍增lca">倍增LCA</h1>
+<h2 id="引子">引子</h2>
+<p>什么？你还不知道什么是LCA？LCA就是树上两个节点的最近公共祖先。<br>
+所以，对于怎么找LCA，是个人都会想到一个办法，让两个节点不断向上移动，只要重合了就是LCA了，嘿嘿嘿<br>
+然鹅，一个一个移动太慢，只要数据过了 $10^8$ 分分钟 T 飞~<br>
+所以，我们需要一个快速的移动方式，比如，成几何级数的移动，这就是倍增算法</p>
+<h2 id="基本思路">基本思路</h2>
+<p>既然要成几何级数的移动速度，要找个底数，比如2吧，每次移动 $2^k$ 个<br>
+要想一次移动这么多，肯定要预处理，不如先预处理一个数组 $grand[i][j]$ 表示 $i$ 向上跳$$2^k$$个是谁，跳出这棵树的值就为-1吧<br>
+怎么判断已经跳到了LCA呢？毕竟公共祖先不只有LCA一个<br>
+不如就不直接跳到LCA，把所有跳到相同节点的情况都视为跳出树了，一直跳直到跳不动了为止，这时候两个节点的父节点就是LCA了，是不是特别机智~</p>
+<h2 id="预处理">预处理</h2>
+<p>怎么预处理出 $grand$数组呢？
+什么？你想一个个往上跳，然后取对数？省省吧，有这功夫早就 T 飞了，我们需要一个更高效的方法，最好能利用已经求出的 $grand$ 数组<br>
+那不就是动态规划嘛，让我们来凑一手状态转移方程<br>
+首先，$i$ 向上跳 $2^k$ 个可以分解成两个动作，先向上跳 $2^{k-1}$ 个，再向上跳 $2^{k-1}$ 个<br>
+$i$向上跳 $2^{k-1}$ 个不就是$grand[i][k-1]$嘛，套个娃，再向上跳 $2^{k-1}$ 个当然就是 $grand[grand[i][k-1]][k-1]$ 。于是我们得出方程：
+$$
+grand[i][k]=grand[grand[i][k-1]][k-1]
+$$
+瞅瞅这个方程，我们该用什么算法呢？<br>
+要想转移状态，必须要先求出 $grand[i][k-1]$，这告诉我们应该：</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span><span class="o">=</span><span class="p">;</span><span class="n">k</span><span class="o">&lt;</span> <span class="n">MAXON</span><span class="p">;</span><span class="n">k</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">//求grand
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></div><p>再看，我们还要先求出$i$的祖先节点的$grand$，因为我们要用到$grand[grand[i][k-1]][k-1]$ 嘛，这好说，来一手 $dfs$ 深度优先搜索就好了，顺便还可以记录每个节点的父节点和深度，一举两得 <br>
+于是我们竟然可以写出代码了
+先用邻接表存图：</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp">	<span class="k">struct</span> <span class="nc">edge</span>
+	<span class="p">{</span>
+		<span class="kt">int</span> <span class="n">to</span><span class="p">;</span><span class="c1">//这条边到达的点
+</span><span class="c1"></span>		<span class="kt">int</span> <span class="n">next</span><span class="p">;</span><span class="c1">//下一条边
+</span><span class="c1"></span>	<span class="p">}</span><span class="n">Edge</span><span class="p">[</span><span class="n">MAXON</span><span class="p">];</span>
+	<span class="kt">int</span> <span class="n">head</span><span class="p">[</span><span class="n">MAXON</span><span class="p">];</span><span class="c1">//head[i]表示由i开始的第一条边的编号
+</span><span class="c1"></span>	<span class="kt">int</span> <span class="n">tot</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="c1">//总边数
+</span><span class="c1"></span>	<span class="kt">int</span> <span class="n">grand</span><span class="p">[</span><span class="mi">500010</span><span class="p">][</span><span class="mi">30</span><span class="p">];</span>
+	<span class="kt">int</span> <span class="n">fa</span><span class="p">[</span><span class="n">MAXON</span><span class="p">];</span>
+	<span class="kt">void</span> <span class="nf">add_dege</span><span class="p">(</span><span class="kt">int</span> <span class="n">from</span><span class="p">,</span> <span class="kt">int</span> <span class="n">to</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">tot</span><span class="o">++</span><span class="p">;</span><span class="c1">//当前边的编号
+</span><span class="c1"></span>		<span class="n">Edge</span><span class="p">[</span><span class="n">tot</span><span class="p">].</span><span class="n">to</span> <span class="o">=</span> <span class="n">to</span><span class="p">;</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">from</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+			<span class="n">Edge</span><span class="p">[</span><span class="n">tot</span><span class="p">].</span><span class="n">next</span> <span class="o">=</span> <span class="n">head</span><span class="p">[</span><span class="n">from</span><span class="p">];</span><span class="c1">//插入在前
+</span><span class="c1"></span>		<span class="n">head</span><span class="p">[</span><span class="n">from</span><span class="p">]</span> <span class="o">=</span> <span class="n">tot</span><span class="p">;</span><span class="c1">//由于这条边插入在了前面,故当前边就是由from开始的第一条边
+</span><span class="c1"></span>	<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">from</span><span class="p">,</span> <span class="kt">int</span> <span class="n">now</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">fa</span><span class="p">[</span><span class="n">now</span><span class="p">]</span> <span class="o">=</span> <span class="n">from</span><span class="p">;</span><span class="c1">//记录父节点
+</span><span class="c1"></span>		<span class="kt">int</span> <span class="n">start</span> <span class="o">=</span> <span class="n">head</span><span class="p">[</span><span class="n">now</span><span class="p">];</span><span class="c1">//从第一个子节点开始找
+</span><span class="c1"></span>		<span class="k">if</span> <span class="p">(</span><span class="n">from</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="c1">//若不是根节点,深度为父节点深度+1(根节点为0)
+</span><span class="c1"></span>			<span class="n">dep</span><span class="p">[</span><span class="n">now</span><span class="p">]</span> <span class="o">=</span> <span class="n">dep</span><span class="p">[</span><span class="n">from</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+		<span class="c1">//int g = log2(dep[now]) ;
+</span><span class="c1"></span>		<span class="kt">int</span> <span class="n">g</span> <span class="o">=</span> <span class="n">lg</span><span class="p">[</span><span class="n">dep</span><span class="p">[</span><span class="n">now</span><span class="p">]];</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">from</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="c1">//根节点没有父节点
+</span><span class="c1"></span>			<span class="n">grand</span><span class="p">[</span><span class="n">now</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">from</span><span class="p">;</span><span class="c1">//2^0=1,即父节点
+</span><span class="c1"></span>		<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="o">=</span> <span class="n">g</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">grand</span><span class="p">[</span><span class="n">now</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">grand</span><span class="p">[</span><span class="n">grand</span><span class="p">[</span><span class="n">now</span><span class="p">][</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]][</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span><span class="c1">//状态转移方程
+</span><span class="c1"></span>		<span class="p">}</span>
+		<span class="k">while</span> <span class="p">(</span><span class="n">start</span><span class="p">)</span><span class="c1">//一个一个找孩子
+</span><span class="c1"></span>		<span class="p">{</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">Edge</span><span class="p">[</span><span class="n">start</span><span class="p">].</span><span class="n">to</span> <span class="o">==</span> <span class="n">from</span><span class="p">)</span><span class="c1">//若相连节点不是父节点
+</span><span class="c1"></span>			<span class="p">{</span>
+				<span class="n">start</span> <span class="o">=</span> <span class="n">Edge</span><span class="p">[</span><span class="n">start</span><span class="p">].</span><span class="n">next</span><span class="p">;</span>
+				<span class="k">continue</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="n">dfs</span><span class="p">(</span><span class="n">now</span><span class="p">,</span> <span class="n">Edge</span><span class="p">[</span><span class="n">start</span><span class="p">].</span><span class="n">to</span><span class="p">);</span><span class="c1">//继续搜索子节点
+</span><span class="c1"></span>			<span class="n">start</span> <span class="o">=</span> <span class="n">Edge</span><span class="p">[</span><span class="n">start</span><span class="p">].</span><span class="n">next</span><span class="p">;</span><span class="c1">//搜索下一个子节点
+</span><span class="c1"></span>		<span class="p">}</span>
+	<span class="p">}</span>
+</code></pre></div><h2 id="跳">跳！</h2>
+<p>预处理好了，接下来就是跳了<br>
+怎么跳呢？先跳到同一高度，然后什么都好说</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp">		<span class="k">if</span> <span class="p">(</span><span class="n">dep</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">dep</span><span class="p">[</span><span class="n">b</span><span class="p">])</span><span class="c1">//统一b深度大于a
+</span><span class="c1"></span>		<span class="p">{</span>
+			<span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span><span class="c1">//a此时等于原来的a,b之和
+</span><span class="c1"></span>			<span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">;</span><span class="c1">//b此时等于原来的a
+</span><span class="c1"></span>			<span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">;</span><span class="c1">//a此时等于原来的b
+</span><span class="c1"></span>		<span class="p">}</span><span class="c1">//神奇的交换方法
+</span><span class="c1"></span>		<span class="kt">int</span> <span class="n">deep</span> <span class="o">=</span> <span class="n">dep</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">-</span> <span class="n">dep</span><span class="p">[</span><span class="n">a</span><span class="p">];</span><span class="c1">//深度差
+</span><span class="c1"></span>		<span class="c1">//int step = log2(deep);
+</span><span class="c1"></span>		<span class="kt">int</span> <span class="n">step</span> <span class="o">=</span> <span class="n">lg</span><span class="p">[</span><span class="n">deep</span><span class="p">];</span><span class="c1">//最大要走的步数
+</span><span class="c1"></span>		<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">step</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span><span class="c1">//先让b跳到和a同一深度
+</span><span class="c1"></span>		<span class="p">{</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">dep</span><span class="p">[</span><span class="n">grand</span><span class="p">[</span><span class="n">b</span><span class="p">][</span><span class="n">i</span><span class="p">]]</span> <span class="o">&lt;</span> <span class="n">dep</span><span class="p">[</span><span class="n">a</span><span class="p">])</span> <span class="k">continue</span><span class="p">;</span><span class="c1">//跳过头了,不跳
+</span><span class="c1"></span>			<span class="k">else</span>
+			<span class="p">{</span>
+				<span class="n">b</span> <span class="o">=</span> <span class="n">grand</span><span class="p">[</span><span class="n">b</span><span class="p">][</span><span class="n">i</span><span class="p">];</span><span class="c1">//没跳过头,跳
+</span><span class="c1"></span>			<span class="p">}</span>
+		<span class="p">}</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span> <span class="k">return</span> <span class="n">a</span><span class="p">;</span><span class="c1">//若相等,则已经找到LCA
+</span></code></pre></div><p>这里为什么要有个step呢，因为先封个顶，一点点下降，能跳再跳，万一就跳出去了呢<br>
+然后就是两个节点一起向上跳了</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp">		<span class="n">step</span> <span class="o">=</span> <span class="n">lg</span><span class="p">[</span><span class="n">dep</span><span class="p">[</span><span class="n">a</span><span class="p">]];</span> <span class="c1">//要走的步数
+</span><span class="c1"></span>		<span class="c1">//step = log2(dep[a]);
+</span><span class="c1"></span>		<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">step</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">grand</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">grand</span><span class="p">[</span><span class="n">b</span><span class="p">][</span><span class="n">i</span><span class="p">])</span> <span class="k">continue</span><span class="p">;</span><span class="c1">//跳过头了,不跳
+</span><span class="c1"></span>			<span class="k">else</span><span class="c1">//没跳过头,跳
+</span><span class="c1"></span>			<span class="p">{</span>
+				<span class="n">a</span> <span class="o">=</span> <span class="n">grand</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">i</span><span class="p">];</span>
+				<span class="n">b</span> <span class="o">=</span> <span class="n">grand</span><span class="p">[</span><span class="n">b</span><span class="p">][</span><span class="n">i</span><span class="p">];</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+		<span class="k">return</span> <span class="n">fa</span><span class="p">[</span><span class="n">a</span><span class="p">];</span><span class="c1">//最后他们的父节点就是LC
+</span></code></pre></div><p>要问这个$lg$数组是怎么来的？洛谷上抄的，嘿嘿嘿</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp">	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="c1">//常数优化,预先算出log_2(i)+1的值，用的时候直接调用就可以了
+</span><span class="c1"></span>		<span class="n">lg</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">lg</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">lg</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">i</span><span class="p">);</span>  <span class="c1">//看不懂的可以手推一下
+</span></code></pre></div><h2 id="完整代码">完整代码</h2>
+<p>我写这玩意的时候特别喜欢class，于是。。。码风奇丑，凑合着看吧。。。</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span><span class="cpf">&lt;cmath&gt;</span><span class="cp">
+</span><span class="cp">#include</span><span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+</span><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">MAXON</span> <span class="o">=</span> <span class="mi">1000010</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">dep</span><span class="p">[</span><span class="n">MAXON</span><span class="p">];</span><span class="c1">//dep[i]代表编号为i的点所处的深度
+</span><span class="c1"></span><span class="kt">int</span> <span class="n">lg</span><span class="p">[</span><span class="n">MAXON</span><span class="p">];</span>
+<span class="k">class</span> <span class="nc">Graph</span>
+<span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+	<span class="k">struct</span> <span class="nc">edge</span>
+	<span class="p">{</span>
+		<span class="kt">int</span> <span class="n">to</span><span class="p">;</span><span class="c1">//这条边到达的点
+</span><span class="c1"></span>		<span class="kt">int</span> <span class="n">next</span><span class="p">;</span><span class="c1">//下一条边
+</span><span class="c1"></span>	<span class="p">}</span><span class="n">Edge</span><span class="p">[</span><span class="n">MAXON</span><span class="p">];</span>
+	<span class="kt">int</span> <span class="n">head</span><span class="p">[</span><span class="n">MAXON</span><span class="p">];</span><span class="c1">//head[i]表示由i开始的第一条边的编号
+</span><span class="c1"></span>	<span class="kt">int</span> <span class="n">tot</span><span class="p">;</span><span class="c1">//总边数
+</span><span class="c1"></span>	<span class="kt">int</span> <span class="n">grand</span><span class="p">[</span><span class="mi">500010</span><span class="p">][</span><span class="mi">30</span><span class="p">];</span>
+	<span class="kt">int</span> <span class="n">fa</span><span class="p">[</span><span class="n">MAXON</span><span class="p">];</span>
+<span class="k">public</span><span class="o">:</span>
+	<span class="n">Graph</span><span class="p">()</span>
+	<span class="p">{</span>
+		<span class="n">tot</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="kt">void</span> <span class="nf">add_dege</span><span class="p">(</span><span class="kt">int</span> <span class="n">from</span><span class="p">,</span> <span class="kt">int</span> <span class="n">to</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">tot</span><span class="o">++</span><span class="p">;</span><span class="c1">//当前边的编号
+</span><span class="c1"></span>		<span class="n">Edge</span><span class="p">[</span><span class="n">tot</span><span class="p">].</span><span class="n">to</span> <span class="o">=</span> <span class="n">to</span><span class="p">;</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">from</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+			<span class="n">Edge</span><span class="p">[</span><span class="n">tot</span><span class="p">].</span><span class="n">next</span> <span class="o">=</span> <span class="n">head</span><span class="p">[</span><span class="n">from</span><span class="p">];</span><span class="c1">//插入在前
+</span><span class="c1"></span>		<span class="n">head</span><span class="p">[</span><span class="n">from</span><span class="p">]</span> <span class="o">=</span> <span class="n">tot</span><span class="p">;</span><span class="c1">//由于这条边插入在了前面,故当前边就是由from开始的第一条边
+</span><span class="c1"></span>	<span class="p">}</span>
+	<span class="kt">void</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">from</span><span class="p">,</span> <span class="kt">int</span> <span class="n">now</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">fa</span><span class="p">[</span><span class="n">now</span><span class="p">]</span> <span class="o">=</span> <span class="n">from</span><span class="p">;</span><span class="c1">//记录父节点
+</span><span class="c1"></span>		<span class="kt">int</span> <span class="n">start</span> <span class="o">=</span> <span class="n">head</span><span class="p">[</span><span class="n">now</span><span class="p">];</span><span class="c1">//从第一个子节点开始找
+</span><span class="c1"></span>		<span class="k">if</span> <span class="p">(</span><span class="n">from</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="c1">//若不是根节点,深度为父节点深度+1(根节点为0)
+</span><span class="c1"></span>			<span class="n">dep</span><span class="p">[</span><span class="n">now</span><span class="p">]</span> <span class="o">=</span> <span class="n">dep</span><span class="p">[</span><span class="n">from</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+		<span class="c1">//int g = log2(dep[now]) ;
+</span><span class="c1"></span>		<span class="kt">int</span> <span class="n">g</span> <span class="o">=</span> <span class="n">lg</span><span class="p">[</span><span class="n">dep</span><span class="p">[</span><span class="n">now</span><span class="p">]];</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">from</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="c1">//根节点没有父节点
+</span><span class="c1"></span>			<span class="n">grand</span><span class="p">[</span><span class="n">now</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">from</span><span class="p">;</span><span class="c1">//2^0=1,即父节点
+</span><span class="c1"></span>		<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">g</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">grand</span><span class="p">[</span><span class="n">now</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">grand</span><span class="p">[</span><span class="n">grand</span><span class="p">[</span><span class="n">now</span><span class="p">][</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]][</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span><span class="c1">//状态转移方程
+</span><span class="c1"></span>		<span class="p">}</span>
+		<span class="k">while</span> <span class="p">(</span><span class="n">start</span><span class="p">)</span><span class="c1">//一个一个找孩子
+</span><span class="c1"></span>		<span class="p">{</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">Edge</span><span class="p">[</span><span class="n">start</span><span class="p">].</span><span class="n">to</span> <span class="o">==</span> <span class="n">from</span><span class="p">)</span><span class="c1">//若相连节点不是父节点
+</span><span class="c1"></span>			<span class="p">{</span>
+				<span class="n">start</span> <span class="o">=</span> <span class="n">Edge</span><span class="p">[</span><span class="n">start</span><span class="p">].</span><span class="n">next</span><span class="p">;</span>
+				<span class="k">continue</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="n">dfs</span><span class="p">(</span><span class="n">now</span><span class="p">,</span> <span class="n">Edge</span><span class="p">[</span><span class="n">start</span><span class="p">].</span><span class="n">to</span><span class="p">);</span><span class="c1">//继续搜索子节点
+</span><span class="c1"></span>			<span class="n">start</span> <span class="o">=</span> <span class="n">Edge</span><span class="p">[</span><span class="n">start</span><span class="p">].</span><span class="n">next</span><span class="p">;</span><span class="c1">//搜索下一个子节点
+</span><span class="c1"></span>		<span class="p">}</span>
+	<span class="p">}</span>
+	<span class="kt">int</span> <span class="nf">lca</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">dep</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">dep</span><span class="p">[</span><span class="n">b</span><span class="p">])</span><span class="c1">//统一b深度大于a
+</span><span class="c1"></span>		<span class="p">{</span>
+			<span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span><span class="c1">//a此时等于原来的a,b之和
+</span><span class="c1"></span>			<span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">;</span><span class="c1">//b此时等于原来的a
+</span><span class="c1"></span>			<span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">;</span><span class="c1">//a此时等于原来的b
+</span><span class="c1"></span>		<span class="p">}</span><span class="c1">//神奇的交换方法
+</span><span class="c1"></span>		<span class="kt">int</span> <span class="n">deep</span> <span class="o">=</span> <span class="n">dep</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">-</span> <span class="n">dep</span><span class="p">[</span><span class="n">a</span><span class="p">];</span><span class="c1">//深度差
+</span><span class="c1"></span>		<span class="c1">//int step = log2(deep);
+</span><span class="c1"></span>		<span class="kt">int</span> <span class="n">step</span> <span class="o">=</span> <span class="n">lg</span><span class="p">[</span><span class="n">deep</span><span class="p">];</span><span class="c1">//最大要走的步数
+</span><span class="c1"></span>		<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">step</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span><span class="c1">//先让b跳到和a同一深度
+</span><span class="c1"></span>		<span class="p">{</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">dep</span><span class="p">[</span><span class="n">grand</span><span class="p">[</span><span class="n">b</span><span class="p">][</span><span class="n">i</span><span class="p">]]</span> <span class="o">&lt;</span> <span class="n">dep</span><span class="p">[</span><span class="n">a</span><span class="p">])</span> <span class="k">continue</span><span class="p">;</span><span class="c1">//跳过头了,不跳
+</span><span class="c1"></span>			<span class="k">else</span>
+			<span class="p">{</span>
+				<span class="n">b</span> <span class="o">=</span> <span class="n">grand</span><span class="p">[</span><span class="n">b</span><span class="p">][</span><span class="n">i</span><span class="p">];</span><span class="c1">//没跳过头,跳
+</span><span class="c1"></span>			<span class="p">}</span>
+		<span class="p">}</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span> <span class="k">return</span> <span class="n">a</span><span class="p">;</span><span class="c1">//若相等,则已经找到LCA
+</span><span class="c1"></span>		<span class="n">step</span> <span class="o">=</span> <span class="n">lg</span><span class="p">[</span><span class="n">dep</span><span class="p">[</span><span class="n">a</span><span class="p">]];</span> <span class="c1">//要走的步数
+</span><span class="c1"></span>		<span class="c1">//step = log2(dep[a]);
+</span><span class="c1"></span>		<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">step</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">grand</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">grand</span><span class="p">[</span><span class="n">b</span><span class="p">][</span><span class="n">i</span><span class="p">])</span> <span class="k">continue</span><span class="p">;</span><span class="c1">//跳过头了,不跳
+</span><span class="c1"></span>			<span class="k">else</span><span class="c1">//没跳过头,跳
+</span><span class="c1"></span>			<span class="p">{</span>
+				<span class="n">a</span> <span class="o">=</span> <span class="n">grand</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">i</span><span class="p">];</span>
+				<span class="n">b</span> <span class="o">=</span> <span class="n">grand</span><span class="p">[</span><span class="n">b</span><span class="p">][</span><span class="n">i</span><span class="p">];</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+		<span class="k">return</span> <span class="n">fa</span><span class="p">[</span><span class="n">a</span><span class="p">];</span><span class="c1">//最后他们的父节点就是LCA
+</span><span class="c1"></span>	<span class="p">}</span>
+<span class="p">};</span>
+<span class="n">Graph</span> <span class="n">G</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">s</span><span class="p">;</span>
+	<span class="c1">//cin &gt;&gt; n &gt;&gt; m &gt;&gt; s;
+</span><span class="c1"></span>	<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">);</span>
+	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="c1">//常熟优化,预先算出log_2(i)+1的值，用的时候直接调用就可以了
+</span><span class="c1"></span>		<span class="n">lg</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">lg</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">lg</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">i</span><span class="p">);</span>  <span class="c1">//看不懂的可以手推一下
+</span><span class="c1"></span>	<span class="n">n</span><span class="o">--</span><span class="p">;</span>
+	<span class="k">while</span> <span class="p">(</span><span class="n">n</span><span class="o">--</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>
+		<span class="c1">//cin &gt;&gt; a &gt;&gt; b;
+</span><span class="c1"></span>		<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">);</span>
+		<span class="n">G</span><span class="p">.</span><span class="n">add_dege</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+		<span class="n">G</span><span class="p">.</span><span class="n">add_dege</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="n">G</span><span class="p">.</span><span class="n">dfs</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>
+	<span class="k">while</span> <span class="p">(</span><span class="n">m</span><span class="o">--</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>
+		<span class="c1">//cin &gt;&gt; a &gt;&gt; b;
+</span><span class="c1"></span>		<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">);</span>
+		<span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">lca</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">ans</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+			<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>
+		<span class="c1">//cout &lt;&lt; s &lt;&lt; endl;
+</span><span class="c1"></span>		<span class="k">else</span>
+			<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">ans</span><span class="p">);</span>
+		<span class="c1">//cout &lt;&lt; ans &lt;&lt; endl;
+</span><span class="c1"></span>	<span class="p">}</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/lca/">LCA</a>
+        
+            <a href="/tags/%E5%80%8D%E5%A2%9E/">倍增</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+        
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [["$", "$"]],
+    },
+    displayMath: [
+      ["$$", "$$"],
+      ["\[\[", "\]\]"],
+    ],
+    svg: {
+      fontCache: "global",
+    },
+  };
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+></script>
+
+
+    
+    
+            <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    
+    <div id="vcomments"></div>
+    <script>
+    new Valine({
+        el: '#vcomments' ,
+        appId: '0yETd71mzQvC5kqlVGmDIVLr-gzGzoHsz',
+        appKey: 'PuVvdF6GU4JvY8RXiuHWlI5W',
+        notify:false, 
+        verify:false, 
+        avatar:'mp', 
+        placeholder: 'just go go' , 
+        enableQQ:true , 
+        visitor:true , 
+        pageSize:15 , 
+        recordIP:true
+    });
+    </script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/csp2020%E5%B0%8F%E7%BB%93/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://s3.ax1x.com/2020/11/22/D3BGc9.jpg" loading="lazy" data-key="" data-hash="https://s3.ax1x.com/2020/11/22/D3BGc9.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">csp2020小结</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/%E4%B8%BB%E5%B8%AD%E6%A0%91/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1587878842959&amp;di=d865670296e9efbf79ee1fe7fa5166cb&amp;imgtype=0&amp;src=http%3A%2F%2Fmedia.hihocoder.com%2Fproblem_images%2F20141108%2F14154249931829.png" loading="lazy" data-key="" data-hash="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1587878842959&amp;di=d865670296e9efbf79ee1fe7fa5166cb&amp;imgtype=0&amp;src=http%3A%2F%2Fmedia.hihocoder.com%2Fproblem_images%2F20141108%2F14154249931829.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">主席树</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/%E7%BA%BF%E6%AE%B5%E6%A0%91/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1587878842959&amp;di=d865670296e9efbf79ee1fe7fa5166cb&amp;imgtype=0&amp;src=http%3A%2F%2Fmedia.hihocoder.com%2Fproblem_images%2F20141108%2F14154249931829.png" loading="lazy" data-key="" data-hash="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1587878842959&amp;di=d865670296e9efbf79ee1fe7fa5166cb&amp;imgtype=0&amp;src=http%3A%2F%2Fmedia.hihocoder.com%2Fproblem_images%2F20141108%2F14154249931829.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">线段树</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2021 GBwater&#39;s blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

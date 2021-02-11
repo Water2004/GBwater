@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='解决区间第k值问题的重要方法'><title>主席树</title>
+
+<link rel='canonical' href='https://gbwater.ga/p/%E4%B8%BB%E5%B8%AD%E6%A0%91/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='主席树'>
+<meta property='og:description' content='解决区间第k值问题的重要方法'>
+<meta property='og:url' content='https://gbwater.ga/p/%E4%B8%BB%E5%B8%AD%E6%A0%91/'>
+<meta property='og:site_name' content='GBwater&#39;s blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='区间第k小' /><meta property='article:tag' content='数据结构' /><meta property='article:tag' content='c&#43;&#43;' /><meta property='article:published_time' content='2020-04-28T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-04-28T00:00:00&#43;00:00'/><meta property='og:image' content='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587878842959&di=d865670296e9efbf79ee1fe7fa5166cb&imgtype=0&src=http%3A%2F%2Fmedia.hihocoder.com%2Fproblem_images%2F20141108%2F14154249931829.png' />
+<meta name="twitter:title" content="主席树">
+<meta name="twitter:description" content="解决区间第k值问题的重要方法"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587878842959&di=d865670296e9efbf79ee1fe7fa5166cb&imgtype=0&src=http%3A%2F%2Fmedia.hihocoder.com%2Fproblem_images%2F20141108%2F14154249931829.png' />
+    <link rel="shortcut icon" href="https://s3.ax1x.com/2021/02/11/yBQqjH.png" />
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu62a23029c3233378eeddc901e2496d13_24275_300x0_resize_box_2.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://gbwater.ga">GBwater&#39;s blog</a></h1>
+        <h2 class="site-description">欢迎各位大佬！</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/categories/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-box-multiple" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="7" y="3" width="14" height="14" rx="2" />
+  <path d="M17 17v2a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h2" />
+</svg>
+                
+                <span>Categories</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="https://gbwater.ga" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/%E4%B8%BB%E5%B8%AD%E6%A0%91/">
+                
+                    <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1587878842959&amp;di=d865670296e9efbf79ee1fe7fa5166cb&amp;imgtype=0&amp;src=http%3A%2F%2Fmedia.hihocoder.com%2Fproblem_images%2F20141108%2F14154249931829.png" loading="lazy" alt="Featured image of post 主席树" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/oi/" style="background-color: #2a9d8f; color: #fff;">
+                OI
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/%E4%B8%BB%E5%B8%AD%E6%A0%91/">主席树</a>
+    </h2>
+
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Apr 28, 2020</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <h1 id="简介">简介</h1>
+<p>主席树是一种数据结构，用来解决区间第k小(大)问题。要问为什么叫主席树？因为这是一个叫黄嘉泰的dalao发明的 <del>名字缩写跟我国某位主席一样，Orz</del><br>
+时间复杂度是Onlogn，十分优秀 <del>空间复杂度倒是有点大</del></p>
+<h1 id="前置姿势">前置姿势</h1>
+<h2 id="权值线段树">权值线段树</h2>
+<ul>
+<li>众所周知，权值线段树是一种线段树 <del>话说这不是废话吗2333</del></li>
+<li>它不同于一般线段树的是它的每一个结点的值代表这个区间中的数在序列中出现的总次数，正所谓“权值”</li>
+<li>它可以被用来处理区间第k小(大)问题</li>
+</ul>
+<h3 id="查询原理">查询原理</h3>
+<p>此处利用二分的思想：
+现有区间[l,r],不妨设区间[l,m] ( m为区间中间位置 ) 内的数的个数为n:
+显然:<br>
+若 n &lt; k ，第k小就是区间[m+1,r]的第 k - n 小
+反之，则为区间[l,r]的第k小
+于是可以写出伪代码</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">que</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">r</span><span class="p">)</span><span class="c1">//询问区间[l,r]的第k小
+</span><span class="c1"></span><span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">l</span><span class="o">==</span><span class="n">r</span><span class="p">)</span> <span class="k">return</span> <span class="n">l</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">m</span><span class="o">=</span><span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">cnt</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="n">m</span><span class="p">)</span><span class="o">&gt;=</span><span class="n">k</span><span class="p">)</span> <span class="k">return</span> <span class="n">que</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">m</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">que</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="n">cnt</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="n">r</span><span class="p">),</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">r</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><h4 id="举个栗子">举个栗子</h4>
+<p>对于序列 1,3,2,2,0,1 建立的权值线段树如下
+<img src="https://s1.ax1x.com/2020/06/02/tt4T3R.png" alt=""  /><br>
+查询第3小：</p>
+<ol>
+<li>访问区间[0,3],有6个数，&gt; 3</li>
+<li>访问左区间[0,1]查询第3小,有3个数,=3</li>
+<li>访问右区间[1,1],查询第2小，返回结果-&gt;1</li>
+</ol>
+<h3 id="建树">建树</h3>
+<p>当然是递归建树啦ψ(｀∇´)ψ<br>
+此处同普通线段树,只需统计区间个数即可<br>
+此处使用暴力统计 <del>其实是懒得打</del></p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">ls</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span><span class="n">rs</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span><span class="n">cnt</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">v</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">l</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span><span class="n">r</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">num</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+<span class="kt">void</span> <span class="nf">update</span><span class="p">(</span><span class="kt">int</span> <span class="n">p</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">v</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">=</span><span class="n">v</span><span class="p">[</span><span class="n">ls</span><span class="p">[</span><span class="n">p</span><span class="p">]]</span><span class="o">+</span><span class="n">v</span><span class="p">[</span><span class="n">rs</span><span class="p">[</span><span class="n">p</span><span class="p">]];</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="nf">build</span><span class="p">(</span><span class="kt">int</span> <span class="n">p</span><span class="p">,</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span><span class="kt">int</span> <span class="n">r</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">l</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">=</span><span class="n">l</span><span class="p">;</span><span class="n">r</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">=</span><span class="n">r</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">l</span><span class="o">==</span><span class="n">r</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&gt;=</span><span class="n">l</span><span class="o">&amp;&amp;</span><span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;=</span><span class="n">r</span><span class="p">)</span> <span class="n">v</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">m</span><span class="o">=</span><span class="n">l</span><span class="o">+</span><span class="n">r</span><span class="o">&gt;&gt;</span><span class="mi">1</span><span class="p">;</span>
+    <span class="n">ls</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">=++</span><span class="n">cnt</span><span class="p">;</span>
+    <span class="n">rs</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">=++</span><span class="n">cnt</span><span class="p">;</span>
+    <span class="n">build</span><span class="p">(</span><span class="n">ls</span><span class="p">[</span><span class="n">p</span><span class="p">],</span><span class="n">l</span><span class="p">,</span><span class="n">m</span><span class="p">);</span>
+    <span class="n">build</span><span class="p">(</span><span class="n">rs</span><span class="p">[</span><span class="n">p</span><span class="p">],</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">r</span><span class="p">);</span>
+    <span class="n">update</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><h3 id="查询">查询</h3>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">que</span><span class="p">(</span><span class="kt">int</span> <span class="n">p</span><span class="p">,</span><span class="kt">int</span> <span class="n">k</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">==</span><span class="n">r</span><span class="p">[</span><span class="n">p</span><span class="p">])</span> <span class="k">return</span> <span class="n">l</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">m</span><span class="o">=</span><span class="n">l</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">+</span><span class="n">r</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">&gt;&gt;</span><span class="mi">1</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">&lt;</span><span class="n">k</span><span class="p">)</span> <span class="k">return</span> <span class="n">que</span><span class="p">(</span><span class="n">rs</span><span class="p">[</span><span class="n">p</span><span class="p">],</span><span class="n">k</span><span class="o">-</span><span class="n">v</span><span class="p">[</span><span class="n">p</span><span class="p">]);</span>
+    <span class="k">return</span> <span class="n">que</span><span class="p">(</span><span class="n">ls</span><span class="p">[</span><span class="n">p</span><span class="p">],</span><span class="n">k</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><h1 id="思想">思想</h1>
+<p>权值线段树有一个缺点，只能查询整个区间的第k小，对于子区间就无能为力了<br>
+那是不是对于所有子区间都能搞出一个权值线段树就好了呢？</p>
+<h2 id="前缀和">前缀和</h2>
+<p>这里就可以用前缀和的思想：<br>
+若用相同范围（即相同的l，r）对任意子区间建树，所有的权值线段树结构相同，这意味着两棵树可以相减（即每一个等位节点相减）！<br>
+于是我们可以依次对[0,0],[0,1],[0,2]&hellip;[0,n]建树，如需得到[l,r]的树，只需将[0,r]和[0,l-1]两棵线段树相减即可！<br>
+查询可以机智地使用宏定义</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#define lv (value[ls[r]]-value[ls[l]])</span><span class="c1">//相减后得到的线段树左儿子的值
+</span><span class="c1"></span><span class="cp">#define rv (value[rs[r]]-value[rs[l]])</span><span class="c1">//相减后得到的线段树右儿子的值
+</span></code></pre></div><h2 id="空间优化">空间优化</h2>
+<p>然而这里有一个问题，每一个区间建立线段树，空间复杂度太大，无法接受<br>
+怎么优化呢？<br>
+实际上，下一棵线段树就相当于上一棵线段树进行单点更新，即[0,n]相对于[0,n-1]只是更新了[num[n],num[n]]的值而已。<br>
+由于主席树不是完全二叉树，需要开数组保存左右儿子的编号，这里利用一下：如果更新左儿子，就把右儿子编号赋为上一棵树该节点右儿子的编号，反之也一样。这样每次建树只需新开一条链就行了 <del>有没有感觉特别机智</del><br>
+更新</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">updata</span><span class="p">(</span><span class="kt">int</span> <span class="n">last</span><span class="cm">/*上一棵线段树等位结点编号*/</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p</span><span class="p">,</span> <span class="kt">int</span> <span class="n">v</span><span class="p">)</span><span class="c1">//建立下一棵线段树,相当于线段树的单点更新,只需保存一条链而已
+</span><span class="c1"></span><span class="p">{</span>
+	<span class="n">ln</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="n">ln</span><span class="p">[</span><span class="n">last</span><span class="p">];</span> <span class="n">rn</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="n">rn</span><span class="p">[</span><span class="n">last</span><span class="p">];</span><span class="c1">//这棵线段树和上一棵一样,直接赋值
+</span><span class="c1"></span>	<span class="n">value</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="p">[</span><span class="n">last</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span><span class="c1">//明显v包含在区间里,直接加一即可
+</span><span class="c1"></span>	<span class="k">if</span> <span class="p">(</span><span class="n">ln</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">==</span> <span class="n">rn</span><span class="p">[</span><span class="n">p</span><span class="p">])</span> <span class="k">return</span><span class="p">;</span><span class="c1">//叶节点,不用继续更新,直接返回即可
+</span><span class="c1"></span>	<span class="k">if</span> <span class="p">(</span><span class="n">v</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="n">ln</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">+</span> <span class="n">rn</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">))</span><span class="c1">//包含在左儿子的区间中
+</span><span class="c1"></span>	<span class="p">{</span>
+		<span class="n">rs</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="n">rs</span><span class="p">[</span><span class="n">last</span><span class="p">];</span><span class="c1">//右子树(即右儿子)和上一棵线段树的一样
+</span><span class="c1"></span>		<span class="n">ls</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="o">++</span><span class="n">cnt</span><span class="p">;</span><span class="c1">//累计节点编号
+</span><span class="c1"></span>		<span class="c1">//本来更新节点的值是写在这里的,但这样根节点就更新不了了,于是写到了前面
+</span><span class="c1"></span>		<span class="n">updata</span><span class="p">(</span><span class="n">ls</span><span class="p">[</span><span class="n">last</span><span class="p">],</span> <span class="n">ls</span><span class="p">[</span><span class="n">p</span><span class="p">],</span> <span class="n">v</span><span class="p">);</span><span class="c1">//建立左子树
+</span><span class="c1"></span>	<span class="p">}</span>
+	<span class="k">else</span><span class="c1">//反之亦然同理
+</span><span class="c1"></span>	<span class="p">{</span>
+		<span class="n">ls</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="n">ls</span><span class="p">[</span><span class="n">last</span><span class="p">];</span>
+		<span class="n">rs</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="o">++</span><span class="n">cnt</span><span class="p">;</span>
+		<span class="n">updata</span><span class="p">(</span><span class="n">rs</span><span class="p">[</span><span class="n">last</span><span class="p">],</span> <span class="n">rs</span><span class="p">[</span><span class="n">p</span><span class="p">],</span> <span class="n">v</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><p>循环建树</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">build</span><span class="p">()</span><span class="c1">//建立主席树
+</span><span class="c1"></span><span class="p">{</span>
+	<span class="n">root</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">cnt</span><span class="p">;</span><span class="c1">//0号根节点为空树,便于相减
+</span><span class="c1"></span>	<span class="n">bud</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">cnt</span><span class="p">);</span><span class="c1">//先建一发空树
+</span><span class="c1"></span>	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="c1">//[0,n)和(0,n]皆可,只不过是root[i-1]和root[i+1]的区别
+</span><span class="c1"></span>	<span class="p">{</span>
+		<span class="n">root</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">++</span><span class="n">cnt</span><span class="p">;</span><span class="c1">//累计根节点
+</span><span class="c1"></span>		<span class="n">updata</span><span class="p">(</span><span class="n">root</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">root</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="c1">//更新这棵线段树
+</span><span class="c1"></span>	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><h2 id="离散化">离散化</h2>
+<p>然而还有一个问题，权值线段树的空间复杂度是与数据范围相关的，所以此处需要离散化。所谓离散化就是把一堆范围很大的数映射到一段很小的区间里<br>
+例如对于序列：12 , 76 , 123 , 67 , 1 , 20<br>
+排序后：1 , 12 , 20 , 67 , 76 , 123<br>
+令：1-&gt;1 , 12-&gt;2 , 20-&gt;3 , 67-&gt;4 , 76-&gt;5 , 123-&gt;6<br>
+原序列就变成了：2 , 5 , 6 , 4 , 1 , 3<br>
+至于怎么搞映射？这不是map最擅长的吗（￣︶￣）↗　</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">map</span> <span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">po</span><span class="cm">/*由原值映射到离散化后的值*/</span><span class="p">,</span> <span class="n">re</span><span class="cm">/*由离散化后的值映射到原值*/</span><span class="p">;</span>
+<span class="n">sort</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">tmp</span> <span class="o">+</span> <span class="n">n</span><span class="p">);</span><span class="c1">//先来一发排序
+</span><span class="c1">//巨坑!!tmp+n是排序区间末区间端点的下一个值的地址!!!
+</span><span class="c1">//我也不知道STL为什么要这样反正我就这样爆了两个点
+</span><span class="c1"></span><span class="n">n2</span> <span class="o">=</span> <span class="n">unique</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">tmp</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span> <span class="o">-</span> <span class="n">tmp</span><span class="p">;</span><span class="c1">//去重也一样!!!(STL的东西都是这个尿性)
+</span><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n2</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="c1">//记录离散化后的数值
+</span><span class="c1"></span><span class="p">{</span>
+	<span class="n">po</span><span class="p">[</span><span class="n">tmp</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+	<span class="n">re</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="p">}</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="c1">//将原值变为离散化后的值
+</span><span class="c1"></span><span class="p">{</span>
+	<span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">po</span><span class="p">[</span><span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">]];</span>
+<span class="p">}</span>
+</code></pre></div><p>输出答案时也别忘了搞回去</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">re</span><span class="p">[</span><span class="n">ans</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span><span class="c1">//输出答案,一定要离散化的数值搞回来!!!小心爆零!!!
+</span></code></pre></div><h1 id="完整代码">完整代码</h1>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cm">/*
+</span><span class="cm">主席树 20191210
+</span><span class="cm">皮:震惊,cin和cout,竟然没有没有TLE???数据竟然没有爆int???!!!
+</span><span class="cm">*/</span>
+<span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span><span class="cpf">&lt;map&gt;</span><span class="cp">
+</span><span class="cp">#include</span><span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span><span class="cp">#include</span><span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">ls</span><span class="p">[</span><span class="mi">20000000</span><span class="p">]</span><span class="cm">/*保存节点左儿子*/</span><span class="p">,</span> <span class="n">rs</span><span class="p">[</span><span class="mi">20000000</span><span class="p">]</span><span class="cm">/*保存节点右儿子*/</span><span class="p">,</span>
+<span class="n">root</span><span class="p">[</span><span class="mi">200010</span><span class="p">]</span><span class="cm">/*保存第一个元素到第n个数对应权值线段树的根节点*/</span><span class="p">,</span>
+<span class="n">value</span><span class="p">[</span><span class="mi">20000000</span><span class="p">]</span><span class="cm">/*保存权值线段树节点的值*/</span><span class="p">,</span> 
+<span class="n">ln</span><span class="p">[</span><span class="mi">20000000</span><span class="p">]</span><span class="cm">/*保存节点区间左端点*/</span><span class="p">,</span> <span class="n">rn</span><span class="p">[</span><span class="mi">20000000</span><span class="p">]</span><span class="cm">/*保存节点区间右端点*/</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">cnt</span><span class="cm">/*累计节点编号*/</span><span class="p">,</span> <span class="n">n</span><span class="cm">/*数的个数*/</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">n2</span><span class="cm">/*排序去重后数的个数(离散化巨坑)*/</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">num</span><span class="p">[</span><span class="mi">200010</span><span class="p">]</span><span class="cm">/*保存序列*/</span><span class="p">,</span> <span class="n">tmp</span><span class="p">[</span><span class="mi">200010</span><span class="p">]</span><span class="cm">/*便于离散化*/</span><span class="p">;</span>
+<span class="kt">void</span> <span class="nf">bud</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p</span><span class="p">)</span><span class="c1">//建立空树(便于线段树相减),同普通线段树,只是没有保存节点权值而已
+</span><span class="c1"></span><span class="p">{</span>
+	<span class="n">ln</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="n">l</span><span class="p">;</span> <span class="n">rn</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span><span class="p">;</span><span class="c1">//显然
+</span><span class="c1"></span>	<span class="k">if</span> <span class="p">(</span><span class="n">l</span> <span class="o">!=</span> <span class="n">r</span><span class="p">)</span><span class="c1">//巨坑,否则死循环!!!
+</span><span class="c1"></span>	<span class="p">{</span>
+		<span class="n">ls</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="o">++</span><span class="n">cnt</span><span class="p">;</span><span class="c1">//累计子节点
+</span><span class="c1"></span>		<span class="n">bud</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="p">(</span><span class="n">l</span> <span class="o">+</span> <span class="n">r</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">),</span> <span class="n">cnt</span><span class="p">);</span><span class="c1">//递归建立左子树
+</span><span class="c1"></span>		<span class="n">rs</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="o">++</span><span class="n">cnt</span><span class="p">;</span><span class="c1">//累计子节点
+</span><span class="c1"></span>		<span class="n">bud</span><span class="p">((</span><span class="n">l</span> <span class="o">+</span> <span class="n">r</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">cnt</span><span class="p">);</span><span class="c1">//递归建立右子树
+</span><span class="c1"></span>	<span class="p">}</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="nf">updata</span><span class="p">(</span><span class="kt">int</span> <span class="n">last</span><span class="cm">/*上一棵线段树等位结点编号*/</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p</span><span class="p">,</span> <span class="kt">int</span> <span class="n">v</span><span class="p">)</span><span class="c1">//建立下一棵线段树,相当于线段树的单点更新,只需保存一条链而已
+</span><span class="c1"></span><span class="p">{</span>
+	<span class="n">ln</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="n">ln</span><span class="p">[</span><span class="n">last</span><span class="p">];</span> <span class="n">rn</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="n">rn</span><span class="p">[</span><span class="n">last</span><span class="p">];</span><span class="c1">//这棵线段树和上一棵一样,直接赋值
+</span><span class="c1"></span>	<span class="n">value</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="p">[</span><span class="n">last</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span><span class="c1">//明显v包含在区间里,直接加一即可
+</span><span class="c1"></span>	<span class="k">if</span> <span class="p">(</span><span class="n">ln</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">==</span> <span class="n">rn</span><span class="p">[</span><span class="n">p</span><span class="p">])</span> <span class="k">return</span><span class="p">;</span><span class="c1">//叶节点,不用继续更新,直接返回即可
+</span><span class="c1"></span>	<span class="k">if</span> <span class="p">(</span><span class="n">v</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="n">ln</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">+</span> <span class="n">rn</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">))</span><span class="c1">//包含在左儿子的区间中
+</span><span class="c1"></span>	<span class="p">{</span>
+		<span class="n">rs</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="n">rs</span><span class="p">[</span><span class="n">last</span><span class="p">];</span><span class="c1">//右子树(即右儿子)和上一棵线段树的一样
+</span><span class="c1"></span>		<span class="n">ls</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="o">++</span><span class="n">cnt</span><span class="p">;</span><span class="c1">//累计节点编号
+</span><span class="c1"></span>		<span class="c1">//本来更新节点的值是写在这里的,但这样根节点就更新不了了,于是写到了前面
+</span><span class="c1"></span>		<span class="n">updata</span><span class="p">(</span><span class="n">ls</span><span class="p">[</span><span class="n">last</span><span class="p">],</span> <span class="n">ls</span><span class="p">[</span><span class="n">p</span><span class="p">],</span> <span class="n">v</span><span class="p">);</span><span class="c1">//建立左子树
+</span><span class="c1"></span>	<span class="p">}</span>
+	<span class="k">else</span><span class="c1">//反之亦然同理
+</span><span class="c1"></span>	<span class="p">{</span>
+		<span class="n">ls</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="n">ls</span><span class="p">[</span><span class="n">last</span><span class="p">];</span>
+		<span class="n">rs</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="o">++</span><span class="n">cnt</span><span class="p">;</span>
+		<span class="n">updata</span><span class="p">(</span><span class="n">rs</span><span class="p">[</span><span class="n">last</span><span class="p">],</span> <span class="n">rs</span><span class="p">[</span><span class="n">p</span><span class="p">],</span> <span class="n">v</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="nf">build</span><span class="p">()</span><span class="c1">//建立主席树
+</span><span class="c1"></span><span class="p">{</span>
+	<span class="n">root</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">cnt</span><span class="p">;</span><span class="c1">//0号根节点为空树,便于相减
+</span><span class="c1"></span>	<span class="n">bud</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">cnt</span><span class="p">);</span><span class="c1">//先建一发空树
+</span><span class="c1"></span>	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="c1">//[0,n)和(0,n]皆可,只不过是root[i-1]和root[i+1]的区别
+</span><span class="c1"></span>	<span class="p">{</span>
+		<span class="n">root</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">++</span><span class="n">cnt</span><span class="p">;</span><span class="c1">//累计根节点
+</span><span class="c1"></span>		<span class="n">updata</span><span class="p">(</span><span class="n">root</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">root</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="c1">//更新这棵线段树
+</span><span class="c1"></span>	<span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">//这类宏定义一定要加括号，否则死的很惨！！！！！！
+</span><span class="c1">//我才不会告诉你我就是因为这个第一次交爆零了...
+</span><span class="c1">//还有,宏定义这种东西作用范围是当前文件...写在哪里都一样...
+</span><span class="c1"></span><span class="cp">#define lv (value[ls[r]]-value[ls[l]])</span><span class="c1">//相减后得到的线段树左儿子的值
+</span><span class="c1"></span><span class="cp">#define rv (value[rs[r]]-value[rs[l]])</span><span class="c1">//相减后得到的线段树右儿子的值
+</span><span class="c1"></span><span class="kt">int</span> <span class="n">ans</span><span class="p">;</span><span class="c1">//落谷猥琐巨坑,直接返回会MLE!!!被迫改void并使用全局变量保存答案
+</span><span class="c1"></span><span class="kt">void</span> <span class="nf">query</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span><span class="p">,</span> <span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">)</span><span class="c1">//这里的l和r指的不是数列的区间,而是l棵线段树和第r棵线段树的根节点
+</span><span class="c1"></span><span class="p">{</span>
+	<span class="c1">//直接写成(其实就是)权值的查询就好
+</span><span class="c1"></span>	<span class="k">if</span> <span class="p">(</span><span class="n">ln</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">==</span> <span class="n">rn</span><span class="p">[</span><span class="n">l</span><span class="p">])</span><span class="c1">//叶节点,直接记录答案
+</span><span class="c1"></span>	<span class="p">{</span>
+		<span class="n">ans</span> <span class="o">=</span> <span class="n">ln</span><span class="p">[</span><span class="n">l</span><span class="p">];</span>
+		<span class="k">return</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">k</span> <span class="o">&lt;=</span> <span class="n">lv</span><span class="p">)</span><span class="c1">//左儿子包含的数的个数大于等于待查询的k
+</span><span class="c1"></span>		<span class="n">query</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">ls</span><span class="p">[</span><span class="n">l</span><span class="p">],</span> <span class="n">ls</span><span class="p">[</span><span class="n">r</span><span class="p">]);</span><span class="c1">//向左儿子查询第k小即可
+</span><span class="c1"></span>	<span class="k">else</span><span class="c1">//左儿子包含的数的个数小于待查询的k
+</span><span class="c1"></span>		<span class="n">query</span><span class="p">(</span><span class="n">k</span> <span class="o">-</span> <span class="n">lv</span><span class="p">,</span> <span class="n">rs</span><span class="p">[</span><span class="n">l</span><span class="p">],</span> <span class="n">rs</span><span class="p">[</span><span class="n">r</span><span class="p">]);</span><span class="c1">//整段区间的第k小即为右区间的第(k-左区间包含数的个数)小
+</span><span class="c1"></span><span class="p">}</span>
+<span class="n">map</span> <span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">po</span><span class="cm">/*由原值映射到离散化后的值*/</span><span class="p">,</span> <span class="n">re</span><span class="cm">/*由离散化后的值映射到原值*/</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span><span class="c1">//输入,显然
+</span><span class="c1"></span>	<span class="kt">int</span> <span class="n">m</span><span class="p">;</span>
+	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">m</span><span class="p">;</span>
+	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="c1">//输入并保存副本用于离散化
+</span><span class="c1"></span>	<span class="p">{</span>
+		<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+		<span class="n">tmp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+	<span class="p">}</span>
+	<span class="c1">//---------------------------------------离散化--------------------------------------------
+</span><span class="c1"></span>	<span class="n">sort</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">tmp</span> <span class="o">+</span> <span class="n">n</span><span class="p">);</span><span class="c1">//先来一发排序
+</span><span class="c1"></span>	<span class="c1">//巨坑!!tmp+n是排序区间末区间端点的下一个值的地址!!!
+</span><span class="c1"></span>	<span class="c1">//我也不知道STL为什么要这样反正我就这样爆了两个点
+</span><span class="c1"></span>	<span class="n">n2</span> <span class="o">=</span> <span class="n">unique</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">tmp</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span> <span class="o">-</span> <span class="n">tmp</span><span class="p">;</span><span class="c1">//去重也一样!!!(STL的东西都是这个尿性)
+</span><span class="c1"></span>	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n2</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="c1">//记录离散化后的数值
+</span><span class="c1"></span>	<span class="p">{</span>
+		<span class="n">po</span><span class="p">[</span><span class="n">tmp</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+		<span class="n">re</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+	<span class="p">}</span>
+	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="c1">//将原值变为离散化后的值
+</span><span class="c1"></span>	<span class="p">{</span>
+		<span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">po</span><span class="p">[</span><span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">]];</span>
+	<span class="p">}</span>
+	<span class="c1">//-----------------------------------------------------------------------------------------
+</span><span class="c1"></span>	<span class="n">build</span><span class="p">();</span><span class="c1">//建立主席树
+</span><span class="c1"></span>	<span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">k</span><span class="p">;</span>
+	<span class="k">while</span> <span class="p">(</span><span class="n">m</span><span class="o">--</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">l</span> <span class="o">&gt;&gt;</span> <span class="n">r</span> <span class="o">&gt;&gt;</span> <span class="n">k</span><span class="p">;</span>
+		<span class="n">l</span><span class="o">--</span><span class="p">;</span>
+		<span class="n">query</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">root</span><span class="p">[</span><span class="n">l</span><span class="p">],</span> <span class="n">root</span><span class="p">[</span><span class="n">r</span><span class="p">]);</span><span class="c1">//一定要传递根节点的编号!!!!!!
+</span><span class="c1"></span>		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">re</span><span class="p">[</span><span class="n">ans</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span><span class="c1">//输出答案,一定要离散化的数值搞回来!!!小心爆零!!!
+</span><span class="c1"></span>	<span class="p">}</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%8C%BA%E9%97%B4%E7%AC%ACk%E5%B0%8F/">区间第k小</a>
+        
+            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+        
+            <a href="/tags/c&#43;&#43;/">c&#43;&#43;</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+    
+            <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    
+    <div id="vcomments"></div>
+    <script>
+    new Valine({
+        el: '#vcomments' ,
+        appId: '0yETd71mzQvC5kqlVGmDIVLr-gzGzoHsz',
+        appKey: 'PuVvdF6GU4JvY8RXiuHWlI5W',
+        notify:false, 
+        verify:false, 
+        avatar:'mp', 
+        placeholder: 'just go go' , 
+        enableQQ:true , 
+        visitor:true , 
+        pageSize:15 , 
+        recordIP:true
+    });
+    </script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/%E7%BA%BF%E6%AE%B5%E6%A0%91/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1587878842959&amp;di=d865670296e9efbf79ee1fe7fa5166cb&amp;imgtype=0&amp;src=http%3A%2F%2Fmedia.hihocoder.com%2Fproblem_images%2F20141108%2F14154249931829.png" loading="lazy" data-key="" data-hash="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1587878842959&amp;di=d865670296e9efbf79ee1fe7fa5166cb&amp;imgtype=0&amp;src=http%3A%2F%2Fmedia.hihocoder.com%2Fproblem_images%2F20141108%2F14154249931829.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">线段树</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/csp2020%E5%B0%8F%E7%BB%93/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://s3.ax1x.com/2020/11/22/D3BGc9.jpg" loading="lazy" data-key="" data-hash="https://s3.ax1x.com/2020/11/22/D3BGc9.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">csp2020小结</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/%E5%80%8D%E5%A2%9Elca/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://s3.ax1x.com/2020/11/15/DPOB9J.jpg" loading="lazy" data-key="" data-hash="https://s3.ax1x.com/2020/11/15/DPOB9J.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">倍增LCA</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2021 GBwater&#39;s blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

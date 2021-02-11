@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='班级网盘使用指南'><title>210 Onedrive 使用指南</title>
+
+<link rel='canonical' href='https://gbwater.ga/p/210-onedrive-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='210 Onedrive 使用指南'>
+<meta property='og:description' content='班级网盘使用指南'>
+<meta property='og:url' content='https://gbwater.ga/p/210-onedrive-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/'>
+<meta property='og:site_name' content='GBwater&#39;s blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='网盘' /><meta property='article:published_time' content='2020-10-01T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-10-01T00:00:00&#43;00:00'/><meta property='og:image' content='https://s1.ax1x.com/2020/10/01/0McffA.jpg' />
+<meta name="twitter:title" content="210 Onedrive 使用指南">
+<meta name="twitter:description" content="班级网盘使用指南"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://s1.ax1x.com/2020/10/01/0McffA.jpg' />
+    <link rel="shortcut icon" href="https://s3.ax1x.com/2021/02/11/yBQqjH.png" />
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu62a23029c3233378eeddc901e2496d13_24275_300x0_resize_box_2.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://gbwater.ga">GBwater&#39;s blog</a></h1>
+        <h2 class="site-description">欢迎各位大佬！</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/categories/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-box-multiple" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="7" y="3" width="14" height="14" rx="2" />
+  <path d="M17 17v2a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h2" />
+</svg>
+                
+                <span>Categories</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="https://gbwater.ga" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/210-onedrive-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">
+                
+                    <img src="https://s1.ax1x.com/2020/10/01/0McffA.jpg" loading="lazy" alt="Featured image of post 210 Onedrive 使用指南" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%AD%A6%E4%B9%A0/" style="background-color: #2a9d8f; color: #fff;">
+                学习
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/210-onedrive-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">210 Onedrive 使用指南</a>
+    </h2>
+
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Oct 01, 2020</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <h1 id="简介">简介</h1>
+<p>微软网盘SkyDrive已更名为OneDrive，在任何设备上可以随时使用OneDrive。在您的Windows电脑或Mac上都可以使用OneDrive，以在包括台式计算机、平板电脑和移动电话在内的所有常用设备上访问您的常用内容。将电脑上的重要文件与OneDrive.com保持同步。微软网盘OneDrive是管理与分享你的文档、照片和视频的最佳个人云存储服务，你几乎可以通过任何设备来访问这些文件——来自<a class="link" href="https://pc.qq.com/detail/0/detail_22240.html"  target="_blank" rel="noopener"
+    >腾讯软件中心</a></p>
+<h1 id="为什么选择onedrive">为什么选择onedrive?</h1>
+<ul>
+<li>不限速</li>
+<li>空间大,5TB</li>
+<li>与Windows结合完美,可以直接在文件管理器中访问、修改内容</li>
+<li>具有同步盘的特性,所有修改在有网时自动保存到云端,添加文件只需将文件复制到onedrive对应文件夹中即可,所有设备多端同步</li>
+<li>有网络时文件不需要下载即可访问,不占用本地空间</li>
+<li>&hellip;…</li>
+</ul>
+<h1 id="下载与安装">下载与安装</h1>
+<p>一般来说,Windows10默认安装了onedrive,安装Office(Microsoft365)也会默认安装。如果没有可以前往<a class="link" href="https://pc.qq.com/detail/0/detail_22240.html"  target="_blank" rel="noopener"
+    >腾讯软件中心</a>下载安装。
+MAC理论上AppStore里有，如果没有，安装Office全家桶即可或者使用<a class="link" href="https://water204-my.sharepoint.com"  target="_blank" rel="noopener"
+    >网页版</a>
+至于Linux&hellip;&hellip;真是一个令人悲伤的故事&hellip;…</p>
+<h1 id="登录与访问">登录与访问</h1>
+<p>如果已经安装并登录了账号，请按下面的步骤添加账号（可以共存）。如果没有，则跳过添加账号的步骤在弹出的窗口中直接输入账号密码登陆即可</p>
+<ol>
+<li>左键单击任务栏上的onedrive图标
+<img src="https://s1.ax1x.com/2020/10/01/0Mclzq.png" alt=""  /></li>
+<li>在弹出的窗口中左键单击设置
+<img src="https://s1.ax1x.com/2020/10/01/0McGLT.png" alt=""  /></li>
+<li>在菜单中点击设置
+<img src="https://s1.ax1x.com/2020/10/01/0McYeU.png" alt=""  /></li>
+<li>切换到&quot;账户&quot;标签,点击&quot;添加账户&quot;
+<img src="https://s1.ax1x.com/2020/10/01/0Mc8yV.png" alt=""  /></li>
+<li>在文本框中输入账号,点击登录
+<img src="https://s1.ax1x.com/2020/10/01/0Mc3Q0.png" alt=""  /></li>
+<li>然后输入密码
+<img src="https://s1.ax1x.com/2020/10/01/0MctwF.png" alt=""  /></li>
+<li>随后可以修改文件夹保存位置,然后点击&quot;下一步&quot;
+<img src="https://s1.ax1x.com/2020/10/01/0McNo4.png" alt=""  />
+<img src="https://s1.ax1x.com/2020/10/01/0McaFJ.png" alt=""  /></li>
+<li>然后一路下一步,可以看看简介.移动应用各大应用商店里都有,不用在这里下载
+<img src="https://s1.ax1x.com/2020/10/01/0McdY9.png" alt=""  />
+<img src="https://s1.ax1x.com/2020/10/01/0McwWR.png" alt=""  />
+<img src="https://s1.ax1x.com/2020/10/01/0McBS1.png" alt=""  />
+<img src="https://s1.ax1x.com/2020/10/01/0McDQx.png" alt=""  />
+<img src="https://s1.ax1x.com/2020/10/01/0Mcry6.png" alt=""  /></li>
+<li>最后即可在侧边栏打开onedrive文件夹以访问文件,此时所有内容不占用本地空间,有网络时即可访问.当然也可以下载,在要下载的文件(夹)上右键,选择对应操作即可
+<img src="https://s1.ax1x.com/2020/10/01/0McsOK.png" alt=""  /></li>
+</ol>
+<h1 id="上传与同步">上传与同步</h1>
+<p>上传可以访问<a class="link" href="https://water204-my.sharepoint.com"  target="_blank" rel="noopener"
+    >网页版</a>进行操作，也可以直接在onedrive文件夹中操作，会自动同步到云端</p>
+<h1 id="更多特性与操作">更多特性与操作</h1>
+<p>请访问<a class="link" href="https://support.microsoft.com/zh-cn/onedrive?ui=zh-cn&amp;rs=zh-cn&amp;ad=cn"  target="_blank" rel="noopener"
+    >微软官网</a>获取</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E7%BD%91%E7%9B%98/">网盘</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+    
+            <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    
+    <div id="vcomments"></div>
+    <script>
+    new Valine({
+        el: '#vcomments' ,
+        appId: '0yETd71mzQvC5kqlVGmDIVLr-gzGzoHsz',
+        appKey: 'PuVvdF6GU4JvY8RXiuHWlI5W',
+        notify:false, 
+        verify:false, 
+        avatar:'mp', 
+        placeholder: 'just go go' , 
+        enableQQ:true , 
+        visitor:true , 
+        pageSize:15 , 
+        recordIP:true
+    });
+    </script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/%E5%81%8F%E5%BE%AE%E5%88%86/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1595424976775&amp;di=d5e3760fd96da88eb8d7329fc1f81e2c&amp;imgtype=0&amp;src=http%3A%2F%2Fpic1.zhimg.com%2Fv2-e499e09400aefa4525e8dccdeb828d70_b.jpg" loading="lazy" data-key="" data-hash="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1595424976775&amp;di=d5e3760fd96da88eb8d7329fc1f81e2c&amp;imgtype=0&amp;src=http%3A%2F%2Fpic1.zhimg.com%2Fv2-e499e09400aefa4525e8dccdeb828d70_b.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">偏微分</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/%E7%A7%AF%E5%88%86/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1362029340,873040901&amp;fm=26&amp;gp=0.jpg" loading="lazy" data-key="" data-hash="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1362029340,873040901&amp;fm=26&amp;gp=0.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">积分</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/%E5%AF%BC%E6%95%B0/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1595088441530&amp;di=ec0a63deebd73fdc0d2cad4d971afb56&amp;imgtype=0&amp;src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fbaike%2Fpic%2Fitem%2Fe7cd7b899e510fb3cc0a63b2db33c895d1430c87.jpg" loading="lazy" data-key="" data-hash="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1595088441530&amp;di=ec0a63deebd73fdc0d2cad4d971afb56&amp;imgtype=0&amp;src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fbaike%2Fpic%2Fitem%2Fe7cd7b899e510fb3cc0a63b2db33c895d1430c87.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">导数</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E7%BD%91%E6%98%93%E4%BA%91%E8%AE%BA%E6%8D%AE/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">网易云论据</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2021 GBwater&#39;s blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

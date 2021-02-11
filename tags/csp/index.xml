@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CSP on GBwater&#39;s blog</title>
+    <link>https://gbwater.ga/tags/csp/</link>
+    <description>Recent content in CSP on GBwater&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 22 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://gbwater.ga/tags/csp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>csp2020小结</title>
+      <link>https://gbwater.ga/p/csp2020%E5%B0%8F%E7%BB%93/</link>
+      <pubDate>Sun, 22 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://gbwater.ga/p/csp2020%E5%B0%8F%E7%BB%93/</guid>
+      <description>csp2020爆零记</description>
+    </item>
+    
+  </channel>
+</rss>

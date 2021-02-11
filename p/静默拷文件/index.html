@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='悄咪咪地复制u盘中的文件,专门对付不给课件的老师'><title>静默拷文件</title>
+
+<link rel='canonical' href='https://gbwater.ga/p/%E9%9D%99%E9%BB%98%E6%8B%B7%E6%96%87%E4%BB%B6/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='静默拷文件'>
+<meta property='og:description' content='悄咪咪地复制u盘中的文件,专门对付不给课件的老师'>
+<meta property='og:url' content='https://gbwater.ga/p/%E9%9D%99%E9%BB%98%E6%8B%B7%E6%96%87%E4%BB%B6/'>
+<meta property='og:site_name' content='GBwater&#39;s blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='电教平台自动化管理工具集' /><meta property='article:published_time' content='2020-07-22T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-07-22T00:00:00&#43;00:00'/><meta property='og:image' content='https://s1.ax1x.com/2020/07/22/UHSWuV.png' />
+<meta name="twitter:title" content="静默拷文件">
+<meta name="twitter:description" content="悄咪咪地复制u盘中的文件,专门对付不给课件的老师"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://s1.ax1x.com/2020/07/22/UHSWuV.png' />
+    <link rel="shortcut icon" href="https://s3.ax1x.com/2021/02/11/yBQqjH.png" />
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu62a23029c3233378eeddc901e2496d13_24275_300x0_resize_box_2.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://gbwater.ga">GBwater&#39;s blog</a></h1>
+        <h2 class="site-description">欢迎各位大佬！</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/categories/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-box-multiple" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="7" y="3" width="14" height="14" rx="2" />
+  <path d="M17 17v2a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h2" />
+</svg>
+                
+                <span>Categories</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="https://gbwater.ga" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/%E9%9D%99%E9%BB%98%E6%8B%B7%E6%96%87%E4%BB%B6/">
+                
+                    <img src="https://s1.ax1x.com/2020/07/22/UHSWuV.png" loading="lazy" alt="Featured image of post 静默拷文件" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%B7%A5%E5%85%B7/" style="background-color: #2a9d8f; color: #fff;">
+                工具
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/%E9%9D%99%E9%BB%98%E6%8B%B7%E6%96%87%E4%BB%B6/">静默拷文件</a>
+    </h2>
+
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Jul 22, 2020</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <h2 id="重中之重br">重中之重<!-- raw HTML omitted --></h2>
+<ul>
+<li>
+<p><!-- raw HTML omitted --> <strong>GUI版运行需要安装 .NET 4.7.2！！！</strong><!-- raw HTML omitted -->
+若未安装，请运行：“NDP472-KB4054530-x86-x64-AllOS-ENU.exe”安装<!-- raw HTML omitted --></p>
+</li>
+<li>
+<p><!-- raw HTML omitted --> <strong>5.0的setting.txt和其他版本的不兼容,不可互换！！！</strong><!-- raw HTML omitted --></p>
+</li>
+<li>
+<p>由于使用了Qt，可能会导致兼容性问题</p>
+</li>
+</ul>
+<h2 id="简介">简介</h2>
+<ul>
+<li>实现在检测到<del>u盘</del>目录存在后将<del>u盘</del>目录中的文件复制到制定目录中</li>
+<li>实现盘符和磁盘名称两种方法检测 <del>用来复制指定u盘的文件</del></li>
+<li>复制时保留源目录结构<del>就是不仅把ppt搞出来还按原方式分文件夹</del></li>
+<li>如有bitlocker锁，则等待解锁后复制<del>就是u盘有密码也可以</del></li>
+<li>经测试可正确运行于Windows10（2004），其他系统本蒟蒻就不知道了<del>其实是懒得试</del><!-- raw HTML omitted --></li>
+<li>使用C++和Qt编写主程序<!-- raw HTML omitted --></li>
+<li>wpf+C# .net实现图形化 <del>（本来用的是winform+VB .net，但嫌它丑）</del><!-- raw HTML omitted --></li>
+<li>使用命令行工具“ROBOCOPY”实现相关功能 <del>本蒟蒻懒得敲</del><!-- raw HTML omitted --></li>
+<li>源代码也一并奉上，欢迎各位大神指导！如有雷同，纯属巧合<!-- raw HTML omitted --></li>
+<li>因使用此工具造成的损失本蒟蒻概不负责<del>强行甩锅，逃。。。</del><!-- raw HTML omitted --></li>
+<li>&hellip;&hellip;</li>
+</ul>
+<h2 id="v-500更新内容">v 5.0.0更新内容</h2>
+<ul>
+<li>使用Qt+C++编写主程序</li>
+<li>新增检测方式——磁盘名称</li>
+<li>新增复制前等待选项，避让使用高峰期</li>
+<li>更换bitlocker解锁检测方式，减小资源消耗</li>
+</ul>
+<h2 id="使用说明">使用说明</h2>
+<ul>
+<li><!-- raw HTML omitted --> <strong>编辑配置文件</strong><!-- raw HTML omitted --></li>
+</ul>
+<ol>
+<li>编辑“setup.txt”完成配置</li>
+<li>运行“start无提示.vbs”或“start有提示.vbs”运行程序，等待u盘插入（切不可直接运行copy.exe!）</li>
+<li>u盘插入后，程序自动复制文件</li>
+<li>待u盘拔出后，检查复制出来的文件，若有需要，打开“log.txt”查看日志并进行下一步操作</li>
+</ol>
+<ul>
+<li><!-- raw HTML omitted --> <strong>使用GUI配置工具（推荐）</strong><!-- raw HTML omitted --></li>
+</ul>
+<ol>
+<li>运行静默拷文件.exe，完成配置后，点击保存并启动按钮（高级选项 is useful，但不了解建议不要勾选）</li>
+<li>u盘插入后，程序自动复制文件</li>
+<li>待u盘拔出后，检查复制出来的文件，若有需要，可以查看日志并进行下一步操作</li>
+</ol>
+<ul>
+<li>
+<p><!-- raw HTML omitted --> <strong>“setup.txt”的填写及修改说明</strong><!-- raw HTML omitted --></p>
+<ul>
+<li>请填写在提示字符的下一行（已留空，直接填在空行就好）</li>
+<li>留空代表不使用该选项</li>
+<li>删除时请留出空行，即各提示字符间必须留有一行空行，多了少了都不行</li>
+<li>本蒟蒻已预先填写好一些内容，均可修改。但(不建议修改）的内容不建议修改及删除（大神请随意）</li>
+</ul>
+</li>
+<li>
+<p><!-- raw HTML omitted --> <strong>“start无提示.vbs”和“start有提示.vbs”</strong><!-- raw HTML omitted -->
+无提示则复制完成后不会有任何反应，有提示则复制完成后会有一“您的资料已被盗！”弹窗弹出</p>
+</li>
+</ul>
+<h2 id="setuptxt配置选项">setup.txt”配置选项</h2>
+<!-- raw HTML omitted -->
+<h2 id="运行截图">运行截图</h2>
+<!-- raw HTML omitted -->
+<h2 id="下载">下载</h2>
+<p><a class="link" href="https://www.fengniaopan.com/#/s/5WV7fp"  target="_blank" rel="noopener"
+    >蜂鸟云盘</a><br>
+<a class="link" href="https://github.com/water2004/Silent-Copy-From-USB-Drives"  target="_blank" rel="noopener"
+    >github项目地址</a></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E7%94%B5%E6%95%99%E5%B9%B3%E5%8F%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%E9%9B%86/">电教平台自动化管理工具集</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+    
+            <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    
+    <div id="vcomments"></div>
+    <script>
+    new Valine({
+        el: '#vcomments' ,
+        appId: '0yETd71mzQvC5kqlVGmDIVLr-gzGzoHsz',
+        appKey: 'PuVvdF6GU4JvY8RXiuHWlI5W',
+        notify:false, 
+        verify:false, 
+        avatar:'mp', 
+        placeholder: 'just go go' , 
+        enableQQ:true , 
+        visitor:true , 
+        pageSize:15 , 
+        recordIP:true
+    });
+    </script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/%E6%96%87%E4%BB%B6%E8%87%AA%E5%8A%A8%E4%BF%9D%E5%AD%98update2-6-1/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://s3.ax1x.com/2020/11/22/D3b01J.jpg" loading="lazy" data-key="" data-hash="https://s3.ax1x.com/2020/11/22/D3b01J.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">文件自动保存update2-6-1</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/%E5%AE%9A%E6%97%B6%E5%85%B3%E6%9C%BA/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://s3.ax1x.com/2021/02/11/yBlcIP.jpg" loading="lazy" data-key="" data-hash="https://s3.ax1x.com/2021/02/11/yBlcIP.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">定时关机</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2021 GBwater&#39;s blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

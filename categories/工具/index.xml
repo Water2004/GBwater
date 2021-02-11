@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>工具 on GBwater&#39;s blog</title>
+    <link>https://gbwater.ga/categories/%E5%B7%A5%E5%85%B7/</link>
+    <description>Recent content in 工具 on GBwater&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 22 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://gbwater.ga/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>文件自动保存update2-6-1</title>
+      <link>https://gbwater.ga/p/%E6%96%87%E4%BB%B6%E8%87%AA%E5%8A%A8%E4%BF%9D%E5%AD%98update2-6-1/</link>
+      <pubDate>Sun, 22 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://gbwater.ga/p/%E6%96%87%E4%BB%B6%E8%87%AA%E5%8A%A8%E4%BF%9D%E5%AD%98update2-6-1/</guid>
+      <description>自动保存桌面文件,自动去除重复文件,电教员福音,现已完全适配Windows7</description>
+    </item>
+    
+    <item>
+      <title>静默拷文件</title>
+      <link>https://gbwater.ga/p/%E9%9D%99%E9%BB%98%E6%8B%B7%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Wed, 22 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://gbwater.ga/p/%E9%9D%99%E9%BB%98%E6%8B%B7%E6%96%87%E4%BB%B6/</guid>
+      <description>悄咪咪地复制u盘中的文件,专门对付不给课件的老师</description>
+    </item>
+    
+    <item>
+      <title>定时关机</title>
+      <link>https://gbwater.ga/p/%E5%AE%9A%E6%97%B6%E5%85%B3%E6%9C%BA/</link>
+      <pubDate>Sat, 25 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://gbwater.ga/p/%E5%AE%9A%E6%97%B6%E5%85%B3%E6%9C%BA/</guid>
+      <description>在指定时间弹出倒计时提示窗口窗口,若没有选择延迟将关机,方便广大电教员</description>
+    </item>
+    
+  </channel>
+</rss>

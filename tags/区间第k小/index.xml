@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>区间第k小 on GBwater&#39;s blog</title>
+    <link>https://gbwater.ga/tags/%E5%8C%BA%E9%97%B4%E7%AC%ACk%E5%B0%8F/</link>
+    <description>Recent content in 区间第k小 on GBwater&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 28 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://gbwater.ga/tags/%E5%8C%BA%E9%97%B4%E7%AC%ACk%E5%B0%8F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>主席树</title>
+      <link>https://gbwater.ga/p/%E4%B8%BB%E5%B8%AD%E6%A0%91/</link>
+      <pubDate>Tue, 28 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://gbwater.ga/p/%E4%B8%BB%E5%B8%AD%E6%A0%91/</guid>
+      <description>解决区间第k值问题的重要方法</description>
+    </item>
+    
+  </channel>
+</rss>

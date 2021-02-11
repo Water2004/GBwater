@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>wine on GBwater&#39;s blog</title>
+    <link>https://gbwater.ga/tags/wine/</link>
+    <description>Recent content in wine on GBwater&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 24 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://gbwater.ga/tags/wine/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>wine软件包及mono和gecko</title>
+      <link>https://gbwater.ga/p/wine%E8%BD%AF%E4%BB%B6%E5%8C%85%E5%8F%8Amono%E5%92%8Cgecko/</link>
+      <pubDate>Fri, 24 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://gbwater.ga/p/wine%E8%BD%AF%E4%BB%B6%E5%8C%85%E5%8F%8Amono%E5%92%8Cgecko/</guid>
+      <description>由于wine官网访问贼慢,特此下载以供后人使用</description>
+    </item>
+    
+  </channel>
+</rss>
