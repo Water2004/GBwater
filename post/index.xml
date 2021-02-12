@@ -6,7 +6,16 @@
     <description>Recent content in Posts on GBwater&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 11 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://gbwater.ga/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://gbwater.ga/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NOIP2020小结</title>
+      <link>https://gbwater.ga/p/noip2020%E5%B0%8F%E7%BB%93/</link>
+      <pubDate>Fri, 12 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://gbwater.ga/p/noip2020%E5%B0%8F%E7%BB%93/</guid>
+      <description>NOIP2020爆零记</description>
+    </item>
+    
     <item>
       <title>deepin20编译安装dde-top-panel</title>
       <link>https://gbwater.ga/p/deepin20%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85dde-top-panel/</link>
