@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='喜欢视频网站的视频却苦于无法下载?看过来!'><title>deepin入坑指南——使用you-get下载主流视频网站的视频</title>
+
+<link rel='canonical' href='https://gbwater.ga/p/deepin%E5%85%A5%E5%9D%91%E6%8C%87%E5%8D%97%E4%BD%BF%E7%94%A8you-get%E4%B8%8B%E8%BD%BD%E4%B8%BB%E6%B5%81%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='deepin入坑指南——使用you-get下载主流视频网站的视频'>
+<meta property='og:description' content='喜欢视频网站的视频却苦于无法下载?看过来!'>
+<meta property='og:url' content='https://gbwater.ga/p/deepin%E5%85%A5%E5%9D%91%E6%8C%87%E5%8D%97%E4%BD%BF%E7%94%A8you-get%E4%B8%8B%E8%BD%BD%E4%B8%BB%E6%B5%81%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91/'>
+<meta property='og:site_name' content='GBwater&#39;s blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='deepin入坑指南' /><meta property='article:tag' content='deepin' /><meta property='article:published_time' content='2021-02-12T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-02-12T00:00:00&#43;00:00'/><meta property='og:image' content='https://s3.ax1x.com/2021/01/31/yA4cJs.jpg' />
+<meta name="twitter:title" content="deepin入坑指南——使用you-get下载主流视频网站的视频">
+<meta name="twitter:description" content="喜欢视频网站的视频却苦于无法下载?看过来!"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://s3.ax1x.com/2021/01/31/yA4cJs.jpg' />
+    <link rel="shortcut icon" href="https://s3.ax1x.com/2021/02/11/yBQqjH.png" />
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu62a23029c3233378eeddc901e2496d13_24275_300x0_resize_box_2.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://gbwater.ga">GBwater&#39;s blog</a></h1>
+        <h2 class="site-description">欢迎各位大佬！</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/categories/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-box-multiple" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="7" y="3" width="14" height="14" rx="2" />
+  <path d="M17 17v2a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h2" />
+</svg>
+                
+                <span>Categories</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="https://gbwater.ga" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/deepin%E5%85%A5%E5%9D%91%E6%8C%87%E5%8D%97%E4%BD%BF%E7%94%A8you-get%E4%B8%8B%E8%BD%BD%E4%B8%BB%E6%B5%81%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91/">
+                
+                    <img src="https://s3.ax1x.com/2021/01/31/yA4cJs.jpg" loading="lazy" alt="Featured image of post deepin入坑指南——使用you-get下载主流视频网站的视频" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/linux/" style="background-color: #2a9d8f; color: #fff;">
+                Linux
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/deepin%E5%85%A5%E5%9D%91%E6%8C%87%E5%8D%97%E4%BD%BF%E7%94%A8you-get%E4%B8%8B%E8%BD%BD%E4%B8%BB%E6%B5%81%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91/">deepin入坑指南——使用you-get下载主流视频网站的视频</a>
+    </h2>
+
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Feb 12, 2021</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <h1 id="deepin入坑指南使用you-get下载主流视频网站的视频">deepin入坑指南——使用you-get下载主流视频网站的视频</h1>
+<h2 id="安装和配置pip3">安装和配置pip3</h2>
+<h3 id="安装pip3">安装pip3</h3>
+<p>首先安装pip3,终端输入命令:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt install python3-pip
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="更换国内源">更换国内源</h3>
+<p>临时使用可以加上-i参数,指定pip源,例如</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">pip install you-get -i https://pypi.tuna.tsinghua.edu.cn/simple
+</code></pre></td></tr></table>
+</div>
+</div><p>永久修改则修改~/.pip/pip.conf(没有就创建一个)， 内容如下</p>
+<pre><code>[global]
+index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+</code></pre><p>一些国内的镜像源:</p>
+<ol>
+<li>阿里云 <a href="http://mirrors.aliyun.com/pypi/simple/">http://mirrors.aliyun.com/pypi/simple/</a></li>
+<li>中国科技大学 <a href="https://pypi.mirrors.ustc.edu.cn/simple/">https://pypi.mirrors.ustc.edu.cn/simple/</a></li>
+<li>豆瓣 <a href="http://pypi.douban.com/simple/">http://pypi.douban.com/simple/</a></li>
+<li>清华大学 <a href="https://pypi.tuna.tsinghua.edu.cn/simple/">https://pypi.tuna.tsinghua.edu.cn/simple/</a></li>
+<li>中国科学技术大学 <a href="http://pypi.mirrors.ustc.edu.cn/simple/">http://pypi.mirrors.ustc.edu.cn/simple/</a></li>
+</ol>
+<h2 id="安装you-get">安装you-get</h2>
+<p>终端输入命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">sudo pip3 install you-get
+</code></pre></td></tr></table>
+</div>
+</div><p>若要更新,使用命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">pip3 install --upgrade you-get
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="使用you-get">使用you-get</h2>
+<h3 id="下载指定格式的视频">下载指定格式的视频</h3>
+<p>首先使用&ndash;info或者-i参数获取视频信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">you-get -i &lt;url&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>这里的url就是浏览器访问视频时地址框里的那个</p>
+<p>例如,如果我要下载<a class="link" href="https://www.iqiyi.com/v_19rx2ez0w4.html"  target="_blank" rel="noopener"
+    >爱奇艺上的德云社春晚相声</a>,就在终端输入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">you-get -i https://www.iqiyi.com/v_19rx2ez0w4.html
+</code></pre></td></tr></table>
+</div>
+</div><p>这时you-get的输出如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">you-get: vd: <span class="m">75</span> is not handled
+you-get: info is <span class="o">{</span><span class="s1">&#39;m3utx&#39;</span>: <span class="s1">&#39;http://cache.m.iqiyi.com/mus/text/250351801/b5d8357ec33641c316bf0a0dc7adb8bb/afbe8fd3d73448c9/0/20200329/c8/99/ccd2f230c814c2aab54a6994e7433afb.m3u8?qd_originate=tmts_py&amp;tvid=14281781800&amp;bossStatus=0&amp;qd_vip=0&amp;px=&amp;src=3_31_312&amp;prv=&amp;previewType=&amp;previewTime=&amp;from=&amp;qd_time=1613129716572&amp;qd_p=0e9d4591&amp;qd_asc=4af38ab6f480b859f7b88d496c8c019e&amp;qypid=14281781800_04022000001000000000_75&amp;qd_k=2004ae445e0a1b1825cfd616d87f3c93&amp;isdol=0&amp;code=2&amp;ff=f4v&amp;iswb=0&amp;qd_s=otv&amp;vf=4b7c73268eb847d33a7cfeaba213652d&amp;np_tag=nginx_part_tag&#39;</span>, <span class="s1">&#39;lgt&#39;</span>: 13, <span class="s1">&#39;mver&#39;</span>: 100, <span class="s1">&#39;screenSize&#39;</span>: <span class="s1">&#39;896x504&#39;</span>, <span class="s1">&#39;ists&#39;</span>: 1, <span class="s1">&#39;unencryptedDuration&#39;</span>: 0, <span class="s1">&#39;vd&#39;</span>: 75, <span class="s1">&#39;m3u&#39;</span>: <span class="s1">&#39;http://cache.m.iqiyi.com/mus/250351801/b5d8357ec33641c316bf0a0dc7adb8bb/afbe8fd3d73448c9/0/20200329/c8/99/ccd2f230c814c2aab54a6994e7433afb.m3u8?qd_originate=tmts_py&amp;tvid=14281781800&amp;bossStatus=0&amp;qd_vip=0&amp;px=&amp;src=3_31_312&amp;prv=&amp;previewType=&amp;previewTime=&amp;from=&amp;qd_time=1613129716572&amp;qd_p=0e9d4591&amp;qd_asc=4af38ab6f480b859f7b88d496c8c019e&amp;qypid=14281781800_04022000001000000000_75&amp;qd_k=2004ae445e0a1b1825cfd616d87f3c93&amp;isdol=0&amp;code=2&amp;ff=f4v&amp;iswb=0&amp;qd_s=otv&amp;vf=4b7c73268eb847d33a7cfeaba213652d&amp;np_tag=nginx_part_tag&#39;</span>, <span class="s1">&#39;code&#39;</span>: 2, <span class="s1">&#39;dr&#39;</span>: -1, <span class="s1">&#39;drmType&#39;</span>: 1, <span class="s1">&#39;vid&#39;</span>: <span class="s1">&#39;b5d8357ec33641c316bf0a0dc7adb8bb&#39;</span><span class="o">}</span>
+site:                爱奇艺 <span class="o">(</span>Iqiyi<span class="o">)</span>
+title:               2020天津卫视德云社相声春晚之精编版（下）
+streams:             <span class="c1"># Available quality and codecs</span>
+    <span class="o">[</span> DEFAULT <span class="o">]</span> _________________________________
+    - format:        TD
+      container:     m3u8
+      video-profile: 720p
+      m3u8_url:      http://cache.m.iqiyi.com/mus/250351801/4fc7566f752ca2c20ee1894df99f3453/afbe8fd3d73448c9/0/20201029/55/b3/e55e81f305266eedc05bc074d249a6ef.m3u8?qd_originate<span class="o">=</span>tmts_py<span class="p">&amp;</span><span class="nv">tvid</span><span class="o">=</span>14281781800<span class="p">&amp;</span><span class="nv">bossStatus</span><span class="o">=</span>0<span class="p">&amp;</span><span class="nv">qd_vip</span><span class="o">=</span>0<span class="p">&amp;</span><span class="nv">px</span><span class="o">=</span><span class="p">&amp;</span><span class="nv">src</span><span class="o">=</span>3_31_312<span class="p">&amp;</span><span class="nv">prv</span><span class="o">=</span><span class="p">&amp;</span><span class="nv">previewType</span><span class="o">=</span><span class="p">&amp;</span><span class="nv">previewTime</span><span class="o">=</span><span class="p">&amp;</span><span class="nv">from</span><span class="o">=</span><span class="p">&amp;</span><span class="nv">qd_time</span><span class="o">=</span>1613129716572<span class="p">&amp;</span><span class="nv">qd_p</span><span class="o">=</span>0e9d4591<span class="p">&amp;</span><span class="nv">qd_asc</span><span class="o">=</span>5d4075f202f2fb30c7fdce7f8c417e54<span class="p">&amp;</span><span class="nv">qypid</span><span class="o">=</span>14281781800_04022000001000000000_4<span class="p">&amp;</span><span class="nv">qd_k</span><span class="o">=</span>2004ae445e0a1b1825cfd616d87f3c93<span class="p">&amp;</span><span class="nv">isdol</span><span class="o">=</span>0<span class="p">&amp;</span><span class="nv">code</span><span class="o">=</span>2<span class="p">&amp;</span><span class="nv">ff</span><span class="o">=</span>f4v<span class="p">&amp;</span><span class="nv">iswb</span><span class="o">=</span>0<span class="p">&amp;</span><span class="nv">qd_s</span><span class="o">=</span>otv<span class="p">&amp;</span><span class="nv">vf</span><span class="o">=</span>fd25d9f6bc8aa66ca5e06de000b36658<span class="p">&amp;</span><span class="nv">np_tag</span><span class="o">=</span>nginx_part_tag
+    <span class="c1"># download-with: you-get --format=TD [URL]</span>
+
+    - format:        TD_H265
+      container:     m3u8
+      video-profile: 720p H265
+      m3u8_url:      http://cache.m.iqiyi.com/mus/250351801/2b2b080be951084fab021dc1249384ef/afbe8fd3d73448c9/0/20201029/55/b3/0d6fcc58ff080f575ed5a4386cda8356.m3u8?qd_originate<span class="o">=</span>tmts_py<span class="p">&amp;</span><span class="nv">tvid</span><span class="o">=</span>14281781800<span class="p">&amp;</span><span class="nv">bossStatus</span><span class="o">=</span>0<span class="p">&amp;</span><span class="nv">qd_vip</span><span class="o">=</span>0<span class="p">&amp;</span><span class="nv">px</span><span class="o">=</span><span class="p">&amp;</span><span class="nv">src</span><span class="o">=</span>3_31_312<span class="p">&amp;</span><span class="nv">prv</span><span class="o">=</span><span class="p">&amp;</span><span class="nv">previewType</span><span class="o">=</span><span class="p">&amp;</span><span class="nv">previewTime</span><span class="o">=</span><span class="p">&amp;</span><span class="nv">from</span><span class="o">=</span><span class="p">&amp;</span><span class="nv">qd_time</span><span class="o">=</span>1613129716572<span class="p">&amp;</span><span class="nv">qd_p</span><span class="o">=</span>0e9d4591<span class="p">&amp;</span><span class="nv">qd_asc</span><span class="o">=</span>26fa4e7c5403eee1942e73344f47c57c<span class="p">&amp;</span><span class="nv">qypid</span><span class="o">=</span>14281781800_04022000001000000000_17<span class="p">&amp;</span><span class="nv">qd_k</span><span class="o">=</span>2004ae445e0a1b1825cfd616d87f3c93<span class="p">&amp;</span><span class="nv">isdol</span><span class="o">=</span>0<span class="p">&amp;</span><span class="nv">code</span><span class="o">=</span>1<span class="p">&amp;</span><span class="nv">ff</span><span class="o">=</span>265ts<span class="p">&amp;</span><span class="nv">iswb</span><span class="o">=</span>0<span class="p">&amp;</span><span class="nv">qd_s</span><span class="o">=</span>otv<span class="p">&amp;</span><span class="nv">vf</span><span class="o">=</span>e10bf652e02b1611a2de6a7c498c3329<span class="p">&amp;</span><span class="nv">np_tag</span><span class="o">=</span>nginx_part_tag
+    <span class="c1"># download-with: you-get --format=TD_H265 [URL]</span>
+
+    - format:        HD
+      container:     m3u8
+      video-profile: 540p
+      m3u8_url:      http://cache.m.iqiyi.com/mus/250351801/3297bf14ce29680457e74bd3b29655fc/afbe8fd3d73448c9/0/20201029/55/b3/6111cf77ca9d50b5c836493d3e274487.m3u8?qd_originate<span class="o">=</span>tmts_py<span class="p">&amp;</span><span class="nv">tvid</span><span class="o">=</span>14281781800<span class="p">&amp;</span><span class="nv">bossStatus</span><span class="o">=</span>0<span class="p">&amp;</span><span class="nv">qd_vip</span><span class="o">=</span>0<span class="p">&amp;</span><span class="nv">px</span><span class="o">=</span><span class="p">&amp;</span><span class="nv">src</span><span class="o">=</span>3_31_312<span class="p">&amp;</span><span class="nv">prv</span><span class="o">=</span><span class="p">&amp;</span><span class="nv">previewType</span><span class="o">=</span><span class="p">&amp;</span><span class="nv">previewTime</span><span class="o">=</span><span class="p">&amp;</span><span class="nv">from</span><span class="o">=</span><span class="p">&amp;</span><span class="nv">qd_time</span><span class="o">=</span>1613129716572<span class="p">&amp;</span><span class="nv">qd_p</span><span class="o">=</span>0e9d4591<span class="p">&amp;</span><span class="nv">qd_asc</span><span class="o">=</span>02e9664c7cff7ff4c5602f30c9dcea89<span class="p">&amp;</span><span class="nv">qypid</span><span class="o">=</span>14281781800_04022000001000000000_2<span class="p">&amp;</span><span class="nv">qd_k</span><span class="o">=</span>2004ae445e0a1b1825cfd616d87f3c93<span class="p">&amp;</span><span class="nv">isdol</span><span class="o">=</span>0<span class="p">&amp;</span><span class="nv">code</span><span class="o">=</span>2<span class="p">&amp;</span><span class="nv">ff</span><span class="o">=</span>f4v<span class="p">&amp;</span><span class="nv">iswb</span><span class="o">=</span>0<span class="p">&amp;</span><span class="nv">qd_s</span><span class="o">=</span>otv<span class="p">&amp;</span><span class="nv">vf</span><span class="o">=</span>796575d2118904ecdab75e98af416dce<span class="p">&amp;</span><span class="nv">np_tag</span><span class="o">=</span>nginx_part_tag
+    <span class="c1"># download-with: you-get --format=HD [URL]</span>
+
+    - format:        HD_H265
+      container:     m3u8
+      video-profile: 540p H265
+      m3u8_url:      http://cache.m.iqiyi.com/mus/250351801/31bc12eef9157c0fa186664858bfe712/afbe8fd3d73448c9/0/20201029/55/b3/58650d10ae97ea73506f1041d72e4dac.m3u8?qd_originate<span class="o">=</span>tmts_py<span class="p">&amp;</span><span class="nv">tvid</span><span class="o">=</span>14281781800<span class="p">&amp;</span><span class="nv">bossStatus</span><span class="o">=</span>0<span class="p">&amp;</span><span class="nv">qd_vip</span><span class="o">=</span>0<span class="p">&amp;</span><span class="nv">px</span><span class="o">=</span><span class="p">&amp;</span><span class="nv">src</span><span class="o">=</span>3_31_312<span class="p">&amp;</span><span class="nv">prv</span><span class="o">=</span><span class="p">&amp;</span><span class="nv">previewType</span><span class="o">=</span><span class="p">&amp;</span><span class="nv">previewTime</span><span class="o">=</span><span class="p">&amp;</span><span class="nv">from</span><span class="o">=</span><span class="p">&amp;</span><span class="nv">qd_time</span><span class="o">=</span>1613129716572<span class="p">&amp;</span><span class="nv">qd_p</span><span class="o">=</span>0e9d4591<span class="p">&amp;</span><span class="nv">qd_asc</span><span class="o">=</span>cfbf044d5dfa5b87d7d0d1d090e4886b<span class="p">&amp;</span><span class="nv">qypid</span><span class="o">=</span>14281781800_04022000001000000000_21<span class="p">&amp;</span><span class="nv">qd_k</span><span class="o">=</span>2004ae445e0a1b1825cfd616d87f3c93<span class="p">&amp;</span><span class="nv">isdol</span><span class="o">=</span>0<span class="p">&amp;</span><span class="nv">code</span><span class="o">=</span>1<span class="p">&amp;</span><span class="nv">ff</span><span class="o">=</span>265ts<span class="p">&amp;</span><span class="nv">iswb</span><span class="o">=</span>0<span class="p">&amp;</span><span class="nv">qd_s</span><span class="o">=</span>otv<span class="p">&amp;</span><span class="nv">vf</span><span class="o">=</span>e1b20f06c858cdf7d55590f459f480bc<span class="p">&amp;</span><span class="nv">np_tag</span><span class="o">=</span>nginx_part_tag
+    <span class="c1"># download-with: you-get --format=HD_H265 [URL]</span>
+
+    - format:        SD
+      container:     m3u8
+      video-profile: 360p
+      m3u8_url:      http://cache.m.iqiyi.com/mus/250351801/5d7a91960ce5b8c049136e4be8d0c4ac/afbe8fd3d73448c9/0/20200329/c8/99/946add8a95cc05f129fc1d5d0ac9da14.m3u8?qd_originate<span class="o">=</span>tmts_py<span class="p">&amp;</span><span class="nv">tvid</span><span class="o">=</span>14281781800<span class="p">&amp;</span><span class="nv">bossStatus</span><span class="o">=</span>0<span class="p">&amp;</span><span class="nv">qd_vip</span><span class="o">=</span>0<span class="p">&amp;</span><span class="nv">px</span><span class="o">=</span><span class="p">&amp;</span><span class="nv">src</span><span class="o">=</span>3_31_312<span class="p">&amp;</span><span class="nv">prv</span><span class="o">=</span><span class="p">&amp;</span><span class="nv">previewType</span><span class="o">=</span><span class="p">&amp;</span><span class="nv">previewTime</span><span class="o">=</span><span class="p">&amp;</span><span class="nv">from</span><span class="o">=</span><span class="p">&amp;</span><span class="nv">qd_time</span><span class="o">=</span>1613129716572<span class="p">&amp;</span><span class="nv">qd_p</span><span class="o">=</span>0e9d4591<span class="p">&amp;</span><span class="nv">qd_asc</span><span class="o">=</span>5f34d251fe608a49cfdd0c584ec27667<span class="p">&amp;</span><span class="nv">qypid</span><span class="o">=</span>14281781800_04022000001000000000_1<span class="p">&amp;</span><span class="nv">qd_k</span><span class="o">=</span>2004ae445e0a1b1825cfd616d87f3c93<span class="p">&amp;</span><span class="nv">isdol</span><span class="o">=</span>0<span class="p">&amp;</span><span class="nv">code</span><span class="o">=</span>2<span class="p">&amp;</span><span class="nv">ff</span><span class="o">=</span>f4v<span class="p">&amp;</span><span class="nv">iswb</span><span class="o">=</span>0<span class="p">&amp;</span><span class="nv">qd_s</span><span class="o">=</span>otv<span class="p">&amp;</span><span class="nv">vf</span><span class="o">=</span>f172ed9a453a415f9b7425254fb93444<span class="p">&amp;</span><span class="nv">np_tag</span><span class="o">=</span>nginx_part_tag
+    <span class="c1"># download-with: you-get --format=SD [URL]</span>
+
+    - format:        LD
+      container:     m3u8
+      video-profile: 210p
+      m3u8_url:      http://cache.m.iqiyi.com/mus/250351801/0b184d7790ebe24ce40d6a42d4a87927/afbe8fd3d73448c9/0/20200329/c8/99/5f0701913828afadb29cd633c1c0744b.m3u8?qd_originate<span class="o">=</span>tmts_py<span class="p">&amp;</span><span class="nv">tvid</span><span class="o">=</span>14281781800<span class="p">&amp;</span><span class="nv">bossStatus</span><span class="o">=</span>0<span class="p">&amp;</span><span class="nv">qd_vip</span><span class="o">=</span>0<span class="p">&amp;</span><span class="nv">px</span><span class="o">=</span><span class="p">&amp;</span><span class="nv">src</span><span class="o">=</span>3_31_312<span class="p">&amp;</span><span class="nv">prv</span><span class="o">=</span><span class="p">&amp;</span><span class="nv">previewType</span><span class="o">=</span><span class="p">&amp;</span><span class="nv">previewTime</span><span class="o">=</span><span class="p">&amp;</span><span class="nv">from</span><span class="o">=</span><span class="p">&amp;</span><span class="nv">qd_time</span><span class="o">=</span>1613129716572<span class="p">&amp;</span><span class="nv">qd_p</span><span class="o">=</span>0e9d4591<span class="p">&amp;</span><span class="nv">qd_asc</span><span class="o">=</span>7bccc88a2ca1cd6e26843180eb3b20f6<span class="p">&amp;</span><span class="nv">qypid</span><span class="o">=</span>14281781800_04022000001000000000_96<span class="p">&amp;</span><span class="nv">qd_k</span><span class="o">=</span>2004ae445e0a1b1825cfd616d87f3c93<span class="p">&amp;</span><span class="nv">isdol</span><span class="o">=</span>0<span class="p">&amp;</span><span class="nv">code</span><span class="o">=</span>2<span class="p">&amp;</span><span class="nv">ff</span><span class="o">=</span>f4v<span class="p">&amp;</span><span class="nv">iswb</span><span class="o">=</span>0<span class="p">&amp;</span><span class="nv">qd_s</span><span class="o">=</span>otv<span class="p">&amp;</span><span class="nv">vf</span><span class="o">=</span>251ad0fd24c007bc80630a1647da6ff9<span class="p">&amp;</span><span class="nv">np_tag</span><span class="o">=</span>nginx_part_tag
+    <span class="c1"># download-with: you-get --format=LD [URL]</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>这里的第六行往下就是可选下载的视频了</p>
+<p>注意前面有一个&quot;-&ldquo;号的条目,这里是format.所以在下载的时候应该输入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">you-get --format<span class="o">=</span>&lt;-format后面的那个&gt; https://www.iqiyi.com/v_19rx2ez0w4.html
+</code></pre></td></tr></table>
+</div>
+</div><p>在每一个可选视频的最下面,you-get也给出了提示:download-with XXX,只需要把[URL]替换成要下载的视频的链接即可,例如</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">you-get --format<span class="o">=</span>TD https://www.iqiyi.com/v_19rx2ez0w4.html
+</code></pre></td></tr></table>
+</div>
+</div><p>如果不使用-i参数,那么会默认直接下载第一个视频</p>
+<p>然后,你就可以在当前终端的目录找到这个视频了</p>
+<h3 id="设置输出路径">设置输出路径</h3>
+<p>如果要指定下载到的目录,则可以使用-o选项后面加上输出文件夹的路径,例如我要把春晚德云社的相声存到桌面上,就可以输入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">you-get -o ~/Desktop --format<span class="o">=</span>TD https://www.iqiyi.com/v_19rx2ez0w4.html
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="加载cookies以下载vip视频">加载cookies以下载vip视频</h3>
+<p>有一些视频是要vip才能下载的,这时就可以加载cookies(保存登录信息,这要求先登录vip账号),这时就可以使用其加载cookies的功能</p>
+<p>在linux下,you-get目前仅支持firefox的cookies,文件名是cookies.sqlite,路径是~/.mozilla/firefox/XXX.default-release/cookies.sqlite</p>
+<p>要加载cookie,使用-c选项加上cookies.sqlite的路径,例如</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">you-get --format<span class="o">=</span>TD https://www.iqiyi.com/v_19rx2ez0w4.html -c<span class="o">=</span>~/Desktop/cookies.sqlite
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="参考资料">参考资料</h2>
+<p><a class="link" href="https://blog.csdn.net/yuzaipiaofei/article/details/80891108"  target="_blank" rel="noopener"
+    >PIP 更换国内安装源</a></p>
+<p><a class="link" href="https://github.com/soimort/you-get"  target="_blank" rel="noopener"
+    >github:you-get</a></p>
+<p><a class="link" href="https://blog.csdn.net/u011546806/article/details/45563859/"  target="_blank" rel="noopener"
+    >cookie 存放地点</a></p>
+<p><a class="link" href="https://www.jianshu.com/p/62c0b1d332b6"  target="_blank" rel="noopener"
+    >you-get下载会员视频使用-c参数导入cookies.sqlite文件</a></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/deepin%E5%85%A5%E5%9D%91%E6%8C%87%E5%8D%97/">deepin入坑指南</a>
+        
+            <a href="/tags/deepin/">deepin</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+    
+            <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    
+    <div id="vcomments"></div>
+    <script>
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'uihkGjAaRyfYjVrLFVtlUjgg-MdYXbMMI',
+        appKey: 'wOjzCeThlB3wsVKgJb5Dq7s5',
+        notify:false, 
+        verify:false, 
+        avatar:'mp', 
+        placeholder: 'just go go' , 
+        enableQQ:true , 
+        visitor:true , 
+        pageSize:15 , 
+        recordIP:true
+    });
+    </script>
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/deepin20%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85dde-top-panel/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://s3.ax1x.com/2021/01/31/yA4cJs.jpg" loading="lazy" data-key="" data-hash="https://s3.ax1x.com/2021/01/31/yA4cJs.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">deepin20编译安装dde-top-panel</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/deepin%E5%85%A5%E5%9D%91%E6%8C%87%E5%8D%97%E5%89%8D%E8%A8%80%E7%AE%80%E4%BB%8B%E4%B8%8E%E8%AF%B4%E6%98%8E/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://s3.ax1x.com/2021/01/31/yA4cJs.jpg" loading="lazy" data-key="" data-hash="https://s3.ax1x.com/2021/01/31/yA4cJs.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">deepin入坑指南(前言)——简介与说明</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/wine%E8%BD%AF%E4%BB%B6%E5%8C%85%E5%8F%8Amono%E5%92%8Cgecko/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1587721926077&amp;di=c58961c8a569ccbabfb210a88343fc94&amp;imgtype=0&amp;src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn%2F20170130%2Ff8f4-fxzyxnu9618537.jpg" loading="lazy" data-key="" data-hash="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1587721926077&amp;di=c58961c8a569ccbabfb210a88343fc94&amp;imgtype=0&amp;src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn%2F20170130%2Ff8f4-fxzyxnu9618537.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">wine软件包及mono和gecko</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2021 GBwater&#39;s blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

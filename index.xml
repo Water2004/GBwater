@@ -7,6 +7,231 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <lastBuildDate>Fri, 12 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://gbwater.ga/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>deepin入坑指南——使用you-get下载主流视频网站的视频</title>
+        <link>https://gbwater.ga/p/deepin%E5%85%A5%E5%9D%91%E6%8C%87%E5%8D%97%E4%BD%BF%E7%94%A8you-get%E4%B8%8B%E8%BD%BD%E4%B8%BB%E6%B5%81%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91/</link>
+        <pubDate>Fri, 12 Feb 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://gbwater.ga/p/deepin%E5%85%A5%E5%9D%91%E6%8C%87%E5%8D%97%E4%BD%BF%E7%94%A8you-get%E4%B8%8B%E8%BD%BD%E4%B8%BB%E6%B5%81%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91/</guid>
+        <description>&lt;img src="https://s3.ax1x.com/2021/01/31/yA4cJs.jpg" alt="Featured image of post deepin入坑指南——使用you-get下载主流视频网站的视频" /&gt;&lt;h1 id=&#34;deepin入坑指南使用you-get下载主流视频网站的视频&#34;&gt;deepin入坑指南——使用you-get下载主流视频网站的视频&lt;/h1&gt;
+&lt;h2 id=&#34;安装和配置pip3&#34;&gt;安装和配置pip3&lt;/h2&gt;
+&lt;h3 id=&#34;安装pip3&#34;&gt;安装pip3&lt;/h3&gt;
+&lt;p&gt;首先安装pip3,终端输入命令:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo apt install python3-pip
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;更换国内源&#34;&gt;更换国内源&lt;/h3&gt;
+&lt;p&gt;临时使用可以加上-i参数,指定pip源,例如&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;pip install you-get -i https://pypi.tuna.tsinghua.edu.cn/simple
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;永久修改则修改~/.pip/pip.conf(没有就创建一个)， 内容如下&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[global]
+index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;一些国内的镜像源:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;阿里云 &lt;a href=&#34;http://mirrors.aliyun.com/pypi/simple/&#34;&gt;http://mirrors.aliyun.com/pypi/simple/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;中国科技大学 &lt;a href=&#34;https://pypi.mirrors.ustc.edu.cn/simple/&#34;&gt;https://pypi.mirrors.ustc.edu.cn/simple/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;豆瓣 &lt;a href=&#34;http://pypi.douban.com/simple/&#34;&gt;http://pypi.douban.com/simple/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;清华大学 &lt;a href=&#34;https://pypi.tuna.tsinghua.edu.cn/simple/&#34;&gt;https://pypi.tuna.tsinghua.edu.cn/simple/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;中国科学技术大学 &lt;a href=&#34;http://pypi.mirrors.ustc.edu.cn/simple/&#34;&gt;http://pypi.mirrors.ustc.edu.cn/simple/&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;安装you-get&#34;&gt;安装you-get&lt;/h2&gt;
+&lt;p&gt;终端输入命令&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo pip3 install you-get
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;若要更新,使用命令&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;pip3 install --upgrade you-get
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;使用you-get&#34;&gt;使用you-get&lt;/h2&gt;
+&lt;h3 id=&#34;下载指定格式的视频&#34;&gt;下载指定格式的视频&lt;/h3&gt;
+&lt;p&gt;首先使用&amp;ndash;info或者-i参数获取视频信息&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;you-get -i &amp;lt;url&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这里的url就是浏览器访问视频时地址框里的那个&lt;/p&gt;
+&lt;p&gt;例如,如果我要下载&lt;a class=&#34;link&#34; href=&#34;https://www.iqiyi.com/v_19rx2ez0w4.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;爱奇艺上的德云社春晚相声&lt;/a&gt;,就在终端输入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;you-get -i https://www.iqiyi.com/v_19rx2ez0w4.html
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这时you-get的输出如下&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;39
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;40
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;41
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;42
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;you-get: vd: &lt;span class=&#34;m&#34;&gt;75&lt;/span&gt; is not handled
+you-get: info is &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;m3utx&amp;#39;&lt;/span&gt;: &lt;span class=&#34;s1&#34;&gt;&amp;#39;http://cache.m.iqiyi.com/mus/text/250351801/b5d8357ec33641c316bf0a0dc7adb8bb/afbe8fd3d73448c9/0/20200329/c8/99/ccd2f230c814c2aab54a6994e7433afb.m3u8?qd_originate=tmts_py&amp;amp;tvid=14281781800&amp;amp;bossStatus=0&amp;amp;qd_vip=0&amp;amp;px=&amp;amp;src=3_31_312&amp;amp;prv=&amp;amp;previewType=&amp;amp;previewTime=&amp;amp;from=&amp;amp;qd_time=1613129716572&amp;amp;qd_p=0e9d4591&amp;amp;qd_asc=4af38ab6f480b859f7b88d496c8c019e&amp;amp;qypid=14281781800_04022000001000000000_75&amp;amp;qd_k=2004ae445e0a1b1825cfd616d87f3c93&amp;amp;isdol=0&amp;amp;code=2&amp;amp;ff=f4v&amp;amp;iswb=0&amp;amp;qd_s=otv&amp;amp;vf=4b7c73268eb847d33a7cfeaba213652d&amp;amp;np_tag=nginx_part_tag&amp;#39;&lt;/span&gt;, &lt;span class=&#34;s1&#34;&gt;&amp;#39;lgt&amp;#39;&lt;/span&gt;: 13, &lt;span class=&#34;s1&#34;&gt;&amp;#39;mver&amp;#39;&lt;/span&gt;: 100, &lt;span class=&#34;s1&#34;&gt;&amp;#39;screenSize&amp;#39;&lt;/span&gt;: &lt;span class=&#34;s1&#34;&gt;&amp;#39;896x504&amp;#39;&lt;/span&gt;, &lt;span class=&#34;s1&#34;&gt;&amp;#39;ists&amp;#39;&lt;/span&gt;: 1, &lt;span class=&#34;s1&#34;&gt;&amp;#39;unencryptedDuration&amp;#39;&lt;/span&gt;: 0, &lt;span class=&#34;s1&#34;&gt;&amp;#39;vd&amp;#39;&lt;/span&gt;: 75, &lt;span class=&#34;s1&#34;&gt;&amp;#39;m3u&amp;#39;&lt;/span&gt;: &lt;span class=&#34;s1&#34;&gt;&amp;#39;http://cache.m.iqiyi.com/mus/250351801/b5d8357ec33641c316bf0a0dc7adb8bb/afbe8fd3d73448c9/0/20200329/c8/99/ccd2f230c814c2aab54a6994e7433afb.m3u8?qd_originate=tmts_py&amp;amp;tvid=14281781800&amp;amp;bossStatus=0&amp;amp;qd_vip=0&amp;amp;px=&amp;amp;src=3_31_312&amp;amp;prv=&amp;amp;previewType=&amp;amp;previewTime=&amp;amp;from=&amp;amp;qd_time=1613129716572&amp;amp;qd_p=0e9d4591&amp;amp;qd_asc=4af38ab6f480b859f7b88d496c8c019e&amp;amp;qypid=14281781800_04022000001000000000_75&amp;amp;qd_k=2004ae445e0a1b1825cfd616d87f3c93&amp;amp;isdol=0&amp;amp;code=2&amp;amp;ff=f4v&amp;amp;iswb=0&amp;amp;qd_s=otv&amp;amp;vf=4b7c73268eb847d33a7cfeaba213652d&amp;amp;np_tag=nginx_part_tag&amp;#39;&lt;/span&gt;, &lt;span class=&#34;s1&#34;&gt;&amp;#39;code&amp;#39;&lt;/span&gt;: 2, &lt;span class=&#34;s1&#34;&gt;&amp;#39;dr&amp;#39;&lt;/span&gt;: -1, &lt;span class=&#34;s1&#34;&gt;&amp;#39;drmType&amp;#39;&lt;/span&gt;: 1, &lt;span class=&#34;s1&#34;&gt;&amp;#39;vid&amp;#39;&lt;/span&gt;: &lt;span class=&#34;s1&#34;&gt;&amp;#39;b5d8357ec33641c316bf0a0dc7adb8bb&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+site:                爱奇艺 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;Iqiyi&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+title:               2020天津卫视德云社相声春晚之精编版（下）
+streams:             &lt;span class=&#34;c1&#34;&gt;# Available quality and codecs&lt;/span&gt;
+    &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; DEFAULT &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; _________________________________
+    - format:        TD
+      container:     m3u8
+      video-profile: 720p
+      m3u8_url:      http://cache.m.iqiyi.com/mus/250351801/4fc7566f752ca2c20ee1894df99f3453/afbe8fd3d73448c9/0/20201029/55/b3/e55e81f305266eedc05bc074d249a6ef.m3u8?qd_originate&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;tmts_py&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;tvid&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;14281781800&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;bossStatus&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;0&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_vip&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;0&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;px&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;3_31_312&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;prv&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;previewType&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;previewTime&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;from&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_time&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;1613129716572&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_p&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;0e9d4591&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_asc&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;5d4075f202f2fb30c7fdce7f8c417e54&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qypid&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;14281781800_04022000001000000000_4&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_k&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;2004ae445e0a1b1825cfd616d87f3c93&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;isdol&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;0&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;code&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;2&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;ff&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;f4v&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;iswb&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;0&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_s&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;otv&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;vf&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;fd25d9f6bc8aa66ca5e06de000b36658&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;np_tag&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;nginx_part_tag
+    &lt;span class=&#34;c1&#34;&gt;# download-with: you-get --format=TD [URL]&lt;/span&gt;
+
+    - format:        TD_H265
+      container:     m3u8
+      video-profile: 720p H265
+      m3u8_url:      http://cache.m.iqiyi.com/mus/250351801/2b2b080be951084fab021dc1249384ef/afbe8fd3d73448c9/0/20201029/55/b3/0d6fcc58ff080f575ed5a4386cda8356.m3u8?qd_originate&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;tmts_py&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;tvid&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;14281781800&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;bossStatus&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;0&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_vip&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;0&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;px&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;3_31_312&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;prv&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;previewType&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;previewTime&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;from&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_time&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;1613129716572&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_p&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;0e9d4591&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_asc&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;26fa4e7c5403eee1942e73344f47c57c&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qypid&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;14281781800_04022000001000000000_17&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_k&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;2004ae445e0a1b1825cfd616d87f3c93&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;isdol&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;0&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;code&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;1&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;ff&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;265ts&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;iswb&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;0&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_s&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;otv&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;vf&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;e10bf652e02b1611a2de6a7c498c3329&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;np_tag&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;nginx_part_tag
+    &lt;span class=&#34;c1&#34;&gt;# download-with: you-get --format=TD_H265 [URL]&lt;/span&gt;
+
+    - format:        HD
+      container:     m3u8
+      video-profile: 540p
+      m3u8_url:      http://cache.m.iqiyi.com/mus/250351801/3297bf14ce29680457e74bd3b29655fc/afbe8fd3d73448c9/0/20201029/55/b3/6111cf77ca9d50b5c836493d3e274487.m3u8?qd_originate&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;tmts_py&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;tvid&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;14281781800&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;bossStatus&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;0&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_vip&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;0&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;px&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;3_31_312&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;prv&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;previewType&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;previewTime&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;from&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_time&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;1613129716572&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_p&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;0e9d4591&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_asc&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;02e9664c7cff7ff4c5602f30c9dcea89&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qypid&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;14281781800_04022000001000000000_2&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_k&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;2004ae445e0a1b1825cfd616d87f3c93&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;isdol&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;0&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;code&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;2&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;ff&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;f4v&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;iswb&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;0&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_s&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;otv&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;vf&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;796575d2118904ecdab75e98af416dce&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;np_tag&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;nginx_part_tag
+    &lt;span class=&#34;c1&#34;&gt;# download-with: you-get --format=HD [URL]&lt;/span&gt;
+
+    - format:        HD_H265
+      container:     m3u8
+      video-profile: 540p H265
+      m3u8_url:      http://cache.m.iqiyi.com/mus/250351801/31bc12eef9157c0fa186664858bfe712/afbe8fd3d73448c9/0/20201029/55/b3/58650d10ae97ea73506f1041d72e4dac.m3u8?qd_originate&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;tmts_py&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;tvid&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;14281781800&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;bossStatus&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;0&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_vip&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;0&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;px&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;3_31_312&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;prv&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;previewType&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;previewTime&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;from&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_time&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;1613129716572&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_p&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;0e9d4591&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_asc&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;cfbf044d5dfa5b87d7d0d1d090e4886b&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qypid&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;14281781800_04022000001000000000_21&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_k&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;2004ae445e0a1b1825cfd616d87f3c93&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;isdol&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;0&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;code&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;1&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;ff&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;265ts&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;iswb&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;0&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_s&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;otv&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;vf&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;e1b20f06c858cdf7d55590f459f480bc&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;np_tag&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;nginx_part_tag
+    &lt;span class=&#34;c1&#34;&gt;# download-with: you-get --format=HD_H265 [URL]&lt;/span&gt;
+
+    - format:        SD
+      container:     m3u8
+      video-profile: 360p
+      m3u8_url:      http://cache.m.iqiyi.com/mus/250351801/5d7a91960ce5b8c049136e4be8d0c4ac/afbe8fd3d73448c9/0/20200329/c8/99/946add8a95cc05f129fc1d5d0ac9da14.m3u8?qd_originate&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;tmts_py&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;tvid&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;14281781800&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;bossStatus&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;0&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_vip&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;0&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;px&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;3_31_312&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;prv&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;previewType&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;previewTime&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;from&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_time&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;1613129716572&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_p&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;0e9d4591&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_asc&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;5f34d251fe608a49cfdd0c584ec27667&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qypid&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;14281781800_04022000001000000000_1&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_k&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;2004ae445e0a1b1825cfd616d87f3c93&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;isdol&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;0&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;code&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;2&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;ff&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;f4v&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;iswb&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;0&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_s&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;otv&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;vf&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;f172ed9a453a415f9b7425254fb93444&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;np_tag&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;nginx_part_tag
+    &lt;span class=&#34;c1&#34;&gt;# download-with: you-get --format=SD [URL]&lt;/span&gt;
+
+    - format:        LD
+      container:     m3u8
+      video-profile: 210p
+      m3u8_url:      http://cache.m.iqiyi.com/mus/250351801/0b184d7790ebe24ce40d6a42d4a87927/afbe8fd3d73448c9/0/20200329/c8/99/5f0701913828afadb29cd633c1c0744b.m3u8?qd_originate&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;tmts_py&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;tvid&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;14281781800&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;bossStatus&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;0&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_vip&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;0&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;px&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;3_31_312&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;prv&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;previewType&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;previewTime&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;from&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_time&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;1613129716572&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_p&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;0e9d4591&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_asc&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;7bccc88a2ca1cd6e26843180eb3b20f6&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qypid&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;14281781800_04022000001000000000_96&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_k&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;2004ae445e0a1b1825cfd616d87f3c93&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;isdol&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;0&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;code&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;2&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;ff&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;f4v&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;iswb&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;0&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;qd_s&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;otv&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;vf&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;251ad0fd24c007bc80630a1647da6ff9&lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;np_tag&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;nginx_part_tag
+    &lt;span class=&#34;c1&#34;&gt;# download-with: you-get --format=LD [URL]&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这里的第六行往下就是可选下载的视频了&lt;/p&gt;
+&lt;p&gt;注意前面有一个&amp;quot;-&amp;ldquo;号的条目,这里是format.所以在下载的时候应该输入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;you-get --format&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&amp;lt;-format后面的那个&amp;gt; https://www.iqiyi.com/v_19rx2ez0w4.html
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;在每一个可选视频的最下面,you-get也给出了提示:download-with XXX,只需要把[URL]替换成要下载的视频的链接即可,例如&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;you-get --format&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;TD https://www.iqiyi.com/v_19rx2ez0w4.html
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;如果不使用-i参数,那么会默认直接下载第一个视频&lt;/p&gt;
+&lt;p&gt;然后,你就可以在当前终端的目录找到这个视频了&lt;/p&gt;
+&lt;h3 id=&#34;设置输出路径&#34;&gt;设置输出路径&lt;/h3&gt;
+&lt;p&gt;如果要指定下载到的目录,则可以使用-o选项后面加上输出文件夹的路径,例如我要把春晚德云社的相声存到桌面上,就可以输入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;you-get -o ~/Desktop --format&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;TD https://www.iqiyi.com/v_19rx2ez0w4.html
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;加载cookies以下载vip视频&#34;&gt;加载cookies以下载vip视频&lt;/h3&gt;
+&lt;p&gt;有一些视频是要vip才能下载的,这时就可以加载cookies(保存登录信息,这要求先登录vip账号),这时就可以使用其加载cookies的功能&lt;/p&gt;
+&lt;p&gt;在linux下,you-get目前仅支持firefox的cookies,文件名是cookies.sqlite,路径是~/.mozilla/firefox/XXX.default-release/cookies.sqlite&lt;/p&gt;
+&lt;p&gt;要加载cookie,使用-c选项加上cookies.sqlite的路径,例如&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;you-get --format&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;TD https://www.iqiyi.com/v_19rx2ez0w4.html -c&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;~/Desktop/cookies.sqlite
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;参考资料&#34;&gt;参考资料&lt;/h2&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/yuzaipiaofei/article/details/80891108&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PIP 更换国内安装源&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/soimort/you-get&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;github:you-get&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/u011546806/article/details/45563859/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;cookie 存放地点&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.jianshu.com/p/62c0b1d332b6&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;you-get下载会员视频使用-c参数导入cookies.sqlite文件&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>NOIP2020小结</title>
         <link>https://gbwater.ga/p/noip2020%E5%B0%8F%E7%BB%93/</link>
         <pubDate>Fri, 12 Feb 2021 00:00:00 +0000</pubDate>
