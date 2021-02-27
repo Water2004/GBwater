@@ -6,7 +6,303 @@
         <description>Recent content on GBwater&#39;s blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Fri, 12 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://gbwater.ga/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 27 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://gbwater.ga/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>圆锥曲线垂直弦交点连线过定点</title>
+        <link>https://gbwater.ga/p/%E5%9C%86%E9%94%A5%E6%9B%B2%E7%BA%BF%E5%9E%82%E7%9B%B4%E5%BC%A6%E4%BA%A4%E7%82%B9%E8%BF%9E%E7%BA%BF%E8%BF%87%E5%AE%9A%E7%82%B9/</link>
+        <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://gbwater.ga/p/%E5%9C%86%E9%94%A5%E6%9B%B2%E7%BA%BF%E5%9E%82%E7%9B%B4%E5%BC%A6%E4%BA%A4%E7%82%B9%E8%BF%9E%E7%BA%BF%E8%BF%87%E5%AE%9A%E7%82%B9/</guid>
+        <description>&lt;img src="https://s3.ax1x.com/2021/02/28/69Z2AP.jpg" alt="Featured image of post 圆锥曲线垂直弦交点连线过定点" /&gt;&lt;h1 id=&#34;圆锥曲线垂直弦交点连线过定点&#34;&gt;圆锥曲线垂直弦交点连线过定点&lt;/h1&gt;
+&lt;h2 id=&#34;椭圆&#34;&gt;椭圆&lt;/h2&gt;
+&lt;h3 id=&#34;命题描述&#34;&gt;命题描述&lt;/h3&gt;
+&lt;p&gt;若直线$l$与椭圆$ C:\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$交于A,B,两点,P$(x_0,y_0)\in C$,且$PA\perp PB$,则$l$过定点$\Big (\frac{a^2-b^2}{a^2+b^2}x_0,-\frac{a^2-b^2}{a^2+b^2}y_0\Big )$&lt;/p&gt;
+&lt;h3 id=&#34;证明&#34;&gt;证明&lt;/h3&gt;
+&lt;p&gt;设$A(x_1,y_1)$ , $B(x_2,y_2)$ , $l:y=kx+m$&lt;/p&gt;
+&lt;p&gt;先看条件,有一个垂直,用上再说
+$$
+\because PA \perp PB
+$$
+$$
+\therefore k_{PA}\cdot k_{PB}=-1 \Rightarrow \frac{y_0-y_1}{x_0-x_1}\cdot \frac{y_0-y_2}{x_0-x_2}=-1
+$$&lt;/p&gt;
+&lt;p&gt;整理,得:
+$$
+x_0^2-(x_1+x_2)x_0+x_1x_2+y_0^2-(y_1+y_2)y_0+y_1y_2=0 \tag{1}
+$$
+按照惯例,联立$C,l$
+$$
+\begin{cases}
+\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\\&lt;br&gt;
+y=kx+b
+\end{cases}
+\Rightarrow (b^2+a^2k^2)x^2+2kma^2x+a^2(m^2-b^2)=0
+$$
+$$
+\therefore x_1+x_2=-\frac{2kma^2}{b^2+a^2k^2},x_1x_2=\frac{a^2(m^2-b^2)}{b^2+a^2k^2}
+$$
+看看还漏了什么&amp;hellip;还有一个$A,B$在$l$上没用&lt;/p&gt;
+&lt;p&gt;由$A,B\in l$
+$$
+\begin{cases}
+y_1=kx_1+m\\&lt;br&gt;
+y_2=kx_2+m\&lt;br&gt;
+\end{cases}
+\therefore
+\begin{cases}
+&amp;amp;y_1+y_2=k(x_1+x_2)+2m=\frac{2mb^2}{b^2+a^2k^2}\\&lt;br&gt;
+&amp;amp;y_1y_2=k^2x_1x_2+km(x_1+x_2)+m^2=\frac{b^2(m^2-a^2k^2)}{b^2+a^2k^2}
+\end{cases}
+$$
+代入$(1)$得
+$$
+x_0^2+\frac{2kma^2}{b^2+a^2k^2}\cdot x_0+\frac{a^2(m^2-b^2)}{b^2+a^2k^2}+y_0^2-\frac{2mb^2}{b^2+a^2k^2}\cdot y_0+\frac{b^2(m^2-a^2k^2)}{b^2+a^2k^2}=0
+$$
+去分母,得
+$$
+(b^2+a^2k^2)(x_0^2+y_0^2)+(2kma^2)x_0+a^2(m^2-b^2)+b^2(m^2-a^2k^2)-2mb^2y_0=0
+$$
+&lt;del&gt;展开之后有些项长的很像完全平方&lt;/del&gt; 按完全平方整理,得
+$$
+a^2(k^2x_0^2+2kmx_0+m^2)+b^2(m^2-2my_0+y_0^2)+b^2x_0^2-a^2b^2+a^2k^2y_0^2-a^2b^2k^2=0
+$$
+即
+$$
+a^2(kx_0+m)^2+b^2(y_0-m)^2+b^2x_0^2-a^2b^2+a^2k^2y_0^2-a^2b^2k^2=0 \tag{2}
+$$
+后面那一坨东西看着就恶心,能不能干掉呢?&lt;/p&gt;
+&lt;p&gt;这不还有一个$P$在$C$上没用嘛~&lt;/p&gt;
+&lt;p&gt;由$P \in C$
+$$
+b^2x_0^2+a^2y_0^2=a^2b^2
+$$
+故
+$$
+b^2x_0^2-a^2b^2+a^2k^2y_0^2-a^2b^2k^2=-a^2y_0^2+k^2(a^2y_0^2-a^2b^2)=-a^2y_0^2-b^2k^2x_0^2
+$$
+代入$(2)$,整理,得
+$$
+a^2[(kx_0+m)^2-y_0^2]=b^2[k^2x_0^2-(y_0-m)^2]
+$$
+这东西竟然是一个平方差!别急着约分,看看等不等于0先&lt;/p&gt;
+&lt;p&gt;$$\because P \notin l$$&lt;/p&gt;
+&lt;p&gt;$$\therefore kx_0+m-y_0 \neq 0$$&lt;/p&gt;
+&lt;p&gt;然后就可以开心地约分了!
+$$
+a^2(kx_0+m+y_0)=b^2(kx_0+y_0-m)
+$$
+故
+$$
+m=\frac{(b^2-a^2)(y_0+kx_0)}{a^2+b^2}
+$$
+故
+$$
+l: y=kx+\frac{(b^2-a^2)(y_0+kx_0)}{a^2+b^2}
+$$
+整理,得
+$$
+k\bigg [ x+\frac{(b^2-a^2)x_0}{a^2+b^2} \bigg ]=y-\frac{(b^2-a^2)y_0}{a^2-b^2}
+$$
+故$l$过定点:
+$$
+\bigg (\frac{a^2-b^2}{a^2+b^2}x_0,\frac{b^2-a^2}{a^2+b^2}y_0 \bigg )
+$$
+单独验证横线和竖线,符合上式 &lt;del&gt;其实是我懒得写&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;$$Q.E.D.$$&lt;/p&gt;
+&lt;h2 id=&#34;双曲线&#34;&gt;双曲线&lt;/h2&gt;
+&lt;h3 id=&#34;命题描述-1&#34;&gt;命题描述&lt;/h3&gt;
+&lt;p&gt;若直线$l$与双曲线$C: \frac{x^2}{a^2}-\frac{y^2}{b^2}=1$交于$A,B$两点,$P(x_0,y_0) \in C$且 $PB \perp PB$,则$l$过定点$\Big ( \frac{a^2+b^2}{a^2-b^2}x_0,-\frac{a^2+b^2}{a^2-b^2}y_0 \Big)$&lt;/p&gt;
+&lt;h3 id=&#34;证明-1&#34;&gt;证明&lt;/h3&gt;
+&lt;p&gt;设$A(x_1,y_1),B(x_2,y_2),l:y=kx+m$&lt;/p&gt;
+&lt;p&gt;照例联立$C,l$
+$$
+\begin{cases}
+b^2x^2-a^2y^2-a^2b^2=0\\&lt;br&gt;
+y=kx+m
+\end{cases}
+\Rightarrow (b^2-a^2k^2)x^2-2a^kmx-a^2b^2-a^2m^2=0
+$$
+$$
+\therefore x_1+x_2=\frac{2a^2km}{b^2-a^2k^2},x_1x_2=\frac{-a^2b^2-a^2m^2}{b^2-a^2k^2}
+$$&lt;/p&gt;
+&lt;p&gt;接下来就是垂直了,老是用斜率没意思,用一手向量点乘等于0&lt;/p&gt;
+&lt;p&gt;由$PA \perp PB$
+$$
+(x_0-x_1)(x_0-x_2)+(y_0-y_1)(y_0-y_2)=0
+$$
+由于$A,B$在$l$上,故
+$$
+\begin{aligned}
+y_1=kx_1+m\\&lt;br&gt;
+y_2=kx_2+m
+\end{aligned}
+$$
+故上式可化为
+$$
+(x_0-x_1)(x_0-x_2)+[(y_0-m)-kx_1][(y_0-m)-kx_2]=0
+$$
+即&lt;br&gt;
+$$
+x_0^2+(y_0-m)^2-[x_0+k(y_0-m)](x_1+x_2)+(k^2+1)x_1x_2=0
+$$
+代入韦达定理,得
+$$
+x_0^2+(y_0-m)^2-\frac{2a^2km[x_0+k(y_0-m)]}{b^2-a^2k^2}-\frac{(k^2+1)(a^2b^2+a^2m^2)}{b^2-a^2k^2}=0
+$$
+去分母,得
+$$
+(b^2-a^2k^2)x_0^2+(b^2-a^2k^2)(y_0-m)^2-2a^2km[x_0+k(y_0-m)]-(k^2+1)(a^2b^2+a^2m^2)=0
+$$
+隐隐约约看到写完全平方的影子,找出来写在一起:
+$$
+-a^2(k^2x_0^2+2kmx_0+m^2)+b^2x_0^2-a^2k^2[(y_0-m)^2+2m(y_0-m)+m^2]+b^2(y_0-m)^2-k^2a^2b^2-a^2b^2=0
+$$
+然后就可以化成平方啦,整体代入不展开真是个好习惯~
+$$
+-a^2(kx_0+m)^2+b^2x^2-a^2k^2y_0^2+b^2(y_0-m)^2-k^2a^2b^2-a^2b^2=0 \tag{1}
+$$
+由$P \in C$得:$b^2x_0^2-a^2y_0^2-a^2b^2=0$
+故
+$$
+\begin{aligned}
+-a^2y_0^2=a^2b^2-b^2x_0^2\\&lt;br&gt;
+-a^2b^2=a^2y_0^2-b^2x_0^2
+\end{aligned}
+$$
+代入$(1)$,得
+$$
+\begin{aligned}
+&amp;amp;-a^2(kx_0+m)^2+b^2x_0^2+k^2a^2b^2-k^2b^2x_0^2+b^2(y_0-m)^2-k^2a^2b^2+a^2y_0^2-b^2x_0^2=0\\&lt;br&gt;
+&amp;amp;\Leftrightarrow -a^2(kx_0+m)^2+b^2(y_0-m)^2-k^2b^2x_0^2+a^2y_0^2=0\\&lt;br&gt;
+&amp;amp;\Leftrightarrow a^2[y_0-(kx_0+m)^2]+b^2[(y_0-m)^2-k^2x_0^2]=0
+\end{aligned}
+$$
+然后就来到了喜闻乐见的平方差环节
+$$
+a^2(y_0+kx_0+m)(y_0-kx_0-m)+b^2(y_0-m+kx_0)(y_0-m-kx_0)=0
+$$
+还是要按照惯例判断是否为零&lt;/p&gt;
+&lt;p&gt;$$\because P \notin C$$&lt;/p&gt;
+&lt;p&gt;$$\therefore y_0-kx_0-m \neq 0$$&lt;/p&gt;
+&lt;p&gt;然后就可以约分啦~
+$$
+a^2(y_0+kx_0+m)+b^2(y_0+kx_0-m)=0
+$$&lt;/p&gt;
+&lt;p&gt;$$
+\Rightarrow m=\frac{(a^2+b^2)y_0+(a^2+b^2)kx_0}{b^2-a^2}=-\frac{(a^2+b^2)(kx_0+y_0)}{a^2-b^2}
+$$&lt;/p&gt;
+&lt;p&gt;故
+$$
+l: y=kx-\frac{(a^2+b^2)(kx_0+y_0)}{a^2-b^2}
+$$
+单独把$k$拎出来
+$$
+y+\frac{y_0(a^2+b^2)}{a^2-b^2}=k\bigg (x-\frac{x_0(a^2+b^2)}{a^2-b^2}\bigg )
+$$
+故$l$过定点:
+$$
+\bigg ( \frac{a^2+b^2}{a^2-b^2}x_0,-\frac{a^2+b^2}{a^2-b^2}y_0\bigg )
+$$
+单独验证横线和竖线,符合上式&lt;/p&gt;
+&lt;p&gt;$$Q.E.D.$$&lt;/p&gt;
+&lt;h2 id=&#34;抛物线&#34;&gt;抛物线&lt;/h2&gt;
+&lt;h3 id=&#34;命题描述-2&#34;&gt;命题描述&lt;/h3&gt;
+&lt;p&gt;若直线$l$与抛物线$C: y^2=2px$交于$A,B$两点,$P(x_0,y_0)\in C$,且$PA \perp PB$,则$l$过定点$(2p+x_0,-y_0)$&lt;/p&gt;
+&lt;h3 id=&#34;证明-2&#34;&gt;证明&lt;/h3&gt;
+&lt;p&gt;&lt;del&gt;整完双曲线以为抛物线有手就行,然鹅&amp;hellip;这真是一个悲伤的故事&amp;hellip;&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;设$A(x_1,y_1),B(x_2,y_2),l:x=my+n$&lt;/p&gt;
+&lt;p&gt;横抛物线肯定是这样设直线简单啦~&lt;/p&gt;
+&lt;p&gt;照例联立$C,l$
+$$
+\begin{cases}
+y^2=2px\\&lt;br&gt;
+x=my+n
+\end{cases}
+\Rightarrow y^2=2pmy-2pn=0
+$$
+$$
+\therefore y_1+y_2=2pm,y_1y_2=-2pn
+$$
+照例向量点乘等于0&lt;/p&gt;
+&lt;p&gt;$$\because PA \perp PB$$&lt;/p&gt;
+&lt;p&gt;$$\therefore (y_0-y_1)(y_0-y_2)+(x_0-x_1)(x_0-x_2)=0$$&lt;/p&gt;
+&lt;p&gt;由于$A,B$在$l$上
+$$
+\begin{aligned}
+x_1=my_1+n\\&lt;br&gt;
+x_2=my_2+n
+\end{aligned}
+$$
+代入上式,得&lt;br&gt;
+$$
+y_0^2+(x_0-n)^2-[y_0+m(x_0-n)](y_1+y_2)+(m^2+1)y_1y_2=0
+$$
+代入韦达定理,得
+$$
+\begin{aligned}
+&amp;amp;y_0^2+(x_0-n)^2-2pm[y_0+m(x_0-n)]-2pm^2n-2pn=0\\&lt;br&gt;
+&amp;amp;\Leftrightarrow y_0^2-2pmy_0+(x_0-n)^2-2pm^2x_0-2pn=0
+\end{aligned}
+$$
+$$\because P \in C$$&lt;/p&gt;
+&lt;p&gt;$$\therefore y_0^2=2px_0$$&lt;/p&gt;
+&lt;p&gt;代入上式,然后是一通十分Genius的操作,注意,核心所在! &lt;del&gt;我是怎么想出来的?&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+&amp;amp;y_0^2-2pmy_0+(x_0-n)^2-m^2y_0-2pn=0\\&lt;br&gt;
+&amp;amp;\Leftrightarrow (1-m^2)y_0^2-2pmy_0+(x_0-n)^2-2pn=0\\&lt;br&gt;
+&amp;amp;\Leftrightarrow (1-m^2)y_0^2-2pmy_0-p^2+(x_0-n)^2-2pn+p^2 \leftarrow 妙不可言!\\&lt;br&gt;
+&amp;amp;\Leftrightarrow [(1+m)y_0+p][(1-m)y_0-p]+(x-n+p)^2-2px_0=0\\&lt;br&gt;
+&amp;amp;\Leftrightarrow (y_0+my_0+p)(y_0-my_0-p)+(x_0-n+p)^2-y_0^2=0\\&lt;br&gt;
+&amp;amp;\Leftrightarrow y_0^2-(my_0+p)^2+(x_0-n+p)^2-y_0^2=0\\&lt;br&gt;
+&amp;amp;\Leftrightarrow (x_0-m+p)^2-(my_0+p)^2=0
+\end{aligned}
+$$
+然后就又到了喜闻乐见的平方差环节
+$$
+(x_0-n+p+my_0+p)(x_0-n+p-my_0-p)=0
+$$
+即
+$$
+(x_0-n+my_0+2p)(x_0-n-my_0)=0
+$$
+剩下的就是常规操作啦&lt;/p&gt;
+&lt;p&gt;$$\because P \notin C$$&lt;/p&gt;
+&lt;p&gt;$$\therefore x_0-n-my_0 \neq 0$$&lt;/p&gt;
+&lt;p&gt;故
+$$
+\begin{aligned}
+x_0-n+my_0+2p=0\\&lt;br&gt;
+\Rightarrow n=my_0+x_0+2p
+\end{aligned}
+$$
+然后就可以愉快地写出直线的方程
+$$
+l: x=my+my_0+x_0+2p
+$$
+还是把$m$单独拿出来
+$$
+x-(x_0+2p)=m(y+y_0)
+$$
+故$l$过定点:
+$$
+(x_0+2p,-y_0)
+$$
+单独验证横线和竖线,符合上式&lt;/p&gt;
+&lt;p&gt;$$Q.E.D.$$&lt;/p&gt;
+&lt;h2 id=&#34;花絮&#34;&gt;花絮&lt;/h2&gt;
+&lt;p&gt;看到这里,你一定很好奇我到底算了多久吧?你一定很好奇我是怎么想到做法的吧?不如来看看这4大张草稿纸吧(笑~)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s3.ax1x.com/2021/02/27/69iew8.jpg&#34; alt=&#34;椭圆草稿纸&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s3.ax1x.com/2021/02/27/69iEOP.jpg&#34; alt=&#34;双曲线草稿纸&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s3.ax1x.com/2021/02/27/69iAyt.jpg&#34; alt=&#34;抛物线草稿纸,附送大问号一枚&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s3.ax1x.com/2021/02/27/69iZef.jpg&#34; alt=&#34;太激动了又验算了一遍&#34;  /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;参考资料&#34;&gt;参考资料&lt;/h2&gt;
+&lt;p&gt;椭圆证明来自:&lt;a class=&#34;link&#34; href=&#34;https://mp.weixin.qq.com/s/Xy4Sas2ayUKQKZZtBHRxoA&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;爱数学的筑梦人:曲线上定点引垂直弦，交点连线过定点&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;封面图:&lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/33873965&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;知乎:【解析几何】什么是极线，好吃吗?&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>deepin入坑指南——使用you-get下载主流视频网站的视频</title>
         <link>https://gbwater.ga/p/deepin%E5%85%A5%E5%9D%91%E6%8C%87%E5%8D%97%E4%BD%BF%E7%94%A8you-get%E4%B8%8B%E8%BD%BD%E4%B8%BB%E6%B5%81%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99%E7%9A%84%E8%A7%86%E9%A2%91/</link>
         <pubDate>Fri, 12 Feb 2021 00:00:00 +0000</pubDate>

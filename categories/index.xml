@@ -6,7 +6,16 @@
     <description>Recent content in Categories on GBwater&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 12 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://gbwater.ga/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://gbwater.ga/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>学习</title>
+      <link>https://gbwater.ga/categories/%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://gbwater.ga/categories/%E5%AD%A6%E4%B9%A0/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Linux</title>
       <link>https://gbwater.ga/categories/linux/</link>
@@ -31,15 +40,6 @@
       <pubDate>Sun, 22 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>https://gbwater.ga/categories/%E5%B7%A5%E5%85%B7/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>学习</title>
-      <link>https://gbwater.ga/categories/%E5%AD%A6%E4%B9%A0/</link>
-      <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://gbwater.ga/categories/%E5%AD%A6%E4%B9%A0/</guid>
       <description></description>
     </item>
     
