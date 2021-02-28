@@ -250,7 +250,7 @@ $$\because P \in C$$&lt;/p&gt;
 \begin{aligned}
 &amp;amp;y_0^2-2pmy_0+(x_0-n)^2-m^2y_0-2pn=0\\&lt;br&gt;
 &amp;amp;\Leftrightarrow (1-m^2)y_0^2-2pmy_0+(x_0-n)^2-2pn=0\\&lt;br&gt;
-&amp;amp;\Leftrightarrow (1-m^2)y_0^2-2pmy_0-p^2+(x_0-n)^2-2pn+p^2 \leftarrow 妙不可言!\\&lt;br&gt;
+&amp;amp;\Leftrightarrow (1-m^2)y_0^2-2pmy_0-p^2+(x_0-n)^2-2pn+p^2=0 \leftarrow 妙不可言!\\&lt;br&gt;
 &amp;amp;\Leftrightarrow [(1+m)y_0+p][(1-m)y_0-p]+(x-n+p)^2-2px_0=0\\&lt;br&gt;
 &amp;amp;\Leftrightarrow (y_0+my_0+p)(y_0-my_0-p)+(x_0-n+p)^2-y_0^2=0\\&lt;br&gt;
 &amp;amp;\Leftrightarrow y_0^2-(my_0+p)^2+(x_0-n+p)^2-y_0^2=0\\&lt;br&gt;
