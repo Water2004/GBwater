@@ -6,7 +6,94 @@
         <description>Recent content on GBwater&#39;s blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sat, 27 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://gbwater.ga/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 03 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://gbwater.ga/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>圆锥曲线的蒙日圆</title>
+        <link>https://gbwater.ga/p/%E5%9C%86%E9%94%A5%E6%9B%B2%E7%BA%BF%E7%9A%84%E8%92%99%E6%97%A5%E5%9C%86/</link>
+        <pubDate>Mon, 03 May 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://gbwater.ga/p/%E5%9C%86%E9%94%A5%E6%9B%B2%E7%BA%BF%E7%9A%84%E8%92%99%E6%97%A5%E5%9C%86/</guid>
+        <description>&lt;img src="https://s3.ax1x.com/2021/02/28/69Z2AP.jpg" alt="Featured image of post 圆锥曲线的蒙日圆" /&gt;&lt;h1 id=&#34;圆锥曲线的蒙日圆&#34;&gt;圆锥曲线的蒙日圆&lt;/h1&gt;
+&lt;h2 id=&#34;引子&#34;&gt;引子&lt;/h2&gt;
+&lt;p&gt;对于椭圆，我们知道一个很经典的结论：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;过一点P能作椭圆两条垂直切线，则P轨迹在一个圆上，称该圆为这个椭圆的蒙日圆&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;听着是不是特别玄乎，下面让我们证明一下&lt;/p&gt;
+&lt;h2 id=&#34;椭圆的蒙日圆&#34;&gt;椭圆的蒙日圆&lt;/h2&gt;
+&lt;p&gt;已知椭圆方程为$\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$，设$P(x_0,y_0)$，切线$y=k(x-x_0)+y_0$
+$$
+\begin{aligned}
+&amp;amp;\begin{cases}
+&amp;amp;y=kx-(kx_0-y_0)\\&lt;br&gt;
+&amp;amp;b^2x^2+a^2x^2-a^2b^2=0
+\end{cases}
+\\&lt;br&gt;
+&amp;amp;\Rightarrow
+(a^2k^2+b^2)x^2-2a^2k(kx_0-y_0)x+a^2(kx_0-y_0)^2-a^2b^2=0\\&lt;br&gt;
+&amp;amp;\Delta=4a^4k^2(kx_0-y_0)^2-4(a^2k^2+b^2)[a^2(kx_0-y_0)^2-a^2b^2]=0\\&lt;br&gt;
+&amp;amp;\Rightarrow
+a^4k^2(kx_0-y_0)^2-a^2(a^2k^2+b^2)(kx_0-y_0)^2+a^2b^2(a^2k^2+b^2)=0\\&lt;br&gt;
+&amp;amp;\Rightarrow
+-(kx_0-y_0)^2+a^2k^2+b^2=0\\&lt;br&gt;
+&amp;amp;\Rightarrow
+(a^2-x_0^2)k^2+2x_0y_0k-y_0^2+b^2=0\\&lt;br&gt;
+&amp;amp;\therefore k_1k_2=\frac{-y_0^2+b^2}{a^2-x_0^2}=-1\\&lt;br&gt;
+&amp;amp;\therefore x_0^2+y_0^2=a^2+b^2\\&lt;br&gt;
+&amp;amp;Q.E.D.
+\end{aligned}
+$$&lt;/p&gt;
+&lt;h2 id=&#34;抛物线的蒙日圆&#34;&gt;抛物线的蒙日圆&lt;/h2&gt;
+&lt;p&gt;常言道，抛物线就是一个被无限拉长的椭圆。那抛物线会不会也有“蒙日圆”呢？&lt;/p&gt;
+&lt;p&gt;不妨假设它有。既然抛物线是无限拉长的椭圆，那它的“蒙日圆”大概率就是一个被无限拉长的圆。无限拉长的圆？那不是一条直线吗？&lt;/p&gt;
+&lt;p&gt;下面来验证我们的猜想&lt;/p&gt;
+&lt;p&gt;已知抛物线$y^2=2px,P(x_0,y_0)$，设切线$x-x_0=m(y-y_0)$
+$$
+\begin{aligned}
+&amp;amp;\begin{cases}
+&amp;amp;y^2=2px\\&lt;br&gt;
+&amp;amp;x=my-my_0+x_0
+\end{cases}\\&lt;br&gt;
+&amp;amp;y^2-2pmy+2p(my_0-x_0)=0\\&lt;br&gt;
+&amp;amp;\Delta=4p^2m^2-8p(my_0-x_0)=0\\&lt;br&gt;
+&amp;amp;\Rightarrow pm^2-2y_0m+2x_0=0\\&lt;br&gt;
+&amp;amp;\therefore m_1m_2=\frac{2x_0}{p}=-1\\&lt;br&gt;
+&amp;amp;\therefore x_0=-\frac{x_0}{2}
+\end{aligned}
+$$
+故P的轨迹是抛物线准线，还真是一条直线！&lt;/p&gt;
+&lt;h2 id=&#34;双曲线&#34;&gt;双曲线&lt;/h2&gt;
+&lt;p&gt;既然抛物线都能有，为什么双曲线不能有？&lt;/p&gt;
+&lt;p&gt;让我们做个更大胆的猜想&lt;/p&gt;
+&lt;p&gt;如果说抛物线是个拉长的椭圆，那你看这个双曲线。。。。。。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;像不像个无限拉长并且绕回来的椭圆？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;那它的“蒙日圆”？应该是套在中间的罢？&lt;/p&gt;
+&lt;p&gt;让我们来验证一下&lt;/p&gt;
+&lt;p&gt;已知双曲线$\frac{x^2}{a^2}-\frac{y^2}{b^2}=1,P(x_0,y_0)$，设切线$y-y_0=k(x-x_0)$
+$$
+\begin{aligned}
+&amp;amp;\begin{cases}
+&amp;amp;b^2x^2-a^2y^2-a^2b^2=0\\&lt;br&gt;
+&amp;amp;y=kx-kx_0+y_0
+\end{cases}\\&lt;br&gt;
+&amp;amp;\Rightarrow
+(b^2-a^2k^2)x^2+2a^2k(kx_0-y_0)x-a^2(kx_0-y_0)^2-a^2b^2=0\\&lt;br&gt;
+&amp;amp;\Delta=4a^4k^2(kx_0-y_0)^2+4(b^2-a^2k^2)[a^2(kx_0-y_0)^2+a^2b^2]=0\\&lt;br&gt;
+&amp;amp;\Rightarrow a^2k^2(kx_0-y_0)^2+(b^2-a^2k^2)[(kx_0-y_0)^2+b^2]=0\\&lt;br&gt;
+&amp;amp;\Leftrightarrow
+b^2(kx_0-y_0)^2-a^2b^2k^2+b^4=0\\&lt;br&gt;
+&amp;amp;\Rightarrow (x_0^2-a^2)k^2-2x_0y_0k+y_0^2+b^2=0\\&lt;br&gt;
+&amp;amp;\therefore k_1k_2=\frac{y_0^2+b^2}{x_0^2-a^2}=-1\\&lt;br&gt;
+&amp;amp;\therefore x_0^2+y_0^2=a^2-b^2
+\end{aligned}
+$$
+这不就夹在左右两支中间嘛！&lt;/p&gt;
+&lt;h2 id=&#34;小结&#34;&gt;小结&lt;/h2&gt;
+&lt;p&gt;经过上述讨论，我们发现三种圆锥曲线都有其对应的“蒙日圆”。由此，圆锥曲线的统一性可见一斑！&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>圆锥曲线垂直弦交点连线过定点</title>
         <link>https://gbwater.ga/p/%E5%9C%86%E9%94%A5%E6%9B%B2%E7%BA%BF%E5%9E%82%E7%9B%B4%E5%BC%A6%E4%BA%A4%E7%82%B9%E8%BF%9E%E7%BA%BF%E8%BF%87%E5%AE%9A%E7%82%B9/</link>
         <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
