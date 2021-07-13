@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>https://gbwater.ga/categories/</loc>
+    <lastmod>2021-05-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://gbwater.ga/</loc>
     <lastmod>2021-05-03T00:00:00+00:00</lastmod>
   </url>
@@ -273,7 +278,27 @@
   </url>
   
   <url>
+    <loc>https://gbwater.ga/categories/%E5%B7%A5%E5%85%B7/</loc>
+  </url>
+  
+  <url>
+    <loc>https://gbwater.ga/categories/oi/</loc>
+  </url>
+  
+  <url>
     <loc>https://gbwater.ga/search/</loc>
+  </url>
+  
+  <url>
+    <loc>https://gbwater.ga/categories/%E5%B7%A5%E5%85%B7/</loc>
+  </url>
+  
+  <url>
+    <loc>https://gbwater.ga/categories/%E5%B7%A5%E5%85%B7/</loc>
+  </url>
+  
+  <url>
+    <loc>https://gbwater.ga/categories/%E5%B7%A5%E5%85%B7/</loc>
   </url>
   
 </urlset>
