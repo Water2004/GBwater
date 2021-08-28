@@ -96,17 +96,29 @@ var _hmt = _hmt || [];
         <a href="/p/%E7%BA%BF%E6%AE%B5%E6%A0%91/">线段树</a>
     </h2>
 
+    
+
+    
     <footer class="article-time">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
 </svg>
+                <time class="article-time--published">Apr 26, 2020</time>
+            </div>
+        
 
-
-
-        <time class="article-time--published">Apr 26, 2020</time>
-    </footer></div>
+        
+    </footer>
+    
+</div>
 </header>
 
     <section class="article-content">
@@ -138,7 +150,18 @@ var _hmt = _hmt || [];
 <h2 id="查询">查询</h2>
 <p>比如有一段序列：<strong>1 , 3 , 5 , 2 ，2</strong><br>
 建立的线段树(每个结点保存其区间的<strong>最大值</strong>)如下 <del>暂且先不管它是怎么建立的</del><br>
-<img src="https://s1.ax1x.com/2020/04/26/J6j7rt.png" alt=""  /></p>
+<figure 
+	>
+	<a href="https://s1.ax1x.com/2020/04/26/J6j7rt.png" >
+		<img src="https://s1.ax1x.com/2020/04/26/J6j7rt.png"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
 <h4 id="观察这棵树可以发现有这两个特点">观察这棵树，可以发现有这两个特点</h4>
 <ul>
 <li><strong><!-- raw HTML omitted -->叶结点<!-- raw HTML omitted --></strong> 区间长度为1，代表这段序列中的一个个数字</li>
@@ -192,7 +215,18 @@ var _hmt = _hmt || [];
 <h3 id="单点修改">单点修改</h3>
 <p>顾名思义，单点修改就是修改序列中的一个数<br>
 还是这段序列和这棵线段树<br>
-<img src="https://s1.ax1x.com/2020/04/26/J6j7rt.png" alt=""  /></p>
+<figure 
+	>
+	<a href="https://s1.ax1x.com/2020/04/26/J6j7rt.png" >
+		<img src="https://s1.ax1x.com/2020/04/26/J6j7rt.png"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
 <h4 id="修改方法">修改方法</h4>
 <ol>
 <li>找到待修改的叶结点</li>
@@ -281,24 +315,90 @@ var _hmt = _hmt || [];
 <li>待查询区间分布于两个子节点，拆分区间使其包含于被两个子节点的区间，把标记传递给两个子节点并向其递归查询，比较，并返回结果</li>
 </ul>
 <h4 id="模拟一下修改的过程将03区间的数全部1">模拟一下修改的过程(将[0,3]区间的数全部+1)</h4>
-<p><img src="https://s1.ax1x.com/2020/04/26/J6j7rt.png" alt=""  /></p>
+<p><figure 
+	>
+	<a href="https://s1.ax1x.com/2020/04/26/J6j7rt.png" >
+		<img src="https://s1.ax1x.com/2020/04/26/J6j7rt.png"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
 <ol>
 <li>访问根节点，不是待修改区间，拆分待修改区间为[0,2]和[3,3]</li>
 <li>向左子树查询，是待修改区间，修改标记为1，更新值为6，返回
-<img src="https://s1.ax1x.com/2020/04/26/JcZtqU.png" alt=""  /></li>
+<figure 
+	>
+	<a href="https://s1.ax1x.com/2020/04/26/JcZtqU.png" >
+		<img src="https://s1.ax1x.com/2020/04/26/JcZtqU.png"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></li>
 <li>向右子树查询，不是待修改区间，待修改区间位于其左子树</li>
 <li>向其左子树查询，是待修改区间，且是叶结点，直接修改，返回
-<img src="https://s1.ax1x.com/2020/04/26/JcZRde.png" alt=""  /></li>
+<figure 
+	>
+	<a href="https://s1.ax1x.com/2020/04/26/JcZRde.png" >
+		<img src="https://s1.ax1x.com/2020/04/26/JcZRde.png"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></li>
 <li>3&gt;2，更新值为3，返回
-<img src="https://s1.ax1x.com/2020/04/26/Jceuy6.png" alt=""  /></li>
+<figure 
+	>
+	<a href="https://s1.ax1x.com/2020/04/26/Jceuy6.png" >
+		<img src="https://s1.ax1x.com/2020/04/26/Jceuy6.png"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></li>
 <li>6&gt;3，更新值为6，结束
-<img src="https://s1.ax1x.com/2020/04/26/Jce00S.png" alt=""  /></li>
+<figure 
+	>
+	<a href="https://s1.ax1x.com/2020/04/26/Jce00S.png" >
+		<img src="https://s1.ax1x.com/2020/04/26/Jce00S.png"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></li>
 </ol>
 <h4 id="再模拟一下查询的过程查询23的最大值">再模拟一下查询的过程(查询[2,3]的最大值)</h4>
 <ol>
 <li>访问根节点，不是待查询区间，拆分其为[2,2]和[3,3]</li>
 <li>向左子树查询，不是待查询区间，进一步查询前把标记传递给两个子节点并更新它们的值
-<img src="https://s1.ax1x.com/2020/04/26/JcmP1I.png" alt=""  /></li>
+<figure 
+	>
+	<a href="https://s1.ax1x.com/2020/04/26/JcmP1I.png" >
+		<img src="https://s1.ax1x.com/2020/04/26/JcmP1I.png"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></li>
 <li>待查询区间位于其右子树，向右子树查询</li>
 <li>待查询区间是此区间，返回结果：6</li>
 <li>返回结果：6</li>
@@ -2273,6 +2373,7 @@ var _hmt = _hmt || [];
     </section>
     </footer>
 
+
     
         
 <script>
@@ -2422,9 +2523,10 @@ var _hmt = _hmt || [];
     
     <section class="powerby">
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
-        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.2.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
     </section>
 </footer>
+
 
     
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">

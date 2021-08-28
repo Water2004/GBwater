@@ -96,17 +96,29 @@ var _hmt = _hmt || [];
         <a href="/p/deepin%E5%85%A5%E5%9D%91%E6%8C%87%E5%8D%97%E5%89%8D%E8%A8%80%E7%AE%80%E4%BB%8B%E4%B8%8E%E8%AF%B4%E6%98%8E/">deepin入坑指南(前言)——简介与说明</a>
     </h2>
 
+    
+
+    
     <footer class="article-time">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
 </svg>
+                <time class="article-time--published">Feb 11, 2021</time>
+            </div>
+        
 
-
-
-        <time class="article-time--published">Feb 11, 2021</time>
-    </footer></div>
+        
+    </footer>
+    
+</div>
 </header>
 
     <section class="article-content">
@@ -120,11 +132,35 @@ var _hmt = _hmt || [];
 <p>​																									——来自百度百科</p>
 </blockquote>
 <p>提到deepin，你是不是想到了这个：</p>
-<p><img src="http://www.deepinghost.com/templets/skin/images/t2.jpg" alt=""  /></p>
+<p><figure 
+	>
+	<a href="http://www.deepinghost.com/templets/skin/images/t2.jpg" >
+		<img src="http://www.deepinghost.com/templets/skin/images/t2.jpg"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
 <p>事实上，深度（即deepin）以前和雨林木风、番茄花园一样，是做盗版系统的。但是，深度的盗版Windows的最后一版是XP V9.0。自2009年，HiweedLinux改名deepin，自此，Deepin的历史开始了。</p>
 <p>这就是我的Deepin桌面：</p>
 <p><a class="link" href="https://imgchr.com/i/yAhzPs"  target="_blank" rel="noopener"
-    ><img src="https://s3.ax1x.com/2021/01/31/yAhzPs.png" alt="yAhzPs.png"  /></a></p>
+    ><figure 
+	>
+	<a href="https://s3.ax1x.com/2021/01/31/yAhzPs.png" >
+		<img src="https://s3.ax1x.com/2021/01/31/yAhzPs.png"
+			
+			
+			
+			loading="lazy"
+			alt="yAhzPs.png">
+	</a>
+	
+	<figcaption>yAhzPs.png</figcaption>
+	
+</figure></a></p>
 <h2 id="安装deepin之前">安装Deepin之前</h2>
 <p>在安装Deepin之前，首先要明确，Deepin不是Windows。请务必了解以下内容：</p>
 <h3 id="deepin和windows有什么不同">Deepin和Windows有什么不同</h3>
@@ -190,7 +226,20 @@ var _hmt = _hmt || [];
 <p>不同于Windows，Deepin没有盘符，更没有C盘。请不要因此抱怨，这更加科学和便利。</p>
 <p>Deepin的系统存放在根目录（/），下图的“系统盘”指的就是根目录</p>
 <p><a class="link" href="https://imgchr.com/i/yABzCD"  target="_blank" rel="noopener"
-    ><img src="https://s3.ax1x.com/2021/01/31/yABzCD.png" alt="yABzCD.png"  /></a></p>
+    ><figure 
+	>
+	<a href="https://s3.ax1x.com/2021/01/31/yABzCD.png" >
+		<img src="https://s3.ax1x.com/2021/01/31/yABzCD.png"
+			
+			
+			
+			loading="lazy"
+			alt="yABzCD.png">
+	</a>
+	
+	<figcaption>yABzCD.png</figcaption>
+	
+</figure></a></p>
 <p>所有的其他主要目录（home、opt、usr等，将在下文介绍）都挂载（类似Windows下的快捷方式）在根目录。所以选择文件夹时找不到这些文件夹，那就去根目录里找。虽然你有权限，但不要轻易修改里面的内容，容易使系统崩溃。</p>
 <p>进入根目录有两种方式，一是在文件管理器中双击进入，而是在终端下使用命令（详情请见后文的终端部分）：</p>
 <div class="highlight"><div class="chroma">
@@ -204,7 +253,20 @@ var _hmt = _hmt || [];
 </div><h4 id="home">/home</h4>
 <p>/home目录就是文件管理器侧边栏的“主目录”，是储存用户文件的目录。“桌面”、“文档”、“下载”等文件夹都存在这个目录，如图所示:</p>
 <p><a class="link" href="https://imgchr.com/i/yADoIf"  target="_blank" rel="noopener"
-    ><img src="https://s3.ax1x.com/2021/01/31/yADoIf.png" alt="yADoIf.png"  /></a></p>
+    ><figure 
+	>
+	<a href="https://s3.ax1x.com/2021/01/31/yADoIf.png" >
+		<img src="https://s3.ax1x.com/2021/01/31/yADoIf.png"
+			
+			
+			
+			loading="lazy"
+			alt="yADoIf.png">
+	</a>
+	
+	<figcaption>yADoIf.png</figcaption>
+	
+</figure></a></p>
 <p>但千万不要认为这里面只有用户文件，许多重要的配置文件也储存在这里。要查看或修改这些文件，需要临时显示隐藏文件，快捷键：<!-- raw HTML omitted -->ctrl<!-- raw HTML omitted -->+<!-- raw HTML omitted -->H<!-- raw HTML omitted -->，再次进入时会默认隐藏。</p>
 <p>要在终端进入/home，输入命令：</p>
 <div class="highlight"><div class="chroma">
@@ -218,7 +280,20 @@ var _hmt = _hmt || [];
 </div><h4 id="opt">/opt</h4>
 <p>/opt是存放软件的目录。按照Deepin的规范，所有在应用商店里安装的软件都会存放到/opt/apps下一个以软件包（将在下文介绍）名称命名的文件夹下。这很类似Windows中C盘下的“programme files”文件夹。如果不是在应用商店里安装的，一般默认直接安装到/opt。如图所示：</p>
 <p><a class="link" href="https://imgchr.com/i/yAydMQ"  target="_blank" rel="noopener"
-    ><img src="https://s3.ax1x.com/2021/01/31/yAydMQ.png" alt="yAydMQ.png"  /></a></p>
+    ><figure 
+	>
+	<a href="https://s3.ax1x.com/2021/01/31/yAydMQ.png" >
+		<img src="https://s3.ax1x.com/2021/01/31/yAydMQ.png"
+			
+			
+			
+			loading="lazy"
+			alt="yAydMQ.png">
+	</a>
+	
+	<figcaption>yAydMQ.png</figcaption>
+	
+</figure></a></p>
 <h4 id="media">/media</h4>
 <blockquote>
 <p>linux 系统会自动识别一些设备，例如U盘、光驱等等，当识别后，Linux 会把识别的设备挂载到这个目录下。</p>
@@ -236,7 +311,20 @@ var _hmt = _hmt || [];
 <p>很多人谈命令行色变，认为命令行是程序员的玩物。其实并不是，命令行是操作的一种方式，有时候比在图形界面用鼠标点更方便快捷，还能完成一些图形界面不能实现的操作。</p>
 <p>运行命令需要终端，如图所示：</p>
 <p><a class="link" href="https://imgchr.com/i/yAcuBd"  target="_blank" rel="noopener"
-    ><img src="https://s3.ax1x.com/2021/01/31/yAcuBd.png" alt="yAcuBd.png"  /></a></p>
+    ><figure 
+	>
+	<a href="https://s3.ax1x.com/2021/01/31/yAcuBd.png" >
+		<img src="https://s3.ax1x.com/2021/01/31/yAcuBd.png"
+			
+			
+			
+			loading="lazy"
+			alt="yAcuBd.png">
+	</a>
+	
+	<figcaption>yAcuBd.png</figcaption>
+	
+</figure></a></p>
 <p>运行命令时，在里面输入命令，然后按回车键即可</p>
 <h4 id="深度终端使用简介">深度终端使用简介</h4>
 <ul>
@@ -530,6 +618,7 @@ var _hmt = _hmt || [];
     </section>
     </footer>
 
+
     
     
             <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
@@ -637,9 +726,10 @@ var _hmt = _hmt || [];
     
     <section class="powerby">
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
-        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.2.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
     </section>
 </footer>
+
 
     
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
