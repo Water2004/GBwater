@@ -6,7 +6,16 @@
     <description>Recent content in Posts on GBwater&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 03 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://gbwater.ga/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://gbwater.ga/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deepin下自动挂载群晖Nas（通过CIFS）</title>
+      <link>https://gbwater.ga/p/deepin%E4%B8%8B%E8%87%AA%E5%8A%A8%E6%8C%82%E8%BD%BD%E7%BE%A4%E6%99%96nas%E9%80%9A%E8%BF%87cifs/</link>
+      <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://gbwater.ga/p/deepin%E4%B8%8B%E8%87%AA%E5%8A%A8%E6%8C%82%E8%BD%BD%E7%BE%A4%E6%99%96nas%E9%80%9A%E8%BF%87cifs/</guid>
+      <description>Linux下自动挂载群晖Nas（通过CIFS）</description>
+    </item>
+    
     <item>
       <title>圆锥曲线的蒙日圆</title>
       <link>https://gbwater.ga/p/%E5%9C%86%E9%94%A5%E6%9B%B2%E7%BA%BF%E7%9A%84%E8%92%99%E6%97%A5%E5%9C%86/</link>
