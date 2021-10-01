@@ -6,7 +6,333 @@
         <description>Recent content on GBwater&#39;s blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Thu, 30 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://gbwater.ga/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 01 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://gbwater.ga/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>对数的估算方法</title>
+        <link>https://gbwater.ga/p/%E5%AF%B9%E6%95%B0%E7%9A%84%E4%BC%B0%E7%AE%97%E6%96%B9%E6%B3%95/</link>
+        <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://gbwater.ga/p/%E5%AF%B9%E6%95%B0%E7%9A%84%E4%BC%B0%E7%AE%97%E6%96%B9%E6%B3%95/</guid>
+        <description>&lt;img src="https://z3.ax1x.com/2021/10/01/4TWNKf.jpg" alt="Featured image of post 对数的估算方法" /&gt;&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;最近做数学卷，有一道题我最后化简出来的结果是 $\frac 9 {lg4}$，于是我脑子一热，$lg4$绝壁小于0.5！然后就炸了&amp;hellip;&amp;hellip;&lt;/p&gt;
+&lt;p&gt;于是我就在考虑估算如何对数的问题&lt;/p&gt;
+&lt;h2 id=&#34;初步&#34;&gt;初步&lt;/h2&gt;
+&lt;p&gt;先拿$ln2$举例&lt;/p&gt;
+&lt;p&gt;最简单的方法就是利用常见不等式：
+$$
+lnx \le x-1
+$$
+于是：
+$$
+ln2 \le 2-1=1
+$$
+不过这也太不精确了吧！有没有什么方法可以让它精确一点呢？&lt;/p&gt;
+&lt;p&gt;注意到上述不等式取等条件为  $x=1$ ，那就是说&lt;code&gt;x&lt;/code&gt;越接近&lt;code&gt;1&lt;/code&gt;，用它算出来的结果越精确&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://z3.ax1x.com/2021/10/01/4TR7DS.png&#34; &gt;
+		&lt;img src=&#34;https://z3.ax1x.com/2021/10/01/4TR7DS.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;那怎么样才能让&lt;code&gt;x&lt;/code&gt;接近&lt;code&gt;1&lt;/code&gt;呢？&lt;/p&gt;
+&lt;p&gt;利用对数的性质
+$$
+ln(ab)=lna+lnb
+$$
+可得
+$$
+ln(x)= ln(\frac {bx} a ·\frac a b)=ln \frac {bx} a + ln \frac a b
+$$
+只要选取合适的&lt;code&gt;a&lt;/code&gt;，&lt;code&gt;b&lt;/code&gt;，就可以让 $\frac {bx} a$ 和 $\frac a b$ 都接近&lt;code&gt;1&lt;/code&gt;，这不就能更精确了吗？&lt;/p&gt;
+&lt;p&gt;尝试一下：
+$$
+ln2=ln\frac 4 3 ·\frac 3 2=ln\frac 4 3+ln\frac 3 2\le \frac 4 3-1+\frac 3 2 -1=\frac 5 6
+$$
+这不就精确多了吗？&lt;/p&gt;
+&lt;p&gt;但这个误差还是有点大，如何再精确点呢？&lt;/p&gt;
+&lt;p&gt;聪明的你肯定想到了，只要&lt;code&gt;拆成更多项&lt;/code&gt;，不就能更精确了嘛~&lt;/p&gt;
+&lt;p&gt;说干就干
+$$
+ln2=ln({8\over7}·{7\over6}·{6\over5}·{5\over 4})\le {1\over7}+{1\over6}+{1\over5}+{1\over4}=0.7595
+$$
+聪明的你肯定已经发现了规律
+$$
+lnx\le {1\over ax-1}+{1\over ax-2}+&amp;hellip;+{1\over a}=\sum_{i=1}^{ax-1}{1\over i}
+$$
+&lt;code&gt;x=2&lt;/code&gt;时，取&lt;code&gt;a=200&lt;/code&gt;，得
+$$
+ln2\le 0.6943987
+$$
+已经离真实值&lt;code&gt;ln2=0.69314718&lt;/code&gt;很接近了！&lt;/p&gt;
+&lt;h2 id=&#34;进阶&#34;&gt;进阶&lt;/h2&gt;
+&lt;p&gt;但是这计算量也太大了！谁会闲着没事算几百个分式的和？还能不能改进一下呢？&lt;/p&gt;
+&lt;p&gt;想想看这种方法还能优化啥？是不是只剩优化不等式了？&lt;/p&gt;
+&lt;p&gt;对嘛，换个准一点不等式的不就好了？&lt;/p&gt;
+&lt;p&gt;比如
+$$
+lnx\ge {2(x-1)\over x+1}，(x\ge 1)
+$$
+&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://z3.ax1x.com/2021/10/01/4TRTu8.png&#34; &gt;
+		&lt;img src=&#34;https://z3.ax1x.com/2021/10/01/4TRTu8.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;仍然在&lt;code&gt;x=1&lt;/code&gt;取等，还是熟悉的配方！&lt;/p&gt;
+&lt;p&gt;于是同理可以得出
+$$
+lnx\ge \sum_{i=a}^{ax-1}{2\over 2i+1}
+$$
+令&lt;code&gt;x=2&lt;/code&gt;，&lt;code&gt;a=10&lt;/code&gt;，得
+$$
+ln2 \ge 0.69283536
+$$
+这10项算起来已经比原来200项的效果都要好了！&lt;/p&gt;
+&lt;p&gt;如果你比较擅长徒手开平方，甚至还可以试试更准的
+$$
+lnx\le \sqrt {x}-\sqrt{1\over x},x\ge1
+$$
+依然是&lt;code&gt;x=1&lt;/code&gt;时取等&lt;/p&gt;
+&lt;p&gt;也就是说
+$$
+lnx\le \sum_{i=a}^{ax-1}\big (\sqrt{i+1\over i}-\sqrt{i\over i+1}\big )
+$$
+令&lt;code&gt;x=2&lt;/code&gt;，&lt;code&gt;a=6&lt;/code&gt;，得
+$$
+ln2 \le 0.69357944
+$$
+用6项取得了同样的效果！&lt;/p&gt;
+&lt;h2 id=&#34;dalao们的方法&#34;&gt;dalao们的方法&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;作者：王希&lt;br&gt;
+链接：&lt;a class=&#34;link&#34; href=&#34;https://www.zhihu.com/question/25485897/answer/46701302&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.zhihu.com/question/25485897/answer/46701302&lt;/a&gt;&lt;br&gt;
+来源：知乎&lt;/p&gt;
+&lt;p&gt;高中生除了 &lt;a class=&#34;link&#34; href=&#34;http://www.zhihu.com/people/336d88c717a698e1dec3bd6a79b08845&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;@王筝&lt;/a&gt; 提到的转化成黎曼和的方式之外没有别的办法了。但是在大学，转化成定积分之后有更好的方法。&lt;/p&gt;
+&lt;p&gt;1.辛普森公式：&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://www.zhihu.com/equation?tex=%5Cint_%7Ba%7D%5E%7Bb%7D&amp;#43;f%28x%29&amp;#43;%5C%2C&amp;#43;dx&amp;#43;%5Capprox&amp;#43;%5Cfrac%7Bb-a%7D%7B6%7D%5Cleft%5Bf%28a%29&amp;#43;%2B&amp;#43;4f%5Cleft%28%5Cfrac%7Ba%2Bb%7D%7B2%7D%5Cright%29%2Bf%28b%29%5Cright%5D&#34; &gt;
+		&lt;img src=&#34;https://www.zhihu.com/equation?tex=%5Cint_%7Ba%7D%5E%7Bb%7D&amp;#43;f%28x%29&amp;#43;%5C%2C&amp;#43;dx&amp;#43;%5Capprox&amp;#43;%5Cfrac%7Bb-a%7D%7B6%7D%5Cleft%5Bf%28a%29&amp;#43;%2B&amp;#43;4f%5Cleft%28%5Cfrac%7Ba%2Bb%7D%7B2%7D%5Cright%29%2Bf%28b%29%5Cright%5D&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			alt=&#34;[公式]&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;[公式]&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;也就是说&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://www.zhihu.com/equation?tex=ln2%3D%5Cint_%7B1%7D%5E%7B2%7D&amp;#43;%5Cfrac%7Bdx%7D%7Bx%7D&amp;#43;&amp;#43;%5Capprox&amp;#43;%5Cfrac%7B1%7D%7B6%7D&amp;#43;%5Cleft%5B&amp;#43;1%2B4%5Ctimes&amp;#43;%5Cfrac%7B2%7D%7B3%7D&amp;#43;%2B%5Cfrac%7B1%7D%7B2%7D&amp;#43;&amp;#43;%5Cright%5D&amp;#43;%3D%5Cfrac%7B25%7D%7B36%7D&amp;#43;&#34; &gt;
+		&lt;img src=&#34;https://www.zhihu.com/equation?tex=ln2%3D%5Cint_%7B1%7D%5E%7B2%7D&amp;#43;%5Cfrac%7Bdx%7D%7Bx%7D&amp;#43;&amp;#43;%5Capprox&amp;#43;%5Cfrac%7B1%7D%7B6%7D&amp;#43;%5Cleft%5B&amp;#43;1%2B4%5Ctimes&amp;#43;%5Cfrac%7B2%7D%7B3%7D&amp;#43;%2B%5Cfrac%7B1%7D%7B2%7D&amp;#43;&amp;#43;%5Cright%5D&amp;#43;%3D%5Cfrac%7B25%7D%7B36%7D&amp;#43;&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			alt=&#34;[公式]&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;[公式]&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;用计算机检验误差：&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://www.zhihu.com/equation?tex=ln2-25%2F36%3D-0.00129&#34; &gt;
+		&lt;img src=&#34;https://www.zhihu.com/equation?tex=ln2-25%2F36%3D-0.00129&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			alt=&#34;[公式]&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;[公式]&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic1.zhimg.com/50/bf271313cf9cac5b0bc606f1e995d4cd_720w.jpg?source=1940ef5c&#34; &gt;
+		&lt;img src=&#34;https://pic1.zhimg.com/50/bf271313cf9cac5b0bc606f1e995d4cd_720w.jpg?source=1940ef5c&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			alt=&#34;img&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;img&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic1.zhimg.com/80/bf271313cf9cac5b0bc606f1e995d4cd_1440w.jpg?source=1940ef5c&#34; &gt;
+		&lt;img src=&#34;https://pic1.zhimg.com/80/bf271313cf9cac5b0bc606f1e995d4cd_1440w.jpg?source=1940ef5c&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			alt=&#34;img&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;img&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;只有3位，怎么办呢？没关系，我们可以等分区间，然后对两侧的区间分别应用辛普森公式，再加起来。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://www.zhihu.com/equation?tex=ln2%3D%5Cint_%7B1%7D%5E%7B1.5%7D%5Cfrac%7Bdx%7D%7Bx%7D&amp;#43;%2B%5Cint_%7B1.5%7D%5E%7B2%7D%5Cfrac%7Bdx%7D%7Bx%7D&amp;#43;&amp;#43;%5Capprox&amp;#43;%5Cfrac%7B1%7D%7B6%7D&amp;#43;%5Cleft%5B&amp;#43;1%2B4%5Ctimes&amp;#43;%5Cfrac%7B4%7D%7B5%7D%2B%5Cfrac%7B2%7D%7B3%7D%2B%5Cfrac%7B2%7D%7B3%7D%2B4%5Ctimes&amp;#43;%5Cfrac%7B4%7D%7B7%7D&amp;#43;%2B%5Cfrac%7B1%7D%7B2%7D&amp;#43;&amp;#43;&amp;#43;&amp;#43;%5Cright%5D&amp;#43;%3D%5Cfrac%7B1747%7D%7B2520%7D&amp;#43;&#34; &gt;
+		&lt;img src=&#34;https://www.zhihu.com/equation?tex=ln2%3D%5Cint_%7B1%7D%5E%7B1.5%7D%5Cfrac%7Bdx%7D%7Bx%7D&amp;#43;%2B%5Cint_%7B1.5%7D%5E%7B2%7D%5Cfrac%7Bdx%7D%7Bx%7D&amp;#43;&amp;#43;%5Capprox&amp;#43;%5Cfrac%7B1%7D%7B6%7D&amp;#43;%5Cleft%5B&amp;#43;1%2B4%5Ctimes&amp;#43;%5Cfrac%7B4%7D%7B5%7D%2B%5Cfrac%7B2%7D%7B3%7D%2B%5Cfrac%7B2%7D%7B3%7D%2B4%5Ctimes&amp;#43;%5Cfrac%7B4%7D%7B7%7D&amp;#43;%2B%5Cfrac%7B1%7D%7B2%7D&amp;#43;&amp;#43;&amp;#43;&amp;#43;%5Cright%5D&amp;#43;%3D%5Cfrac%7B1747%7D%7B2520%7D&amp;#43;&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			alt=&#34;[公式]&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;[公式]&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;这次的误差就足够小了&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic1.zhimg.com/50/def57c45dbfac5e707e2d2eb68ff64b1_720w.jpg?source=1940ef5c&#34; &gt;
+		&lt;img src=&#34;https://pic1.zhimg.com/50/def57c45dbfac5e707e2d2eb68ff64b1_720w.jpg?source=1940ef5c&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			alt=&#34;img&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;img&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic1.zhimg.com/80/def57c45dbfac5e707e2d2eb68ff64b1_1440w.jpg?source=1940ef5c&#34; &gt;
+		&lt;img src=&#34;https://pic1.zhimg.com/80/def57c45dbfac5e707e2d2eb68ff64b1_1440w.jpg?source=1940ef5c&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			alt=&#34;img&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;img&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;2.另外，还可以直接用科特斯公式&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic1.zhimg.com/50/1bfa518abe230e42dba3cc2c6a0fc864_720w.jpg?source=1940ef5c&#34; &gt;
+		&lt;img src=&#34;https://pic1.zhimg.com/50/1bfa518abe230e42dba3cc2c6a0fc864_720w.jpg?source=1940ef5c&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			alt=&#34;img&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;img&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic1.zhimg.com/80/1bfa518abe230e42dba3cc2c6a0fc864_1440w.jpg?source=1940ef5c&#34; &gt;
+		&lt;img src=&#34;https://pic1.zhimg.com/80/1bfa518abe230e42dba3cc2c6a0fc864_1440w.jpg?source=1940ef5c&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			alt=&#34;img&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;img&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;计算，结果应该更准确。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;作者：王筝&lt;br&gt;
+链接：&lt;a class=&#34;link&#34; href=&#34;https://www.zhihu.com/question/25485897/answer/30862922&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.zhihu.com/question/25485897/answer/30862922&lt;/a&gt;&lt;br&gt;
+来源：知乎&lt;/p&gt;
+&lt;p&gt;楼上两位说的当然是对的，但是收敛太慢了，算到精确到4,5位要算很多项才行。
+给一个收敛稍微快一点的。
+&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://www.zhihu.com/equation?tex=%5Cln%281%2Bx%29%3D%5Csum_%7Bn%3D1%7D%5E%7B%5Cinfty%7D%7B%5Cfrac%7B%28-1%29%5E%7Bn%2B1%7Dx%5E%7Bn%7D%7D%7Bn%7D%7D&amp;#43;&#34; &gt;
+		&lt;img src=&#34;https://www.zhihu.com/equation?tex=%5Cln%281%2Bx%29%3D%5Csum_%7Bn%3D1%7D%5E%7B%5Cinfty%7D%7B%5Cfrac%7B%28-1%29%5E%7Bn%2B1%7Dx%5E%7Bn%7D%7D%7Bn%7D%7D&amp;#43;&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			alt=&#34;[公式]&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;[公式]&lt;/figcaption&gt;
+	
+&lt;/figure&gt;
+&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://www.zhihu.com/equation?tex=%5Cln%281-x%29%3D%5Csum_%7Bn%3D1%7D%5E%7B%5Cinfty%7D%7B%5Cfrac%7B-x%5En%7D%7Bn%7D%7D&amp;#43;&#34; &gt;
+		&lt;img src=&#34;https://www.zhihu.com/equation?tex=%5Cln%281-x%29%3D%5Csum_%7Bn%3D1%7D%5E%7B%5Cinfty%7D%7B%5Cfrac%7B-x%5En%7D%7Bn%7D%7D&amp;#43;&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			alt=&#34;[公式]&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;[公式]&lt;/figcaption&gt;
+	
+&lt;/figure&gt;
+两式相减，消掉一些项，然后得到
+&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://www.zhihu.com/equation?tex=%5Cln%28%5Cfrac%7B1%2Bx%7D%7B1-x%7D%29%3D%5Csum_%7Bn%3D1%7D%5E%7B%5Cinfty%7D%7B%5Cfrac%7B2x%5E%7B2n-1%7D%7D%7B2n-1%7D%7D&amp;#43;&#34; &gt;
+		&lt;img src=&#34;https://www.zhihu.com/equation?tex=%5Cln%28%5Cfrac%7B1%2Bx%7D%7B1-x%7D%29%3D%5Csum_%7Bn%3D1%7D%5E%7B%5Cinfty%7D%7B%5Cfrac%7B2x%5E%7B2n-1%7D%7D%7B2n-1%7D%7D&amp;#43;&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			alt=&#34;[公式]&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;[公式]&lt;/figcaption&gt;
+	
+&lt;/figure&gt;
+带入&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://www.zhihu.com/equation?tex=x%3D%5Cfrac1&amp;#43;3&#34; &gt;
+		&lt;img src=&#34;https://www.zhihu.com/equation?tex=x%3D%5Cfrac1&amp;#43;3&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			alt=&#34;[公式]&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;[公式]&lt;/figcaption&gt;
+	
+&lt;/figure&gt;即可，这个收敛的截断误差是指数阶的，算几项就能精确到4，5位了。不过这样需要假设高中生理解那个级数。。有点难度。。如果考虑一般高中生的水平，手算能用的函数恐怕仅限有理函数了。这时可以考虑认为ln(2)是1/x在[1,2]上的积分，那么就可以按照黎曼和的方式写出公式来，不过这个比起上面的方法就差远了。。&lt;/p&gt;
+&lt;hr&gt;
+</description>
+        </item>
+        <item>
         <title>Deepin下自动挂载群晖Nas（通过CIFS）</title>
         <link>https://gbwater.ga/p/deepin%E4%B8%8B%E8%87%AA%E5%8A%A8%E6%8C%82%E8%BD%BD%E7%BE%A4%E6%99%96nas%E9%80%9A%E8%BF%87cifs/</link>
         <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
